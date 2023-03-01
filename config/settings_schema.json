@@ -1394,6 +1394,12 @@
         "content": "Body text"
       },
       {
+        "type":"checkbox",
+        "id":"use_adobe_regular_font",
+        "label":"Use Adobe Font Family",
+        "default": true
+      },
+      {
         "type": "font_picker",
         "id": "regular__font",
         "label": "Font",
@@ -1450,6 +1456,12 @@
       {
         "type": "header",
         "content": "Main menu"
+      },
+      {
+        "type":"checkbox",
+        "id":"use_adobe_nav_font",
+        "label":"Use Adobe Font Family",
+        "default": true
       },
       {
         "type": "font_picker",
@@ -1551,6 +1563,12 @@
         "content": "Buttons"
       },
       {
+        "type":"checkbox",
+        "id":"use_adobe_button_font",
+        "label":"Use Adobe Font Family",
+        "default": true
+      },
+      {
         "type": "font_picker",
         "id": "button__font",
         "label": "Font",
@@ -1588,6 +1606,12 @@
       {
         "type": "header",
         "content": "Headings"
+      },
+      {
+        "type":"checkbox",
+        "id":"use_adobe_heading_font",
+        "label":"Use Adobe Font Family",
+        "default": true
       },
       {
         "type": "font_picker",
@@ -1638,6 +1662,12 @@
         "content": "Preheading"
       },
       {
+        "type":"checkbox",
+        "id":"use_adobe_preheading_font",
+        "label":"Use Adobe Font Family",
+        "default": true
+      },
+      {
         "type": "font_picker",
         "id": "preheading_font",
         "label": "Font",
@@ -1675,6 +1705,12 @@
       {
         "type": "header",
         "content": "Subheading"
+      },
+      {
+        "type":"checkbox",
+        "id":"use_adobe_subheading_font",
+        "label":"Use Adobe Font Family",
+        "default": true
       },
       {
         "type": "font_picker",
@@ -1716,6 +1752,12 @@
         "content": "Banner headings"
       },
       {
+        "type":"checkbox",
+        "id":"use_adobe_banner_heading_font",
+        "label":"Use Adobe Font Family",
+        "default": true
+      },
+      {
         "type": "font_picker",
         "id": "banner_heading__font",
         "label": "Font",
@@ -1753,6 +1795,12 @@
       {
         "type": "header",
         "content": "Banner text"
+      },
+      {
+        "type":"checkbox",
+        "id":"use_adobe_banner_text_font",
+        "label":"Use Adobe Font Family",
+        "default": true
       },
       {
         "type": "font_picker",

@@ -1,0 +1,66 @@
+{% style %}
+    :root{
+        /* variable to define regular font family */
+        {%- if settings.use_adobe_regular_font -%}
+            --regular-font-family: aktiv-grotesk, sans-serif;
+        {%- else -%}
+            --regular-font-family: {{ settings.regular__font.family }}, {{ settings.regular__font.fallback_families }};
+        {%- endif -%}
+
+        /* variable to define heading font family */
+        {%- if settings.use_adobe_heading_font -%}
+            --heading-font-family: obviously, sans-serif;
+        {%- else -%}
+            --heading-font-family: {{ settings.heading__font.family }}, {{ settings.heading__font.fallback_families }};
+        {%- endif -%}
+
+        /* variable to define preheading font family */
+        {%- if settings.use_adobe_preheading_font -%}
+            --preheading-font-family: obviously, sans-serif;
+        {%- else -%}
+            --preheading-font-family: {{ settings.preheading_font.family }}, {{ settings.preheading_font.fallback_families }};
+        {%- endif -%}
+
+        /* variable to define subheading font family */
+        {%- if settings.use_adobe_preheading_font -%}
+            --subheading-font-family: obviously, sans-serif;
+        {%- else -%}
+            --subheading-font-family: {{ settings.subheading_font.family }}, {{ settings.subheading_font.fallback_families }};
+        {%- endif -%}
+
+        /* variable to define nav font family */
+        {%- if settings.use_adobe_nav_font -%}
+            --nav-font-family: aktiv-grotesk, sans-serif;
+        {%- else -%}
+            --nav-font-family: {{ settings.nav__font.family }}, {{ settings.nav__font.fallback_families }};
+        {%- endif -%}
+
+        /* variable to define nav font family */
+        {%- if settings.use_adobe_nav_font -%}
+            --nav-font-family: aktiv-grotesk, sans-serif;
+        {%- else -%}
+            --nav-font-family: {{ settings.nav__font.family }}, {{ settings.nav__font.fallback_families }};
+        {%- endif -%}
+
+        /* variable to define button font family */
+        {%- if settings.use_adobe_button_font -%}
+            --button-font-family: obviously, sans-serif;
+        {%- else -%}
+            --button-font-family: {{ settings.button__font.family }}, {{ settings.button__font.fallback_families }};
+        {%- endif -%}
+
+        /* variable to define banner heading font family */
+        {%- if settings.use_adobe_banner_heading_font -%}
+            --banner-heading-font-family: obviously, sans-serif;
+        {%- else -%}
+            --banner-heading-font-family: {{ settings.banner_heading__font.family }}, {{ settings.banner_heading__font.fallback_families }};
+        {%- endif -%}
+
+        /* variable to define banner text font family */
+        {%- if settings.use_adobe_banner_text_font -%}
+            --banner-text-font-family: obviously, sans-serif;
+        {%- else -%}
+            --banner-text-font-family: {{ settings.banner_text__font.family }}, {{ settings.banner_text__font.fallback_families }};
+        {%- endif -%}
+    }
+{% endstyle %}

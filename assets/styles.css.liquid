@@ -2554,7 +2554,7 @@ button,
 input,
 select,
 textarea {
-  font-family: {{ settings.regular__font.family }}, {{ settings.regular__font.fallback_families }};
+  font-family: var(--regular-font-family);
 }
 
 code,
@@ -2722,7 +2722,7 @@ table th {
 /* # Typography
 ================================================== */
 body {
-  font-family: {{ settings.regular__font.family }}, {{ settings.regular__font.fallback_families }};
+  font-family: var(--regular-font-family);
   font-size: {{ settings.regular_font_size | append: 'px' }};
   font-weight: {{ settings.regular__font.weight }};
   line-height: 1.5;
@@ -2734,7 +2734,7 @@ body {
 
 h1, .age-gate__heading,
 .h1 {
-  font-family: {{ settings.heading__font.family }}, {{ settings.heading__font.fallback_families }};
+  font-family: var(--heading-font-family);
   font-weight: {{ settings.heading__font.weight }};
   font-style: {{ settings.heading__font.style }};
   font-size: {{ settings.heading_size | append: 'px' }};
@@ -2771,7 +2771,7 @@ h1 > a:focus,
 
 h2,
 .h2 {
-  font-family: {{ settings.heading__font.family }}, {{ settings.heading__font.fallback_families }};
+  font-family: var(--heading-font-family);
   font-weight: {{ settings.heading__font.weight }};
   font-style: {{ settings.heading__font.style }};
   font-size: {{ settings.heading_size | times: 0.9 | floor | append: 'px' }};
@@ -2807,7 +2807,7 @@ h2 > a:focus,
 
 h3,
 .h3 {
-  font-family: {{ settings.heading__font.family }}, {{ settings.heading__font.fallback_families }};
+  font-family: var(--heading-font-family);
   font-weight: {{ settings.heading__font.weight }};
   font-style: {{ settings.heading__font.style }};
   font-size: {{ settings.heading_size | times: 0.8 | floor | append: 'px' }};
@@ -2843,7 +2843,7 @@ h3 > a:focus,
 
 h4,
 .h4 {
-  font-family: {{ settings.heading__font.family }}, {{ settings.heading__font.fallback_families }};
+  font-family: var(--heading-font-family);
   font-weight: {{ settings.heading__font.weight }};
   font-style: {{ settings.heading__font.style }};
   font-size: {{ settings.heading_size | times: 0.7 | floor | append: 'px' }};
@@ -2879,7 +2879,7 @@ h4 > a:focus,
 
 h5,
 .h5 {
-  font-family: {{ settings.heading__font.family }}, {{ settings.heading__font.fallback_families }};
+  font-family: var(--heading-font-family);
   font-weight: {{ settings.heading__font.weight }};
   font-style: {{ settings.heading__font.style }};
   font-size: {{ settings.heading_size | times: 0.65 | floor | append: 'px' }};
@@ -2915,7 +2915,7 @@ h5 > a:focus,
 
 h6,
 .h6 {
-  font-family: {{ settings.heading__font.family }}, {{ settings.heading__font.fallback_families }};
+  font-family: var(--heading-font-family);
   font-weight: {{ settings.heading__font.weight }};
   font-style: {{ settings.heading__font.style }};
   font-size: {{ settings.heading_size | times: 0.6 | floor | append: 'px' }};
@@ -5888,7 +5888,7 @@ fieldset[disabled] .textarea, fieldset[disabled] .button, fieldset[disabled] .ag
 /* # Button
 ================================================== */
 .button, .age-gate__confirm_btn {
-  font-family: {{ settings.button__font.family }}, {{ settings.button__font.fallback_families }};
+  font-family: var(--button-font-family);
   font-weight: {{ settings.button__font.weight }};
   font-style: {{ settings.button__font.style }};
   letter-spacing: {{ settings.button_letter_spacing | append: 'px' }};
@@ -6732,7 +6732,7 @@ a.button--add-to-cart.button.is-large {
   align-items: center;
   padding: 10px;
   margin-top: 5px;
-  font-family: {{ settings.nav__font.family }}, {{ settings.nav__font.fallback_families }};
+  font-family: var(--nav-font-family);
   font-size: {{ settings.nav_font_size | append: 'px' }};
   font-style: {{ settings.nav__font.style }};
   font-weight: {{ settings.nav__font.weight }};
@@ -6806,7 +6806,7 @@ button.disclosure__button {
   display: block;
   width: 100%;
   padding: 10px 0;
-  font-family: {{ settings.nav__font.family }}, {{ settings.nav__font.fallback_families }};
+  font-family: var(--nav-font-family);
   font-size: {{ settings.nav_font_size | append: 'px' }};
   font-style: {{ settings.nav__font.style }};
   font-weight: {{ settings.nav__font.weight }};
@@ -9972,7 +9972,7 @@ ul.tabs.is-toggle.is-toggle-rounded li:last-child a {
 }
 
 .surface-pick-up__modal-title {
-  font-family: {{ settings.heading__font.family }}, {{ settings.heading__font.fallback_families }};
+  font-family: var(--heading-font-family);
   font-weight: {{ settings.heading__font.weight }};
   font-style: {{ settings.heading__font.style }};
   font-size: {{ settings.heading_size | times: 0.8 | floor | append: 'px' }};
@@ -10913,7 +10913,7 @@ shopify-payment-terms {
 }
 
 .complementary-products__title {
-  font-family: {{ settings.regular__font.family }}, {{ settings.regular__font.fallback_families }};
+  font-family: var(--regular-font-family);
   font-size: {{ settings.regular_font_size | append: 'px' }};
   font-weight: bold;
   margin: 2.6667rem 0 1rem;
@@ -10926,7 +10926,7 @@ shopify-payment-terms {
 }
 
 .complementary-product__name {
-  font-family: {{ settings.regular__font.family }}, {{ settings.regular__font.fallback_families }};
+  font-family: var(--regular-font-family);
   font-size: {{ settings.regular_font_size | append: 'px' }};
 }
 .complementary-product__name > .complementary-product__name-link {
@@ -11096,7 +11096,7 @@ shopify-payment-terms {
   max-width: 80%;
   padding: 16px 0 28px;
   margin: 0 auto;
-  font-family: {{ settings.regular__font.family }}, {{ settings.regular__font.fallback_families }};
+  font-family: var(--regular-font-family);
   font-size: 0.8rem;
   font-style: {{ settings.regular__font.style }};
   font-weight: normal;
@@ -11450,7 +11450,7 @@ shopify-payment-terms {
   border-radius: {{ settings.button_cart_border_radius | append: 'px' }};
   width: {{ btn_add_to_cart_width }};
   line-height: {{ btn_add_to_cart_line_height }};
-  font-family: {{ settings.button__font.family }}, {{ settings.button__font.fallback_families }};
+  font-family: var(--button-font-family);
   font-weight: {{ settings.button__font.weight }};
   font-style: {{ settings.button__font.style }};
   letter-spacing: {{ settings.button_letter_spacing | append: 'px' }};
@@ -12922,7 +12922,7 @@ shopify-payment-terms {
 }
 
 .banner__heading {
-  font-family: {{ settings.banner_heading__font.family }}, {{ settings.banner_heading__font.fallback_families }};
+  font-family: var(--banner-heading-font-family);
   font-weight: {{ settings.banner_heading__font.weight }};
   font-style: {{ settings.banner_heading__font.style }};
   font-size: {{ settings.banner_heading_size | append: 'px' }};
@@ -12941,7 +12941,7 @@ shopify-payment-terms {
 }
 
 .banner__subheading {
-  font-family: {{ settings.banner_text__font.family }}, {{ settings.banner_text__font.fallback_families }};
+  font-family: var(--banner-text-font-family);
   font-weight: {{ settings.banner_text__font.weight }};
   font-style: {{ settings.banner_text__font.style }};
   font-size: {{ settings.banner_text_size | append: 'px' }};
@@ -13238,7 +13238,7 @@ shopify-payment-terms {
 }
 
 .footer__heading {
-  font-family: {{ settings.heading__font.family }}, {{ settings.heading__font.fallback_families }};
+  font-family: var(--heading-font-family);
   font-size: {{ settings.footer_heading_font_size | append: 'px' }};
   color: {{ settings.footer_text_color }};
   margin-bottom: 10px;
@@ -13600,7 +13600,7 @@ shopify-payment-terms {
 ================================================== */
 {%- if settings.header_layout == 'centered' -%}
 .top-bar {
-    font-family: {{ settings.nav__font.family }}, {{ settings.nav__font.fallback_families }};
+    font-family: var(--nav-font-family);
     font-weight: {{ settings.nav__font.weight }};
     font-style: {{ settings.nav__font.style }};
     letter-spacing: {{ settings.nav_letter_spacing | append: 'px' }};
@@ -14204,7 +14204,7 @@ shopify-payment-terms {
 
 .header,
 .mobile-header {
-  font-family: {{ settings.nav__font.family }}, {{ settings.nav__font.fallback_families }};
+  font-family: var(--nav-font-family);
   font-weight: {{ settings.nav__font.weight }};
   font-style: {{ settings.nav__font.style }};
   letter-spacing: {{ settings.nav_letter_spacing | append: 'px' }};
@@ -14425,7 +14425,7 @@ h1.header__logo-text > a:hover,
 /* # Heading
 ================================================== */
 .heading-section__preheading {
-  font-family: {{ settings.preheading_font.family }}, {{ settings.preheading_font.fallback_families }};
+  font-family: var(--preheading-font-family);
   font-size: {{ settings.preheading_size | append: 'px' }};
   font-weight: {{ settings.preheading_font.weight }};
   font-style: {{ settings.preheading_font.style }};
@@ -14433,7 +14433,7 @@ h1.header__logo-text > a:hover,
 }
 
 .heading-section__subheading {
-  font-family: {{ settings.subheading_font.family }}, {{ settings.subheading_font.fallback_families }};
+  font-family: var(--subheading-font-family);
   font-size: {{ settings.subheading_size | append: 'px' }};
   font-weight: {{ settings.subheading_font.weight }};
   font-style: {{ settings.subheading_font.style }};
@@ -14697,7 +14697,7 @@ h1.header__logo-text > a:hover,
 .image-slideshow .pretext,
 .image-slideshow .subtitle {
   font-size: {{ settings.banner_text_size | append: 'px' }};
-  font-family: {{ settings.banner_text__font.family }}, {{ settings.regular__font.fallback_families }};
+  font-family: var(--banner-text-font-family);
   font-weight: {{ settings.banner_text__font.weight }};
   letter-spacing: {{ settings.banner_text_letter_spacing | append: 'px' }};
 }
@@ -14729,7 +14729,7 @@ h1.header__logo-text > a:hover,
 .image-with-text-overlay .image-with-text-overlay__banner .title.age-gate__heading,
 .image-slideshow .image-with-text-overlay__banner h1.title,
 .image-slideshow .image-with-text-overlay__banner .title.age-gate__heading {
-  font-family: {{ settings.heading__font.family }}, {{ settings.heading__font.fallback_families }};
+  font-family: var(--heading-font-family);
   font-weight: {{ settings.heading__font.weight }};
   font-style: {{ settings.heading__font.style }};
   font-size: {{ settings.heading_size | times: 2.0 | append: 'px' }};
@@ -14946,7 +14946,7 @@ h1.header__logo-text > a:hover,
 .collection-info__caption .title {
   display: block;
   margin-bottom: 20px;
-  font-family: {{ settings.heading__font.family }}, {{ settings.heading__font.fallback_families }};
+  font-family: var(--heading-font-family);
   font-weight: {{ settings.heading__font.weight }};
   font-style: {{ settings.heading__font.style }};
   font-size: {{ settings.heading_size | append: 'px' }};
@@ -15276,7 +15276,7 @@ h1.header__logo-text > a:hover,
 }
 .mobile__currency-dropdown select {
   border: none;
-  font-family: {{ settings.nav__font.family }}, {{ settings.nav__font.fallback_families }};
+  font-family: var(--nav-font-family);
   font-weight: {{ settings.nav__font.weight }};
   font-style: {{ settings.nav__font.style }};
   font-size: {{ settings.nav_font_size | append: 'px' }};
@@ -16314,13 +16314,13 @@ ul.faceted-filter-group-display__list {
   }
 }
 .slideshow-with-text .text-slideshow__heading.banner__subheading {
-  font-family: {{ settings.regular__font.family }}, {{ settings.regular__font.fallback_families }};
+  font-family: var(--regular-font-family);
   font-size: {{ settings.regular_font_size | append: 'px' }};
   font-weight: {{ settings.regular__font.weight }};
   font-style: {{ settings.regular__font.style }};
 }
 .slideshow-with-text .text-slideshow__heading.banner__heading {
-  font-family: {{ settings.heading__font.family }}, {{ settings.heading__font.fallback_families }};
+  font-family: var(--heading-font-family);
   font-size: {{ settings.heading_size | append: 'px' }};
   font-weight: {{ settings.heading__font.weight }};
   font-style: {{ settings.heading__font.style }};
@@ -16573,7 +16573,7 @@ ul.faceted-filter-group-display__list {
   }
 }
 .slideshow-classic__banner h2.title {
-  font-family: {{ settings.banner_heading__font.family }}, {{ settings.banner_heading__font.fallback_families }};
+  font-family: var(--banner-heading-font-family);
   font-weight: {{ settings.banner_heading__font.weight }};
   font-style: {{ settings.banner_heading__font.style }};
   font-size: {{ settings.banner_heading_size | append: 'px' }};
