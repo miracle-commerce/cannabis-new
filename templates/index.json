@@ -1,0 +1,469 @@
+{
+  "sections": {
+    "image_with_text_overlay": {
+      "type": "index__image-with-text-overlay",
+      "settings": {
+        "link": "",
+        "image": "shopify:\/\/shop_images\/pexels-los-muertos-crew-8908038.png",
+        "mobile_image": "shopify:\/\/shop_images\/pexels-los-muertos-crew-mobile.png",
+        "pretext": "<p>Australian Grown and Made <\/p>",
+        "title": "Organic Hemp Products",
+        "subtitle": "",
+        "pretext_color": "#ffffff",
+        "heading_color": "#ffffff",
+        "subheading_color": "#ffffff",
+        "text_alignment": "left",
+        "text_horizontal_position": "left",
+        "text_vertical_position": "bottom",
+        "background_color": "rgba(0,0,0,0)",
+        "background_opacity": 0,
+        "border_color": "#ffffff",
+        "border_width": 0,
+        "text_width": 40,
+        "button_1": "",
+        "button_1_link": "",
+        "button_1_style": "button--secondary",
+        "button_2": "",
+        "button_2_link": "",
+        "button_2_style": "button--secondary",
+        "mobile_text_below_image": true,
+        "pretext_color_mobile": "#000000",
+        "heading_color_mobile": "#000000",
+        "subheading_color_mobile": "#000000",
+        "width": "wide",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "bf760700-d034-42d7-bc31-c156113a68b4": {
+      "type": "index__gallery",
+      "blocks": {
+        "template--18176695304513__bf760700-d034-42d7-bc31-c156113a68b4-1677682803f7a8ea93-0": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "template--18176695304513__bf760700-d034-42d7-bc31-c156113a68b4-1677682803f7a8ea93-1": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "template--18176695304513__bf760700-d034-42d7-bc31-c156113a68b4-1677682803f7a8ea93-2": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "template--18176695304513__bf760700-d034-42d7-bc31-c156113a68b4-1677682803f7a8ea93-3": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18176695304513__bf760700-d034-42d7-bc31-c156113a68b4-1677682803f7a8ea93-0",
+        "template--18176695304513__bf760700-d034-42d7-bc31-c156113a68b4-1677682803f7a8ea93-1",
+        "template--18176695304513__bf760700-d034-42d7-bc31-c156113a68b4-1677682803f7a8ea93-2",
+        "template--18176695304513__bf760700-d034-42d7-bc31-c156113a68b4-1677682803f7a8ea93-3"
+      ],
+      "settings": {
+        "gallery_type": "classic",
+        "crop_images": false,
+        "images_per_row": 4,
+        "enable_lightbox": true,
+        "overlay_color": "#000000",
+        "link_color": "#FFFFFF",
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "5a1e8283-7b36-443f-90b5-8795c6b0198e": {
+      "type": "index__featured-collection",
+      "settings": {
+        "title": "Featured",
+        "collection": "popular",
+        "products_per": 4,
+        "mobile_products_per_row": "1",
+        "products_limit": 10,
+        "align_height": false,
+        "collection_height": 200,
+        "collection_style": "slider",
+        "width": "wide",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "98daa6d7-2fc0-4745-bd50-9e7b25bdc2aa": {
+      "type": "index__collection-list",
+      "blocks": {
+        "template--18176695304513__98daa6d7-2fc0-4745-bd50-9e7b25bdc2aa-167768300182f4e426-0": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "wellness",
+            "image": "shopify:\/\/shop_images\/edward-howell-rdJhMyb4Yuc-unsplash.png",
+            "title": "",
+            "button_label": ""
+          }
+        },
+        "template--18176695304513__98daa6d7-2fc0-4745-bd50-9e7b25bdc2aa-167768300182f4e426-1": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "lifestyle",
+            "image": "shopify:\/\/shop_images\/lifestyle.png",
+            "title": "Lifestyle",
+            "button_label": ""
+          }
+        },
+        "template--18176695304513__98daa6d7-2fc0-4745-bd50-9e7b25bdc2aa-167768300182f4e426-2": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "cannaco-pets-1",
+            "image": "shopify:\/\/shop_images\/collectikon-pets.png",
+            "title": "Pets",
+            "button_label": ""
+          }
+        },
+        "50514bc6-cdc2-4332-8b4d-b1c04f773078": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "beverages",
+            "image": "shopify:\/\/shop_images\/collection-beverages.png",
+            "title": "Beverages",
+            "button_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18176695304513__98daa6d7-2fc0-4745-bd50-9e7b25bdc2aa-167768300182f4e426-0",
+        "template--18176695304513__98daa6d7-2fc0-4745-bd50-9e7b25bdc2aa-167768300182f4e426-1",
+        "template--18176695304513__98daa6d7-2fc0-4745-bd50-9e7b25bdc2aa-167768300182f4e426-2",
+        "50514bc6-cdc2-4332-8b4d-b1c04f773078"
+      ],
+      "settings": {
+        "collections_per_row": 4,
+        "align_height": false,
+        "collection_height": 400,
+        "enable_zoom": true,
+        "button_style": "button--secondary",
+        "overlay_background": "#939393",
+        "overlay_background_opacity": 10,
+        "overlay_text": "#FFFFFF",
+        "collection_title_below_image": true,
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "dda7d614-5507-4983-a23e-ec674a74a243": {
+      "type": "index__slideshow-with-text",
+      "blocks": {
+        "template--18176695304513__dda7d614-5507-4983-a23e-ec674a74a243-1677684007c823b574-1": {
+          "type": "image",
+          "settings": {
+            "pretext": "<p>Add a preheader<\/p>",
+            "title": "Second slide",
+            "text": "<p>Each slide can use different text to accompany the image.<\/p>",
+            "button_label": "Link to product",
+            "button_link": ""
+          }
+        },
+        "template--18176695304513__dda7d614-5507-4983-a23e-ec674a74a243-1677684007c823b574-0": {
+          "type": "image",
+          "settings": {
+            "pretext": "<p>Add a preheader<\/p>",
+            "title": "Slideshow with Text",
+            "text": "<p>Each slide can have its own text and button link. Use it to describe the product, collection, page, etc. that the image depicts.<\/p>",
+            "button_label": "Click here",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18176695304513__dda7d614-5507-4983-a23e-ec674a74a243-1677684007c823b574-1",
+        "template--18176695304513__dda7d614-5507-4983-a23e-ec674a74a243-1677684007c823b574-0"
+      ],
+      "settings": {
+        "background_color": "#EEEEEE",
+        "text_color": "rgba(0,0,0,0)",
+        "text_alignment": "center",
+        "text_transition": "fadeIn",
+        "button_style": "button--primary",
+        "show_nav_buttons": true,
+        "image_position": "left",
+        "image_transition": "slide",
+        "image_slideshow_speed": 8,
+        "show_arrows": true,
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "cdb1b0a8-85f9-4410-bec9-d01e194cbbd5": {
+      "type": "index__logo-list",
+      "blocks": {
+        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-0": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-1": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-2": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-3": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-4": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-0",
+        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-1",
+        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-2",
+        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-3",
+        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-4"
+      ],
+      "settings": {
+        "logos_per_row": 5,
+        "logo_size": "medium",
+        "background": "rgba(0,0,0,0)",
+        "gradient": "rgba(0,0,0,0)",
+        "gradient_rotation": 0,
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "4062e330-b665-4eed-a360-00e4f1675a01": {
+      "type": "index__image-with-text",
+      "blocks": {
+        "template--18176695304513__4062e330-b665-4eed-a360-00e4f1675a01-1677684235fa5168d2-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image-with-text.png",
+            "image_link": ""
+          }
+        },
+        "template--18176695304513__4062e330-b665-4eed-a360-00e4f1675a01-1677684235fa5168d2-2": {
+          "type": "text",
+          "settings": {
+            "title": "What Is Cannabis? Effects, Uses and Dangers Explained",
+            "heading_size": "regular",
+            "text": "<p>Everybody’s talking about it, your friends are using it, and even your children know what it does … but you can’t get a firm understanding of the word and its potential uses. Cannabis is one of the most commonly used psychoactive drugs. It has been used for centuries as a drug, medicine, and even food. <\/p>",
+            "button_label": "",
+            "link": "",
+            "button_style": "button--primary",
+            "background": "rgba(0,0,0,0)",
+            "text_color": "rgba(0,0,0,0)",
+            "alignment": "left",
+            "vertical_position": "center"
+          }
+        }
+      },
+      "block_order": [
+        "template--18176695304513__4062e330-b665-4eed-a360-00e4f1675a01-1677684235fa5168d2-0",
+        "template--18176695304513__4062e330-b665-4eed-a360-00e4f1675a01-1677684235fa5168d2-2"
+      ],
+      "settings": {
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "d9c05bc4-d46a-403d-9325-d852fe2742b4": {
+      "type": "index__blog-posts",
+      "settings": {
+        "title": "Recent blog posts",
+        "blog_widget_select": "recipes",
+        "home_page_articles": 3,
+        "blog_show_tags": false,
+        "blog_author": false,
+        "read_time": false,
+        "blog_date": true,
+        "blog_comment_count": false,
+        "blog_show_excerpt": false,
+        "show-border": false,
+        "button_label": "",
+        "button_type": "button--primary",
+        "width": "wide",
+        "padding_top": 20,
+        "padding_bottom": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "87d17ffa-21de-4889-ac07-840316a2b8a2": {
+      "type": "index__image-with-text-overlay",
+      "settings": {
+        "link": "",
+        "pretext": "<p>Preheading<\/p>",
+        "title": "Image with Text Overlay",
+        "subtitle": "<p>Additional info in the subheading<\/p>",
+        "pretext_color": "#000000",
+        "heading_color": "#000000",
+        "subheading_color": "#000000",
+        "text_alignment": "center",
+        "text_horizontal_position": "left",
+        "text_vertical_position": "top",
+        "background_color": "rgba(0,0,0,0)",
+        "background_opacity": 0,
+        "border_color": "#FFFFFF",
+        "border_width": 0,
+        "text_width": 40,
+        "button_1": "Button 1",
+        "button_1_link": "",
+        "button_1_style": "button--secondary",
+        "button_2": "Button 2",
+        "button_2_link": "",
+        "button_2_style": "button--secondary",
+        "mobile_text_below_image": true,
+        "pretext_color_mobile": "rgba(0,0,0,0)",
+        "heading_color_mobile": "rgba(0,0,0,0)",
+        "subheading_color_mobile": "rgba(0,0,0,0)",
+        "width": "wide",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "e04b9f29-7365-4ce1-84bb-6b4ab7c97d32": {
+      "type": "index__logo-list",
+      "blocks": {
+        "template--18176695304513__e04b9f29-7365-4ce1-84bb-6b4ab7c97d32-1677684158c760c456-0": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "template--18176695304513__e04b9f29-7365-4ce1-84bb-6b4ab7c97d32-1677684158c760c456-1": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "template--18176695304513__e04b9f29-7365-4ce1-84bb-6b4ab7c97d32-1677684158c760c456-2": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "template--18176695304513__e04b9f29-7365-4ce1-84bb-6b4ab7c97d32-1677684158c760c456-3": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18176695304513__e04b9f29-7365-4ce1-84bb-6b4ab7c97d32-1677684158c760c456-0",
+        "template--18176695304513__e04b9f29-7365-4ce1-84bb-6b4ab7c97d32-1677684158c760c456-1",
+        "template--18176695304513__e04b9f29-7365-4ce1-84bb-6b4ab7c97d32-1677684158c760c456-2",
+        "template--18176695304513__e04b9f29-7365-4ce1-84bb-6b4ab7c97d32-1677684158c760c456-3"
+      ],
+      "settings": {
+        "logos_per_row": 4,
+        "logo_size": "medium",
+        "background": "rgba(0,0,0,0)",
+        "gradient": "rgba(0,0,0,0)",
+        "gradient_rotation": 0,
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "dcd55ea6-1e0c-4012-8eb2-1122e8f8d1f9": {
+      "type": "index__newsletter",
+      "settings": {
+        "display_first_name": false,
+        "display_last_name": false,
+        "newsletter_title": "Join Our Community",
+        "newsletter_richtext": "<p>Sign up to the newsletter to get news, product reviews and 10% off your first order<\/p>",
+        "newsletter_section_text_align": "center",
+        "background_color": "#E5E5E5",
+        "text_color": "#000000",
+        "image_darken": false,
+        "image_position": "left",
+        "width": "wide",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    }
+  },
+  "order": [
+    "image_with_text_overlay",
+    "bf760700-d034-42d7-bc31-c156113a68b4",
+    "5a1e8283-7b36-443f-90b5-8795c6b0198e",
+    "98daa6d7-2fc0-4745-bd50-9e7b25bdc2aa",
+    "dda7d614-5507-4983-a23e-ec674a74a243",
+    "cdb1b0a8-85f9-4410-bec9-d01e194cbbd5",
+    "4062e330-b665-4eed-a360-00e4f1675a01",
+    "d9c05bc4-d46a-403d-9325-d852fe2742b4",
+    "87d17ffa-21de-4889-ac07-840316a2b8a2",
+    "e04b9f29-7365-4ce1-84bb-6b4ab7c97d32",
+    "dcd55ea6-1e0c-4012-8eb2-1122e8f8d1f9"
+  ]
+}
