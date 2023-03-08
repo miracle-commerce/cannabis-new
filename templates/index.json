@@ -7,7 +7,7 @@
         "image": "shopify:\/\/shop_images\/pexels-los-muertos-crew-8908038.png",
         "mobile_image": "shopify:\/\/shop_images\/pexels-los-muertos-crew-mobile.png",
         "pretext": "<p>Australian Grown and Made <\/p>",
-        "title": "Organic Hemp Products",
+        "title": "Organic<br> Hemp<br> Products",
         "subtitle": "",
         "pretext_color": "#ffffff",
         "heading_color": "#ffffff",
@@ -35,56 +35,6 @@
         "padding_bottom": 0,
         "padding_left": 0,
         "padding_right": 0,
-        "animation": "none",
-        "css_class": "",
-        "custom_css": ""
-      }
-    },
-    "bf760700-d034-42d7-bc31-c156113a68b4": {
-      "type": "index__gallery",
-      "blocks": {
-        "template--18176695304513__bf760700-d034-42d7-bc31-c156113a68b4-1677682803f7a8ea93-0": {
-          "type": "image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "template--18176695304513__bf760700-d034-42d7-bc31-c156113a68b4-1677682803f7a8ea93-1": {
-          "type": "image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "template--18176695304513__bf760700-d034-42d7-bc31-c156113a68b4-1677682803f7a8ea93-2": {
-          "type": "image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "template--18176695304513__bf760700-d034-42d7-bc31-c156113a68b4-1677682803f7a8ea93-3": {
-          "type": "image",
-          "settings": {
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--18176695304513__bf760700-d034-42d7-bc31-c156113a68b4-1677682803f7a8ea93-0",
-        "template--18176695304513__bf760700-d034-42d7-bc31-c156113a68b4-1677682803f7a8ea93-1",
-        "template--18176695304513__bf760700-d034-42d7-bc31-c156113a68b4-1677682803f7a8ea93-2",
-        "template--18176695304513__bf760700-d034-42d7-bc31-c156113a68b4-1677682803f7a8ea93-3"
-      ],
-      "settings": {
-        "gallery_type": "classic",
-        "crop_images": false,
-        "images_per_row": 4,
-        "enable_lightbox": true,
-        "overlay_color": "#000000",
-        "link_color": "#FFFFFF",
-        "width": "standard",
-        "show_gutter": true,
-        "padding_top": 20,
-        "padding_bottom": 20,
         "animation": "none",
         "css_class": "",
         "custom_css": ""
@@ -164,9 +114,9 @@
         "button_style": "button--secondary",
         "overlay_background": "#939393",
         "overlay_background_opacity": 10,
-        "overlay_text": "#FFFFFF",
+        "overlay_text": "#ffffff",
         "collection_title_below_image": true,
-        "width": "standard",
+        "width": "wide",
         "show_gutter": true,
         "padding_top": 20,
         "padding_bottom": 20,
@@ -204,7 +154,7 @@
         "template--18176695304513__dda7d614-5507-4983-a23e-ec674a74a243-1677684007c823b574-0"
       ],
       "settings": {
-        "background_color": "#EEEEEE",
+        "background_color": "#eeeeee",
         "text_color": "rgba(0,0,0,0)",
         "text_alignment": "center",
         "text_transition": "fadeIn",
@@ -357,7 +307,7 @@
         "text_vertical_position": "top",
         "background_color": "rgba(0,0,0,0)",
         "background_opacity": 0,
-        "border_color": "#FFFFFF",
+        "border_color": "#ffffff",
         "border_width": 0,
         "text_width": 40,
         "button_1": "Button 1",
@@ -438,7 +388,7 @@
         "newsletter_title": "Join Our Community",
         "newsletter_richtext": "<p>Sign up to the newsletter to get news, product reviews and 10% off your first order<\/p>",
         "newsletter_section_text_align": "center",
-        "background_color": "#E5E5E5",
+        "background_color": "#e5e5e5",
         "text_color": "#000000",
         "image_darken": false,
         "image_position": "left",
@@ -455,7 +405,6 @@
   },
   "order": [
     "image_with_text_overlay",
-    "bf760700-d034-42d7-bc31-c156113a68b4",
     "5a1e8283-7b36-443f-90b5-8795c6b0198e",
     "98daa6d7-2fc0-4745-bd50-9e7b25bdc2aa",
     "dda7d614-5507-4983-a23e-ec674a74a243",

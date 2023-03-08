@@ -18,7 +18,7 @@
           "link": "",
           "button_style": "button--primary",
           "background": "#000000",
-          "text_color": "#FFFFFF",
+          "text_color": "#ffffff",
           "width": "wide",
           "homepage_only": false,
           "enable_sticky": false,
@@ -66,7 +66,7 @@
       "header-classic": {
         "type": "header-classic",
         "settings": {
-          "logo": "shopify:\/\/shop_images\/TCC_LOGO_0e81d6af-535f-47e7-8719-ef7d051f9d7d.png",
+          "logo": "shopify:\/\/shop_images\/logo-black.png",
           "logo_width": 200,
           "main_linklist": "main-menu",
           "menu_alignment": "center",
@@ -104,7 +104,7 @@
             "type": "featured_promo",
             "settings": {
               "richtext": "<p>Add description and links to your promotion<\/p>",
-              "bgr_color": "#EEEEEE",
+              "bgr_color": "#eeeeee",
               "text_color": "#000000",
               "promo_link": "",
               "button_label": "Shop now",
@@ -180,7 +180,7 @@
           "alignment": "center",
           "icon_position": "row",
           "size": "medium",
-          "background": "#8B8B8B",
+          "background": "#8b8b8b",
           "link_color": "#ffffff",
           "link_hover_color": "#000000",
           "text_color": "#ffffff",
