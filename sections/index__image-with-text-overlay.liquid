@@ -111,6 +111,10 @@
                 {% if caption_border_alpha != 0 %}
                   has-border
                 {% endif %}
+                {% unless section.settings.section_height == 'fit_image' %}
+                  section--has-static-height
+                  static-height--{{section.settings.section_height}}
+                {% endunless %}
                 "
                 {% if section.settings.animation != "none" %}
                   data-scroll-class="{{ section.settings.animation }}"
@@ -140,7 +144,7 @@
       {% endif %}
 
       {% if mobile_image != blank %}
-        <div class="is-hidden-desktop-only">
+        <div class="is-hidden-desktop-only mobile-image-banner">
           {%
             render 'image-element',
             image: mobile_image,
@@ -157,44 +161,57 @@
 
       {% if pretext != blank or title != blank or subtitle != blank or button_1 != blank or button_2 != blank %}
         <div class="caption text-align-{{ section.settings.text_horizontal_position }} align-{{ section.settings.text_vertical_position }}">
-          <div class="caption-content text-align-{{ section.settings.text_alignment }}">
-            {% if pretext != blank %}
-              <div class="image-with-text-overlay__preheading banner__subheading pretext subtitle">
-                {{ pretext }}
-              </div>
-            {% endif %}
-            {% if title != blank %}
-              <h2 class="image-with-text-overlay__heading banner__heading title">
-                <span>{{ title }}</span>
-              </h2>
-            {% endif %}
-            {% if subtitle != blank %}
-              <div class="image-with-text-overlay__subheading banner__subheading subtitle">
-                {{ subtitle }}
-              </div>
-            {% endif %}
-            {% if button_1 != blank or button_2 != blank %}
-              <div class="image-with-text-overlay__buttons buttons {% unless buttons == true %}is-justify-{{ section.settings.text_alignment }}{% endunless %}">
-
-              {% if button_1 != blank %}
-                {% render 'button',
-                        label: button_1,
-                        href: button_1_link,
-                        type: "link",
-                        style: section.settings.button_1_style
-                %}
+          <div class="caption-content text-align-{{ section.settings.text_alignment }} {{section.settings.caption_layout}}">
+            {%- if section.settings.caption_layout == 'two-columns' -%}
+            <div class="caption__multicolumns-item">
+            {%- endif -%}
+              {% if pretext != blank %}
+                <div class="image-with-text-overlay__preheading banner__subheading featured-heading featured-heading--tiny featured-heading--weight-normal">
+                  {{ pretext }}
+                </div>
               {% endif %}
-              {% if button_2 != blank %}
-                {% render 'button',
-                        label: button_2,
-                        href: button_2_link,
-                        type: "link",
-                        style: section.settings.button_2_style
-                %}
+              {% if title != blank %}
+                <h2 class="image-with-text-overlay__heading banner__heading title featured-heading featured-heading--{{section.settings.title_size}}">
+                  {{ title }}
+                </h2>
               {% endif %}
-
-              </div>
-            {% endif %}
+            {%- if section.settings.caption_layout == 'two-columns' -%}
+            </div>
+            {%- endif -%}
+            
+            {%- if section.settings.caption_layout == 'two-columns' -%}
+            <div class="caption__multicolumns-item">
+            {%- endif -%}
+              {% if subtitle != blank %}
+                <div class="image-with-text-overlay__subheading banner__subheading subtitle">
+                  {{ subtitle }}
+                </div>
+              {% endif %}
+              {% if button_1 != blank or button_2 != blank %}
+                <div class="image-with-text-overlay__buttons  {% unless buttons == false %}buttons is-justify-{{ section.settings.text_alignment }}{% endunless %}">
+    
+                  {% if button_1 != blank %}
+                    {% render 'button',
+                            label: button_1,
+                            href: button_1_link,
+                            type: "link",
+                            style: section.settings.button_1_style
+                    %}
+                  {% endif %}
+                  {% if button_2 != blank %}
+                    {% render 'button',
+                            label: button_2,
+                            href: button_2_link,
+                            type: "link",
+                            style: section.settings.button_2_style
+                    %}
+                  {% endif %}
+    
+                </div>
+              {% endif %}
+            {%- if section.settings.caption_layout == 'two-columns' -%}
+              <div>
+            {%- endif -%}
           </div>
         </div>
       {% endif %}
@@ -208,6 +225,29 @@
   "name": "Image with text overlay",
   "class": "image-with-text-overlay overlaid-header-option",
   "settings": [
+    {
+      "type":"select", 
+      "id":"section_height",
+      "label":"Section Height",
+      "options":[
+        {
+          "value":"fit_image",
+          "label":"Fit as Image"
+        },
+        {
+          "value":"small",
+          "label":"Small"
+        },
+        {
+          "value":"medium",
+          "label":"Medium"
+        },
+        {
+          "value":"large",
+          "label":"Large"
+        }
+      ]
+    },
     {
       "type": "url",
       "id": "link",
@@ -235,6 +275,22 @@
       "content": "Text"
     },
     {
+      "type": "select",
+      "id": "caption_layout",
+      "label": "Caption Layout",
+      "options": [
+        {
+          "value": "single-column",
+          "label": "Single Column"
+        },
+        {
+          "value":"two-columns",
+          "label":"Two Columns"
+        }
+      ],
+      "default": "single-column"
+    },
+    {
       "type": "richtext",
       "id": "pretext",
       "label": "Preheading",
@@ -245,6 +301,34 @@
       "id": "title",
       "label": "Heading",
       "default": "Image with Text Overlay"
+    },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title Size",
+      "options": [
+        {
+          "value": "tiny",
+          "label": "Tiny"
+        },
+        {
+          "value":"small",
+          "label":"Small"
+        },
+        {
+          "value":"medium",
+          "label":"Medium"
+        },
+        {
+          "value":"large",
+          "label":"Large"
+        },
+        {
+          "value":"extra-large",
+          "label":"Extra Large"
+        }
+      ],
+      "default": "medium"
     },
     {
       "type": "richtext",

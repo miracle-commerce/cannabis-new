@@ -47,7 +47,7 @@
           "header__top-bar-1"
         ],
         "settings": {
-          "show_top_bar": true,
+          "show_top_bar": false,
           "font": "open_sans_n4",
           "font_style": "none",
           "font_size": 14,

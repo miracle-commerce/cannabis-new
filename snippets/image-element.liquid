@@ -124,24 +124,21 @@
 {% endif %}
 
 {% if back_to_basics %}
-  <div class="image-element__wrap"
+  <div class="image-element__wrap {% if additional_classes != blank %}{{additional_classes}}{% endif %}"
               style="{{ image_background_color }}{{ height_style }}">
       <img  alt="{{ alt | escape }}" src="{{ image | img_url: '2000x' }}"
             style="{{ inline_style }}"
-            {% if additional_classes %}
-              class="{{ additional_classes }}"
-            {% endif %}
       />
   </div>
 {% else %}
 {% comment %}Build image element{% endcomment %}
-<div class="image-element__wrap"
+<div class="image-element__wrap  {{ additional_classes }}"
             {% if calculate_aspect_ratio %}
               data-calculate-aspect-ratio
             {% endif %}
             style="{{ image_background_color }}{{ height_style }} {% unless stretch_width == true or object_fit %}max-width: {{ image.width }}px;{% endunless %}">
   <img  alt="{{ alt | escape }}"
-        class="lazyload transition--{{ settings.image_loading_style }} {{ additional_classes }}"
+        class="lazyload transition--{{ settings.image_loading_style }}"
         {% if low_quality_image %}
           src="{{ low_quality_image }}"
         {% endif %}
