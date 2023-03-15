@@ -4,7 +4,10 @@
     "footer_background": "#374d4c",
     "footer_border": "#707070",
     "search_display_style": "popup",
+    "display_vendor": true,
     "thumbnail_hover_enabled": false,
+    "thumbnail_text_alignment": "left",
+    "currency_format": "money_format",
     "show_multiple_currencies": true,
     "sections": {
       "announcement-bar": {
