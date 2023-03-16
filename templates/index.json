@@ -128,12 +128,45 @@
         "custom_css": ""
       }
     },
+    "30fcee4b-c778-4381-8db3-9ab1eb4bcdb4": {
+      "type": "index__product-testimonials",
+      "blocks": {
+        "template--18176695304513__30fcee4b-c778-4381-8db3-9ab1eb4bcdb4-16789919504cf24987-0": {
+          "type": "testimonial",
+          "settings": {
+            "product": "hemp-seed-and-flax-oil-for-pets-100ml",
+            "testimonial_main": "<p>My wife and I love your oil. We both have osteoarthritis, and I have worn shoulder joints and need a shoulder replacement, so I’m in constant pain. The oil is a godsend and helps to kill the pain. I can even sleep, as before I couldn’t even lay in bed.<\/p>",
+            "testimonial_author": "Kevin, Western Australia"
+          }
+        },
+        "e6d3b722-9f71-42e9-b410-119b2da80062": {
+          "type": "testimonial",
+          "settings": {
+            "product": "",
+            "testimonial_main": "<p>My wife and I love your oil. We both have osteoarthritis, and I have worn shoulder joints and need a shoulder replacement, so I’m in constant pain. The oil is a godsend and helps to kill the pain. I can even sleep, as before I couldn’t even lay in bed.<\/p>",
+            "testimonial_author": "Kevin, Western Australia"
+          }
+        }
+      },
+      "block_order": [
+        "template--18176695304513__30fcee4b-c778-4381-8db3-9ab1eb4bcdb4-16789919504cf24987-0",
+        "e6d3b722-9f71-42e9-b410-119b2da80062"
+      ],
+      "settings": {
+        "width": "wide",
+        "padding_top": 20,
+        "padding_bottom": 80,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
     "dda7d614-5507-4983-a23e-ec674a74a243": {
       "type": "index__slideshow-with-text",
       "blocks": {
         "template--18176695304513__dda7d614-5507-4983-a23e-ec674a74a243-1677684007c823b574-1": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/image-with-text.png",
             "pretext": "<p>Add a preheader<\/p>",
             "title": "Second slide",
             "text": "<p>Each slide can use different text to accompany the image.<\/p>",
@@ -414,6 +447,7 @@
     "image_with_text_overlay",
     "5a1e8283-7b36-443f-90b5-8795c6b0198e",
     "98daa6d7-2fc0-4745-bd50-9e7b25bdc2aa",
+    "30fcee4b-c778-4381-8db3-9ab1eb4bcdb4",
     "dda7d614-5507-4983-a23e-ec674a74a243",
     "87d17ffa-21de-4889-ac07-840316a2b8a2",
     "cdb1b0a8-85f9-4410-bec9-d01e194cbbd5",

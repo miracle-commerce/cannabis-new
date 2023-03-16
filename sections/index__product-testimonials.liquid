@@ -1,0 +1,175 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    padding-left: {{ section.settings.padding_left }}px;
+    padding-right: {{ section.settings.padding_right }}px;
+    {% if section.settings.width == 'wide' %}
+      width: 100%;
+    {% elsif section.settings.width == 'half' %}
+      width: 50%;
+    {% endif %}
+  }
+{% endstyle %}
+<section class="section
+                {{section.settings.css_class}}
+                is-width-{{section.settings.width}}"
+              >
+  <div class="">
+    {%- if section.blocks.size > 0 -%}
+      <div id="product-testimonials-slideshow" class="product-testimonials-slideshow"  data-flickity='{ "cellAlign": "left", "contain": true, "fade": true, "prevNextButtons": false }'>
+        {% for block in section.blocks %}
+          <div class="product-testimonials-slider">
+            <div class="testimonial-product-item">
+              {% if block.settings.product != blank %}
+                {% assign block_product = block.settings.product %}
+                <div class="testimonial-product__image-wrapper">
+                  {%- if block_product.featured_image -%}
+                    {%
+                      render 'image-element',
+                      image: block_product.featured_image,
+                      alt: block_product.featured_image.alt,
+                      stretch_width: true
+                    %}
+                  {%- else -%}
+                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                  {%- endif -%}
+                </div>
+                <div class="testimonial-product__info">
+                  <p class="testimonial-product__info__title">{{block_product.title}}</p>
+                  <p class="testimonail-product__info__price--wrapper">
+                    {%- if block_product.price_varies and block_product.price_min > 0 -%}
+                      <span class="price-from">{{ 'products.general.from' | t }}</span>
+                    {%- endif -%}
+                    <span class="money">
+                      {% render 'price-element', price: block_product.price_min %}
+                    </span>
+                  </p>
+                </div>
+              {% else %}
+                <div class="testimonial-product__image-wrapper">
+                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                </div>
+                <div class="testimonial-product__info">
+                  <p class="testimonial-product__info__title">Product Title</p>
+                  <p class="testimonail-product__info__price--wrapper">
+                    <span class="money">
+                      $99.00
+                    </span>
+                  </p>
+                </div>
+              {% endif %}
+            </div>
+            <div class="product-testimonial-content">
+              <div class="testimonial-main">{{block.settings.testimonial_main}}</div>
+              <span class="testimonial-author">{{block.settings.testimonial_author | upcase}}</span>
+            </div>
+          </div>
+        {% endfor %}
+      </div>   
+    {%- endif -%}
+  </div>
+</section>
+{% schema %}
+  {
+    "name":"Product Testimonials", 
+    "class":"product-testimonials",
+    "settings":[
+      {
+        "type": "header",
+        "content": "Layout"
+      },
+      {
+        "type": "select",
+        "id": "width",
+        "label": "Width",
+        "default": "wide",
+        "options": [
+          {
+            "value": "half",
+            "label": "Half"
+          },
+          {
+            "value": "standard",
+            "label": "Standard"
+          },
+          {
+            "value": "wide",
+            "label": "Wide"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Top spacing",
+        "min": 0,
+        "max": 80,
+        "default": 20,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Bottom spacing",
+        "min": 0,
+        "max": 80,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_left",
+        "label": "Left spacing",
+        "min": 0,
+        "max": 80,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_right",
+        "label": "Right spacing",
+        "default": 0,
+        "min": 0,
+        "max": 80,
+        "unit": "px"
+      }
+    ],
+    "blocks":[
+      {
+        "name":"Product Testimonial",
+        "type":"testimonial",
+        "settings":[
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          },
+          {
+            "type": "richtext",
+            "id": "testimonial_main",
+            "label": "Testimonial Content",
+            "default": "<p>My wife and I love your oil. We both have osteoarthritis, and I have worn shoulder joints and need a shoulder replacement, so I’m in constant pain. The oil is a godsend and helps to kill the pain. I can even sleep, as before I couldn’t even lay in bed.</p>"
+          },
+          {
+            "type": "text",
+            "id": "testimonial_author",
+            "label": "Author",
+            "default": "Kevin, Western Australia"
+          }
+        ]
+      }
+    ],
+    "presets":[
+      {
+        "name":"Product Testimonials",
+        "blocks":[
+          {
+            "type":"testimonial"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

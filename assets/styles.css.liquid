@@ -3702,8 +3702,8 @@ blockquote cite::before {
 }
 @media only screen and (max-width: 480px) {
   .section.is-width-wide .container.small-down--has-limit {
-    max-width: 1200px;
-    width: 95%;
+    max-width: 1640px;
+    width: 100%;
   }
 }
 
@@ -18121,19 +18121,18 @@ body{
   position: relative;
 }
 
-body:before{
+/* body:before{
   content: '';
   height: 50%;
   width: 100%;
   position: absolute;
   display: block;
   top: 0;
-  /* Created with https://www.css-gradient.com */
   background: #EAF7F5;
   background: -webkit-radial-gradient(top right, #EAF7F5, #FFFFFF00);
   background: -moz-radial-gradient(top right, #EAF7F5, #FFFFFF00);
   background: radial-gradient(to bottom left, #EAF7F5, #FFFFFF00);
-}
+} */
 
 /* Custom Basic Heading Styles */
 .featured-heading{
@@ -18384,5 +18383,110 @@ body:before{
     flex-wrap: wrap; 
     align-items: flex-end; 
     justify-content: flex-end; 
+  }
+}
+
+
+/*================================================
+Custom Styles for Product Testimonials
+==================================================*/
+.shopify-section.product-testimonials .section{
+  padding: 0 40px; 
+}
+.product-testimonials-slideshow{
+  max-width: 1640px; 
+  margin: auto;
+}
+.product-testimonials-slideshow .flickity-page-dots{
+  width: auto; 
+  right: 0;
+}
+
+.product-testimonials-slider{
+  display: flex; 
+  flex-wrap: wrap; 
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.testimonial-product-item{
+  flex: 1 1 100%; 
+  max-width: 100%;
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center;
+  margin-bottom: 50px; 
+}
+
+.testimonial-product__image-wrapper{
+  flex: 1 1 100%;
+  max-width: 100%;
+  margin-bottom: 10px; 
+}
+
+.testimonial-product__info__title{
+  font-size: 18px;
+}
+.product-testimonial-content{
+  flex: 1 1 100%;
+  max-width: 100%;
+}
+
+.testimonial-main{
+  font-size: 20px; 
+  font-weight: 300;
+  margin-bottom: 20px; 
+}
+
+.testimonial-main:before{
+  font-family: "roc-grotesk-wide", sans-serif;
+  font-size: 32px; 
+  font-weight: 500;
+  font-style: normal;
+  content:"\275D";
+  color: #F78257;
+}
+
+.testimonial-author{
+  font-family: "obviously-wide", sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  color: #5D6A73;
+}
+
+@media only screen and (min-width: 1024px){
+  .product-testimonials-slider{
+    column-gap: 70px;
+  }
+  .testimonial-product-item{
+    flex: 1 1 350px; 
+    max-width: 350px;
+  }
+  .product-testimonial-content{
+    flex: 1 1 calc(100% - 420px);
+    max-width: 798px;
+  }
+}
+
+@media only screen and (min-width: 1200px){
+  .testimonial-main{
+    font-size: 32px; 
+    margin-bottom: 30px;
+  }
+  .testimonial-author{
+    font-size: 13px; 
+  }
+  .product-testimonials-slideshow .flickity-page-dots{
+    bottom: 0;
+  }
+}
+
+@media only screen and (min-width: 1680px){
+  .product-testimonials-slider{
+    column-gap: 150px;
+  }
+  .product-testimonial-content{
+    flex: 1 1 calc(100% - 500px);
   }
 }
