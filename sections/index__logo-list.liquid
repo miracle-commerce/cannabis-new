@@ -26,6 +26,10 @@
       width: 50%;
     {% endif %}
   }
+
+  #shopify-section-{{ section.id }} .section__title{
+    color: {{section.settings.title_color}};
+  }
   {% render 'css-loop',
           css: section_css,
           id: section.id
@@ -47,62 +51,43 @@
                 {% if section.settings.animation != "none" %}
                   data-scroll-class="{{ section.settings.animation }}"
                 {% endif %}>
-  <div class="container
-              has-column-padding-bottom
-              is-justify-center
-              is-align-center
-              small-down--has-limit
-              is-{{ section.settings.logo_size }}
-              logo-list__wrapper
-              ">
+  {% if section.settings.title != blank %}
+    <div class="section__title--wrapper">
+      <h3 class="section__title">{{section.settings.title | upcase }}</h3>
+    </div>
+  {% endif %}
+  <div class="has-column-padding-bottom logo-list__wrapper">
     {% if section.blocks.size > 0 %}
-      {% for block in section.blocks %}
-
-        {% comment %}Add number to id for each loop{% endcomment %}
-        {% capture image %}image{{ index }}{% endcapture %}
-        {% capture link %}link{{ index }}{% endcapture %}
-
-        {%- assign image = block.settings[image] -%}
-
-          <div class="logo-list__item
-            small-down--one-half
-            column
-            {% if section.settings.logos_per_row == 1 %}
-              one-whole
-            {% elsif section.settings.logos_per_row == 2 %}
-              one-half
-            {% elsif section.settings.logos_per_row == 3 %}
-              one-third
-            {% elsif section.settings.logos_per_row == 4 %}
-              one-fourth
-            {% elsif section.settings.logos_per_row == 5 %}
-              one-fifth
-            {% elsif section.settings.logos_per_row == 6 %}
-              one-sixth
-            {% elsif section.settings.logos_per_row == 7 %}
-              one-seventh
-            {% elsif section.settings.logos_per_row == 8 %}
-              one-eighth
-            {% endif %}" {% if type != 'block' %}{{ block.shopify_attributes }}{% endif %}>
-            {% if block.settings[link] != blank %}
-              <a href="{{ block.settings[link] }}" class="logo-list__link">
-            {% endif %}
-            {% if image != blank %}
-              {%- assign alt_text = image.alt -%}
-              {%
-                render 'image-element',
-                image: image,
-                alt: alt_text,
-                focal_point: image.presentation.focal_point,
-              %}
-            {% else %}
-              {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
-            {% endif %}
-            {% if block.settings[link] != blank %}
-              </a>
-            {% endif %}
-          </div>
-      {% endfor %}
+      <div class="logo-list__slideshow"  data-flickity='{ "cellAlign": "center", "contain": true, "prevNextButtons": false }'>
+        {% for block in section.blocks %}
+  
+          {% comment %}Add number to id for each loop{% endcomment %}
+          {% capture image %}image{{ index }}{% endcapture %}
+          {% capture link %}link{{ index }}{% endcapture %}
+  
+          {%- assign image = block.settings[image] -%}
+  
+            <div class="logo-list__item" {% if type != 'block' %}{{ block.shopify_attributes }}{% endif %}>
+              {% if block.settings[link] != blank %}
+                <a href="{{ block.settings[link] }}" class="logo-list__link">
+              {% endif %}
+              {% if image != blank %}
+                {%- assign alt_text = image.alt -%}
+                {%
+                  render 'image-element',
+                  image: image,
+                  alt: alt_text,
+                  focal_point: image.presentation.focal_point,
+                %}
+              {% else %}
+                {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
+              {% endif %}
+              {% if block.settings[link] != blank %}
+                </a>
+              {% endif %}
+            </div>
+        {% endfor %}
+      </div>
     {% endif %}
   </div>
 </section>
@@ -115,32 +100,24 @@
     "max_blocks": 20,
     "settings": [
       {
+        "type":"text", 
+        "id": "title",
+        "label":"Title",
+        "default":"Also Seen In"
+      },
+      {
+        "type": "color",
+        "id": "title_color",
+        "label": "Title Color",
+        "default": "#839B8C"
+      },
+      {
         "type": "range",
         "id": "logos_per_row",
         "label": "Logos per row",
         "min": 1,
         "max": 8,
         "default": 5
-      },
-      {
-        "type": "select",
-        "id": "logo_size",
-        "label": "Logo size",
-        "default": "medium",
-        "options": [
-          {
-            "value": "small",
-            "label": "Small"
-          },
-          {
-            "value": "medium",
-            "label": "Medium"
-          },
-          {
-            "value": "large",
-            "label": "Large"
-          }
-        ]
       },
       {
         "type": "header",
@@ -181,6 +158,10 @@
           {
             "value": "half",
             "label": "Half"
+          },
+          {
+            "value":"container",
+            "label":"Container"
           },
           {
             "value": "standard",

@@ -54,7 +54,7 @@
         "align_height": false,
         "collection_height": 200,
         "collection_style": "slider",
-        "width": "wide",
+        "width": "standard",
         "show_gutter": true,
         "padding_top": 20,
         "padding_bottom": 20,
@@ -119,7 +119,7 @@
         "overlay_background_opacity": 10,
         "overlay_text": "#ffffff",
         "collection_title_below_image": true,
-        "width": "wide",
+        "width": "standard",
         "show_gutter": true,
         "padding_top": 20,
         "padding_bottom": 20,
@@ -158,6 +158,77 @@
         "padding_bottom": 80,
         "padding_left": 0,
         "padding_right": 0
+      }
+    },
+    "cdb1b0a8-85f9-4410-bec9-d01e194cbbd5": {
+      "type": "index__logo-list",
+      "blocks": {
+        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-0": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/01_dmarge.png",
+            "link": ""
+          }
+        },
+        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-1": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/02_SBS.png",
+            "link": ""
+          }
+        },
+        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-2": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/03_gourmet.png",
+            "link": ""
+          }
+        },
+        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-3": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/04.body-soul.png",
+            "link": ""
+          }
+        },
+        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-4": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/05_gq.png",
+            "link": ""
+          }
+        },
+        "5ea3d959-e994-4bac-b5ee-c876019d5e66": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/06_delicious.png",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-0",
+        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-1",
+        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-2",
+        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-3",
+        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-4",
+        "5ea3d959-e994-4bac-b5ee-c876019d5e66"
+      ],
+      "settings": {
+        "title": "Also Seen In",
+        "title_color": "#839b8c",
+        "logos_per_row": 6,
+        "background": "rgba(0,0,0,0)",
+        "gradient": "rgba(0,0,0,0)",
+        "gradient_rotation": 0,
+        "width": "container",
+        "padding_top": 20,
+        "padding_bottom": 80,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
       }
     },
     "dda7d614-5507-4983-a23e-ec674a74a243": {
@@ -248,63 +319,6 @@
         "animation": "none",
         "css_class": "second-banner",
         "custom_css": ".button.button--link-style{\ncolor: #fff;\nborder: none;\n}\n\n.button.button--link-style:after{\ncontent: '\\2197';\npadding-left: 10px;\nfont-size: 20px;\nmargin-top: -5px;\n}"
-      }
-    },
-    "cdb1b0a8-85f9-4410-bec9-d01e194cbbd5": {
-      "type": "index__logo-list",
-      "blocks": {
-        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-0": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-1": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-2": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-3": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-4": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-0",
-        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-1",
-        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-2",
-        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-3",
-        "template--18176695304513__cdb1b0a8-85f9-4410-bec9-d01e194cbbd5-1677684158c760c456-4"
-      ],
-      "settings": {
-        "logos_per_row": 5,
-        "logo_size": "medium",
-        "background": "rgba(0,0,0,0)",
-        "gradient": "rgba(0,0,0,0)",
-        "gradient_rotation": 0,
-        "width": "standard",
-        "padding_top": 20,
-        "padding_bottom": 0,
-        "padding_left": 0,
-        "padding_right": 0,
-        "animation": "none",
-        "css_class": "",
-        "custom_css": ""
       }
     },
     "4062e330-b665-4eed-a360-00e4f1675a01": {
@@ -405,8 +419,9 @@
         "template--18176695304513__e04b9f29-7365-4ce1-84bb-6b4ab7c97d32-1677684158c760c456-3"
       ],
       "settings": {
+        "title": "Also Seen In",
+        "title_color": "#839b8c",
         "logos_per_row": 4,
-        "logo_size": "medium",
         "background": "rgba(0,0,0,0)",
         "gradient": "rgba(0,0,0,0)",
         "gradient_rotation": 0,
@@ -448,9 +463,9 @@
     "5a1e8283-7b36-443f-90b5-8795c6b0198e",
     "98daa6d7-2fc0-4745-bd50-9e7b25bdc2aa",
     "30fcee4b-c778-4381-8db3-9ab1eb4bcdb4",
+    "cdb1b0a8-85f9-4410-bec9-d01e194cbbd5",
     "dda7d614-5507-4983-a23e-ec674a74a243",
     "87d17ffa-21de-4889-ac07-840316a2b8a2",
-    "cdb1b0a8-85f9-4410-bec9-d01e194cbbd5",
     "4062e330-b665-4eed-a360-00e4f1675a01",
     "d9c05bc4-d46a-403d-9325-d852fe2742b4",
     "e04b9f29-7365-4ce1-84bb-6b4ab7c97d32",
