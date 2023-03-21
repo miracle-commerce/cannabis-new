@@ -132,7 +132,7 @@
   </div>
 {% else %}
 {% comment %}Build image element{% endcomment %}
-<div class="image-element__wrap  {{ additional_classes }}"
+<div class="image-element__wrap  {{ additional_classes }} image--{{ image_style | default: 'native'}}"
             {% if calculate_aspect_ratio %}
               data-calculate-aspect-ratio
             {% endif %}

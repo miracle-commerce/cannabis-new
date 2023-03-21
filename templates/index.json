@@ -277,12 +277,36 @@
         "custom_css": ""
       }
     },
-    "d9c05bc4-d46a-403d-9325-d852fe2742b4": {
-      "type": "index__blog-posts",
+    "b6bcdfd1-7e7f-4f02-8afe-e4e47ed0bd39": {
+      "type": "index__featured-articles",
+      "blocks": {
+        "fbaba073-0010-409d-a162-0fbdfd95e905": {
+          "type": "article",
+          "settings": {
+            "article": "higher-learning\/the-history-of-cbd"
+          }
+        },
+        "e1af2046-dae5-4bb0-8481-347d059f1c76": {
+          "type": "article",
+          "settings": {
+            "article": "higher-learning\/best-probiotics-in-australia-the-complete-guide"
+          }
+        },
+        "d98244b2-1257-4e84-8121-391b8494d6d3": {
+          "type": "article",
+          "settings": {
+            "article": "higher-learning\/indica-vs-sativa"
+          }
+        }
+      },
+      "block_order": [
+        "fbaba073-0010-409d-a162-0fbdfd95e905",
+        "e1af2046-dae5-4bb0-8481-347d059f1c76",
+        "d98244b2-1257-4e84-8121-391b8494d6d3"
+      ],
       "settings": {
-        "title": "Recent blog posts",
-        "blog_widget_select": "recipes",
-        "home_page_articles": 3,
+        "title": "",
+        "image_style": "square",
         "blog_show_tags": false,
         "blog_author": false,
         "read_time": false,
@@ -290,12 +314,15 @@
         "blog_comment_count": false,
         "blog_show_excerpt": false,
         "show-border": false,
-        "button_label": "",
-        "button_type": "button--primary",
-        "width": "wide",
-        "padding_top": 20,
-        "padding_bottom": 0,
+        "button_label": "Read more",
+        "button_type": "none",
+        "width": "container",
+        "padding_top": 0,
+        "padding_bottom": 80,
         "animation": "none",
+        "show_all_button": true,
+        "url_all_button": "",
+        "label_all_button": "ALL POSTS",
         "css_class": "",
         "custom_css": ""
       }
@@ -372,7 +399,7 @@
     "30fcee4b-c778-4381-8db3-9ab1eb4bcdb4",
     "cdb1b0a8-85f9-4410-bec9-d01e194cbbd5",
     "4062e330-b665-4eed-a360-00e4f1675a01",
-    "d9c05bc4-d46a-403d-9325-d852fe2742b4",
+    "b6bcdfd1-7e7f-4f02-8afe-e4e47ed0bd39",
     "87d17ffa-21de-4889-ac07-840316a2b8a2",
     "dcd55ea6-1e0c-4012-8eb2-1122e8f8d1f9"
   ]

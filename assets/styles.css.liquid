@@ -17146,15 +17146,6 @@ ul.faceted-filter-group-display__list {
   background-image: linear-gradient(to bottom, {{ settings.shop_bg_color | color_to_rgb | color_modify: 'alpha', 0 }}, {{ settings.shop_bg_color | color_to_rgb | color_modify: 'alpha', 1 }});
 }
 
-.blog-card__link:hover .blog-card__image,
-.blog-card__link:hover svg {
-  transform: scale(1.1);
-}
-
-.blog-card__image,
-.blog-card__link svg {
-  transition: transform 0.3s ease-in-out;
-}
 
 /* # Cart
 ================================================== */
@@ -18247,6 +18238,20 @@ body{
   font-weight: 600;
 }
 
+/* Custom Image element helper */
+.image-element__wrap.image--square{
+  height: 0; 
+  padding-bottom: 100%;
+}
+
+.image-element__wrap.image--square img{
+  position: absolute; 
+  top: 0;
+  left: 0;
+  object-fit: cover; 
+  object-position: var(--focal-point, 'center center');
+}
+
 /* ========================================
 Image with text overlay section
 ===========================================*/
@@ -18669,4 +18674,80 @@ Image with Text Section
     padding-left: 0; 
     padding-right: 0;
   }
+}
+
+/* =================================================
+Custom styles for featured articles
+====================================================*/
+.featured-articles__wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 30px;
+}
+.featured-article__item{
+  flex: 1 1 100%;
+  max-width: 100%;
+}
+
+.blog-card__image{
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.blog-card__topic{
+  color: #5D6A73;
+  font-family: "obviously-wide", sans-serif;
+  font-weight: 500; 
+  font-size: 11px; 
+}
+
+@media only screen and (min-width: 768px){
+  .blog-card__topic{
+    font-size: 12px;
+  }
+  .featured-articles__wrapper{
+    column-gap: 5%;
+  }
+  .featured-article__item{
+    flex: 1 1 47.5%;
+    max-width: 47.5%;
+  }
+}
+
+@media only screen and (min-width: 1200px){
+  .featured-article__item{
+    flex: 1 1 30%; 
+    max-width: 30%;
+  }
+}
+
+.featured-acticles .show-all-button--wrapper{
+  text-align: center; 
+}
+
+.featured-articles--show-all{
+  display: inline-block;
+  border:2px solid #F78257;
+  border-radius: 25px;
+  color: #F78257;
+  font-size: 11px;
+  font-family: "obviously-wide", sans-serif;
+  font-weight: 500;
+  min-width: 200px; 
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.featured-articles--show-all svg{
+  fill: #F78257;
+}
+
+
+.featured-articles--show-all:hover{
+  background-color: #F78257; 
+  color: #fff;
+}
+
+.featured-articles--show-all:hover svg{
+  fill: #fff; 
 }

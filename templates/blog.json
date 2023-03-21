@@ -3,11 +3,52 @@
     "banner": {
       "type": "banner",
       "settings": {
+        "image_darken": true,
+        "subtitle": "Subheading",
+        "width": "wide",
+        "banner_height": "medium",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "css_class": "",
+        "custom_css": ""
       }
     },
     "main": {
       "type": "blog__main",
+      "blocks": {
+        "afae98b0-b7ec-45e4-93f6-aa0f5d79a913": {
+          "type": "post_tags",
+          "settings": {
+            "title": "Blog post tags",
+            "blog": "higher-learning"
+          }
+        }
+      },
+      "block_order": [
+        "afae98b0-b7ec-45e4-93f6-aa0f5d79a913"
+      ],
       "settings": {
+        "blog_tags": true,
+        "blog_posts_per_row": 3,
+        "blog_posts_per_page": 12,
+        "pagination_type": "basic_pagination",
+        "show_sidebar": true,
+        "sidebar_position": "left",
+        "blog_author": false,
+        "blog_date": true,
+        "read_time": false,
+        "blog_comment_count": false,
+        "blog_show_tags": true,
+        "blog_show_excerpt": false,
+        "show_border": true,
+        "button_label": "Read more",
+        "button_type": "none",
+        "width": "standard",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
       }
     }
   },
