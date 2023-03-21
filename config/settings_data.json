@@ -4,6 +4,7 @@
     "header_background": "#3F3F3F",
     "footer_background": "#374d4c",
     "footer_border": "#707070",
+    "regular_font_size": 18,
     "search_display_style": "popup",
     "display_vendor": true,
     "thumbnail_hover_enabled": false,

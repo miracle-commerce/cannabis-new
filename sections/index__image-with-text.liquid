@@ -38,6 +38,9 @@
                 {% if section.settings.animation != "none" %}
                   data-scroll-class="{{ section.settings.animation }}"
                 {% endif %}>
+  {% if section.settings.title != blank %}
+    <h3 class="section__heading featured-heading--large is-text-align--{{section.settings.title_align}}" style="--section-heading-color: {{section.settings.title_color}}">{{section.settings.title}}</h3>
+  {% endif %}
   <div class="container
               ">
     {% if blocks.size > 0 %}
@@ -100,6 +103,20 @@
               {% if text != blank %}
                 <div class="image-with-text__text text-align-{{ block.settings.alignment }} content">
                   {{ text }}
+                </div>
+              {% endif %}
+
+              {% if block.settings.author_name != blank %}
+                <div class="author-info__wrapper">
+                  {%- if block.settings.author_image != blank -%}
+                    <div class="author-image--wrapper">
+                      <img src="{{block.settings.author_image | image_url: width: 48}}" width="48" height="48" alt="{{block.settings.author_image.alt | default: block.settings.author_name}}">
+                    </div>
+                  {%- endif -%}
+                  <div class="author-info__content">
+                    <p class="author__name">{{block.settings.author_name}}</p>
+                    <p class="publish_date">{{block.settings.publish_date}}</p>
+                  </div>
                 </div>
               {% endif %}
 
@@ -191,6 +208,10 @@
           "label": "Standard"
         },
         {
+          "value":"container",
+          "label":"Container"
+        },
+        {
           "value": "wide",
           "label": "Wide"
         }
@@ -262,6 +283,40 @@
     },
     {
       "type": "header",
+      "content": "Section Title"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#000"
+    },
+    {
+      "type": "select",
+      "id": "title_align",
+      "label": "Align Title",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value":"center",
+          "label":"Center"
+        },
+        {
+          "value":"right",
+          "label":"Right"
+        }
+      ]
+    },
+    {
+      "type": "header",
       "content": "Advanced",
       "info": "[Learn more](https://help.outofthesandbox.com/hc/en-us/articles/360022329373)"
     },
@@ -320,6 +375,10 @@
             {
               "value": "large",
               "label": "Large"
+            },
+            {
+              "value": "extra-large",
+              "label": "Extra Large"
             }
           ],
           "default": "regular"
@@ -329,6 +388,23 @@
           "id": "text",
           "label": "Text",
           "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "author_image",
+          "label": "Author Image"
+        },
+        {
+          "type": "text",
+          "id": "author_name",
+          "label": "Author Name",
+          "default": "Jamie Stowell"
+        },
+        {
+          "type": "text",
+          "id": "publish_date",
+          "label": "Publish Date",
+          "default": "13TH JANUARY 2023"
         },
         {
           "type": "text",

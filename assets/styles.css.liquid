@@ -3686,6 +3686,10 @@ blockquote cite::before {
   }
 }
 @media only screen and (max-width: 480px) {
+  .section{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
   .section.is-width-half .container.small-down--has-limit {
     max-width: 1200px;
     width: 100%;
@@ -14592,6 +14596,9 @@ h1.header__logo-text > a:hover,
 .image-with-text__heading.is-large {
   font-size: {{ settings.heading_size | times: 1.5 | floor | append: 'px' }};
 }
+.image-with-text__heading.is-extra-large {
+  font-size: {{ settings.heading_size | times: 2.5 | floor | append: 'px' }};
+}
 
 .image-with-text__link {
   width: 100%;
@@ -18222,6 +18229,27 @@ body{
 .static-height--small{
   height: 350px;
 }
+/* Custom Helper styles */
+.is-text-align--left{
+  text-align: left !important;
+}
+
+.is-text-align--center{
+  text-align: center !important;
+}
+
+.is-text-align--right{
+  text-align: right !important;
+}
+
+.section__heading{
+  color: var(--section-heading-color);
+  font-weight: 600;
+}
+
+/* ========================================
+Image with text overlay section
+===========================================*/
 
 .image-with-text-overlay .section--has-static-height .mobile-image-banner{
   height: 100%;
@@ -18579,5 +18607,66 @@ Section: index__logo-list.liquid
 @media only screen and (min-width: 1680px){
   .logo-list__item{
     width: calc(100% / 6);
+  }
+}
+
+/* ========================================
+Image with Text Section
+===========================================*/
+.shopify-section.image-with-text .image-with-text__image{
+  border-radius: 10px; 
+  overflow: hidden;
+}
+.shopify-section.image-with-text .author-info__wrapper{
+  display: flex; 
+  flex-wrap: wrap; 
+  align-items: center; 
+}
+
+.shopify-section.image-with-text .author-image--wrapper{
+  width: 48px; 
+  height: 48px; 
+  margin-right: 30px;
+  border-radius: 50%; 
+  overflow: hidden;
+}
+
+.shopify-section.image-with-text .author__name{
+  font-family: var(--heading-font-family);
+  font-size: 16px; 
+  color: #2A2D31;
+  margin-bottom: 10px;
+}
+
+.shopify-section.image-with-text .publish_date{
+  font-size: 10px;
+  color: #858A8E;
+}
+
+@media only screen and (min-width: 768px){
+  .shopify-section.image-with-text .author__name{
+    font-size: 20px; 
+  }
+  
+  .shopify-section.image-with-text .publish_date{
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 798px){
+  .image-with-text__heading.is-large{
+    font-size: 30px;
+  }
+  .container .image-with-text__column{
+    width: 100%; 
+    margin-left: 0; 
+    margin-right: 0;
+  }
+  .container .image-with-text__text-column{
+    width: 100%; 
+    margin-left: 0; 
+    margin-right: 0;
+    padding-left: 0; 
+    padding-right: 0;
   }
 }

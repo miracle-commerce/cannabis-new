@@ -231,50 +231,71 @@
         "custom_css": ""
       }
     },
-    "dda7d614-5507-4983-a23e-ec674a74a243": {
-      "type": "index__slideshow-with-text",
+    "4062e330-b665-4eed-a360-00e4f1675a01": {
+      "type": "index__image-with-text",
       "blocks": {
-        "template--18176695304513__dda7d614-5507-4983-a23e-ec674a74a243-1677684007c823b574-1": {
+        "template--18176695304513__4062e330-b665-4eed-a360-00e4f1675a01-1677684235fa5168d2-0": {
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/image-with-text.png",
-            "pretext": "<p>Add a preheader<\/p>",
-            "title": "Second slide",
-            "text": "<p>Each slide can use different text to accompany the image.<\/p>",
-            "button_label": "Link to product",
-            "button_link": ""
+            "image_link": ""
           }
         },
-        "template--18176695304513__dda7d614-5507-4983-a23e-ec674a74a243-1677684007c823b574-0": {
-          "type": "image",
+        "template--18176695304513__4062e330-b665-4eed-a360-00e4f1675a01-1677684235fa5168d2-2": {
+          "type": "text",
           "settings": {
-            "pretext": "<p>Add a preheader<\/p>",
-            "title": "Slideshow with Text",
-            "text": "<p>Each slide can have its own text and button link. Use it to describe the product, collection, page, etc. that the image depicts.<\/p>",
-            "button_label": "Click here",
-            "button_link": ""
+            "title": "What Is Cannabis? Effects, Uses and Dangers Explained",
+            "heading_size": "large",
+            "text": "<p>Everybody’s talking about it, your friends are using it, and even your children know what it does … but you can’t get a firm understanding of the word and its potential uses. Cannabis is one of the most commonly used psychoactive drugs. It has been used for centuries as a drug, medicine, and even food. <\/p>",
+            "author_image": "shopify:\/\/shop_images\/jamie.png",
+            "author_name": "Jamie Stowell",
+            "publish_date": "13TH JANUARY 2023",
+            "button_label": "",
+            "link": "",
+            "button_style": "button--primary",
+            "background": "rgba(0,0,0,0)",
+            "text_color": "rgba(0,0,0,0)",
+            "alignment": "left",
+            "vertical_position": "center"
           }
         }
       },
       "block_order": [
-        "template--18176695304513__dda7d614-5507-4983-a23e-ec674a74a243-1677684007c823b574-1",
-        "template--18176695304513__dda7d614-5507-4983-a23e-ec674a74a243-1677684007c823b574-0"
+        "template--18176695304513__4062e330-b665-4eed-a360-00e4f1675a01-1677684235fa5168d2-0",
+        "template--18176695304513__4062e330-b665-4eed-a360-00e4f1675a01-1677684235fa5168d2-2"
       ],
       "settings": {
-        "background_color": "#eeeeee",
-        "text_color": "rgba(0,0,0,0)",
-        "text_alignment": "center",
-        "text_transition": "fadeIn",
-        "button_style": "button--primary",
-        "show_nav_buttons": true,
-        "image_position": "left",
-        "image_transition": "slide",
-        "image_slideshow_speed": 8,
-        "show_arrows": true,
-        "width": "standard",
+        "width": "container",
         "show_gutter": true,
         "padding_top": 20,
-        "padding_bottom": 20,
+        "padding_bottom": 80,
+        "animation": "none",
+        "title": "Learn",
+        "title_color": "#f78257",
+        "title_align": "right",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "d9c05bc4-d46a-403d-9325-d852fe2742b4": {
+      "type": "index__blog-posts",
+      "settings": {
+        "title": "Recent blog posts",
+        "blog_widget_select": "recipes",
+        "home_page_articles": 3,
+        "blog_show_tags": false,
+        "blog_author": false,
+        "read_time": false,
+        "blog_date": true,
+        "blog_comment_count": false,
+        "blog_show_excerpt": false,
+        "show-border": false,
+        "button_label": "",
+        "button_type": "button--primary",
+        "width": "wide",
+        "padding_top": 20,
+        "padding_bottom": 0,
+        "animation": "none",
         "css_class": "",
         "custom_css": ""
       }
@@ -321,120 +342,6 @@
         "custom_css": ".button.button--link-style{\ncolor: #fff;\nborder: none;\n}\n\n.button.button--link-style:after{\ncontent: '\\2197';\npadding-left: 10px;\nfont-size: 20px;\nmargin-top: -5px;\n}"
       }
     },
-    "4062e330-b665-4eed-a360-00e4f1675a01": {
-      "type": "index__image-with-text",
-      "blocks": {
-        "template--18176695304513__4062e330-b665-4eed-a360-00e4f1675a01-1677684235fa5168d2-0": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/image-with-text.png",
-            "image_link": ""
-          }
-        },
-        "template--18176695304513__4062e330-b665-4eed-a360-00e4f1675a01-1677684235fa5168d2-2": {
-          "type": "text",
-          "settings": {
-            "title": "What Is Cannabis? Effects, Uses and Dangers Explained",
-            "heading_size": "regular",
-            "text": "<p>Everybody’s talking about it, your friends are using it, and even your children know what it does … but you can’t get a firm understanding of the word and its potential uses. Cannabis is one of the most commonly used psychoactive drugs. It has been used for centuries as a drug, medicine, and even food. <\/p>",
-            "button_label": "",
-            "link": "",
-            "button_style": "button--primary",
-            "background": "rgba(0,0,0,0)",
-            "text_color": "rgba(0,0,0,0)",
-            "alignment": "left",
-            "vertical_position": "center"
-          }
-        }
-      },
-      "block_order": [
-        "template--18176695304513__4062e330-b665-4eed-a360-00e4f1675a01-1677684235fa5168d2-0",
-        "template--18176695304513__4062e330-b665-4eed-a360-00e4f1675a01-1677684235fa5168d2-2"
-      ],
-      "settings": {
-        "width": "standard",
-        "show_gutter": true,
-        "padding_top": 20,
-        "padding_bottom": 20,
-        "animation": "none",
-        "css_class": "",
-        "custom_css": ""
-      }
-    },
-    "d9c05bc4-d46a-403d-9325-d852fe2742b4": {
-      "type": "index__blog-posts",
-      "settings": {
-        "title": "Recent blog posts",
-        "blog_widget_select": "recipes",
-        "home_page_articles": 3,
-        "blog_show_tags": false,
-        "blog_author": false,
-        "read_time": false,
-        "blog_date": true,
-        "blog_comment_count": false,
-        "blog_show_excerpt": false,
-        "show-border": false,
-        "button_label": "",
-        "button_type": "button--primary",
-        "width": "wide",
-        "padding_top": 20,
-        "padding_bottom": 0,
-        "animation": "none",
-        "css_class": "",
-        "custom_css": ""
-      }
-    },
-    "e04b9f29-7365-4ce1-84bb-6b4ab7c97d32": {
-      "type": "index__logo-list",
-      "blocks": {
-        "template--18176695304513__e04b9f29-7365-4ce1-84bb-6b4ab7c97d32-1677684158c760c456-0": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "template--18176695304513__e04b9f29-7365-4ce1-84bb-6b4ab7c97d32-1677684158c760c456-1": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "template--18176695304513__e04b9f29-7365-4ce1-84bb-6b4ab7c97d32-1677684158c760c456-2": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "template--18176695304513__e04b9f29-7365-4ce1-84bb-6b4ab7c97d32-1677684158c760c456-3": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--18176695304513__e04b9f29-7365-4ce1-84bb-6b4ab7c97d32-1677684158c760c456-0",
-        "template--18176695304513__e04b9f29-7365-4ce1-84bb-6b4ab7c97d32-1677684158c760c456-1",
-        "template--18176695304513__e04b9f29-7365-4ce1-84bb-6b4ab7c97d32-1677684158c760c456-2",
-        "template--18176695304513__e04b9f29-7365-4ce1-84bb-6b4ab7c97d32-1677684158c760c456-3"
-      ],
-      "settings": {
-        "title": "Also Seen In",
-        "title_color": "#839b8c",
-        "logos_per_row": 4,
-        "background": "rgba(0,0,0,0)",
-        "gradient": "rgba(0,0,0,0)",
-        "gradient_rotation": 0,
-        "width": "standard",
-        "padding_top": 20,
-        "padding_bottom": 0,
-        "padding_left": 0,
-        "padding_right": 0,
-        "animation": "none",
-        "css_class": "",
-        "custom_css": ""
-      }
-    },
     "dcd55ea6-1e0c-4012-8eb2-1122e8f8d1f9": {
       "type": "index__newsletter",
       "settings": {
@@ -464,11 +371,9 @@
     "98daa6d7-2fc0-4745-bd50-9e7b25bdc2aa",
     "30fcee4b-c778-4381-8db3-9ab1eb4bcdb4",
     "cdb1b0a8-85f9-4410-bec9-d01e194cbbd5",
-    "dda7d614-5507-4983-a23e-ec674a74a243",
-    "87d17ffa-21de-4889-ac07-840316a2b8a2",
     "4062e330-b665-4eed-a360-00e4f1675a01",
     "d9c05bc4-d46a-403d-9325-d852fe2742b4",
-    "e04b9f29-7365-4ce1-84bb-6b4ab7c97d32",
+    "87d17ffa-21de-4889-ac07-840316a2b8a2",
     "dcd55ea6-1e0c-4012-8eb2-1122e8f8d1f9"
   ]
 }
