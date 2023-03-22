@@ -1,5 +1,6 @@
 {
   "current": {
+    "use_placeholders": true,
     "regular_color": "#2a2d31",
     "link_color": "#363636",
     "link_hover_color": "#f78257",

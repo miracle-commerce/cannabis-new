@@ -76,61 +76,29 @@
 {% endstyle %}
 
 {% comment %} HTML markup {% endcomment %}
-{% if image != blank %}
-  <div class="newsletter__image--mobile-wrapper has-image-crop">
-    {%
-      render 'image-element',
-      image: image,
-      alt: image.alt,
-      stretch_width: true,
-      focal_point: image.presentation.focal_point,
-    %}
-  </div>
-{% endif %}
 <section class="section newsletter-section newsletter-section--is-width-{{ object.settings.width }}
                 {{ object.settings.css_class }}
                 {{ newsletter_class }}
                 is-width-{{ object.settings.width }}
-                {% if image != blank %}
-                  has-full-width-crop
-                {% endif %}
                 {% if background_alpha != 0 or gradient_alpha != 0 or background_image != blank %}
                   has-background
-                {% endif %}
-                {% if background_image != blank %}
-                  dark-overlay-{{ image_darken }}
                 {% endif %}"
                 {% if object.settings.animation != "none" %}
                   data-scroll-class="{{ object.settings.animation }}"
                 {% endif %} >
-  <div class="newsletter-container is-flex
-              {% if image_position == 'right' %}is-flex-row-reverse{% endif %}">
-    {% if image != blank %}
-      <div class="newsletter__image one-half column has-image-crop">
-        {%
-          render 'image-element',
-          image: image,
-          alt: image.alt,
-          stretch_width: true,
-          calculate_wrap: true,
-          focal_point: image.presentation.focal_point,
-        %}
-      </div>
-    {% endif %}
-
-    <div class="newsletter__wrapper column {% if image != blank %} is-active-image one-half medium-down--one-whole{% else %} one-whole {% endif %}">
+    <div class="newsletter__wrapper">
       <div class="newsletter__text-wrapper text-align-{{ object.settings.newsletter_section_text_align }}">
-        <h2 class="newsletter__heading newsletter__text title">{{ heading }}</h2>
+        <h2 class="newsletter__heading" style="--newsletter-title-color: {{section.settings.title_color}}">{{ heading }}</h2>
         <div class="newsletter__subheading newsletter__text">{{ subheading }}</div>
       </div>
 
       {% render 'newsletter-form',
               type: 'section',
-              display_first_name: section.settings.display_first_name,
+              show_label: section.settings.show_label, 
+              display_first_name: section.settings.display_first_name, 
               display_last_name: section.settings.display_last_name
       %}
     </div>
-  </div>
 </section>
 
 {% schema %}
@@ -143,13 +111,13 @@
       "type": "checkbox",
       "id": "display_first_name",
       "label": "Show first name",
-      "default": true
+      "default": false
     },
     {
       "type": "checkbox",
       "id": "display_last_name",
       "label": "Show last name",
-      "default": true
+      "default": false
     },
     {
       "type": "text",
@@ -195,51 +163,25 @@
     },
     {
       "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#F0B3B1"
+    },
+    {
+      "type": "color",
       "id": "text_color",
       "label": "Text",
       "default": "#000000"
     },
     {
       "type": "header",
-      "content": "Background image"
-    },
-    {
-      "type": "image_picker",
-      "id": "background_image",
-      "label": "Background image",
-      "info": "1600 x 300px recommended"
+      "content": "Newsletter Form Style"
     },
     {
       "type": "checkbox",
-      "id": "image_darken",
-      "label": "Darken image",
+      "id": "show_label",
+      "label": "Show Label",
       "default": false
-    },
-    {
-      "type": "header",
-      "content": "Feature image"
-    },
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Image",
-      "info": "1024 x 1024px recommended"
-    },
-    {
-      "type": "select",
-      "id": "image_position",
-      "label": "Image position",
-      "options": [
-        {
-          "value": "left",
-          "label": "Left"
-        },
-        {
-          "value": "right",
-          "label": "Right"
-        }
-      ],
-      "default": "left"
     },
     {
       "type": "header",
@@ -258,6 +200,10 @@
         {
           "value": "standard",
           "label": "Standard"
+        },
+        {
+          "value":"container",
+          "label":"Container"
         },
         {
           "value": "wide",

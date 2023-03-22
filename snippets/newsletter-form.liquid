@@ -58,11 +58,11 @@ newsletter_class: <string>
       {% if display_first_name %}
         {% comment %} First name {% endcomment %}
         <div class="field is-stretched-width {% if display_last_name != true %} is-full-width {% endif %}">
-          <label class="label newsletter__text {% if settings.use_placeholders %}is-sr-only{% endif %}">
+          <label class="label newsletter__text {% unless show_label %}is-sr-only{% endunless %}">
             {{ 'general.newsletter_form.subscriber_first_name' | t }}
           </label>
           <div class="control">
-            <input class="input is-{{ field_input_style }} is-{{ field_input_size }}" type="text" name="contact[first_name]" placeholder="{% if settings.use_placeholders %}{{ 'general.newsletter_form.subscriber_first_name' | t }}{% endif %}">
+            <input class="input is-{{ field_input_size }}" type="text" name="contact[first_name]" placeholder="{% if settings.use_placeholders %}{{ 'general.newsletter_form.subscriber_first_name' | t }}{% endif %}">
           </div>
         </div>
       {% endif %}
@@ -70,37 +70,29 @@ newsletter_class: <string>
       {% if display_last_name %}
         {% comment %} Last name {% endcomment %}
         <div class="field is-stretched-width {% if display_first_name != true %} is-full-width {% endif %}">
-          <label class="label newsletter__text {% if settings.use_placeholders %}is-sr-only{% endif %}">
+          <label class="label newsletter__text {% unless show_label %}is-sr-only{% endunless %}">
             {{ 'general.newsletter_form.subscriber_last_name' | t }}
           </label>
           <div class="control">
-            <input class="input is-{{ field_input_style }} is-{{ field_input_size }}" type="text" name="contact[last_name]" placeholder="{% if settings.use_placeholders %}{{ 'general.newsletter_form.subscriber_last_name' | t }}{% endif%}">
+            <input class="input is-{{ field_input_size }}" type="text" name="contact[last_name]" placeholder="{% if settings.use_placeholders %}{{ 'general.newsletter_form.subscriber_last_name' | t }}{% endif%}">
           </div>
         </div>
       {% endif %}
 
       {% comment %} Email {% endcomment %}
-      <div class="field is-stretched-width">
-        <label class="label newsletter__text {% if settings.use_placeholders %}is-sr-only{% endif %}">
+      <div class="field">
+        <label class="label newsletter__text {% unless show_label %}is-sr-only{% endunless %}">
           {{ 'general.newsletter_form.email' | t }}<span class="required">*</span>
         </label>
-        <div class="control {% if settings.show_form_icons %} has-icons-left has-icons-left--responsive-form{% endif %}">
-          <input class="input is-{{ field_input_style }} is-{{ field_input_size }}" type="email" name="contact[email]" placeholder="{% if settings.use_placeholders %}{{ 'general.newsletter_form.email' | t }}*{% endif %}" required>
-          {% if settings.show_form_icons %}
-            {% render 'icon', name: 'email' %}
-          {% endif %}
-        </div>
-      </div>
+        <div class="control newsletter_form__email-field--wrapper">
+          <input class="input is-{{ field_input_size }} " type="email" name="contact[email]" placeholder="{% if settings.use_placeholders %}{{ 'general.newsletter_form.email_placeholder' | t }}{% endif %}" required>
 
-      {% comment %} Submit button {% endcomment %}
-      <div class="field is-default-width is-align-self-end">
-        <div class="control">
-          {%- assign button_label = 'general.newsletter_form.submit' | t -%}
+          {% comment %} Submit Button {% endcomment %}
+          {%- assign button_label = 'general.newsletter_form.submit' | t | upcase -%}
           {% render 'button',
                   label: button_label,
                   type: "submit",
-                  style: settings.form_button_style,
-                  class: 'is-within-form'
+                  class: 'is-within-form newsletter-signup-button'
           %}
         </div>
       </div>

@@ -18802,3 +18802,106 @@ Custom Styles for Featured Promotions
     flex: 1 1 calc(25% - 20px);
   }
 }
+
+/* =============================================
+Custom Styles for Newsletter Section
+================================================*/
+.newsletter__wrapper{
+  max-width: 1720px; 
+  padding: 40px 30px;
+  margin: auto;
+  display: flex; 
+  flex-wrap: wrap;
+  align-items: center; 
+  column-gap: 30px;
+}
+
+.newsletter__heading{
+  color: var(--newsletter-title-color);
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.newsletter__text{
+  font-size: 16px;
+  font-weight: 300;
+}
+
+@media only screen and (min-width: 768px){
+  .newsletter__wrapper{
+    padding: 50px 40px;
+  }
+  .newsletter__text-wrapper{
+    flex: 1 1 calc(50% - 15px);
+    max-width: calc(50% - 15px);
+  }
+
+  .newsletter-form__wrapper{
+    flex: 1 1 calc(50% - 15px); 
+    max-width: calc(50% - 15px);
+  }
+}
+
+@media only screen and (min-width: 1200px){
+  .newsletter__text-wrapper{
+    flex: 1 1 calc(60% - 15px);
+    max-width: calc(60% - 15px);
+    display: flex; 
+    align-items: center; 
+    column-gap: 30px;
+  }
+  .newsletter__heading{
+    font-size: 37px;
+  }
+
+  .newsletter__text{
+    font-size: 22px;
+    margin-bottom: 0px;
+  }
+
+  .newsletter-form__wrapper{
+    flex: 1 1 calc(40% - 15px); 
+    max-width: calc(40% - 15px);
+  }
+}
+
+.newsletter_form__email-field--wrapper {
+  border-radius: 6px; 
+  display: flex; 
+  flex-wrap: wrap; 
+  align-items: center; 
+  overflow: hidden;
+}
+
+.newsletter-form .field .newsletter_form__email-field--wrapper{
+  width: 100%;
+}
+
+.newsletter_form__email-field--wrapper input.input{
+  flex: 1 1 calc(100% - 150px);
+  max-width: calc(100% - 150px);
+  height: 45px;
+}
+
+.newsletter_form__email-field--wrapper .newsletter-signup-button{
+  height: 45px;
+  flex: 1 1 150px; 
+  max-width: 150px;
+  font-family: 'obviously-wide', sans-serif;
+  font-size: 11px !important;
+  font-weight: 500;
+  color: #7C8C82;
+}
+
+@media only screen and (min-width: 1024px){
+  .newsletter_form__email-field--wrapper input.input{
+    height: 60px;
+  }
+
+  .newsletter_form__email-field--wrapper .newsletter-signup-button{
+    height: 60px;
+    font-size: 17px !important;
+  }
+}
