@@ -7,13 +7,24 @@
     "header_background": "#3F3F3F",
     "footer_background": "#374d4c",
     "footer_border": "#707070",
+    "footer_link_hover_color": "#f78257",
     "regular_font_size": 18,
+    "footer_heading_font_size": 17,
+    "footer_font_size": 16,
     "search_display_style": "popup",
     "display_vendor": true,
     "thumbnail_hover_enabled": false,
     "thumbnail_text_alignment": "left",
     "currency_format": "money_format",
     "show_multiple_currencies": true,
+    "facebook_link": "https:\/\/www.facebook.com\/cannacoaus",
+    "instagram_link": "https:\/\/www.linkedin.com\/company\/cannabis-company\/",
+    "medium_link": "",
+    "messenger_link": "",
+    "pinterest_link": "https:\/\/www.instagram.com\/cannacoaus\/",
+    "tiktok_link": "",
+    "vimeo_link": "",
+    "youtube_link": "https:\/\/www.youtube.com\/channel\/UCAc3l5EnLVIHX8k6ZcyCbGA?reload=9",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
@@ -203,39 +214,55 @@
           "footer-classic-0": {
             "type": "logo",
             "settings": {
-              "size": "small",
+              "logo": "shopify:\/\/shop_images\/Footer-Logo.png",
+              "size": "large",
               "text": "",
-              "social_icons_footer": false
+              "social_icons_footer": true
+            }
+          },
+          "6cbc145f-3880-4154-a1b0-d34d931daca0": {
+            "type": "empty",
+            "settings": {
+              "custom_class": "medium-down--hide"
             }
           },
           "footer-classic-1": {
             "type": "link_list",
             "settings": {
-              "menu": "main-menu",
+              "menu": "community",
               "social_icons_footer": false
             }
           },
-          "footer-classic-2": {
-            "type": "text",
+          "7ce31b86-0258-4e9c-b9d5-ff06668a381e": {
+            "type": "link_list",
             "settings": {
-              "title": "Title",
-              "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+              "menu": "contact",
+              "social_icons_footer": false
+            }
+          },
+          "90c5bd57-1964-41c6-b352-5c831d6c5310": {
+            "type": "link_list",
+            "settings": {
+              "menu": "accessories-toys",
               "social_icons_footer": false
             }
           }
         },
         "block_order": [
           "footer-classic-0",
+          "6cbc145f-3880-4154-a1b0-d34d931daca0",
           "footer-classic-1",
-          "footer-classic-2"
+          "7ce31b86-0258-4e9c-b9d5-ff06668a381e",
+          "90c5bd57-1964-41c6-b352-5c831d6c5310"
         ],
         "settings": {
-          "copyright_text": "",
-          "display_designed_by": true,
-          "display_shopify": true,
-          "display_payment_methods": true,
-          "show_locale_selector": true,
-          "show_currency_selector": true,
+          "copyright_text": "<p>|  <a href=\"#\" title=\"#\">Cookie Policy<\/a>   |  <a href=\"\/policies\/terms-of-service\" title=\"Terms of Service\">Privacy & Terms<\/a><\/p>",
+          "contact_text": "<p>1300 402 420     .     Suite 504, 365 Little Collins Street, Melbourne, 3000, VIC     .     <a href=\"#\" title=\"#\">Cookie Policy<\/a>   |  <a href=\"\/policies\/terms-of-service\" title=\"Terms of Service\">Privacy & Terms<\/a><\/p>",
+          "display_designed_by": false,
+          "display_shopify": false,
+          "display_payment_methods": false,
+          "show_locale_selector": false,
+          "show_currency_selector": false,
           "css_class": "",
           "custom_css": ""
         }

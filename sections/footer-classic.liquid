@@ -30,13 +30,12 @@
 <footer class="footer__container {{ css_class }}">
   <section class="footer__content
                   section
-                  is-width-wide
-                  has-background
+                  is-width-container
                   has-padding-top
                   has-padding-bottom">
     <div class="container has-limit is-justify-space-between">
       {% for block in section.blocks %}
-        <div id="shopify-section-{{ block.id }}" class="footer__block block__{{ block.id }} block__{{ block.type | downcase | replace: '_', '-' }}
+        <div id="shopify-section-{{ block.id }}" class="footer__block block__{{ block.id }} block__{{ block.type | downcase | replace: '_', '-' }} {% if block.settings.custom_class != blank %} {{block.settings.custom_class}}{% endif %}
                     {% render 'column-width', value: section.blocks.size %}
                     medium-down--one-whole column"
                     {{ block.shopify_attributes }}>
@@ -49,8 +48,7 @@
                     render 'image-element',
                     image: block.settings.logo,
                     alt: block.settings.logo.alt,
-                    additional_classes: 'footer__logo',
-                    focal_point: block.settings.logo.presentation.focal_point,
+                    additional_classes: 'footer__logo'
                   %}
                 {% else %}
                   <h2 class="footer__heading">{{ shop.name }}</h2>
@@ -95,39 +93,39 @@
               </div>
             {% endif %}
 
-            {% elsif block.type == 'newsletter' %}
-              {% comment %} Newsletter {% endcomment %}
-              {% if block.settings.newsletter_title != blank %}
-                <p class="footer__heading">
-                  {{ block.settings.newsletter_title }}
-                </p>
-              {% endif %}
+          {% elsif block.type == 'newsletter' %}
+            {% comment %} Newsletter {% endcomment %}
+            {% if block.settings.newsletter_title != blank %}
+              <p class="footer__heading">
+                {{ block.settings.newsletter_title }}
+              </p>
+            {% endif %}
 
-              {% if block.settings.newsletter_richtext != blank %}
-                <div class="content">
-                  {{ block.settings.newsletter_richtext }}
-                </div>
-              {% endif %}
+            {% if block.settings.newsletter_richtext != blank %}
+              <div class="content">
+                {{ block.settings.newsletter_richtext }}
+              </div>
+            {% endif %}
 
-              {% render 'newsletter-form',
-                      type: 'block',
-                      display_first_name: block.settings.display_first_name,
-                      display_last_name: block.settings.display_last_name
-              %}
+            {% render 'newsletter-form',
+                    type: 'block',
+                    display_first_name: block.settings.display_first_name,
+                    display_last_name: block.settings.display_last_name
+            %}
 
-              {% if block.settings.social_icons_footer %}
-                <div class="has-padding-bottom has-padding-top">
-                  {% render 'social-icons' %}
-                </div>
-              {% endif %}
+            {% if block.settings.social_icons_footer %}
+              <div class="has-padding-bottom has-padding-top">
+                {% render 'social-icons' %}
+              </div>
+            {% endif %}
           {% endif %}
         </div>
       {% endfor %}
     </div>
   </section>
-  <section class="footer__extra-content section">
+  <section class="footer__extra-content section is-width-container">
     <div class="container has-padding-top has-padding-bottom">
-      {% if locale_selector or currency_selector or settings.show_multiple_currencies %}
+      {% comment %} {% if locale_selector or currency_selector or settings.show_multiple_currencies %}
         <div class="one-whole column">
           <div class="footer-menu__disclosure footer-classic__disclosure">
             {% render 'localization-switcher',
@@ -147,9 +145,9 @@
             %}
           </div>
         </div>
-      {% endif %}
+      {% endif %} {% endcomment %}
 
-      <div class="footer__credits {% if section.settings.display_payment_methods %}two-thirds {% else %} one-whole {% endif %} column small-down--one-whole">
+      <div class="footer__credits {% if section.settings.display_payment_methods or section.settings.contact_text != blank  %}one-half {% else %} one-whole {% endif %} column medium-down--one-whole">
         <p>&copy; {{ "now" | date: "%Y" }} {{ shop.name | link_to: routes.root_url }}.</p>
         {{ section.settings.copyright_text }}
         {% if section.settings.display_designed_by %}
@@ -159,13 +157,16 @@
           <p>{{ powered_by_link }}</p>
         {% endif %}
       </div>
-      {% if section.settings.display_payment_methods %}
-        <div class="footer__payment-methods one-third column small-down--one-whole is-flex is-justify-end is-flex-wrap">
-          <div class="payment-methods">
-            {% for type in shop.enabled_payment_types %}
-              {{ type | payment_type_svg_tag: class:'payment-icon' }}
-            {% endfor %}
-          </div>
+      {% if section.settings.display_payment_methods or section.settings.contact_text != blank %}
+        <div class="footer__payment-methods one-half column medium-down--one-whole is-flex is-justify-end is-flex-wrap">
+          {{section.settings.contact_text}}
+          {%- if section.settings.display_payment_methods -%}
+            <div class="payment-methods">
+              {% for type in shop.enabled_payment_types %}
+                {{ type | payment_type_svg_tag: class:'payment-icon' }}
+              {% endfor %}
+            </div>
+          {%- endif -%}
         </div>
       {% endif %}
     </div>
@@ -183,6 +184,11 @@
       "type": "richtext",
       "id": "copyright_text",
       "label": "Copyright text"
+    },
+    {
+      "type": "richtext",
+      "id": "contact_text",
+      "label": "Contact text"
     },
     {
       "type": "checkbox",
@@ -379,6 +385,11 @@
       "type": "empty",
       "name": "Empty column",
       "settings": [
+        {
+          "type": "text",
+          "id": "custom_class",
+          "label": "Custom Class"
+        }
       ]
     }
   ],

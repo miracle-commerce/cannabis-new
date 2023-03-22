@@ -18905,3 +18905,63 @@ Custom Styles for Newsletter Section
     font-size: 17px !important;
   }
 }
+
+/* ====================================================
+Custom Styles for Footer
+=======================================================*/
+.footer__container{
+  background-color: {{ settings.footer_background }};
+}
+
+.footer__content{
+  padding-top: 45px; 
+  padding-bottom: 45px;
+}
+
+.footer__content .social-icons{
+  column-gap: 20px;
+}
+
+.footer__content .social-icons .icon{
+  width: 30px; 
+  height: 30px;
+  opacity: 0.75;
+}
+
+.footer__content .social-icons a:hover .icon{
+  opacity: 1;
+}
+
+.footer__heading{
+  font-family: obviously-wide, sans-serif;
+  font-weight: 500;
+}
+
+li.footer__menu-link{
+  padding: 5px 0;
+}
+
+@media only screen and (max-width: 798px){
+  .footer__block:not(:last-child) .footer__menu{
+    margin-bottom: 40px;
+  }
+}
+
+.footer__extra-content, .footer__extra-content a{
+  font-size: 12px;
+  color: {{settings.footer_text_color}};
+}
+.footer__credits{
+  font-size: 12px; 
+  color: {{settings.footer_text_color}};
+}
+
+@media only screen and (max-width: 480px){
+  .footer__credits{
+    text-align: left;
+  }
+  .footer__payment-methods {
+    text-align: left;
+    justify-content: flex-start;
+  }
+}
