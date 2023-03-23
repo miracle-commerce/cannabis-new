@@ -13664,13 +13664,13 @@ shopify-payment-terms {
     width: 100%;
     z-index: 10;
   }
-[data-enable_overlay=true] .overlay-logo {
+[data-enable_overlay=true] .header:not(.is--opend-dropdown) .overlay-logo {
     display: block;
   }
-[data-enable_overlay=true] .overlay-logo + .primary-logo {
+[data-enable_overlay=true] .header:not(.is--opend-dropdown) .overlay-logo + .primary-logo {
     display: none;
   }
-[data-enable_overlay=true] .overlay-logo + .header__logo-text {
+[data-enable_overlay=true] .header:not(.is--opend-dropdown) .overlay-logo + .header__logo-text {
     display: none;
   }
 .header {
@@ -13877,7 +13877,7 @@ shopify-payment-terms {
 .action-area__link.has-cart-count {
     padding-right: 1.8em;
   }
-[data-enable_overlay=false] .overlay-logo {
+[data-enable_overlay=false] .header:not(.is--opend-dropdown) .overlay-logo {
     display: none;
   }
 [data-enable_overlay=true] {
@@ -13890,13 +13890,13 @@ shopify-payment-terms {
     width: 100%;
     z-index: 10;
   }
-[data-enable_overlay=true] .overlay-logo {
+[data-enable_overlay=true] .header:not(.is--opend-dropdown) .overlay-logo {
     display: block;
   }
-[data-enable_overlay=true] .overlay-logo + .primary-logo {
+[data-enable_overlay=true] .header:not(.is--opend-dropdown) .overlay-logo + .primary-logo {
     display: none;
   }
-[data-enable_overlay=true] .overlay-logo + .header__logo-text {
+[data-enable_overlay=true] .header:not(.is--opend-dropdown) .overlay-logo + .header__logo-text {
     display: none;
   }
 [data-enable_sticky=true] .header {
@@ -14360,11 +14360,15 @@ h1.header__logo-text > a:hover,
   display: block;
 }
 
-[data-enable_overlay=true] .overlay-logo__content {
+[data-enable_overlay=true] .header:not(.is--opend-dropdown) .overlay-logo__content {
   display: block;
 }
-[data-enable_overlay=true] .logo__content {
+[data-enable_overlay=true] .header:not(.is--opend-dropdown) .logo__content {
   display: none;
+}
+
+[data-enable_overlay=true] .is--opend-dropdown .overlay-logo__content{
+  display: none; 
 }
 
 .header__logo:hover img {

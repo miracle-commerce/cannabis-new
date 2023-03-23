@@ -84,15 +84,18 @@ window.PXUTheme.jsHeader = {
       // Close all dropdowns & mega menu
       $('.has-dropdown, .has-mega-menu').removeClass('is-opened');
       $('.mega-menu__section').removeClass('is-active');
+      this.$el.removeClass('is--opend-dropdown');
 
       // Open selected dropdown/mega menu
       $parentWrap.addClass('is-opened');
       $parentWrap.data('clicked', 'true');
+      this.$el.addClass('is--opend-dropdown');
     } else {
 
       // Close all dropdowns & mega menu
       $('.has-dropdown, .has-mega-menu').removeClass('is-opened');
       $('.mega-menu__section').removeClass('is-active');
+      this.$el.removeClass('is--opend-dropdown');
     }
 
     // Close dropdown if click anywhere outside dropdown menu
@@ -100,6 +103,7 @@ window.PXUTheme.jsHeader = {
       if ($(e.target).closest('.header__link, .navbar-dropdown').length === 0) {
         $('.has-dropdown, .has-mega-menu').removeClass('is-opened');
         $('.mega-menu__section').removeClass('is-active');
+        this.$el.removeClass('is--opend-dropdown');
         window.PXUTheme.jsHeader.collapseSubmenu($('.navbar-item'));
       }
     });

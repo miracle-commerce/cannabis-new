@@ -37,7 +37,7 @@
   }
 
   {%- if section.settings.enable_overlay -%}
-    [data-enable_overlay="true"] .header {
+    [data-enable_overlay="true"] .header:not(.is--opend-dropdown) {
       background-color: {%- if overlay_alpha != 0 -%}{{ section.settings.overlay_background | color_modify: 'alpha', overlay_background_alpha }}{%- else -%}{{ settings.header_background | color_modify: 'alpha', overlay_background_alpha }}{%- endif -%};
     }
 
@@ -46,8 +46,8 @@
       width: {{ section.settings.overlay_logo_width }}px;
     }
 
-    [data-enable_overlay="true"] .header__link,
-    [data-enable_overlay="true"] .select select {
+    [data-enable_overlay="true"] .header:not(.is--opend-dropdown) .header__link,
+    [data-enable_overlay="true"] .header:not(.is--opend-dropdown) .select select {
       color: {%- if overlay_link_alpha != 0 -%}{{ section.settings.overlay_link_color }}{%- endif -%};
       fill: {%- if overlay_link_alpha != 0 -%}{{ section.settings.overlay_link_color }}{%- endif -%};
       {% if section.settings.show_text_shadow %}
@@ -55,12 +55,14 @@
       {% endif %}
     }
 
-    [data-enable_overlay="true"] .header__link:hover,
-    [data-enable_overlay="true"] .header__link.is-active,
-    [data-enable_overlay="true"] .select select:hover {
+    [data-enable_overlay="true"] .header:not(.is--opend-dropdown) .header__link:hover,
+    [data-enable_overlay="true"] .header:not(.is--opend-dropdown) .header__link.is-active,
+    [data-enable_overlay="true"] .header:not(.is--opend-dropdown) .select select:hover {
       color: {%- if overlay_link_hover_alpha != 0 -%}{{ section.settings.overlay_link_hover_color }}{%- endif -%};
       fill: {%- if overlay_link_hover_alpha != 0 -%}{{ section.settings.overlay_link_hover_color }}{%- endif -%};
     }
+
+
   {%- endif -%}
   {%- if section.settings.enable_sticky -%}
     .header-sticky-wrapper.is-sticky .header {
@@ -203,7 +205,8 @@
 
           {% render 'header__action-icons',
                   display_search: section.settings.display_search,
-                  icon_style: section.settings.icon_style
+                  icon_style: section.settings.icon_style,
+                  currency_selector: true
           %}
         </div>
       </div>

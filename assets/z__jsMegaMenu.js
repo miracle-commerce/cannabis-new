@@ -11,6 +11,7 @@ window.PXUTheme.jsMegaMenu = {
     const $megaMenu = $section.find('.mega-menu__' + sectionId);
     const $parentElement = $('.header__menu [data-navlink-handle="' + parentLink + '"], .sticky-header__menu [data-navlink-handle="' + parentLink + '"]');
     const $parentElementLink = $parentElement.find('.header__link');
+    const $header = $section.find(".header");
     // Remove old mega menus
     $parentElement.find('.mega-menu__section').remove();
 
@@ -69,14 +70,15 @@ window.PXUTheme.jsMegaMenu = {
     // Determine if header is set to hover to open or click to open
     if ($('.dropdown-click--false').length > 0) {
       $('.navbar-item, .header__brand, .header__search').on('mouseover', function(){
-
         //Close any mega menus on hover
         $('.mega-menu__section').removeClass('is-active');
+        $header.removeClass("is--opend-dropdown");
 
         if($(this).hasClass('has-mega-menu')) {
 
           //Toggle corresponding mega menu
           $(this).find('.mega-menu__section').addClass('is-active');
+          $header.addClass("is--opend-dropdown");
         }
       })
 
@@ -84,17 +86,20 @@ window.PXUTheme.jsMegaMenu = {
 
         //Hide mega menu upon leaving mega menu, logo or navbar
         $('.mega-menu__section').removeClass('is-active');
+        $header.removeClass("is--opend-dropdown");
       })
     } else {
       $('.navbar-item, .header__brand, .header__search').on('click touchstart', function(){
 
         //Close any mega menus on click
         $('.mega-menu__section').removeClass('is-active');
+        $header.removeClass("is--opend-dropdown");
 
         if($(this).hasClass('has-mega-menu')) {
 
           //Toggle corresponding mega menu
           $(this).find('.mega-menu__section').addClass('is-active');
+          $header.addClass("is--opend-dropdown");
         }
       })
     }
