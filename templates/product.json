@@ -68,7 +68,7 @@
         "slideshow_speed": 0,
         "slideshow_transition": "slide",
         "display_thumbnails": true,
-        "thumbnail_position": "bottom-thumbnails",
+        "thumbnail_position": "left-thumbnails",
         "enable_thumbnail_slider": true,
         "width": "standard",
         "padding_top": 20,
@@ -99,12 +99,12 @@
     "c97878f6-9e89-471a-a195-2f80661fdbe7": {
       "type": "index__rich-text",
       "settings": {
-        "title": "Rich text",
+        "title": "Product Information",
         "heading_font": "open_sans_n4",
         "heading_color": "rgba(0,0,0,0)",
         "heading_alignment": "center",
         "heading_size": 30,
-        "text": "<p>Use this section to create some callout text on your page, or add more details about your shop, services, promotions, etc. If you have a large amount of text, you can opt to have it display in <strong>two columns<\/strong> instead so that it's much easier to read.<\/p><p><\/p><p>This section also includes the option to add a button in primary or secondary style, and also control the colors, including the option for a gradient background. Since this is rich text, you can also <em>format it as you wish<\/em> and <a href=\"\/collections\/all\" title=\"All Products\">include links<\/a>.<\/p>",
+        "text": "<p>Use this section to create some callout text on your page, or add more details about your shop, services, promotions, etc. If you have a large amount of text, you can opt to have it display in <strong>two columns<\/strong> instead so that it's much easier to read.<\/p><p><\/p><p>This section also includes the option to add a button in primary or secondary style, and also control the colors, including the option for a gradient background. Since this is rich text, you can also <em>format it as you wish<\/em> and <a href=\"\/collections\/all\" title=\"All Products\">include links<\/a>.{{ shop.brand.short_description }}<\/p>",
         "text_font": "open_sans_n4",
         "text_color": "rgba(0,0,0,0)",
         "text_alignment": "left",
@@ -114,8 +114,8 @@
         "button_link": "",
         "button_alignment": "right",
         "button_style": "button--primary",
-        "background": "#EEEEEE",
-        "gradient": "#C0C0C0",
+        "background": "rgba(0,0,0,0)",
+        "gradient": "rgba(0,0,0,0)",
         "gradient_rotation": 180,
         "width": "wide",
         "padding_top": 20,
@@ -127,18 +127,156 @@
         "custom_css": ""
       }
     },
+    "8d96669b-b12e-4fa8-a15a-1741638a1c1e": {
+      "type": "index__faq",
+      "blocks": {
+        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-0": {
+          "type": "heading",
+          "settings": {
+            "title": "Section heading"
+          }
+        },
+        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-1": {
+          "type": "content",
+          "settings": {
+            "title": "What is your question?",
+            "answer": "<p>Provide the answer to the question here.<\/p>"
+          }
+        },
+        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-2": {
+          "type": "content",
+          "settings": {
+            "title": "What is your question?",
+            "answer": "<p>Provide the answer to the question here.<\/p>"
+          }
+        },
+        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-3": {
+          "type": "content",
+          "settings": {
+            "title": "What is your question?",
+            "answer": "<p>Provide the answer to the question here.<\/p>"
+          }
+        },
+        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-4": {
+          "type": "heading",
+          "settings": {
+            "title": "Section heading"
+          }
+        },
+        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-5": {
+          "type": "content",
+          "settings": {
+            "title": "What is your question?",
+            "answer": "<p>Provide the answer to the question here.<\/p>"
+          }
+        },
+        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-6": {
+          "type": "content",
+          "settings": {
+            "title": "What is your question?",
+            "answer": "<p>Provide the answer to the question here.<\/p>"
+          }
+        },
+        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-7": {
+          "type": "content",
+          "settings": {
+            "title": "What is your question?",
+            "answer": "<p>Provide the answer to the question here.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-0",
+        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-1",
+        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-2",
+        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-3",
+        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-4",
+        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-5",
+        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-6",
+        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-7"
+      ],
+      "settings": {
+        "title": "FAQ",
+        "width": "standard",
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "7de9ffdf-c38a-449f-bf5d-d11673507c64": {
+      "type": "index__featured-promotions-1",
+      "blocks": {
+        "template--18176696123713__7de9ffdf-c38a-449f-bf5d-d11673507c64-167952319813f879ce-0": {
+          "type": "promotion",
+          "settings": {
+            "use_image_icon": false,
+            "use_svg_icon": true,
+            "promo_icon_svg": "",
+            "promo_content": ""
+          }
+        },
+        "template--18176696123713__7de9ffdf-c38a-449f-bf5d-d11673507c64-167952319813f879ce-1": {
+          "type": "promotion",
+          "settings": {
+            "use_image_icon": false,
+            "use_svg_icon": true,
+            "promo_icon_svg": "",
+            "promo_content": ""
+          }
+        },
+        "template--18176696123713__7de9ffdf-c38a-449f-bf5d-d11673507c64-167952319813f879ce-2": {
+          "type": "promotion",
+          "settings": {
+            "use_image_icon": false,
+            "use_svg_icon": true,
+            "promo_icon_svg": "",
+            "promo_content": ""
+          }
+        },
+        "template--18176696123713__7de9ffdf-c38a-449f-bf5d-d11673507c64-167952319813f879ce-3": {
+          "type": "promotion",
+          "settings": {
+            "use_image_icon": false,
+            "use_svg_icon": true,
+            "promo_icon_svg": "",
+            "promo_content": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18176696123713__7de9ffdf-c38a-449f-bf5d-d11673507c64-167952319813f879ce-0",
+        "template--18176696123713__7de9ffdf-c38a-449f-bf5d-d11673507c64-167952319813f879ce-1",
+        "template--18176696123713__7de9ffdf-c38a-449f-bf5d-d11673507c64-167952319813f879ce-2",
+        "template--18176696123713__7de9ffdf-c38a-449f-bf5d-d11673507c64-167952319813f879ce-3"
+      ],
+      "settings": {
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 10,
+        "padding_bottom": 80,
+        "animation": "none",
+        "title": "",
+        "title_size": "medium",
+        "title_color": "#000",
+        "title_align": "left",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
     "aeb91e31-a7cd-4b18-89c8-6f5d5685a341": {
       "type": "index__newsletter",
       "settings": {
-        "display_first_name": true,
-        "display_last_name": true,
+        "display_first_name": false,
+        "display_last_name": false,
         "newsletter_title": "Subscribe",
         "newsletter_richtext": "<p>Sign up to get the latest on sales, new releases and more …<\/p>",
         "newsletter_section_text_align": "center",
-        "background_color": "#E5E5E5",
+        "background_color": "#e5e5e5",
+        "title_color": "#F0B3B1",
         "text_color": "#000000",
-        "image_darken": false,
-        "image_position": "left",
+        "show_label": false,
         "width": "wide",
         "padding_top": 0,
         "padding_bottom": 0,
@@ -156,6 +294,8 @@
     "main",
     "recommendations",
     "c97878f6-9e89-471a-a195-2f80661fdbe7",
+    "8d96669b-b12e-4fa8-a15a-1741638a1c1e",
+    "7de9ffdf-c38a-449f-bf5d-d11673507c64",
     "aeb91e31-a7cd-4b18-89c8-6f5d5685a341"
   ]
 }
