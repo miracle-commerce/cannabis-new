@@ -62,6 +62,12 @@
       fill: {%- if overlay_link_hover_alpha != 0 -%}{{ section.settings.overlay_link_hover_color }}{%- endif -%};
     }
 
+    [data-enable_overlay="true"] .header:not(.is--opend-dropdown) .disclosure__toggle{
+      background: none; 
+      border: none; 
+      color: {{section.settings.overlay_link_color}};
+      padding: 3px; 
+    }
 
   {%- endif -%}
   {%- if section.settings.enable_sticky -%}

@@ -105,7 +105,7 @@ additional_classes: <string>
             aria-describedby="country-heading-{{ id }}"
             data-disclosure-toggle
           >
-          <span class="disclosure__toggle-content">{{ localization.country.name }} ({{ localization.country.currency.iso_code }}{% if localization.country.currency.symbol %} {{ localization.country.currency.symbol }}{%- endif -%})</span> {% render 'icon', name: 'down-caret' %}
+          <span class="disclosure__toggle-content"><span class="country-flag fi fi-{{localization.country.iso_code | downcase}} fis"></span> {% if localization.country.currency.symbol %} {{ localization.country.currency.symbol }}{%- endif -%} {{ localization.country.currency.iso_code }}</span> {% render 'icon', name: 'down-caret' %}
           </button>
           <div class="disclosure__list-wrap">
             <ul
@@ -127,7 +127,7 @@ additional_classes: <string>
                     name="country_code"
                     value="{{ country.iso_code }}"
                   >
-                    {{ country.name }} ({{ country.currency.iso_code }}{% if country.currency.symbol %} {{ country.currency.symbol }}{%- endif -%})
+                    <span class="country-flag fi fi-{{country.iso_code | downcase}} fis"></span> {% if country.currency.symbol %} {{ country.currency.symbol }}{%- endif -%} {{ country.currency.iso_code }}
                   </button>
                 </li>
               {%- endfor -%}

@@ -27,10 +27,12 @@
   <link rel="preconnect" href="https://fonts.shopify.com" crossorigin>
   <link rel="preconnect" href="https://monorail-edge.shopifysvc.com">
   <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="perconnect" href="https://use.typekit.net">
 
   <!-- Preloads -->
   <!-- Preload CSS -->
   <link rel="preload" href="https://use.typekit.net/vxl0flw.css" as="style">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css" as="style"/>
   <link rel="preload" href="{{ 'fancybox.css' | asset_url }}" as="style">
   <link rel="preload" href="{{ 'styles.css' | asset_url }}" as="style">
 
@@ -65,6 +67,9 @@
   <link rel="stylesheet" href="https://use.typekit.net/vxl0flw.css">
   
   <!-- CSS for Flex -->
+  {% comment %} CSS for displaying flags {% endcomment %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css" />
+
   {% render 'css-variable' %}
   <link rel="stylesheet" href="{{ 'fancybox.css' | asset_url }}">
   <link rel="stylesheet" href="{{ 'styles.css' | asset_url }}">

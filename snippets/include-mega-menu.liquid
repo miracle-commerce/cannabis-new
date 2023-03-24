@@ -93,7 +93,7 @@
 
         {% elsif block.type == 'image' %}
           {% comment %} Image and menu {% endcomment %}
-          <div class="mega-menu__content">
+          <div class="mega-menu__content mega-menu__image-content">
             {% if block.settings.image_link != blank %}
               <a href="{{ block.settings.image_link }}">
             {% endif %}
@@ -109,14 +109,11 @@
               {% else %}
                 {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
               {% endif %}
-
+              {% if block.settings.image_caption != blank %}
+                <span class="mega-menu__image-caption">{{block.settings.image_caption | strip_html}} {% if block.settings.image_link != blank  %}{% render 'icon__north-east-arrow-svg' %}{% endif %}</span>
+              {% endif %}
             {% if block.settings.image_link != blank %}
               </a>
-            {% endif %}
-          </div>
-          <div class="mega-menu__content content">
-            {% if block.settings.image_caption %}
-              {{ block.settings.image_caption }}
             {% endif %}
           </div>
 

@@ -18969,3 +18969,86 @@ li.footer__menu-link{
     justify-content: flex-start;
   }
 }
+
+/* =============================================
+Custom Styles for Header
+================================================*/
+.header__brand{
+  padding: 1rem 0.75rem 0 0.75rem;
+}
+
+.header__icons{
+  column-gap: 30px;
+}
+
+.header__menu-items.is-flex{
+  column-gap: 30px;
+}
+
+
+.header--classic [data-enable_overlay="false"] .navbar:after{
+  content: '';
+  display: inline-block;
+  height: 1px; 
+  width: calc(100% - 100px); 
+  position:absolute;
+  bottom: 0;
+  right: 0;
+  background-color: {{settings.border_color}};
+}
+/* Styles for Megamenu */
+.mega-menu.mega-menu--header-classic{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.mega-menu.mega-menu--header-classic .container{
+  max-width: calc(100% - 120px);
+  margin: 0 10px 0 auto;
+}
+.mega-menu.mega-menu--header-classic .mega-menu__block:first-child{
+  padding-left: 0;
+}
+.mega-menu.mega-menu--header-classic .mega-menu__block:last-child{
+  padding-right: 0;
+}
+
+.mega-menu .menu__heading{
+  font-family: obviously-wide, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.mega-menu__linklist-link{
+  font-size: 16px; 
+}
+
+.mega-menu__block.block__image .mega-menu__image-content, .mega-menu__block.block__image .mega-menu__content .mega-menu__image, .mega-menu__image img{
+  height: 100%;
+  max-height: initial;
+}
+
+.mega-menu__image-caption{
+  font-family: termina, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  position: absolute;
+  top: 22px;
+  left: 28px;
+  color: #fff;
+}
+.mega-menu__image-caption svg{
+  margin-left: 10px; 
+  fill: #fff; 
+}
+
+.mega-menu__image-content{
+  border-radius: 12px; 
+  overflow: hidden; 
+}
+
+
+/* styles for currency selector */
+.country-flag{
+  border-radius: 50%; 
+  margin-right: 5px; 
+}

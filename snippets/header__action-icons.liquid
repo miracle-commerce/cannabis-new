@@ -18,19 +18,7 @@
 {%- endif -%}
 
 <div class="header__icons header__icon-style-{{ icon_style | replace: '_', '-' }} {{ header_icon_class }}">
-
-
-  {% comment %} Currency converter select {% endcomment %}
-  <div class="header__link">
-    {% render 'localization-switcher',
-      additional_classes: 'header-menu__disclosure',
-      id: 'header__selector-form--action-icons',
-      currency_selector: currency_selector,
-      locale_selector: locale_selector,
-      show_currency: section.settings.show_currency_selector
-    %}
-  </div>
-
+  
   {% if object.settings.display_search or header_icon_class == 'header__icons--sticky' %}
     {% comment %} Search icon {% endcomment %}
     <a class="header__link action-area__link" data-show-search-trigger tabindex="0">
@@ -41,6 +29,18 @@
       <span class="icon-caption">{{ 'general.search.title' | t | escape }}</span>
     </a>
   {% endif %}
+
+  {% comment %} Currency converter select {% endcomment %}
+  <div class="header__link">
+    {% render 'localization-switcher',
+      additional_classes: 'header-menu__disclosure',
+      id: 'header__selector-form--action-icons',
+      currency_selector: true,
+      locale_selector: locale_selector,
+      show_currency: section.settings.show_currency_selector
+    %}
+  </div>
+
 
   {% if shop.customer_accounts_enabled %}
     {% comment %} Account icon {% endcomment %}

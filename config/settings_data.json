@@ -96,7 +96,7 @@
           "logo_width": 200,
           "main_linklist": "main-menu-2",
           "menu_alignment": "center",
-          "dropdown_click": false,
+          "dropdown_click": true,
           "display_search": true,
           "icon_style": "icons",
           "enable_overlay": true,
@@ -158,8 +158,8 @@
             "type": "image",
             "settings": {
               "image": "shopify:\/\/shop_images\/megamenu.png",
-              "image_link": "",
-              "image_caption": "<p>Image caption appears here<\/p>"
+              "image_link": "#",
+              "image_caption": "<p>FEATURED<\/p>"
             }
           }
         },
