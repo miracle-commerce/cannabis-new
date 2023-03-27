@@ -53,8 +53,14 @@
                 {% if section.settings.animation != "none" %}
                   data-scroll-class="{{ section.settings.animation }}"
                 {% endif %}>
-  {% if title != blank %}
+  {% if title != blank or section.settings.show_all_button %}
+    <div class="section_heading--wrapper">
       <h3 class="section__heading featured-heading featured-heading--{{section.settings.title_size}} is-text-align--{{section.settings.title_align}}" style="--section-heading-color: {{section.settings.title_color}}">{{title}}</h3>
+
+      {% if section.settings.show_all_button %}
+        <a href="{{collection.url}}" class="featured-collection__button featured-collection__button--in-heading medium-down--hide" style="--featured-collection-button-background: {{section.settings.button_background}}; --featured-collection-button-color: {{section.settings.button_color}}">{{section.settings.button_label}}</a>
+      {% endif %}
+    </div>
   {% endif %}
   <div class="container has-column-padding-bottom featured-collection layout--{{ layout }} is-justify-center">
     {% if section_onboarding == false %}
@@ -105,6 +111,16 @@
       {% endfor %}
     {% endif %}
   </div>
+  {%- if section.settings.show_collection_description and collection.description != blank -%}
+    <div class="featured-collection__description">{{collection.description | strip_html}}</div>
+  {%- endif -%}
+
+  {%- if section.settings.show_all_button -%}
+    <div class="featured-collection__button-wrapper hide medium-down--show">
+      <a href="{{collection.url}}" class="featured-collection__button" style="--featured-collection-button-background: {{section.settings.button_background}}; --featured-collection-button-color: {{section.settings.button_color}}">{{section.settings.button_label}}</a>
+    </div>
+  {%- endif -%}
+
 </section>
 
 {% comment %} JavaScript {% endcomment %}
@@ -253,6 +269,44 @@
       "default": 200,
       "unit": "px",
       "info": "Applied when 'Align to height' is enabled. [Learn more](https://help.outofthesandbox.com/hc/en-us/articles/360022543913)"
+    },
+    {
+      "type": "header",
+      "content": "Show All Products Button"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_all_button",
+      "label": "Show all products button",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Label",
+      "default": "Shop All"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Background",
+      "default": "#707070"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Text Color",
+      "default": "#fff"
+    },
+    {
+      "type": "header",
+      "content": "Collection Description"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_description",
+      "label": "Show Collection Description",
+      "default": false
     },
     {
       "type": "header",

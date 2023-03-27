@@ -19182,6 +19182,71 @@ Styles for index__collection-list.liquid section.
   font-size: 18px; 
   font-weight: 300;
 }
+/* ===========================================
+Custom Styles for feature collection
+==============================================*/
+@media only screen and (max-width: 798px) {
+  .featured-collection-section .flickity-prev-next-button,
+  .block__featured-collection .flickity-prev-next-button {
+    display: flex;
+  }
+}
+
+.featured-collection-section .flickity-prev-next-button{
+  top: 150px;
+  border: 2px solid #7C8C82;
+  transform: initial;
+}
+
+.featured-collection-section .flickity-prev-next-button svg{
+  fill: #7C8C82;
+}
+
+.featured-collection-section .section_heading--wrapper{
+  display: flex; 
+  flex-wrap:wrap; 
+  justify-content: space-between; 
+  column-gap: 30px; 
+  row-gap: 30px;
+}
+
+.featured-collection__button{
+  display: inline-block;
+  border-radius: 45px;
+  background-color: var(--featured-collection-button-background);
+  color: var(--featured-collection-button-color);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+  height: 45px;
+  margin-bottom: 2px;
+  min-width: 215px; 
+  text-align: center; 
+  padding: 12px 30px;
+}
+
+.featured-collection__button:hover{
+  opacity: 0.7;
+  color: var(--featured-collection-button-color);
+}
+
+.featured-collection__button-wrapper{
+  margin-top: 40px;
+}
+
+.featured-collection__description{
+  color: #3A5654;
+  font-size: 25px;
+  max-width: 945px;
+  margin-top: 15px;
+  margin-right: auto;
+}
+
+@media only screen and (max-width: 798px){
+  .featured-collection__description{
+    font-size: 16px;
+  }
+}
 
 /* ===========================================
 New section: global__section-spliter.liquid
@@ -19189,14 +19254,30 @@ New section: global__section-spliter.liquid
 .section-spliting{
   display: block; 
   height: var(--split-desktop-height);
+  position: relative;
 }
 
-.section-spliting--has-border{
-  border-bottom: var(--split-border-width), solid var(--split-border-color);
+.section-spliting--has-border:after{
+  content: '';
+  display: block; 
+  width: calc(100% - 80px);
+  height: var(--split-border-width);
+  background-color: var(--split-border-color);
+  margin: 0 auto;
+  left: 40px;
+  bottom: 0;
+  position: absolute;
 }
 
 @media only screen and (max-width: 1024px){
   .section-spliting{
     height: var(--split-mobile-height);
+  }
+}
+
+@media only screen and (max-width: 480px){
+  .section-spliting--has-border:after{
+    width: calc(100% - 20px);
+    left: 10px;
   }
 }
