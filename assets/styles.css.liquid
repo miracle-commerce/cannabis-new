@@ -18240,7 +18240,7 @@ body{
 .section__heading{
   color: var(--section-heading-color);
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   letter-spacing: -3px;
 }
 
@@ -19181,4 +19181,22 @@ Styles for index__collection-list.liquid section.
 .product-thumbnail__price{
   font-size: 18px; 
   font-weight: 300;
+}
+
+/* ===========================================
+New section: global__section-spliter.liquid
+==============================================*/
+.section-spliting{
+  display: block; 
+  height: var(--split-desktop-height);
+}
+
+.section-spliting--has-border{
+  border-bottom: var(--split-border-width), solid var(--split-border-color);
+}
+
+@media only screen and (max-width: 1024px){
+  .section-spliting{
+    height: var(--split-mobile-height);
+  }
 }

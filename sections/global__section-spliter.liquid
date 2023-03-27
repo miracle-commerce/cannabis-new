@@ -1,0 +1,81 @@
+<section class="section is-width-{{ section.settings.width }} section-spliting {% if section.settings.show_border%} section-spliting--has-border{% endif %}" style="--split-desktop-height: {{section.settings.desktop_height}}px; --split-mobile-height: {{section.settings.mobile_height}}px; --split-border-width: {{section.settings.border_size}}px; --split-border-color: {{section.settings.border_color}}">
+</section>
+
+{% schema %}
+{
+  "name":"Section Spliter",
+  "settings":[
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Width",
+      "default": "wide",
+      "options": [
+        {
+          "value": "standard",
+          "label": "Standard"
+        },
+        {
+          "value":"container",
+          "label":"Container"
+        },
+        {
+          "value": "wide",
+          "label": "Wide"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "desktop_height",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Desktop Height",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "mobile_height",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Mobile Height",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Border"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_border",
+      "label": "Show Border",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color",
+      "default": "#7C8C82"
+    },
+    {
+      "type": "range",
+      "id": "border_size",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Border Size",
+      "default": 1
+    }
+  ],
+  "presets":[
+    {
+      "name":"Section Spliter"
+    }
+  ]
+}
+{% endschema %}
