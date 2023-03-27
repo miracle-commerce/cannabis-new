@@ -13,6 +13,17 @@
         "custom_css": ""
       }
     },
+    "8e16a232-c0aa-4c82-b649-c62df9616892": {
+      "type": "global__section-spliter",
+      "settings": {
+        "width": "standard",
+        "desktop_height": 80,
+        "mobile_height": 45,
+        "show_border": false,
+        "border_color": "#e9e9e9",
+        "border_size": 1
+      }
+    },
     "main": {
       "type": "collection__main",
       "settings": {
@@ -27,16 +38,38 @@
         "promo_text": "<p>Description of promotion with lots of details.<\/p>",
         "banner_height": "medium",
         "align_height": true,
-        "collection_height": 400,
+        "collection_height": 300,
         "products_per_row": 4,
         "mobile_products_per_row": "1",
         "pagination_limit": 48,
         "pagination_type": "basic_pagination",
         "width": "standard",
-        "padding_top": 20,
-        "padding_bottom": 40,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "css_class": "",
         "custom_css": ""
+      }
+    },
+    "9eedafd7-6e4f-4d71-9127-3b2b4e477254": {
+      "type": "global__section-spliter",
+      "settings": {
+        "width": "standard",
+        "desktop_height": 80,
+        "mobile_height": 50,
+        "show_border": true,
+        "border_color": "#e9e9e9",
+        "border_size": 4
+      }
+    },
+    "69e8d988-41a4-4804-91dd-c2c9c3b9fee3": {
+      "type": "global__section-spliter",
+      "settings": {
+        "width": "wide",
+        "desktop_height": 80,
+        "mobile_height": 50,
+        "show_border": false,
+        "border_color": "#e9e9e9",
+        "border_size": 1
       }
     },
     "f733865d-eccc-4780-8287-238e065767ba": {
@@ -49,17 +82,48 @@
             "testimonial_main": "<p>My wife and I love your oil. We both have osteoarthritis, and I have worn shoulder joints and need a shoulder replacement, so I’m in constant pain. The oil is a godsend and helps to kill the pain. I can even sleep, as before I couldn’t even lay in bed.<\/p>",
             "testimonial_author": "Kevin, Western Australia"
           }
+        },
+        "9d163e22-f1d4-4f38-a263-597b06861993": {
+          "type": "testimonial",
+          "settings": {
+            "product": "hemp-seed-and-flax-oil-for-pets-100ml",
+            "testimonial_main": "<p>My wife and I love your oil. We both have osteoarthritis, and I have worn shoulder joints and need a shoulder replacement, so I’m in constant pain. The oil is a godsend and helps to kill the pain. I can even sleep, as before I couldn’t even lay in bed.<\/p>",
+            "testimonial_author": "Kevin, Western Australia"
+          }
         }
       },
       "block_order": [
-        "template--18176694944065__f733865d-eccc-4780-8287-238e065767ba-167988789551576224-0"
+        "template--18176694944065__f733865d-eccc-4780-8287-238e065767ba-167988789551576224-0",
+        "9d163e22-f1d4-4f38-a263-597b06861993"
       ],
       "settings": {
         "width": "standard",
-        "padding_top": 20,
+        "padding_top": 0,
         "padding_bottom": 0,
         "padding_left": 0,
         "padding_right": 0
+      }
+    },
+    "6abf5384-539c-444d-9817-5cab840a001d": {
+      "type": "global__section-spliter",
+      "settings": {
+        "width": "standard",
+        "desktop_height": 80,
+        "mobile_height": 60,
+        "show_border": true,
+        "border_color": "#e9e9e9",
+        "border_size": 4
+      }
+    },
+    "60b70c49-0b7d-4b25-b6c8-05d7e425ace1": {
+      "type": "global__section-spliter",
+      "settings": {
+        "width": "standard",
+        "desktop_height": 55,
+        "mobile_height": 40,
+        "show_border": false,
+        "border_color": "#e9e9e9",
+        "border_size": 1
       }
     },
     "410cc5ae-7768-4ac0-a5af-6f74b3c21ad8": {
@@ -75,23 +139,79 @@
         "products_limit": 10,
         "align_height": true,
         "collection_height": 400,
+        "show_all_button": false,
+        "button_label": "Shop All",
+        "button_background": "#707070",
+        "button_color": "#ffffff",
+        "show_collection_description": false,
         "collection_style": "slider",
-        "width": "wide",
+        "width": "standard",
         "show_gutter": true,
-        "padding_top": 20,
-        "padding_bottom": 20,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "animation": "none",
         "css_class": "",
         "custom_css": ""
       }
     },
-    "a7a9cc69-f47b-45b1-9076-e511a6e4de5d": {
-      "type": "index__blog-posts",
+    "0a7c5e72-1aa1-4018-9a99-1da05c42c7cf": {
+      "type": "global__section-spliter",
+      "settings": {
+        "width": "wide",
+        "desktop_height": 50,
+        "mobile_height": 40,
+        "show_border": true,
+        "border_color": "#e9e9e9",
+        "border_size": 4
+      }
+    },
+    "066bab76-1068-42f2-ab84-99399f9b5e18": {
+      "type": "global__section-spliter",
+      "settings": {
+        "width": "standard",
+        "desktop_height": 50,
+        "mobile_height": 40,
+        "show_border": false,
+        "border_color": "#e9e9e9",
+        "border_size": 1
+      }
+    },
+    "c9916ae5-fd84-40a6-ad88-2bab7ffa64d8": {
+      "type": "index__featured-articles",
+      "blocks": {
+        "e78861b4-d224-4c72-bc7b-7e1cb4e0c554": {
+          "type": "article",
+          "settings": {
+            "article": "higher-learning\/hemp-oil-vs-flax-seed-oil"
+          }
+        },
+        "ab2b3bc0-6557-49a0-9ec2-b067e39ba45c": {
+          "type": "article",
+          "settings": {
+            "article": "higher-learning\/what-is-beta-caryophyllene"
+          }
+        },
+        "f1dfbfba-8808-46ba-8f21-f880b8df143f": {
+          "type": "article",
+          "settings": {
+            "article": "higher-learning\/how-to-access-cbd-medical-cannabis-in-australia"
+          }
+        }
+      },
+      "block_order": [
+        "e78861b4-d224-4c72-bc7b-7e1cb4e0c554",
+        "ab2b3bc0-6557-49a0-9ec2-b067e39ba45c",
+        "f1dfbfba-8808-46ba-8f21-f880b8df143f"
+      ],
       "settings": {
         "title": "Learn",
-        "blog_widget_select": "higher-learning",
-        "home_page_articles": 3,
-        "blog_show_tags": true,
+        "title_color": "#f78257",
+        "title_size": "large",
+        "subtitle": "ABOUT HEMP SEED OIL",
+        "subtitle_color": "#f78257",
+        "image_style": "square",
+        "blog_show_tags": false,
+        "show_topic": true,
         "blog_author": false,
         "read_time": false,
         "blog_date": true,
@@ -101,9 +221,12 @@
         "button_label": "",
         "button_type": "button--primary",
         "width": "standard",
-        "padding_top": 20,
+        "padding_top": 0,
         "padding_bottom": 0,
         "animation": "none",
+        "show_all_button": false,
+        "url_all_button": "",
+        "label_all_button": "",
         "css_class": "",
         "custom_css": ""
       }
@@ -177,7 +300,7 @@
       ],
       "settings": {
         "title": "",
-        "title_color": "#000",
+        "title_color": "#000000",
         "title_align": "left",
         "title_size": "medium",
         "collections_per_row": 3,
@@ -187,12 +310,12 @@
         "button_style": "button--secondary",
         "overlay_background": "#939393",
         "overlay_background_opacity": 40,
-        "overlay_text": "#FFFFFF",
+        "overlay_text": "#ffffff",
         "collection_title_below_image": true,
         "width": "standard",
         "show_gutter": true,
-        "padding_top": 20,
-        "padding_bottom": 80,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "animation": "none",
         "css_class": "",
         "custom_css": ""
@@ -201,10 +324,17 @@
   },
   "order": [
     "banner",
+    "8e16a232-c0aa-4c82-b649-c62df9616892",
     "main",
+    "9eedafd7-6e4f-4d71-9127-3b2b4e477254",
+    "69e8d988-41a4-4804-91dd-c2c9c3b9fee3",
     "f733865d-eccc-4780-8287-238e065767ba",
+    "6abf5384-539c-444d-9817-5cab840a001d",
+    "60b70c49-0b7d-4b25-b6c8-05d7e425ace1",
     "410cc5ae-7768-4ac0-a5af-6f74b3c21ad8",
-    "a7a9cc69-f47b-45b1-9076-e511a6e4de5d",
+    "0a7c5e72-1aa1-4018-9a99-1da05c42c7cf",
+    "066bab76-1068-42f2-ab84-99399f9b5e18",
+    "c9916ae5-fd84-40a6-ad88-2bab7ffa64d8",
     "8fa3b1c2-8a33-49e3-bba0-2ee54b490353",
     "fd5ee440-085f-46e8-931c-2195ec67d41d"
   ]
