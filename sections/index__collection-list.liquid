@@ -30,7 +30,7 @@
     background-color: {%- if overlay_alpha != 0 -%}{{ section.settings.overlay_background | color_modify: 'alpha', overlay_background_alpha }}{% endif %};
   }
 
-  .collection-info__caption span {
+  .collection-info__caption--above-image .collection-info__caption-wrapper {
     color: {%- if overlay_text_alpha != 0 -%}{{ section.settings.overlay_text }}{% endif %}
   }
 {%- endcapture -%}
@@ -127,30 +127,28 @@
               {{ 'collection-' | append: num | placeholder_svg_tag: 'placeholder-svg' }}
             {% endif %}
 
-            <a class="collection-info__caption" href="{{ collection.url }}">
-              {% if section.settings.collection_title_below_image == blank %}
-                <div class="collection-info__caption-wrapper">
-                  <span class="title">
-                    {% if title != blank %}
-                      {{ title }}
-                    {% elsif collection != blank %}
-                      {{ collection.title }}
-                    {% else %}
-                      {{ "homepage.onboarding.collection_title" | t }}
-                    {% endif %}
-                  </span>
-                  {% render 'button',
-                          label: button_label,
-                          href: collection.url,
-                          style: section.settings.button_style
-                  %}
-                </div>
-              {% endif %}
+            <a class="collection-info__caption collection-info__caption--above-image" href="{{ collection.url }}">              
+              <div class="collection-info__caption-wrapper {% if section.settings.collection_title_below_image %}hide medium-down--show{% endif %}">
+                <span>
+                  {% if title != blank %}
+                    {{ title }}
+                  {% elsif collection != blank %}
+                    {{ collection.title }}
+                  {% else %}
+                    {{ "homepage.onboarding.collection_title" | t }}
+                  {% endif %}
+                </span>
+                {% render 'button',
+                        label: button_label,
+                        href: collection.url,
+                        style: section.settings.button_style
+                %}
+              </div>
             </a>
           </div>
-          {% if section.settings.collection_title_below_image != blank %}
-            <a class="collection-info__caption-wrapper collection-info__caption--below-image" href="{{ collection.url }}">
-              <span class="title">
+          {% if section.settings.collection_title_below_image %}
+            <a class="collection-info__caption-wrapper collection-info__caption--below-image medium-down--hide" href="{{ collection.url }}">
+              <span>
                 {% if title != blank %}
                   {{ title }}
                 {% elsif collection != blank %}

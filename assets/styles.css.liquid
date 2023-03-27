@@ -18241,7 +18241,7 @@ body{
   color: var(--section-heading-color);
   font-weight: 700;
   margin-bottom: 10px;
-  letter-spacing: -5px;
+  letter-spacing: -3px;
 }
 
 /* Custom Image element helper */
@@ -19129,4 +19129,56 @@ Custom Styles for Moble Navigation
   top: 0px; 
   width: 100%;
   z-index: 10;
+}
+
+/* ===============================================
+Styles for index__collection-list.liquid section.
+=================================================*/
+.shopify-section.collection-list .product-wrap{
+  overflow: hidden; 
+  border-radius: 12px;
+}
+
+.shopify-section.collection-list .collection-info__caption-wrapper{
+  font-family: obviously, sans-serif; 
+  font-size: 40px; 
+  font-weight: 300; 
+}
+
+.shopify-section.collection-list .collection-info__caption--below-image{
+  display: block; 
+  text-align: left;
+  padding: 10px 0;
+}
+
+@media only screen and (max-width: 1440px){
+  .shopify-section.collection-list .collection-info__caption-wrapper{
+    font-size: 27px;
+    font-weight: 400;
+  }
+}
+
+
+/* Custom Styles for Product Grid Item */
+.product-image__wrapper{
+  background-color: #fff; 
+}
+
+.product-thumbnail__vendor{
+  font-family: obviously-wide, sans-serif; 
+  font-weight: 500;
+  font-size: 17px;
+  margin-bottom: 17px;
+  color: #5D6A73;
+}
+
+.product-thumbnail__title{
+  font-size: 22px;
+  margin-bottom: 5px;
+  min-height: 56px;
+}
+
+.product-thumbnail__price{
+  font-size: 18px; 
+  font-weight: 300;
 }
