@@ -2,11 +2,194 @@
   "sections": {
     "main": {
       "type": "list-collections__main",
+      "disabled": true,
       "settings": {
+        "collections_per_row": 3,
+        "pagination_limit": 48,
+        "pagination_type": "basic_pagination",
+        "align_height": false,
+        "collection_height": 400,
+        "enable_zoom": true,
+        "button_style": "button--secondary",
+        "overlay_background": "#939393",
+        "overlay_background_opacity": 70,
+        "overlay_text": "#FFFFFF",
+        "collection_title_below_image": false,
+        "width": "standard",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "551d2325-43c0-42d1-8365-b515f6ecae27": {
+      "type": "index__collection-list",
+      "blocks": {
+        "template--18176695370049__551d2325-43c0-42d1-8365-b515f6ecae27-1679887068bebadd68-0": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "wellness",
+            "image": "shopify:\/\/shop_images\/edward-howell-rdJhMyb4Yuc-unsplash.png",
+            "title": "Wellness",
+            "button_label": ""
+          }
+        },
+        "template--18176695370049__551d2325-43c0-42d1-8365-b515f6ecae27-1679887068bebadd68-1": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "lifestyle",
+            "image": "shopify:\/\/shop_images\/lifestyle.png",
+            "title": "Lifestyle",
+            "button_label": ""
+          }
+        },
+        "template--18176695370049__551d2325-43c0-42d1-8365-b515f6ecae27-1679887068bebadd68-2": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "pets",
+            "image": "shopify:\/\/shop_images\/collectikon-pets.png",
+            "title": "Pets",
+            "button_label": ""
+          }
+        },
+        "0bff92a8-b835-4555-8c0f-76e320a85e85": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "beverages",
+            "image": "shopify:\/\/shop_images\/collection-beverages.png",
+            "title": "Beverages",
+            "button_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18176695370049__551d2325-43c0-42d1-8365-b515f6ecae27-1679887068bebadd68-0",
+        "template--18176695370049__551d2325-43c0-42d1-8365-b515f6ecae27-1679887068bebadd68-1",
+        "template--18176695370049__551d2325-43c0-42d1-8365-b515f6ecae27-1679887068bebadd68-2",
+        "0bff92a8-b835-4555-8c0f-76e320a85e85"
+      ],
+      "settings": {
+        "title": "",
+        "title_color": "#000",
+        "title_align": "left",
+        "title_size": "medium",
+        "collections_per_row": 4,
+        "align_height": true,
+        "collection_height": 400,
+        "enable_zoom": true,
+        "button_style": "button--secondary",
+        "overlay_background": "#939393",
+        "overlay_background_opacity": 30,
+        "overlay_text": "#FFFFFF",
+        "collection_title_below_image": true,
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 80,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "194b0d11-6678-42b0-888a-0e84c7d05133": {
+      "type": "index__featured-collection",
+      "settings": {
+        "title": "Wellness",
+        "title_color": "#405554",
+        "title_align": "left",
+        "title_size": "large",
+        "collection": "wellness",
+        "products_per": 4,
+        "mobile_products_per_row": "1",
+        "products_limit": 10,
+        "align_height": true,
+        "collection_height": 400,
+        "collection_style": "slider",
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "799547e4-721a-47d4-98b9-bec818507f90": {
+      "type": "index__featured-collection",
+      "settings": {
+        "title": "Lifestyle",
+        "title_color": "#f78257",
+        "title_align": "left",
+        "title_size": "large",
+        "collection": "lifestyle",
+        "products_per": 4,
+        "mobile_products_per_row": "1",
+        "products_limit": 10,
+        "align_height": false,
+        "collection_height": 200,
+        "collection_style": "slider",
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "8e9d62f0-a6c2-4329-af81-78acc54d79cb": {
+      "type": "index__featured-collection",
+      "settings": {
+        "title": "Pets",
+        "title_color": "#f18079",
+        "title_align": "left",
+        "title_size": "large",
+        "collection": "cannaco-pets-1",
+        "products_per": 4,
+        "mobile_products_per_row": "1",
+        "products_limit": 10,
+        "align_height": true,
+        "collection_height": 400,
+        "collection_style": "slider",
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "5eafd62d-a470-4d78-9eec-41fde424ccf5": {
+      "type": "index__featured-collection",
+      "settings": {
+        "title": "Beverages",
+        "title_color": "#223241",
+        "title_align": "left",
+        "title_size": "large",
+        "collection": "beverages",
+        "products_per": 4,
+        "mobile_products_per_row": "1",
+        "products_limit": 10,
+        "align_height": true,
+        "collection_height": 400,
+        "collection_style": "slider",
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "551d2325-43c0-42d1-8365-b515f6ecae27",
+    "194b0d11-6678-42b0-888a-0e84c7d05133",
+    "799547e4-721a-47d4-98b9-bec818507f90",
+    "8e9d62f0-a6c2-4329-af81-78acc54d79cb",
+    "5eafd62d-a470-4d78-9eec-41fde424ccf5"
   ]
 }
