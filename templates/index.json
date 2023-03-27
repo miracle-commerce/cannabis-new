@@ -436,28 +436,6 @@
         "css_class": "",
         "custom_css": ""
       }
-    },
-    "dcd55ea6-1e0c-4012-8eb2-1122e8f8d1f9": {
-      "type": "index__newsletter",
-      "settings": {
-        "display_first_name": false,
-        "display_last_name": false,
-        "newsletter_title": "Join Our Community",
-        "newsletter_richtext": "<p>Sign up to the newsletter to get news, product reviews and 10% off your first order<\/p>",
-        "newsletter_section_text_align": "left",
-        "background_color": "#374d4c",
-        "title_color": "#f0b3b1",
-        "text_color": "#ffffff",
-        "show_label": false,
-        "width": "wide",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "padding_left": 0,
-        "padding_right": 0,
-        "animation": "none",
-        "css_class": "",
-        "custom_css": ""
-      }
     }
   },
   "order": [
@@ -469,7 +447,6 @@
     "4062e330-b665-4eed-a360-00e4f1675a01",
     "b6bcdfd1-7e7f-4f02-8afe-e4e47ed0bd39",
     "87d17ffa-21de-4889-ac07-840316a2b8a2",
-    "5278bb9f-a792-4e55-9f63-38aeb4fe373b",
-    "dcd55ea6-1e0c-4012-8eb2-1122e8f8d1f9"
+    "5278bb9f-a792-4e55-9f63-38aeb4fe373b"
   ]
 }

@@ -281,6 +281,28 @@
           "css_class": "",
           "custom_css": ""
         }
+      },
+      "index__newsletter": {
+        "type": "index__newsletter",
+        "settings": {
+          "display_first_name": false,
+          "display_last_name": false,
+          "newsletter_title": "Join Our Community",
+          "newsletter_richtext": "<p>Sign up to the newsletter to get news, product reviews and 10% off your first order<\/p>",
+          "newsletter_section_text_align": "left",
+          "background_color": "#374d4c",
+          "title_color": "#F0B3B1",
+          "text_color": "#FFF",
+          "show_label": false,
+          "width": "wide",
+          "padding_top": 0,
+          "padding_bottom": 0,
+          "padding_left": 0,
+          "padding_right": 0,
+          "animation": "none",
+          "css_class": "",
+          "custom_css": ""
+        }
       }
     },
     "content_for_index": [
