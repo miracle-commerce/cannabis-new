@@ -74,16 +74,17 @@
     <div class="collection__spacer three-fifths column hide-when-banner-enabled"></div>
     <div class="two-fifths medium-down--one-whole column has-no-side-gutter hide-when-banner-enabled">
       {% comment %} Collection title {% endcomment %}
-      <h1 class="collection__title featured-heading featured-heading--large">{{collection.title}}</h1>
+      {% render 'heading',
+              title: collection.title,
+              heading_tag: 'h1',
+              context: 'collection',
+              text_alignment: 'left'
+      %}
     </div>
-
-    {% comment %} Collection description {% endcomment %}
-    {% if collection.description != blank %}
-      <div class="collection__description three-fifths medium-down--one-whole column">
-        {{ collection.description | strip_html}}
-      </div>      
-    {% endif %}
-
+    <div class="collection__filters three-fifths medium-down--one-whole column">
+      {% comment %} Collection filters {% endcomment %}
+      {% render 'collection__filters' %}
+    </div>
     {% if settings.heading_divider_width != 0 and settings.heading_divider_style == 'long' %}
       <div class="heading-divider-below heading-wrapper one-whole column hide-when-banner-enabled">
         <div class="heading-divider
@@ -96,14 +97,16 @@
     {% endif %}
   </div>
 
-  <div class="container">
-    <div class="one-whole column">
-      <div class="collection__filters ">
-        {% comment %} Collection filters {% endcomment %}
-        {% render 'collection__filters' %}
+  {% comment %} Collection description {% endcomment %}
+  {% if collection.description != blank %}
+    <div class="container">
+      <div class="one-whole column">
+        <div class="collection__description content has-padding-bottom">
+          {{ collection.description }}
+        </div>
       </div>
     </div>
-  </div>
+  {% endif %}
 
   {% comment %} Collection sidebar and main content area {% endcomment %}
   <div class="container collection__content">
