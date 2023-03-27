@@ -162,6 +162,12 @@
         "info": "600 x 200px recommended"
       },
       {
+        "type":"image_picker", 
+        "id":"logo_overlay_mobile",
+        "label":"Mobile Overlay Logo", 
+        "info":"600 x 200px recommended"
+      },
+      {
         "type": "range",
         "id": "mobile_logo_width",
         "label": "Mobile logo width",
@@ -206,12 +212,6 @@
             "label": "Right"
           }
         ]
-      },
-      {
-        "type": "checkbox",
-        "id": "show_search_icon_mobile",
-        "label": "Show mobile search icon",
-        "default": true
       },
       {
         "type": "header",

@@ -18974,7 +18974,7 @@ li.footer__menu-link{
 Custom Styles for Header
 ================================================*/
 .header__brand{
-  padding: 1rem 0.75rem 0 0.75rem;
+  padding: 1rem 0.75rem 10px 0.75rem;
 }
 
 .header__icons{
@@ -18986,13 +18986,13 @@ Custom Styles for Header
 }
 
 
-.header--classic [data-enable_overlay="false"] .navbar:after{
+.header--classic [data-enable_overlay="false"] .navbar:after, .header.is--opend-dropdown .navbar:after{
   content: '';
   display: inline-block;
   height: 1px; 
   width: calc(100% - 100px); 
   position:absolute;
-  bottom: 0;
+  bottom: 10px;
   right: 0;
   background-color: {{settings.border_color}};
 }
@@ -19051,4 +19051,80 @@ Custom Styles for Header
 .country-flag{
   border-radius: 50%; 
   margin-right: 5px; 
+}
+
+.disclosure__toggle{
+  border: none;
+}
+
+/* ==================================
+Custom Styles for Moble Navigation
+=====================================*/
+.mobile-menu__content .mobile-menu__list{
+  padding-bottom: 0;
+}
+
+.mobile-menu__list:not(.mobile-search__wrapper):not(:last-child):after{
+  background-color: {{settings.border_color}};
+  content: '';
+  display: block;
+  height: 1px;
+  width: calc(100% - 50px); 
+  margin: 15px auto;
+}
+
+.mobile-menu .mobile-menu-link, .mobile-menu .mobile-menu__item, .mobile-menu .mobile-search__wrapper{
+  padding: 10px 25px;
+}
+
+.mobile-search__wrapper{
+  padding: 0 25px;
+}
+
+.mobile-search__wrapper .search-form{
+  padding-top: 0;
+}
+
+.mobile-search__wrapper .search-form .search__fields input.input{
+  height: 50px; 
+  padding-left: 50px;
+  border-radius: 40px;
+}
+
+.selectors-form--mobile .disclosure{
+  border: none;
+}
+
+.mobile-menu-link--first-level{
+  font-family: obviously-wide, sans-serif;
+  font-size: 14px; 
+  font-weight: 500;
+}
+
+.mobile-submenu__list{
+  border: none;
+}
+
+.mobile-menu__submenu-list-item .mobile-menu__item{
+  font-size: 16px;
+  color: #5C5F67;
+}
+
+.announcement-bar{
+  font-family: obviously-wide, sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+}
+
+@media only screen and (max-width: 798px){
+  .announcement-bar{
+    font-family: obviously, sans-serif;
+  }
+}
+
+[data-enable_overlay=true] .mobile-header{
+  position: absolute; 
+  top: 0px; 
+  width: 100%;
+  z-index: 10;
 }

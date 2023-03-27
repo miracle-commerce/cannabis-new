@@ -59,10 +59,7 @@
 {% comment %} HTML markup {% endcomment %}
 {% capture announcement %}
 <div class="announcement-bar__container {{ css_class }}">
-  <div class="announcement-bar
-              is-{{ size }}
-              "
-        id="announcement-bar">
+  <div class="announcement-bar" id="announcement-bar">
     <div class="section
                 is-width-{{ width }}">
       <div class="message-header">
@@ -76,7 +73,7 @@
           {% endif %}
 
           <div class="announcement-bar__text text-align-{{ section.settings.alignment }}">
-            {{ section.settings.text }}
+            {{ section.settings.text | upcase}}
             <p class="buttons">
               {% if section.settings.button_label != blank %}
                 {% render 'button',
@@ -166,26 +163,6 @@
         }
       ],
       "default": "center"
-    },
-    {
-      "type": "select",
-      "id": "size",
-      "label": "Base size",
-      "options": [
-        {
-          "value": "small",
-          "label": "Small"
-        },
-        {
-          "value": "regular",
-          "label": "Regular"
-        },
-        {
-          "value": "large",
-          "label": "Large"
-        }
-      ],
-      "default": "regular"
     },
     {
       "type": "header",

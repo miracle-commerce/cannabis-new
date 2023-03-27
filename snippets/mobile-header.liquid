@@ -75,18 +75,7 @@
         </a>
       {% endif %}
     </div>
-    <div class="mobile-icons {% if settings.show_search_icon_mobile == false %}has-one-icon{% endif %}">
-      {% if settings.show_search_icon_mobile %}
-        {% comment %} Search icon {% endcomment %}
-        <a class="header__link action-area__link" data-show-search-trigger>
-          {% render 'icon',
-                  name: 'search',
-                  icon_class: 'header__icon'
-          %}
-          <span class="icon-caption">{{ 'general.search.title' | t | escape }}</span>
-        </a>
-      {% endif %}
-
+    <div class="mobile-icons has-one-icon">
       {% comment %} Cart icon {% endcomment %}
       <div class="header-cart action-area__link {% if cart.item_count != 0 %}has-cart-count{% endif %}" data-ajax-cart-trigger>
         <a class="header__link" {% if settings.cart_action != 'mini_cart' or settings.cart_action != 'drawer' %}href="{{ routes.cart_url }}"{% endif %} >

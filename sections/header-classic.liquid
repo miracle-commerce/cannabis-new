@@ -37,7 +37,7 @@
   }
 
   {%- if section.settings.enable_overlay -%}
-    [data-enable_overlay="true"] .header:not(.is--opend-dropdown) {
+    [data-enable_overlay="true"] .header:not(.is--opend-dropdown), [data-enable_overlay="true"] .mobile-header {
       background-color: {%- if overlay_alpha != 0 -%}{{ section.settings.overlay_background | color_modify: 'alpha', overlay_background_alpha }}{%- else -%}{{ settings.header_background | color_modify: 'alpha', overlay_background_alpha }}{%- endif -%};
     }
 
