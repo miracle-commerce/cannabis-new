@@ -70,7 +70,9 @@
                 {% if section.settings.animation != "none" %}
                   data-scroll-class="{{ section.settings.animation }}"
                 {% endif %}>
-
+  {% if section.settings.title != blank %}
+    <h3 class="section__heading featured-heading featured-heading--{{section.settings.title_size}} is-text-align--{{section.settings.title_align}}" style="--section-heading-color: {{section.settings.title_color}}">{{section.settings.title}}</h3>
+  {% endif %}
   <div class="container">
     {% if blocks.size > 0 %}
 
@@ -178,6 +180,73 @@
   "class": "collection-list",
   "max_blocks": 8,
   "settings": [
+    {
+      "type": "header",
+      "content": "Section Heading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Featured collection"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#000"
+    },
+    {
+      "type": "select",
+      "id": "title_align",
+      "label": "Align Title",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value":"center",
+          "label":"Center"
+        },
+        {
+          "value":"right",
+          "label":"Right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title Size",
+      "options": [
+        {
+          "value": "tiny",
+          "label": "Tiny"
+        },
+        {
+          "value":"small",
+          "label":"Small"
+        },
+        {
+          "value":"medium",
+          "label":"Medium"
+        },
+        {
+          "value":"large",
+          "label":"Large"
+        },
+        {
+          "value":"extra-large",
+          "label":"Extra Large"
+        }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "header",
+      "content": "Collections"
+    },
     {
       "type": "range",
       "id": "collections_per_row",

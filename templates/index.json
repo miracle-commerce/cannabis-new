@@ -35,7 +35,7 @@
         "subheading_color_mobile": "#ffffff",
         "width": "wide",
         "padding_top": 0,
-        "padding_bottom": 0,
+        "padding_bottom": 30,
         "padding_left": 0,
         "padding_right": 0,
         "animation": "none",
@@ -47,6 +47,9 @@
       "type": "index__featured-collection",
       "settings": {
         "title": "Featured",
+        "title_color": "#405554",
+        "title_align": "left",
+        "title_size": "large",
         "collection": "popular",
         "products_per": 4,
         "mobile_products_per_row": "1",
@@ -57,7 +60,7 @@
         "width": "standard",
         "show_gutter": true,
         "padding_top": 20,
-        "padding_bottom": 20,
+        "padding_bottom": 80,
         "animation": "none",
         "css_class": "",
         "custom_css": ""
@@ -110,6 +113,10 @@
         "50514bc6-cdc2-4332-8b4d-b1c04f773078"
       ],
       "settings": {
+        "title": "Collections",
+        "title_color": "#405554",
+        "title_align": "right",
+        "title_size": "large",
         "collections_per_row": 4,
         "align_height": false,
         "collection_height": 400,
@@ -433,11 +440,15 @@
     "dcd55ea6-1e0c-4012-8eb2-1122e8f8d1f9": {
       "type": "index__newsletter",
       "settings": {
+        "display_first_name": false,
+        "display_last_name": false,
         "newsletter_title": "Join Our Community",
         "newsletter_richtext": "<p>Sign up to the newsletter to get news, product reviews and 10% off your first order<\/p>",
         "newsletter_section_text_align": "left",
         "background_color": "#374d4c",
+        "title_color": "#f0b3b1",
         "text_color": "#ffffff",
+        "show_label": false,
         "width": "wide",
         "padding_top": 0,
         "padding_bottom": 0,
