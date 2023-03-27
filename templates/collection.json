@@ -2,17 +2,210 @@
   "sections": {
     "banner": {
       "type": "fallback_image_banner",
+      "disabled": true,
       "settings": {
+        "image_darken": true,
+        "width": "wide",
+        "banner_height": "medium",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "css_class": "",
+        "custom_css": ""
       }
     },
     "main": {
       "type": "collection__main",
       "settings": {
+        "collection_breadcrumb": false,
+        "collection_tags": false,
+        "collection_sort": false,
+        "show_sidebar": false,
+        "sidebar_position": "left",
+        "show_promo_banner": false,
+        "image_darken": true,
+        "promo_title": "Special sale on now!",
+        "promo_text": "<p>Description of promotion with lots of details.<\/p>",
+        "banner_height": "medium",
+        "align_height": true,
+        "collection_height": 400,
+        "products_per_row": 4,
+        "mobile_products_per_row": "1",
+        "pagination_limit": 48,
+        "pagination_type": "basic_pagination",
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 40,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "f733865d-eccc-4780-8287-238e065767ba": {
+      "type": "index__product-testimonials",
+      "blocks": {
+        "template--18176694944065__f733865d-eccc-4780-8287-238e065767ba-167988789551576224-0": {
+          "type": "testimonial",
+          "settings": {
+            "product": "digestive-terpene-essentials-30ml",
+            "testimonial_main": "<p>My wife and I love your oil. We both have osteoarthritis, and I have worn shoulder joints and need a shoulder replacement, so I’m in constant pain. The oil is a godsend and helps to kill the pain. I can even sleep, as before I couldn’t even lay in bed.<\/p>",
+            "testimonial_author": "Kevin, Western Australia"
+          }
+        }
+      },
+      "block_order": [
+        "template--18176694944065__f733865d-eccc-4780-8287-238e065767ba-167988789551576224-0"
+      ],
+      "settings": {
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "410cc5ae-7768-4ac0-a5af-6f74b3c21ad8": {
+      "type": "index__featured-collection",
+      "settings": {
+        "title": "You Might Also Like",
+        "title_color": "#223241",
+        "title_align": "left",
+        "title_size": "medium",
+        "collection": "beverages",
+        "products_per": 4,
+        "mobile_products_per_row": "1",
+        "products_limit": 10,
+        "align_height": true,
+        "collection_height": 400,
+        "collection_style": "slider",
+        "width": "wide",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "a7a9cc69-f47b-45b1-9076-e511a6e4de5d": {
+      "type": "index__blog-posts",
+      "settings": {
+        "title": "Learn",
+        "blog_widget_select": "higher-learning",
+        "home_page_articles": 3,
+        "blog_show_tags": true,
+        "blog_author": false,
+        "read_time": false,
+        "blog_date": true,
+        "blog_comment_count": false,
+        "blog_show_excerpt": false,
+        "show-border": false,
+        "button_label": "",
+        "button_type": "button--primary",
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "8fa3b1c2-8a33-49e3-bba0-2ee54b490353": {
+      "type": "index__rich-text",
+      "settings": {
+        "title": "Rich text",
+        "heading_font": "open_sans_n4",
+        "heading_color": "rgba(0,0,0,0)",
+        "heading_alignment": "center",
+        "heading_size": 30,
+        "text": "<p>Use this section to create some callout text on your page, or add more details about your shop, services, promotions, etc. If you have a large amount of text, you can opt to have it display in <strong>two columns<\/strong> instead so that it's much easier to read.<\/p><p><\/p><p>This section also includes the option to add a button in primary or secondary style, and also control the colors, including the option for a gradient background. Since this is rich text, you can also <em>format it as you wish<\/em> and <a href=\"\/collections\/all\" title=\"All Products\">include links<\/a>.<\/p>",
+        "text_font": "open_sans_n4",
+        "text_color": "rgba(0,0,0,0)",
+        "text_alignment": "left",
+        "text_size": 14,
+        "columns": 2,
+        "button_label": "Shop All",
+        "button_link": "",
+        "button_alignment": "center",
+        "button_style": "button--primary",
+        "background": "#ffffff",
+        "gradient": "rgba(0,0,0,0)",
+        "gradient_rotation": 180,
+        "width": "standard",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "fd5ee440-085f-46e8-931c-2195ec67d41d": {
+      "type": "index__collection-list",
+      "blocks": {
+        "template--18176694944065__fd5ee440-085f-46e8-931c-2195ec67d41d-1679887068bebadd68-0": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "lifestyle",
+            "image": "shopify:\/\/shop_images\/lifestyle.png",
+            "title": "Lifestyle",
+            "button_label": ""
+          }
+        },
+        "template--18176694944065__fd5ee440-085f-46e8-931c-2195ec67d41d-1679887068bebadd68-1": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "pets",
+            "image": "shopify:\/\/shop_images\/collectikon-pets.png",
+            "title": "Pets",
+            "button_label": ""
+          }
+        },
+        "template--18176694944065__fd5ee440-085f-46e8-931c-2195ec67d41d-1679887068bebadd68-2": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "beverages",
+            "image": "shopify:\/\/shop_images\/collection-beverages.png",
+            "title": "Beverages",
+            "button_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18176694944065__fd5ee440-085f-46e8-931c-2195ec67d41d-1679887068bebadd68-0",
+        "template--18176694944065__fd5ee440-085f-46e8-931c-2195ec67d41d-1679887068bebadd68-1",
+        "template--18176694944065__fd5ee440-085f-46e8-931c-2195ec67d41d-1679887068bebadd68-2"
+      ],
+      "settings": {
+        "title": "",
+        "title_color": "#000",
+        "title_align": "left",
+        "title_size": "medium",
+        "collections_per_row": 3,
+        "align_height": true,
+        "collection_height": 350,
+        "enable_zoom": false,
+        "button_style": "button--secondary",
+        "overlay_background": "#939393",
+        "overlay_background_opacity": 40,
+        "overlay_text": "#FFFFFF",
+        "collection_title_below_image": true,
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 80,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
       }
     }
   },
   "order": [
     "banner",
-    "main"
+    "main",
+    "f733865d-eccc-4780-8287-238e065767ba",
+    "410cc5ae-7768-4ac0-a5af-6f74b3c21ad8",
+    "a7a9cc69-f47b-45b1-9076-e511a6e4de5d",
+    "8fa3b1c2-8a33-49e3-bba0-2ee54b490353",
+    "fd5ee440-085f-46e8-931c-2195ec67d41d"
   ]
 }
