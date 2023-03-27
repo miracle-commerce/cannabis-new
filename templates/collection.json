@@ -38,7 +38,7 @@
         "promo_text": "<p>Description of promotion with lots of details.<\/p>",
         "banner_height": "medium",
         "align_height": true,
-        "collection_height": 300,
+        "collection_height": 450,
         "products_per_row": 4,
         "mobile_products_per_row": "1",
         "pagination_limit": 48,
@@ -234,16 +234,16 @@
     "8fa3b1c2-8a33-49e3-bba0-2ee54b490353": {
       "type": "index__rich-text",
       "settings": {
-        "title": "Rich text",
+        "title": "FAQs",
         "heading_font": "open_sans_n4",
-        "heading_color": "rgba(0,0,0,0)",
+        "heading_color": "#5d6a73",
         "heading_alignment": "center",
         "heading_size": 30,
-        "text": "<p>Use this section to create some callout text on your page, or add more details about your shop, services, promotions, etc. If you have a large amount of text, you can opt to have it display in <strong>two columns<\/strong> instead so that it's much easier to read.<\/p><p><\/p><p>This section also includes the option to add a button in primary or secondary style, and also control the colors, including the option for a gradient background. Since this is rich text, you can also <em>format it as you wish<\/em> and <a href=\"\/collections\/all\" title=\"All Products\">include links<\/a>.<\/p>",
+        "text": "{{ collection.metafields.custom.faqs | metafield_tag }}",
         "text_font": "open_sans_n4",
-        "text_color": "rgba(0,0,0,0)",
+        "text_color": "#5d6a73",
         "text_alignment": "left",
-        "text_size": 14,
+        "text_size": 16,
         "columns": 2,
         "button_label": "Shop All",
         "button_link": "",
@@ -252,14 +252,14 @@
         "background": "#ffffff",
         "gradient": "rgba(0,0,0,0)",
         "gradient_rotation": 180,
-        "width": "standard",
+        "width": "container",
         "padding_top": 60,
         "padding_bottom": 60,
         "padding_left": 0,
         "padding_right": 0,
         "animation": "none",
         "css_class": "",
-        "custom_css": ""
+        "custom_css": ".rich-text__content{\nmax-width:1364px;\nmargin: auto;\n}"
       }
     },
     "fd5ee440-085f-46e8-931c-2195ec67d41d": {

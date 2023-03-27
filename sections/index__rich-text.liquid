@@ -22,32 +22,26 @@
 {% comment %} Section specific CSS {% endcomment %}
 {% capture section_css -%}
 
-  .section {
+  .section .rich-text-content--wrapper {
     background-image: linear-gradient({{ section.settings.gradient_rotation }}deg, rgba(255,255,255,0), {{ section.settings.gradient }});
     background-color: {%- if background_alpha != 0 -%}{{ section.settings.background }}{%- endif -%};
   }
 
-  .rich-text__heading {
-    font-size: {{ heading_size }}px;
-    color: {%- if heading_alpha != 0 -%}{{ heading_color }}{%- else -%}{{ settings.heading_color }}{%- endif -%};
-    font-family: {{ heading_font.family }}, {{ heading_font.fallback_families }};
-    font-weight: {{ heading_font.weight }};
-    font-style: {{ heading_font.style }};
+  .metafield-rich_text_field{
+    color: {{section.settings.text_color}};
   }
 
-  .rich-text__text {
-    font-size: {{ text_size }}px;
-    color: {%- if text_alpha != 0 -%}{{ text_color }}{%- else -%}{{ settings.regular_color }}{%- endif -%};
-    font-family: {{ text_font.family }}, {{ text_font.fallback_families }};
-    font-weight: {{ text_font.weight }};
-    font-style: {{ text_font.style }};
+  .metafield-rich_text_field h1,
+  .metafield-rich_text_field h2,
+  .metafield-rich_text_field h3,
+  .metafield-rich_text_field h4,
+  .metafield-rich_text_field h5,
+  .metafield-rich_text_field h6,{
+    color: {{section.settings.content_heading_color}};
   }
 {%- endcapture -%}
 
 {% style %}
-  {{ heading_font | font_face }}
-  {{ text_font | font_face }}
-
   #shopify-section-{{ section.id }} {
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
@@ -82,13 +76,20 @@
           {% endif %}>
   <div class="container
               has-limit
+              rich-text-content--wrapper
               ">
     <div class="columns one-whole">
       <div class="rich-text__content card-content">
-
-        {% if title != blank %}
-          <h2 class="rich-text__heading title text-align-{{ heading_alignment }} {% if heading_size > 50 %}mobile-shrink-text{% endif %}"><span>{{ title }}</span></h2>
-        {% endif %}
+        {%- if section.settings.title != blank or section.settings.button_label != blank -%}
+          <div class="rich-text__heading-wrapper section_heading--wrapper">
+            {% if section.settings.title != blank %}
+              <h3 class="section__heading featured-heading featured-heading--{{section.settings.title_size}}" style="--section-heading-color: {{section.settings.title_color}}">{{section.settings.title}}</h3>
+            {% endif %}
+            {% if section.settings.button_label != blank %}
+              <a href="{{section.settings.button_link}}" class="rich-text__button button medium-down--hide" style="--button-background: {{section.settings.button_background}}; --button-text-color: {{section.settings.button_text_color}}">{{section.settings.button_label}}</a>
+            {% endif %}
+          </div>
+        {%- endif -%}
 
         {% if text != blank %}
           <div class="rich-text__text has-columns--{{ section.settings.columns }} text-align-{{ text_alignment }} content {% if text_size > 35 %}mobile-shrink-text{% endif %}">
@@ -97,13 +98,8 @@
         {% endif %}
 
         {% if section.settings.button_label != blank %}
-          <div class="buttons is-{{ section.settings.button_alignment }}">
-            {% render 'button',
-                    label: section.settings.button_label,
-                    href: section.settings.button_link,
-                    style: section.settings.button_style,
-                    type: "link"
-            %}
+          <div class="rich-text__button-wrapper">
+            <a href="{{section.settings.button_link}}" class="rich-text__button button hide medium-down--show" style="--button-background: {{section.settings.button_background}}; --button-text-color: {{section.settings.button_text_color}}">{{section.settings.button_label}}</a>
           </div>
         {% endif %}
       </div>
@@ -128,53 +124,42 @@
         "default": "Rich text"
       },
       {
-        "type": "font_picker",
-        "id": "heading_font",
-        "label": "Font",
-        "default": "open_sans_n4"
-      },
-      {
         "type": "color",
-        "id": "heading_color",
-        "label": "Heading",
-        "default": "rgba(0,0,0,0)"
+        "id": "title_color",
+        "label": "Title Color",
+        "default": "#5D6A73"
       },
       {
         "type": "select",
-        "id": "heading_alignment",
-        "label": "Text alignment",
+        "id": "title_size",
+        "label": "Title Size",
         "options": [
           {
-            "value": "left",
-            "label": "Left"
+            "value": "tiny",
+            "label": "Tiny"
           },
           {
-            "value": "center",
-            "label": "Center"
+            "value":"small",
+            "label":"Small"
           },
           {
-            "value": "justify",
-            "label": "Justify"
+            "value":"medium",
+            "label":"Medium"
           },
           {
-            "value": "right",
-            "label": "Right"
+            "value":"large",
+            "label":"Large"
+          },
+          {
+            "value":"extra-large",
+            "label":"Extra Large"
           }
         ],
-        "default": "center"
-      },
-      {
-        "type": "range",
-        "id": "heading_size",
-        "label": "Base size",
-        "min": 20,
-        "max": 120,
-        "default": 30,
-        "unit": "px"
+        "default": "medium"
       },
       {
         "type": "header",
-        "content": "Text"
+        "content": "Content"
       },
       {
         "type": "richtext",
@@ -183,16 +168,16 @@
         "default": "<p>Use this section to create some callout text on your page, or add more details about your shop, services, promotions, etc. If you have a large amount&nbsp;of text, you can opt to have it display in <strong>two columns<\/strong> instead so that it's much easier to read.<\/p>\n<p><\/p>\n<p>This section also includes&nbsp;the option to add a button&nbsp;in primary or secondary style, and also control the colors, including the option for a gradient background. Since this is rich text, you can also <em>format it as you wish<\/em> and&nbsp;<a href=\"\/collections\/all\" title=\"All Products\">include links<\/a>.<\/p>"
       },
       {
-        "type": "font_picker",
-        "id": "text_font",
-        "label": "Font",
-        "default": "open_sans_n4"
+        "type": "color",
+        "id": "content_heading_color",
+        "label": "Content Heading color",
+        "default": "#000"
       },
       {
         "type": "color",
         "id": "text_color",
         "label": "Text",
-        "default": "rgba(0,0,0,0)"
+        "default":"#5D6A73"
       },
       {
         "type": "select",
@@ -217,15 +202,6 @@
           }
         ],
         "default": "left"
-      },
-      {
-        "type": "range",
-        "id": "text_size",
-        "label": "Base size",
-        "min": 8,
-        "max": 40,
-        "default": 14,
-        "unit": "px"
       },
       {
         "type": "range",
@@ -270,24 +246,16 @@
         "default": "center"
       },
       {
-        "type": "select",
-        "id": "button_style",
-        "label": "Style",
-        "options": [
-          {
-            "value": "button--primary",
-            "label": "Primary"
-          },
-          {
-            "value": "button--secondary",
-            "label": "Secondary"
-          },
-          {
-            "value": "button--link-style",
-            "label": "Link style"
-          }
-        ],
-        "default": "button--primary"
+        "type": "color",
+        "id": "button_background",
+        "label": "Button Background",
+        "default": "#5D6A73"
+      },
+      {
+        "type": "color",
+        "id": "button_text_color",
+        "label": "Button Text Color",
+        "default": "#fff"
       },
       {
         "type": "header",
@@ -332,6 +300,10 @@
           {
             "value": "standard",
             "label": "Standard"
+          },
+          {
+            "value": "container",
+            "label": "Container"
           },
           {
             "value": "wide",

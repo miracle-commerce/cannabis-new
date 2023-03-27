@@ -19332,3 +19332,128 @@ Custom Styles for Collection Template
   }
 }
 
+/* ====================================================
+Custom Styles for rich-text section
+=======================================================*/
+.rich-text-content--wrapper{
+  border-radius: 12px; 
+  overflow: hidden; 
+}
+.rich-text__content{
+  padding: 80px 60px;
+}
+.rich-text__text.has-columns--2{
+  column-gap: 100px;
+}
+
+.rich-text__text.has-columns--3{
+  column-gap: 50px;
+}
+
+.rich-text__heading-wrapper{
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: space-between;
+  column-gap: 30px; 
+  row-gap: 10px; 
+  margin-bottom: 10px;
+}
+
+.rich-text__button{
+  display: inline-block;
+  border: none;
+  border-radius: 45px;
+  background-color: var(--button-background);
+  color: var(--button-text-color);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+  height: 45px;
+  margin-bottom: 2px;
+  min-width: 215px; 
+  text-align: center; 
+  padding: 10px 30px;
+}
+
+.rich-text__button:hover{
+  border: none;
+  background-color: var(--button-background);
+  color: var(--button-text-color);
+  opacity: 0.8;
+}
+
+.rich-text__text{
+  font-size: 16px;
+}
+
+.rich-text__text h1{
+  font-size: 32px;
+}
+
+.rich-text__text h2{
+  font-size: 28px;
+}
+
+.rich-text__text h3{
+  font-size: 24px;
+}
+
+.rich-text__text h4{
+  font-size: 22px;
+}
+
+.rich-text__text h5{
+  font-size: 20px;
+}
+
+.rich-text__text h6{
+  font-size: 18px;
+}
+
+
+@media only screen and (max-width: 798px){
+  .rich-text__content{
+    padding: 60px 30px;
+  }
+
+  .rich-text__text.has-columns--2, .rich-text__text.has-columns--3{
+    column-count: 1;
+  }
+
+  .rich-text__text{
+    font-size: 14px;
+  }
+
+  .rich-text__text h1{
+    font-size: 24px;
+  }
+  
+  .rich-text__text h2{
+    font-size: 22px;
+  }
+  
+  .rich-text__text h3{
+    font-size: 18px;
+  }
+  
+  .rich-text__text h4{
+    font-size: 16px;
+  }
+  
+  .rich-text__text h5{
+    font-size: 14px;
+  }
+  
+  .rich-text__text h6{
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 480px){
+  .rich-text .section.is-width-container{
+    padding: 0 10px;
+  }
+  .rich-text__content{
+    padding: 30px;
+  }
+}
