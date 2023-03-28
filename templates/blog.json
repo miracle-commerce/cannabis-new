@@ -2,6 +2,7 @@
   "sections": {
     "banner": {
       "type": "banner",
+      "disabled": true,
       "settings": {
         "image_darken": true,
         "subtitle": "Subheading",
@@ -16,16 +17,15 @@
     "main": {
       "type": "blog__main",
       "blocks": {
-        "afae98b0-b7ec-45e4-93f6-aa0f5d79a913": {
-          "type": "post_tags",
+        "844588c3-6b3d-4e26-a3d6-8a884d96349d": {
+          "type": "menu",
           "settings": {
-            "title": "Blog post tags",
-            "blog": "higher-learning"
+            "menu": "blog-sort-navigation"
           }
         }
       },
       "block_order": [
-        "afae98b0-b7ec-45e4-93f6-aa0f5d79a913"
+        "844588c3-6b3d-4e26-a3d6-8a884d96349d"
       ],
       "settings": {
         "blog_tags": true,
@@ -34,13 +34,15 @@
         "pagination_type": "basic_pagination",
         "show_sidebar": true,
         "sidebar_position": "left",
+        "image_style": "square",
         "blog_author": false,
         "blog_date": true,
         "read_time": false,
         "blog_comment_count": false,
         "blog_show_tags": true,
+        "show_topic": true,
         "blog_show_excerpt": false,
-        "show_border": true,
+        "show_border": false,
         "button_label": "Read more",
         "button_type": "none",
         "width": "standard",

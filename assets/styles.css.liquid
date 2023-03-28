@@ -19458,3 +19458,30 @@ Custom Styles for rich-text section
     padding: 30px;
   }
 }
+
+
+/* ===================================
+Custom Styles for blog templates
+======================================*/
+.articles--wrapper{
+  column-gap: 50px;
+  row-gap: 50px;
+}
+
+.articles--wrapper .one-fourth{
+  width: calc(25% - 150px / 4);
+}
+
+.articles--wrapper .one-third{
+  width: calc(100% / 3 - 100px / 3);
+}
+
+.articles--wrapper .one-half{
+  width: calc(50% - 25px);
+}
+
+@media only screen and (max-width: 798px){
+ .articles--wrapper .medium-down--one-half{
+  width: calc(50% - 25px);
+ }
+}

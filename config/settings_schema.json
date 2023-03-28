@@ -284,6 +284,16 @@
         "content": "Mobile navigation"
       },
       {
+        "type": "link_list",
+        "id": "mobile_main_menu1",
+        "label": "Mobile Main Menu1"
+      },
+      {
+        "type": "link_list",
+        "id": "mobile_main_menu2",
+        "label": "Mobile Main Menu2"
+      },
+      {
         "type": "color",
         "id": "mobile_menu_background_color",
         "label": "Mobile navigation background",

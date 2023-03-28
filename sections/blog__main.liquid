@@ -159,14 +159,31 @@
         {% endif %}
       </div>
 
-      <div class="container" {% if section.settings.pagination_type != 'basic_pagination' %}data-load-more--grid {% endif %}>
+      <div class="container articles--wrapper" {% if section.settings.pagination_type != 'basic_pagination' %}data-load-more--grid {% endif %}>
         {% if blog.articles.size == 0 %}
           <div class="blog-page__no-content one-whole column">
             <div class="excerpt">{{ 'homepage.onboarding.blog_excerpt' | t }}</div>
           </div>
         {% endif %}
         {% for article in blog.articles %}
-          <div class="featured-article blog-card {% render 'column-width', value: section.settings.blog_posts_per_row %} columns article card show-border-{{ section.settings.show_border }} medium-down--one-half small-down--one-whole has-margin-bottom {% if section.settings.blog_posts_per_row == 1 %}is-horizontal{% endif %}" {% if section.settings.pagination_type != 'basic_pagination' %}data-load-more--grid-item{% endif %}>
+          <div class="featured-article__wrapper {% render 'column-width', value: section.settings.blog_posts_per_row %} medium-down--one-half small-down--one-whole " {% if section.settings.pagination_type != 'basic_pagination' %} data-load-more--grid-item{% endif %}>
+            {% render 'article-card',
+              article: article,
+              show_border: {{section.settings.show_border}}, 
+              show_excerpt: section.settings.blog_show_excerpt, 
+              show_tags: section.settings.blog_show_tags, 
+              tag_style: settings.tag_style,
+              show_author: section.settings.blog_author,
+              show_date: section.settings.blog_date,
+              show_read_time: section.settings.read_time,
+              show_comment_count: section.settings.blog_comment_count,
+              button_label: section.settings.button_label,
+              button_type: section.settings.button_type, 
+              image_style: section.settings.image_style,
+              show_topic: section.settings.show_topic 
+            %}
+          </div>
+          {% comment %} <div class="featured-article blog-card {% render 'column-width', value: section.settings.blog_posts_per_row %} columns article card show-border-{{ section.settings.show_border }} medium-down--one-half small-down--one-whole has-margin-bottom {% if section.settings.blog_posts_per_row == 1 %}is-horizontal{% endif %}" {% if section.settings.pagination_type != 'basic_pagination' %}data-load-more--grid-item{% endif %}>
             {% if article.image %}
               <div class="card-image blog-card__image">
                 <figure class="image">
@@ -247,7 +264,7 @@
               %}
             </div>
           {% endif %}
-          </div>
+          </div> {% endcomment %}
         {% endfor %}
       </div>
 
@@ -367,6 +384,21 @@
       "content": "Blog posts"
     },
     {
+      "type": "select",
+      "id": "image_style",
+      "label": "Article Image Style",
+      "options": [
+        {
+          "value": "fit-image",
+          "label": "Fit Image"
+        },
+        {
+          "value": "square",
+          "label":"Square"
+        }
+      ]
+    },
+    {
       "type": "checkbox",
       "id": "blog_author",
       "label": "Show author"
@@ -393,6 +425,12 @@
       "type": "checkbox",
       "id": "blog_show_tags",
       "label": "Show tags",
+      "default": true
+    },
+    {
+      "type":"checkbox",
+      "id":"show_topic",
+      "label":"Show Topic",
       "default": true
     },
     {
@@ -450,6 +488,10 @@
         {
           "value": "standard",
           "label": "Standard"
+        },
+        {
+          "value": "container",
+          "label": "Container"
         },
         {
           "value": "wide",
