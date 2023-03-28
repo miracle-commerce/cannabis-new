@@ -1,0 +1,51 @@
+<section class="section is-width-{{section.settings.width}}">
+  <div class="blog-top-navigation" data-flickity='{ "cellAlign": "left", "contain": true, "freeScroll": true, "prevNextButtons": false,
+    "pageDots": false }'>
+    {% if section.settings.navigation != blank %}
+      {% assign blog_navigation = linklists[section.settings.navigation] %}
+      {% for link in blog_navigation.links %}
+        <a href="{{link.url}}" class="blog-top-menu--link {% if link.active %} active{% endif%}">{{link.title | escape}}</a>
+      {% endfor %}
+    {% endif %}
+  </div>
+</section>
+{% schema %}
+  {
+    "name":"Blog Top Navigation", 
+    "settings":[
+      {
+        "type": "select",
+        "id": "width",
+        "label": "Width",
+        "default": "standard",
+        "options": [
+          {
+            "value": "standard",
+            "label": "Standard"
+          },
+          {
+            "value": "container",
+            "label": "Container"
+          },
+          {
+            "value": "wide",
+            "label": "Wide"
+          }
+        ]
+      },
+      {
+        "type": "link_list",
+        "id": "navigation",
+        "label": "Navigation"
+      }
+    ],
+    "enabled_on":{
+      "templates":["blog"]
+    },
+    "presets":[
+      {
+        "name":"Blog Top Navigation"
+      }
+    ]
+  }
+{% endschema %}

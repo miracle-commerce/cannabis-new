@@ -14,6 +14,68 @@
         "custom_css": ""
       }
     },
+    "33d5c24b-e512-4e6a-8a73-dbb92b66af8b": {
+      "type": "global__section-spliter",
+      "settings": {
+        "width": "container",
+        "desktop_height": 43,
+        "mobile_height": 24,
+        "show_border": false,
+        "border_color": "#e9e9e9",
+        "border_size": 1
+      }
+    },
+    "c3d3e6ce-bb31-4135-ad35-a70280985103": {
+      "type": "blog__top-navigation",
+      "settings": {
+        "width": "container",
+        "navigation": "blog-sort-navigation"
+      }
+    },
+    "77175775-40ba-4173-9c1d-941f28b81bd9": {
+      "type": "global__section-spliter",
+      "settings": {
+        "width": "wide",
+        "desktop_height": 50,
+        "mobile_height": 40,
+        "show_border": false,
+        "border_color": "#e9e9e9",
+        "border_size": 1
+      }
+    },
+    "9357a9c3-2e0b-49f2-92a1-972e573176f2": {
+      "type": "index__newsletter",
+      "settings": {
+        "display_first_name": false,
+        "display_last_name": false,
+        "newsletter_title": "JOIN OUR COMMUNITY",
+        "newsletter_richtext": "<p>Sign up to the newsletter to get news, product reviews and the lates deals straight to your inbox.<\/p>",
+        "newsletter_section_text_align": "left",
+        "background_color": "rgba(0,0,0,0)",
+        "title_color": "#f18079",
+        "text_color": "#5c5f67",
+        "show_label": false,
+        "width": "container",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ".newsletter__wrapper{\n     border: 1px solid #EDEDED;\n    border-radius: 12px;\n    background-color: #fff;\noverflow: hidden;\n}\n\n.newsletter__heading{\nfont-size: 30px;\nfont-family: obviously-wide, sans-serif;\n}"
+      }
+    },
+    "2bd42ff7-acf7-466b-9b32-2abae66a67c8": {
+      "type": "global__section-spliter",
+      "settings": {
+        "width": "standard",
+        "desktop_height": 80,
+        "mobile_height": 60,
+        "show_border": false,
+        "border_color": "#e9e9e9",
+        "border_size": 1
+      }
+    },
     "main": {
       "type": "blog__main",
       "blocks": {
@@ -45,9 +107,9 @@
         "show_border": false,
         "button_label": "Read more",
         "button_type": "none",
-        "width": "standard",
-        "padding_top": 40,
-        "padding_bottom": 40,
+        "width": "container",
+        "padding_top": 0,
+        "padding_bottom": 0,
         "animation": "none",
         "css_class": "",
         "custom_css": ""
@@ -56,6 +118,11 @@
   },
   "order": [
     "banner",
+    "33d5c24b-e512-4e6a-8a73-dbb92b66af8b",
+    "c3d3e6ce-bb31-4135-ad35-a70280985103",
+    "77175775-40ba-4173-9c1d-941f28b81bd9",
+    "9357a9c3-2e0b-49f2-92a1-972e573176f2",
+    "2bd42ff7-acf7-466b-9b32-2abae66a67c8",
     "main"
   ]
 }

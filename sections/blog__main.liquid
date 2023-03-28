@@ -121,7 +121,7 @@
     {% paginate blog.articles by section.settings.blog_posts_per_page %}
     <section class="{% if section.blocks.size > 0 and section.settings.show_sidebar %} three-fourths medium-down--one-whole column equal-columns--outside-trim{% endif %}">
       <div class="container {% if settings.heading_divider_style == 'long' %}has-heading-divider-below {% endif %}">
-        <div class="one-half medium-down--one-whole column has-no-side-gutter">
+        <div class="one-half medium-down--one-whole column has-no-side-gutter hide">
           <div class="hide-when-banner-enabled">
             {% comment %} Blog title {% endcomment %}
             {% render 'heading',
