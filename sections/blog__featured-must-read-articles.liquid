@@ -1,0 +1,154 @@
+<section class="section is-width-{{section.settings.width}}">
+  <div class="blog__featured-mustread-articles">
+    <div class="blog__featured-article">
+      {%- assign featured_article = section.settings.featured_article -%}
+      {%- if section.settings.featured_article_title != blank -%}
+        <h3 class="featured-heading featured-heading--large blog__featured-article__block-title">
+          {{section.settings.featured_article_title}}
+        </h3>
+      {%- endif -%}
+      <div class="blog__featured-article-block">
+        <div class="blog__featured-article__image-wrapper">
+          {%- if featured_article != blank and featured_article.image != blank -%}
+            {% render 'image-element',
+              image: featured_article.image  
+            %}
+          {%- else -%}
+            {{'image' | placeholder_svg_tag: 'article-image-placeholder'}}
+          {%- endif -%}
+        </div>
+        <div class="blog__featured-article__meta-info">
+          <p class="blog__featured-article__topic">
+            {% if featured_article != blank and featured_article.metafields.meta_info.topic != blank %}
+              {{featured_article.metafields.meta_info.topic | escape | upcase}}
+            {% else %}
+              {{'Aricle Topic' | upcase}}
+            {% endif %}
+          </p>
+          <h3 class="blog__featured-article__title">
+            <a href="{{featured_article.url}}">{{featured_article.title | default: 'Featured Article Title'}}</a>
+          </h3>
+          <div class="blog__featured-article__author">
+            <div class="blog__featured-article__author__image">
+              {%- if featured_article != blank and featured_article.metafields.author.image != blank -%}
+                <img data-src="{{featured_article.metafields.author.image | image_url: width: 50}}" alt="" width="50" height="50" class="lazyload">
+              {%- else -%}
+                {{'image' | placeholder_svg_tag: 'article-author-placeholder'}}
+              {%- endif -%}
+            </div>
+            <div class="blog__featured-article__author__info">
+              <p class="blog__featured-article__author-name">{{featured_article.author | default: 'Author Name'}}</p>
+              <p class="blog__featured-article__publish-date">{{featured_article.published_at | default: 'now' | date: '%d %B %Y' | upcase}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="blog__mustread-articles">
+      <h3 class="featured-heading featured-heading--small blog__mustread-articles__title">{{section.settings.must_read_title}}</h3>
+      <div class="blog__mustread-articles--wrapper">
+        {% for block in section.blocks %}
+          {%- assign mrarticle = block.settings.must_read_article -%}
+          <div class="blog__mustread-article">
+            <div class="blog__mustread-article__image">
+              {% if mrarticle != blank and mrarticle.image != blank %}
+                {% render 'image-element', image: mrarticle.image, stretch_width: true %}
+              {% else %}
+                {{'image' | placeholder_svg_tag: 'article-author-placeholder'}}
+              {% endif %}
+            </div>
+            <div class="blog__mustread-article__meta">
+              <div class="blog__mustread-article__meta__main">
+                {% if mrarticle.metafields.meta_info.topic != blank %}
+                {% endif %}
+                <p class="blog__mustread-article__meta__topic">{{mrarticle.metafields.meta_info.topic | default: 'Article Topic' | upcase}}</p>
+                <h4 class="blog__mustread-article__meta__title"><a href="{{mrarticle.url}}">{{mrarticle.title | default: 'Article Title'}}</a></h4>
+              </div>
+              <div class="blog__mustread-article__meta__date">
+                {{mrarticle.published_at | default: 'now' | date: '%d %B %Y'}}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name":"Blog featured articles",
+    "max_blocks": 3, 
+    "settings":[
+      {
+        "type": "header",
+        "content": "Layout"
+      },
+      {
+        "type": "select",
+        "id": "width",
+        "label": "Width",
+        "default": "standard",
+        "options": [
+          {
+            "value": "standard",
+            "label": "Standard"
+          },
+          {
+            "value": "container",
+            "label": "Container"
+          },
+          {
+            "value": "wide",
+            "label": "Wide"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Featured Article"
+      },
+      {
+        "type": "text",
+        "id": "featured_article_title",
+        "label": "Featured Article Title",
+        "default": "Featured"
+      },
+      {
+        "type": "article",
+        "id": "featured_article",
+        "label": "Featured Article"
+      },
+      {
+        "type": "header",
+        "content": "Must read articles"
+      },
+      {
+        "type": "text",
+        "id": "must_read_title",
+        "label": "Must read Title",
+        "default": "Must Reads"
+      }
+    ],
+    "enabled_on":{
+      "templates":["blog"]
+    },
+    "blocks":[
+      {
+        "name":"Must Read Article",
+        "type":"article",
+        "settings":[
+          {
+            "type": "article",
+            "id": "must_read_article",
+            "label": "Must Read Aricle"
+          }
+        ]
+      }
+    ],
+    "presets":[
+      {
+        "name":"Blog Featured Articles"
+      }
+    ]
+  }
+{% endschema %}

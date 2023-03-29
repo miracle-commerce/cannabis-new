@@ -32,11 +32,56 @@
         "navigation": "blog-sort-navigation"
       }
     },
+    "f987891a-fd64-44ce-a0b8-d6f34f108bbc": {
+      "type": "global__section-spliter",
+      "settings": {
+        "width": "wide",
+        "desktop_height": 30,
+        "mobile_height": 20,
+        "show_border": false,
+        "border_color": "#e9e9e9",
+        "border_size": 1
+      }
+    },
+    "104511f6-8d16-49cf-93da-8afab1655c35": {
+      "type": "blog__featured-must-read-articles",
+      "blocks": {
+        "e45304e1-51c6-45d1-b12d-59139b858480": {
+          "type": "article",
+          "settings": {
+            "must_read_article": "higher-learning\/best-probiotics-in-australia-the-complete-guide"
+          }
+        },
+        "98440652-370f-4ea7-91f1-8b79720486b4": {
+          "type": "article",
+          "settings": {
+            "must_read_article": "higher-learning\/indica-vs-sativa"
+          }
+        },
+        "70e4c943-5ef8-4b15-bf78-c1dc39b78b0f": {
+          "type": "article",
+          "settings": {
+            "must_read_article": "higher-learning\/hemp-seed-oil-anxiety"
+          }
+        }
+      },
+      "block_order": [
+        "e45304e1-51c6-45d1-b12d-59139b858480",
+        "98440652-370f-4ea7-91f1-8b79720486b4",
+        "70e4c943-5ef8-4b15-bf78-c1dc39b78b0f"
+      ],
+      "settings": {
+        "width": "container",
+        "featured_article_title": "Featured",
+        "featured_article": "higher-learning\/what-is-cannabis-effects-explained",
+        "must_read_title": "Must Reads"
+      }
+    },
     "77175775-40ba-4173-9c1d-941f28b81bd9": {
       "type": "global__section-spliter",
       "settings": {
         "width": "wide",
-        "desktop_height": 50,
+        "desktop_height": 80,
         "mobile_height": 40,
         "show_border": false,
         "border_color": "#e9e9e9",
@@ -90,7 +135,7 @@
         "844588c3-6b3d-4e26-a3d6-8a884d96349d"
       ],
       "settings": {
-        "blog_tags": true,
+        "blog_tags": false,
         "blog_posts_per_row": 3,
         "blog_posts_per_page": 12,
         "pagination_type": "basic_pagination",
@@ -120,6 +165,8 @@
     "banner",
     "33d5c24b-e512-4e6a-8a73-dbb92b66af8b",
     "c3d3e6ce-bb31-4135-ad35-a70280985103",
+    "f987891a-fd64-44ce-a0b8-d6f34f108bbc",
+    "104511f6-8d16-49cf-93da-8afab1655c35",
     "77175775-40ba-4173-9c1d-941f28b81bd9",
     "9357a9c3-2e0b-49f2-92a1-972e573176f2",
     "2bd42ff7-acf7-466b-9b32-2abae66a67c8",
