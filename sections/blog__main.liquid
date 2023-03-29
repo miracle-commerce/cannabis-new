@@ -46,7 +46,7 @@
     {% if section.blocks.size > 0 and section.settings.show_sidebar %}
       <aside class="sidebar-section
                   one-fourth
-                  medium-down--one-whole
+                  medium-down--hide
                   column">
         {% for block in section.blocks %}
           <div id="shopify-section-{{ block.id }}"
@@ -78,7 +78,8 @@
             {% elsif block.type == 'menu' %}
               {%
                 render 'sidebar__menu',
-                menu: block.settings.menu
+                menu: block.settings.menu,
+                title: block.settings.title
               %}
 
             {% elsif block.type == 'newsletter' %}
@@ -166,7 +167,7 @@
           </div>
         {% endif %}
         {% for article in blog.articles %}
-          <div class="featured-article__wrapper {% render 'column-width', value: section.settings.blog_posts_per_row %} medium-down--one-half small-down--one-whole " {% if section.settings.pagination_type != 'basic_pagination' %} data-load-more--grid-item{% endif %}>
+          {% comment %} <div class="featured-article__wrapper {% render 'column-width', value: section.settings.blog_posts_per_row %} medium-down--one-half small-down--one-whole " {% if section.settings.pagination_type != 'basic_pagination' %} data-load-more--grid-item{% endif %}>
             {% render 'article-card',
               article: article,
               show_border: {{section.settings.show_border}}, 
@@ -182,8 +183,8 @@
               image_style: section.settings.image_style,
               show_topic: section.settings.show_topic 
             %}
-          </div>
-          {% comment %} <div class="featured-article blog-card {% render 'column-width', value: section.settings.blog_posts_per_row %} columns article card show-border-{{ section.settings.show_border }} medium-down--one-half small-down--one-whole has-margin-bottom {% if section.settings.blog_posts_per_row == 1 %}is-horizontal{% endif %}" {% if section.settings.pagination_type != 'basic_pagination' %}data-load-more--grid-item{% endif %}>
+          </div> {% endcomment %}
+          <div class="featured-article blog-card {% render 'column-width', value: section.settings.blog_posts_per_row %} columns article card show-border-{{ section.settings.show_border }} large-down--one-half small-down--one-whole has-margin-bottom {% if section.settings.blog_posts_per_row == 1 %}is-horizontal{% endif %}" {% if section.settings.pagination_type != 'basic_pagination' %}data-load-more--grid-item{% endif %}>
             {% if article.image %}
               <div class="card-image blog-card__image">
                 <figure class="image">
@@ -193,6 +194,7 @@
                       image: article.image,
                       alt: article.image.alt,
                       stretch_width: true,
+                      image_style: 'square'
                     %}
                   </a>
                 </figure>
@@ -264,7 +266,7 @@
               %}
             </div>
           {% endif %}
-          </div> {% endcomment %}
+          </div>
         {% endfor %}
       </div>
 
@@ -664,6 +666,11 @@
       "type": "menu",
       "name": "Menu",
       "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
         {
           "type": "link_list",
           "id": "menu",

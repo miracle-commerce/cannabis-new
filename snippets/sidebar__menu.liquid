@@ -1,7 +1,7 @@
 {% if menu != blank %}
   <div data-has-toggle-option>
     <h3 class="sidebar-block__heading" {% if settings.toggle_sidebar %}data-sidebar-block__toggle="closed" aria-label="toggle"{% endif %}>
-      {{ linklists[menu].title }}
+      {{ title | default: linklists[menu].title | upcase }}
       {% if settings.toggle_sidebar %}
         <button class="sidebar-block__toggle-icon icon-style--{{ settings.toggle_icon_style }}">
           {% if settings.toggle_icon_style == 'plus_and_minus' %}
