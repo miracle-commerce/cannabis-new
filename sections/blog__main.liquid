@@ -45,8 +45,8 @@
 
     {% if section.blocks.size > 0 and section.settings.show_sidebar %}
       <aside class="sidebar-section
-                  one-fourth
-                  medium-down--hide
+                  one-fifth
+                  large-down--hide
                   column">
         {% for block in section.blocks %}
           <div id="shopify-section-{{ block.id }}"
@@ -120,7 +120,7 @@
     {% endif %}
 
     {% paginate blog.articles by section.settings.blog_posts_per_page %}
-    <section class="{% if section.blocks.size > 0 and section.settings.show_sidebar %} three-fourths medium-down--one-whole column equal-columns--outside-trim{% endif %}">
+    <section class="{% if section.blocks.size > 0 and section.settings.show_sidebar %} four-fifths large-down--one-whole column equal-columns--outside-trim{% endif %}">
       <div class="container {% if settings.heading_divider_style == 'long' %}has-heading-divider-below {% endif %}">
         <div class="one-half medium-down--one-whole column has-no-side-gutter hide">
           <div class="hide-when-banner-enabled">
@@ -166,85 +166,98 @@
             <div class="excerpt">{{ 'homepage.onboarding.blog_excerpt' | t }}</div>
           </div>
         {% endif %}
-        {% for article in blog.articles %}
-          {% comment %} <div class="featured-article__wrapper {% render 'column-width', value: section.settings.blog_posts_per_row %} medium-down--one-half small-down--one-whole " {% if section.settings.pagination_type != 'basic_pagination' %} data-load-more--grid-item{% endif %}>
-            {% render 'article-card',
-              article: article,
-              show_border: {{section.settings.show_border}}, 
-              show_excerpt: section.settings.blog_show_excerpt, 
-              show_tags: section.settings.blog_show_tags, 
-              tag_style: settings.tag_style,
-              show_author: section.settings.blog_author,
-              show_date: section.settings.blog_date,
-              show_read_time: section.settings.read_time,
-              show_comment_count: section.settings.blog_comment_count,
-              button_label: section.settings.button_label,
-              button_type: section.settings.button_type, 
-              image_style: section.settings.image_style,
-              show_topic: section.settings.show_topic 
-            %}
-          </div> {% endcomment %}
-          <div class="featured-article blog-card {% render 'column-width', value: section.settings.blog_posts_per_row %} columns article card show-border-{{ section.settings.show_border }} large-down--one-half small-down--one-whole has-margin-bottom {% if section.settings.blog_posts_per_row == 1 %}is-horizontal{% endif %}" {% if section.settings.pagination_type != 'basic_pagination' %}data-load-more--grid-item{% endif %}>
-            {% if article.image %}
-              <div class="card-image blog-card__image">
-                <figure class="image">
-                  <a href="{{ article.url }}" title="{{ article.title | escape }}">
-                    {%
-                      render 'image-element',
-                      image: article.image,
-                      alt: article.image.alt,
-                      stretch_width: true,
-                      image_style: 'square'
-                    %}
-                  </a>
-                </figure>
-              </div>
-            {% endif %}
-
-            <div class="card-content blog-card__content">
-              <div class="media">
-                <div class="media-content">
-                  <h4 class="title">
-                    <a class="featured-article--link" href="{{ article.url }}">{{ article.title }}</a>
-                  </h4>
-                </div>
-              </div>
-
-              {% if article.excerpt != blank and section.settings.blog_show_excerpt %}
-                {% assign postexcerpt = article.excerpt | size %}
-                {% if postexcerpt > 150 %}
-                    {% assign excerptlength = 'lg' %}
-                {% elsif postexcerpt <= 150 %}
-                    {% assign excerptlength = 'sm' %}
-                {% endif %}
-                <div class="excerpt excerpt-length-{{ excerptlength }} has-margin-bottom">
-                  {{ article.excerpt }}
-                  <span class="truncation-fade"></span>
+        <div class="articles">
+          {% for article in blog.articles %}
+            <div class="featured-article__wrapper {% render 'column-width', value: section.settings.blog_posts_per_row %} medium-down--one-half small-down--one-whole " {% if section.settings.pagination_type != 'basic_pagination' %} data-load-more--grid-item{% endif %}>
+              {% render 'article-card',
+                article: article,
+                show_border: {{section.settings.show_border}}, 
+                show_excerpt: section.settings.blog_show_excerpt, 
+                show_tags: section.settings.blog_show_tags, 
+                tag_style: settings.tag_style,
+                show_author: section.settings.blog_author,
+                show_date: section.settings.blog_date,
+                show_read_time: section.settings.read_time,
+                show_comment_count: section.settings.blog_comment_count,
+                button_label: section.settings.button_label,
+                button_type: section.settings.button_type, 
+                image_style: section.settings.image_style,
+                show_topic: section.settings.show_topic 
+              %}
+            </div>
+            {% comment %} <div class="featured-article blog-card {% render 'column-width', value: section.settings.blog_posts_per_row %} columns article card show-border-{{ section.settings.show_border }} large-down--one-half small-down--one-whole has-margin-bottom {% if section.settings.blog_posts_per_row == 1 %}is-horizontal{% endif %}" {% if section.settings.pagination_type != 'basic_pagination' %}data-load-more--grid-item{% endif %}>
+              {% if article.image %}
+                <div class="card-image blog-card__image">
+                  <figure class="image">
+                    <a href="{{ article.url }}" title="{{ article.title | escape }}">
+                      {%
+                        render 'image-element',
+                        image: article.image,
+                        alt: article.image.alt,
+                        stretch_width: true,
+                        image_style: 'square'
+                      %}
+                    </a>
+                  </figure>
                 </div>
               {% endif %}
-
-              <div class="meta-info is-small">
-                {% if section.settings.blog_show_tags %}
-                  {% if article.tags.size > 0 %}
-                    <ul class="meta-tag-list tags">
-                    {% for tag in article.tags %}
-                      <li class="tag tag--{{ settings.tag_style }}">
-                        <a href="{{ shop.url}}/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}" title="{{ blog.title | escape }} {{ 'blogs.general.tagged' | t }} {{ tag | escape }}">{{ tag }}</a>
-                      </li>
-                    {% endfor %}
-                    </ul>
+  
+              <div class="card-content blog-card__content">
+                <div class="media">
+                  <div class="media-content">
+                    <h4 class="title">
+                      <a class="featured-article--link" href="{{ article.url }}">{{ article.title }}</a>
+                    </h4>
+                  </div>
+                </div>
+  
+                {% if article.excerpt != blank and section.settings.blog_show_excerpt %}
+                  {% assign postexcerpt = article.excerpt | size %}
+                  {% if postexcerpt > 150 %}
+                      {% assign excerptlength = 'lg' %}
+                  {% elsif postexcerpt <= 150 %}
+                      {% assign excerptlength = 'sm' %}
                   {% endif %}
+                  <div class="excerpt excerpt-length-{{ excerptlength }} has-margin-bottom">
+                    {{ article.excerpt }}
+                    <span class="truncation-fade"></span>
+                  </div>
                 {% endif %}
-
-                {% render 'meta-info-list',
-                        article: article,
-                        blog_author: section.settings.blog_author,
-                        blog_date: section.settings.blog_date,
-                        blog_read_time: section.settings.read_time,
-                        blog_comment_count: section.settings.blog_comment_count %}
+  
+                <div class="meta-info is-small">
+                  {% if section.settings.blog_show_tags %}
+                    {% if article.tags.size > 0 %}
+                      <ul class="meta-tag-list tags">
+                      {% for tag in article.tags %}
+                        <li class="tag tag--{{ settings.tag_style }}">
+                          <a href="{{ shop.url}}/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}" title="{{ blog.title | escape }} {{ 'blogs.general.tagged' | t }} {{ tag | escape }}">{{ tag }}</a>
+                        </li>
+                      {% endfor %}
+                      </ul>
+                    {% endif %}
+                  {% endif %}
+  
+                  {% render 'meta-info-list',
+                          article: article,
+                          blog_author: section.settings.blog_author,
+                          blog_date: section.settings.blog_date,
+                          blog_read_time: section.settings.read_time,
+                          blog_comment_count: section.settings.blog_comment_count %}
+                </div>
+  
+                {% if section.settings.button_type != 'none' and section.settings.blog_posts_per_row == 1 %}
+                  <div class="blog-card__read-more buttons">
+                    {% render 'button',
+                            label: section.settings.button_label,
+                            href: article.url,
+                            type: "link",
+                            style: section.settings.button_type
+                    %}
+                  </div>
+                {% endif %}
               </div>
-
-              {% if section.settings.button_type != 'none' and section.settings.blog_posts_per_row == 1 %}
+  
+              {% if section.settings.button_type != 'none' and section.settings.blog_posts_per_row != 1 %}
                 <div class="blog-card__read-more buttons">
                   {% render 'button',
                           label: section.settings.button_label,
@@ -254,24 +267,13 @@
                   %}
                 </div>
               {% endif %}
-            </div>
-
-          {% if section.settings.button_type != 'none' and section.settings.blog_posts_per_row != 1 %}
-            <div class="blog-card__read-more buttons">
-              {% render 'button',
-                      label: section.settings.button_label,
-                      href: article.url,
-                      type: "link",
-                      style: section.settings.button_type
-              %}
-            </div>
-          {% endif %}
-          </div>
-        {% endfor %}
+            </div> {% endcomment %}
+          {% endfor %}
+        </div>
       </div>
 
       <div class="container">
-        <div class="one-whole column text-align-center">
+        <div class="one-whole column text-align-right small-down--text-center">
           {% assign load_more_text = 'blogs.general.pagination_button' | t %}
           {% render 'pagination',
                   paginate: paginate,

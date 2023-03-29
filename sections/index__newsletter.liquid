@@ -79,10 +79,7 @@
 <section class="section newsletter-section newsletter-section--is-width-{{ object.settings.width }}
                 {{ object.settings.css_class }}
                 {{ newsletter_class }}
-                is-width-{{ object.settings.width }}
-                {% if background_alpha != 0 or gradient_alpha != 0 or background_image != blank %}
-                  has-background
-                {% endif %}"
+                is-width-{{ object.settings.width }}"
                 {% if object.settings.animation != "none" %}
                   data-scroll-class="{{ object.settings.animation }}"
                 {% endif %} >

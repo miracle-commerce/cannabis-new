@@ -17049,8 +17049,7 @@ ul.faceted-filter-group-display__list {
   box-shadow: none;
 }
 .blog-card.show-border-false .card-content {
-  padding-left: 0;
-  padding-right: 0;
+  padding: 20px 0 0 0;
 }
 .blog-card.show-border-false .blog-card__read-more {
   margin-left: 0;
@@ -19475,25 +19474,33 @@ Custom Styles for rich-text section
 /* ===================================
 Custom Styles for blog templates
 ======================================*/
-.articles--wrapper{
+.articles{
+  display: flex; 
+  flex-wrap: wrap;
   column-gap: 50px;
   row-gap: 50px;
+  margin-bottom: 100px;
 }
 
-.articles--wrapper .one-fourth{
+.featured-article__wrapper{
+  margin: 0 !important;
+}
+
+.articles .one-fourth{
   width: calc(25% - 150px / 4);
 }
 
-.articles--wrapper .one-third{
+.articles .one-third{
   width: calc(100% / 3 - 100px / 3);
 }
 
-.articles--wrapper .one-half{
+.articles .one-half{
   width: calc(50% - 25px);
 }
 
+
 @media only screen and (max-width: 798px){
- .articles--wrapper .medium-down--one-half{
+ .articles .medium-down--one-half{
   width: calc(50% - 25px);
  }
 }
@@ -19811,4 +19818,64 @@ Custom style for sidebar
 .block__menu .sidebar-block__item{
   font-size: 16px; 
   line-height: 30px;
+}
+
+/* ===========================================
+Custom Styles for Pagenation
+==============================================*/
+.pagination{
+  flex-wrap: wrap;
+  row-gap: 45px;
+}
+.pagination-list{
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.pagination-link{
+  border: none;
+  color: #D5D5D5;
+  height: auto; 
+  min-width: initial;
+  width: 20px;
+  font-family: obviously-wide, sans-serif; 
+  font-size: 13px; 
+  font-weight: 500;
+}
+
+.pagination-link:active{
+  box-shadow: none;
+}
+
+.pagination-link.is-current{
+  background: none;
+  color: #5D6A73;
+}
+
+.pagination-previous, .pagination-next{
+  box-shadow: none;
+  border: 2px solid #D5D5D5;
+  border-radius: 80px;
+  min-width: 100px;
+  height: 40px;
+  padding: 10px 40px;
+  font-family: obviously-wide, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1.4px;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #D5D5D5;
+}
+
+@media only screen and (max-width: 480px){
+  .pagination-list{
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 45px;
+  }
 }

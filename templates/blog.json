@@ -127,6 +127,7 @@
         "844588c3-6b3d-4e26-a3d6-8a884d96349d": {
           "type": "menu",
           "settings": {
+            "title": "Explore",
             "menu": "blog-sort-navigation"
           }
         }
@@ -159,6 +160,28 @@
         "css_class": "",
         "custom_css": ""
       }
+    },
+    "d9d657f4-085a-4be1-bfef-57e48c4ecde9": {
+      "type": "global__section-spliter",
+      "settings": {
+        "width": "wide",
+        "desktop_height": 100,
+        "mobile_height": 100,
+        "show_border": false,
+        "border_color": "#e9e9e9",
+        "border_size": 1
+      }
+    },
+    "f4ddb670-36ee-4479-8f66-f50a9095cde2": {
+      "type": "global__section-spliter",
+      "settings": {
+        "width": "wide",
+        "desktop_height": 100,
+        "mobile_height": 60,
+        "show_border": false,
+        "border_color": "#e9e9e9",
+        "border_size": 1
+      }
     }
   },
   "order": [
@@ -170,6 +193,8 @@
     "77175775-40ba-4173-9c1d-941f28b81bd9",
     "9357a9c3-2e0b-49f2-92a1-972e573176f2",
     "2bd42ff7-acf7-466b-9b32-2abae66a67c8",
-    "main"
+    "main",
+    "d9d657f4-085a-4be1-bfef-57e48c4ecde9",
+    "f4ddb670-36ee-4479-8f66-f50a9095cde2"
   ]
 }
