@@ -67,6 +67,11 @@
         "products_limit": 10,
         "align_height": true,
         "collection_height": 400,
+        "show_all_button": false,
+        "button_label": "Shop All",
+        "button_background": "#707070",
+        "button_color": "#fff",
+        "show_collection_description": false,
         "collection_style": "slider",
         "width": "standard",
         "show_gutter": true,
@@ -84,7 +89,7 @@
         "desktop_height": 80,
         "mobile_height": 60,
         "show_border": false,
-        "border_color": "#7C8C82",
+        "border_color": "#7c8c82",
         "border_size": 1
       }
     },
@@ -164,7 +169,7 @@
         "desktop_height": 80,
         "mobile_height": 60,
         "show_border": false,
-        "border_color": "#7C8C82",
+        "border_color": "#7c8c82",
         "border_size": 1
       }
     },
@@ -207,7 +212,7 @@
         "desktop_height": 80,
         "mobile_height": 60,
         "show_border": false,
-        "border_color": "#7C8C82",
+        "border_color": "#7c8c82",
         "border_size": 1
       }
     },
@@ -289,7 +294,7 @@
         "desktop_height": 80,
         "mobile_height": 60,
         "show_border": false,
-        "border_color": "#7C8C82",
+        "border_color": "#7c8c82",
         "border_size": 1
       }
     },
@@ -346,7 +351,7 @@
         "desktop_height": 80,
         "mobile_height": 60,
         "show_border": false,
-        "border_color": "#7C8C82",
+        "border_color": "#7c8c82",
         "border_size": 1
       }
     },
@@ -379,6 +384,10 @@
       ],
       "settings": {
         "title": "",
+        "title_color": "#000",
+        "title_size": "medium",
+        "subtitle": "",
+        "subtitle_color": "#000",
         "image_style": "square",
         "blog_show_tags": false,
         "show_topic": true,
@@ -408,7 +417,7 @@
         "desktop_height": 80,
         "mobile_height": 60,
         "show_border": false,
-        "border_color": "#7C8C82",
+        "border_color": "#7c8c82",
         "border_size": 1
       }
     },
@@ -461,7 +470,7 @@
         "desktop_height": 80,
         "mobile_height": 60,
         "show_border": false,
-        "border_color": "#7C8C82",
+        "border_color": "#7c8c82",
         "border_size": 1
       }
     },
@@ -532,7 +541,7 @@
         "desktop_height": 80,
         "mobile_height": 60,
         "show_border": false,
-        "border_color": "#7C8C82",
+        "border_color": "#7c8c82",
         "border_size": 1
       }
     }
