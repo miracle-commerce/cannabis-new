@@ -2,6 +2,7 @@
   "sections": {
     "breadcrumbs": {
       "type": "product__breadcrumb",
+      "disabled": true,
       "settings": {
         "width": "standard",
         "padding_top": 20,
@@ -19,6 +20,17 @@
         "custom_css": ""
       }
     },
+    "8b91bb5d-7cf3-482f-a5e8-578f585e0aa8": {
+      "type": "global__section-spliter",
+      "settings": {
+        "width": "wide",
+        "desktop_height": 75,
+        "mobile_height": 20,
+        "show_border": false,
+        "border_color": "#e9e9e9",
+        "border_size": 1
+      }
+    },
     "main": {
       "type": "product__main",
       "blocks": {
@@ -29,6 +41,11 @@
         },
         "title": {
           "type": "title",
+          "settings": {
+          }
+        },
+        "81ce485e-3ba5-46c0-ac1b-06fcc7ad3d74": {
+          "type": "price_rating",
           "settings": {
           }
         },
@@ -44,53 +61,66 @@
             "show_payment_button": false
           }
         },
-        "share": {
-          "type": "share",
+        "8af3ef4a-870e-423c-bbe8-1e0534a7ee10": {
+          "type": "short_description",
           "settings": {
+            "short_description": "{{ product.metafields.meta_info.short_description | metafield_tag }}"
           }
         }
       },
       "block_order": [
         "b6d1d30f-1f4d-4a33-9b37-334fd3536d71",
         "title",
+        "81ce485e-3ba5-46c0-ac1b-06fcc7ad3d74",
         "price",
         "form",
-        "share"
+        "8af3ef4a-870e-423c-bbe8-1e0534a7ee10"
       ],
       "settings": {
+        "show_breadcrumb": true,
+        "show_instock_badge": true,
         "product_images_position": "left",
         "set_product_height": false,
         "product_height": 500,
         "video_looping": false,
         "gallery_arrows": true,
-        "enable_zoom": true,
-        "enable_product_lightbox": true,
+        "enable_zoom": false,
+        "enable_product_lightbox": false,
         "slideshow_speed": 0,
         "slideshow_transition": "slide",
         "display_thumbnails": true,
         "thumbnail_position": "left-thumbnails",
         "enable_thumbnail_slider": true,
-        "width": "standard",
-        "padding_top": 20,
-        "padding_bottom": 20,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "animation": "none",
         "css_class": "",
         "custom_css": ""
+      }
+    },
+    "fcc94cc4-22d6-4a38-b4dd-c56304275971": {
+      "type": "global__section-spliter",
+      "settings": {
+        "width": "wide",
+        "desktop_height": 90,
+        "mobile_height": 60,
+        "show_border": false,
+        "border_color": "#e9e9e9",
+        "border_size": 1
       }
     },
     "recommendations": {
       "type": "product__recommendations",
       "settings": {
         "show_product_recommendations": true,
-        "product_recommendations_style": "slider",
+        "product_recommendations_style": "grid",
         "product_recommendations_heading": "Recommend To use with",
         "products_per": 4,
-        "recommended_products_limit": 6,
+        "recommended_products_limit": 4,
         "align_height": true,
         "collection_height": 260,
-        "width": "standard",
-        "padding_top": 20,
-        "padding_bottom": 20,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "animation": "none",
         "css_class": "",
         "custom_css": ""
@@ -100,18 +130,18 @@
       "type": "index__rich-text",
       "settings": {
         "title": "Product Information",
-        "title_color": "#5D6A73",
+        "title_color": "#5d6a73",
         "title_size": "medium",
-        "text": "<p>Use this section to create some callout text on your page, or add more details about your shop, services, promotions, etc. If you have a large amount of text, you can opt to have it display in <strong>two columns<\/strong> instead so that it's much easier to read.<\/p><p><\/p><p>This section also includes the option to add a button in primary or secondary style, and also control the colors, including the option for a gradient background. Since this is rich text, you can also <em>format it as you wish<\/em> and <a href=\"\/collections\/all\" title=\"All Products\">include links<\/a>.{{ shop.brand.short_description }}{{ shop.brand.short_description }}<\/p>",
-        "content_heading_color": "#000",
-        "text_color": "rgba(0,0,0,0)",
+        "text": "{{ product.metafields.meta_info.product_information | metafield_tag }}",
+        "content_heading_color": "#000000",
+        "text_color": "#000000",
         "text_alignment": "left",
         "columns": 2,
         "button_label": "Add to Cart",
         "button_link": "",
         "button_alignment": "right",
-        "button_background": "#5D6A73",
-        "button_text_color": "#fff",
+        "button_background": "#5d6a73",
+        "button_text_color": "#ffffff",
         "background": "rgba(0,0,0,0)",
         "gradient": "rgba(0,0,0,0)",
         "gradient_rotation": 180,
@@ -203,6 +233,26 @@
         "custom_css": ""
       }
     },
+    "16801229245ccad69e": {
+      "type": "apps",
+      "blocks": {
+        "5c79c631-4e0a-4182-9501-905783688172": {
+          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "5c79c631-4e0a-4182-9501-905783688172"
+      ],
+      "settings": {
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
     "7de9ffdf-c38a-449f-bf5d-d11673507c64": {
       "type": "index__featured-promotions-1",
       "blocks": {
@@ -262,36 +312,18 @@
         "css_class": "",
         "custom_css": ""
       }
-    },
-    "16801229245ccad69e": {
-      "type": "apps",
-      "blocks": {
-        "5c79c631-4e0a-4182-9501-905783688172": {
-          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "5c79c631-4e0a-4182-9501-905783688172"
-      ],
-      "settings": {
-        "width": "standard",
-        "padding_top": 20,
-        "padding_bottom": 20,
-        "css_class": "",
-        "custom_css": ""
-      }
     }
   },
   "order": [
     "breadcrumbs",
     "sidebar",
+    "8b91bb5d-7cf3-482f-a5e8-578f585e0aa8",
     "main",
+    "fcc94cc4-22d6-4a38-b4dd-c56304275971",
     "recommendations",
     "c97878f6-9e89-471a-a195-2f80661fdbe7",
     "8d96669b-b12e-4fa8-a15a-1741638a1c1e",
-    "7de9ffdf-c38a-449f-bf5d-d11673507c64",
-    "16801229245ccad69e"
+    "16801229245ccad69e",
+    "7de9ffdf-c38a-449f-bf5d-d11673507c64"
   ]
 }

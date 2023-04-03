@@ -56,12 +56,14 @@ enable_product_lightbox: <boolean>
             {%endif %}"
             data-enable-zoom="{{ enable_zoom }}"
             data-video-loop="{{ video_looping }}">
-  <div class="product-gallery__main slideshow-transition--{{ slideshow_transition }}" data-product-id="{{ product.id }}" data-media-count="{{ product.media.size }}">
+  <div class="product-gallery__main 
+    {% if thumbnail_position == 'left-thumbnails' or thumbnail_position == 'right-thumbnails' %} product-gallery__main-has-side-thumbnail{% endif %}
+    slideshow-transition--{{ slideshow_transition }}" data-product-id="{{ product.id }}" data-media-count="{{ product.media.size }}">
 
     {% for media in product.media %}
 
       {% comment %} Check alt text for video iframe {% endcomment %}
-      <div class="product-gallery__image "
+      <div class="product-gallery__image"
             data-product-id="{{ product.id }}"
             data-title="{% if image_alt contains 'youtube' or image_alt contains 'vimeo' %}{{ product.title }}{% else %}{{ image_alt | escape }}{% endif %}"
             data-media-type="{% if media.alt contains 'youtube' or media.alt contains 'vimeo' %}external_video{% else %}{{ media.media_type }}{% endif %}">

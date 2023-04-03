@@ -59,9 +59,7 @@
   endfor
 %}
 
-<section class="section
-        {{ css_class }}
-        is-width-{{ width }}"
+<section class="{{ css_class }}"
         {% if animation != "none" %}
           data-scroll-class="{{ animation }}"
         {% endif %}>
@@ -69,6 +67,8 @@
     {%
       render 'product',
       product: product,
+      show_breadcrumb: section.settings.show_breadcrumb,
+      show_instock_badge: section.settings.show_instock_badge,
       sold_out_options: settings.sold_out_options,
       selected_variant: selected_variant,
       width: width,
@@ -133,6 +133,22 @@
   "name": "Product information",
   "class": "product-template product-main has-sidebar-option jsProduct section--has-sidebar-option",
   "settings": [
+    {
+      "type": "header",
+      "content": "breadcrumb"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumb",
+      "label": "Show breadcrumb",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_instock_badge",
+      "label": "Show Instock Badge",
+      "default": true
+    },
     {
       "type": "header",
       "content": "Media",
@@ -260,26 +276,6 @@
     {
       "type": "header",
       "content": "Layout"
-    },
-    {
-      "type": "select",
-      "id": "width",
-      "label": "Width",
-      "options": [
-        {
-          "value": "standard",
-          "label": "Standard"
-        },
-        {
-          "value":"container", 
-          "label":"Container"
-        },
-        {
-          "value": "wide",
-          "label": "Wide"
-        }
-      ],
-      "default": "standard"
     },
     {
       "type": "range",
@@ -423,6 +419,11 @@
       ]
     },
     {
+      "type":"price_rating", 
+      "name":"Price and Rating", 
+      "limit":1
+    },
+    {
       "type": "sku",
       "name": "SKU",
       "limit": 1
@@ -442,7 +443,28 @@
     {
       "type": "description",
       "name": "Description",
+      "settings":[
+        {
+          "type": "richtext",
+          "id": "custom_description",
+          "label": "Custom Description",
+          "default": "<p></p>"
+        }
+      ],
       "limit": 1
+    },
+    {
+      "type": "short_description",
+      "name": "Short Description",
+      "limit": 1,
+      "settings":[
+        {
+          "type": "richtext",
+          "id": "short_description",
+          "label": "Short Description",
+          "default": "<p></p>"
+        }
+      ]
     },
     {
       "type": "form",

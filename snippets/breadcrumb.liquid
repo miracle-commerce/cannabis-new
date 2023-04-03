@@ -20,8 +20,8 @@
     </li>
     {% if template.name == 'product' %}
       <li>
-        <span class="breadcrumb-separator">
-          {% render 'icon', name: breadcrumb_separator %}
+        <span class="breadcrumb-separator">/
+          {% comment %} {% render 'icon', name: breadcrumb_separator %} {% endcomment %}
         </span>
         <a href="{{ routes.collections_url }}/{% if collection.handle != blank %}{{ collection.handle }}{% else %}all{% endif %}" title="{{ collection.title | escape }}">
           {% unless collection.title %} All {% else %} {{ collection.title }} {% endunless %}
@@ -30,9 +30,7 @@
       {% if current_tags %}
         {% for tag in current_tags %}
           <li>
-            <span class="breadcrumb-separator">
-              {% render 'icon', name: breadcrumb_separator %}
-            </span>
+            <span class="breadcrumb-separator"> / </span>
             <a href="{{ routes.collections_url }}/{% if collection.handle != blank %}{{ collection.handle }}{% else %}all{% endif %} {{ tag | handleize }}" title="{{ tag | escape }}">
               {{ tag }}
             </a>
@@ -69,9 +67,7 @@
     {% endif %}
     {% if product.handle != blank %}
       <li>
-        <span class="breadcrumb-separator">
-          {% render 'icon', name: breadcrumb_separator %}
-        </span>
+        <span class="breadcrumb-separator breadcrumb-productname"> / </span>
         {{ product.title }}
       </li>
     {% endif %}
