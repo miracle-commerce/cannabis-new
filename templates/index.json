@@ -361,19 +361,19 @@
         "fbaba073-0010-409d-a162-0fbdfd95e905": {
           "type": "article",
           "settings": {
-            "article": "higher-learning\/the-history-of-cbd"
+            "article": "recipes-cocktails\/raw-hemp-brownies"
           }
         },
         "e1af2046-dae5-4bb0-8481-347d059f1c76": {
           "type": "article",
           "settings": {
-            "article": "higher-learning\/best-probiotics-in-australia-the-complete-guide"
+            "article": "health-wellness\/best-probiotics-in-australia-the-complete-guide"
           }
         },
         "d98244b2-1257-4e84-8121-391b8494d6d3": {
           "type": "article",
           "settings": {
-            "article": "higher-learning\/indica-vs-sativa"
+            "article": "health-wellness\/the-best-supplements-for-muscle-recovery-a-comprehensive-guide"
           }
         }
       },
@@ -414,8 +414,8 @@
       "type": "global__section-spliter",
       "settings": {
         "width": "wide",
-        "desktop_height": 80,
-        "mobile_height": 60,
+        "desktop_height": 100,
+        "mobile_height": 75,
         "show_border": false,
         "border_color": "#7c8c82",
         "border_size": 1
