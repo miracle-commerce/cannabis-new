@@ -18281,6 +18281,15 @@ body[data-template="list-collections"]{
   background-position: bottom 100px left -20vw, top 0 right -10vw;
 }
 
+body[data-template="collection"]{
+  background: radial-gradient(closest-side at 50% 50%,#FFF5E6 80%,#FFFFFF 100%),radial-gradient(closest-side at 50% 50%,rgba(234,247,245,.8) 60%, #FFFFFF 100%);
+  background-repeat: no-repeat,no-repeat;
+  mix-blend-mode: multiply;
+  opacity: 1;
+  background-size: 70% 50%, 60% 80%;
+  background-position: bottom 100px left -20vw, top 0 right -10vw;
+}
+
 body[data-template="blog"]{
   background: radial-gradient(closest-side at 50% 50%,#FFF5E6 80%,#FFFFFF 100%),radial-gradient(closest-side at 50% 50%,rgba(234,247,245,.8) 60%, #FFFFFF 100%);
   background-repeat: no-repeat,no-repeat;
@@ -19423,12 +19432,13 @@ Custom Styles for feature collection
   color: #3A5654;
   font-size: 25px;
   max-width: 945px;
-  margin-top: 15px;
+  margin-top: 90px;
   margin-right: auto;
 }
 
 @media only screen and (max-width: 798px){
   .featured-collection__description{
+    margin-top: 80px;
     font-size: 16px;
   }
 }
