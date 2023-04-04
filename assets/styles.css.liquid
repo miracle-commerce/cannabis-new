@@ -18288,6 +18288,22 @@ Image with text overlay section
   height: 100%;
 }
 
+.image-with-text-overlay__banner .image-element__wrap{
+  position: relative; 
+}
+
+.image-with-text-overlay__banner .image-element__wrap:after{
+  position: absolute; 
+  top: 0; 
+  left: 0;
+  content: '';
+  display: inline-block; 
+  width: 100%; 
+  height: 100%; 
+  background: linear-gradient(180deg, #152D2E 0%, #16333700 100%);
+  opacity: 0.24;
+}
+
 @media only screen and (max-width: 480px){
   .image-with-text-overlay section.mobile-text--below-media.section--has-static-height{
     height: auto;
