@@ -67,6 +67,7 @@
         "products_limit": 10,
         "align_height": true,
         "collection_height": 400,
+        "show_rating": true,
         "show_all_button": false,
         "button_label": "Shop All",
         "button_background": "#707070",

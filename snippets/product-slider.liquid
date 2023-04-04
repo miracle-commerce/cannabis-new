@@ -124,7 +124,7 @@ product_recommendations: <boolean>
                     %}
                   {% endif %}
 
-                  {% if hover_enabled %}
+                  {% if hover_enabled and show_rating %}
                     {% if settings.enable_shopify_collection_badges and product.metafields.reviews.rating.value != blank %}
                       <div class="product__rating rating">
                         {%
@@ -162,7 +162,8 @@ product_recommendations: <boolean>
               {%
                 render 'product-thumbnail__product-info',
                 product: product,
-                collection_handles: collection_handles
+                collection_handles: collection_handles,
+                show_rating: show_rating
               %}
             </div>
           {% endif %}

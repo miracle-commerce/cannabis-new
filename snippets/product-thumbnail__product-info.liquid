@@ -52,4 +52,31 @@
       %}
     {% endif %}
   {% endif %}
+
+  {% if show_rating and product.metafields.reviews.rating.value != blank %}
+    <div class="product__rating rating product-thumbnail__ratings">
+      {%
+        render 'rating-stars',
+        value: product.metafields.reviews.rating.value.rating,
+        scale_max: product.metafields.reviews.rating.value.scale_max,
+      %}
+{% comment %} 
+      <p class="rating__text">
+        <span aria-hidden="true">
+          {{ product.metafields.reviews.rating.value }} / {{ product.metafields.reviews.rating.value.scale_max }}
+        </span>
+      </p>
+
+      <p class="rating__count">
+        <span aria-hidden="true">
+          {{ product.metafields.reviews.rating_count }}
+          {% if product.metafields.reviews.rating_count > 1 %}
+            {{ "general.accessibility.star_reviews_text" | t }}
+          {% else %}
+            {{ "general.accessibility.star_review_text" | t }}
+          {% endif %}
+        </span>
+      </p> {% endcomment %}
+    </div>
+  {% endif %}
 </div>

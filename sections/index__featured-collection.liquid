@@ -77,7 +77,8 @@
             align_height: section.settings.align_height,
             height: section.settings.collection_height,
             show_gutter: section.settings.show_gutter,
-            featured_collection: section.settings.collection
+            featured_collection: section.settings.collection,
+            show_rating: section.settings.show_rating
           %}
         {% endif %}
       {% else %}
@@ -269,6 +270,12 @@
       "default": 200,
       "unit": "px",
       "info": "Applied when 'Align to height' is enabled. [Learn more](https://help.outofthesandbox.com/hc/en-us/articles/360022543913)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "Show Product Ratings",
+      "default": false
     },
     {
       "type": "header",
