@@ -19163,13 +19163,32 @@ Custom Styles for Moble Navigation
 
 .announcement-bar{
   font-family: obviously-wide, sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 11px;
+  letter-spacing: 0.55px;
+}
+
+.announcement-bar .message-header{
+  padding: 15px 11px;
+}
+
+.announcement-bar .close{
+  background: none; 
+}
+
+.announcement-bar .close .icon{
+  max-height: initial; 
+  max-width: initial;
+  width: 14px; 
+  height: 14px; 
 }
 
 @media only screen and (max-width: 798px){
   .announcement-bar{
     font-family: obviously, sans-serif;
+  }
+  .announcement-bar .close{
+    display: none; 
   }
 }
 
