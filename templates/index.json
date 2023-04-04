@@ -62,7 +62,7 @@
         "title_align": "left",
         "title_size": "large",
         "collection": "popular",
-        "products_per": 4,
+        "products_per": 3,
         "mobile_products_per_row": "1",
         "products_limit": 10,
         "align_height": true,
