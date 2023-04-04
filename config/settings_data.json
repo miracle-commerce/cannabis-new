@@ -42,7 +42,7 @@
     "footer_font_size": 16,
     "search_placeholder": "Search",
     "search_display_style": "popup",
-    "enable_shopify_collection_badges": true,
+    "enable_shopify_collection_badges": false,
     "display_vendor": true,
     "thumbnail_hover_enabled": false,
     "thumbnail_text_alignment": "left",

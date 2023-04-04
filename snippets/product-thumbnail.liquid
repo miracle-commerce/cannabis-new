@@ -197,7 +197,7 @@
                     value: product.metafields.reviews.rating.value.rating,
                     scale_max: product.metafields.reviews.rating.value.scale_max,
                   %}
-
+{% comment %} 
                   <p class="rating__text">
                     <span aria-hidden="true">
                       {{ product.metafields.reviews.rating.value }} / {{ product.metafields.reviews.rating.value.scale_max }}
@@ -213,7 +213,7 @@
                         {{ "general.accessibility.star_review_text" | t }}
                       {% endif %}
                     </span>
-                  </p>
+                  </p> {% endcomment %}
                 </div>
               {% endif %}
             {% endif %}
@@ -250,7 +250,7 @@
           scale_max: product.metafields.reviews.rating.value.scale_max,
         %}
 
-        <p class="rating__text">
+        {% comment %} <p class="rating__text">
           <span aria-hidden="true">
             {{ product.metafields.reviews.rating.value }} / {{ product.metafields.reviews.rating.value.scale_max }}
           </span>
@@ -265,7 +265,7 @@
               {{ "general.accessibility.star_review_text" | t }}
             {% endif %}
           </span>
-        </p>
+        </p> {% endcomment %}
       </div>
     {% endif %}
   {% endif %}

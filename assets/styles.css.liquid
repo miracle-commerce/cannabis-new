@@ -20230,11 +20230,18 @@ Custom Styles for Product page
 /* ==========================================================
 Custom Styles for Product Grid Item
 ============================================================*/
+.collection-matrix__wrapper .container.collection-matrix{
+  row-gap: 90px;
+}
+
 .product-thumbnail__ratings{
   margin-bottom: 0; 
   margin-top: 15px;
 }
 @media only screen and (max-width: 798px){
+  .collection-matrix__wrapper .container.collection-matrix{
+    row-gap: 45px;
+  }
   .product-thumbnail__vendor{
     font-size: 11px;
     margin-bottom: 10px;
