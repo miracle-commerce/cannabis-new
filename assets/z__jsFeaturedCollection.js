@@ -34,7 +34,7 @@ window.PXUTheme.jsFeaturedCollection = {
       imagesLoaded: true,
       draggable: true,
       cellAlign: 'left',
-      wrapAround: slideData.wrapAround,
+      wrapAround: false,
       pageDots: false,
       contain: true,
       prevNextButtons: slideData.products_limit > slideData.products_per_slide ? true : false,
