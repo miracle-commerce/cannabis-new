@@ -44,12 +44,13 @@
             <div>
               <a href="{{ routes.root_url }}" title="{{ shop.name }}" class="footer__logo-wrapper has-padding-bottom is-{{ block.settings.size }}">
                 {% if block.settings.logo %}
-                  {%
+                  {% render 'header-logo-white-svg' %}
+                  {% comment %} {%
                     render 'image-element',
                     image: block.settings.logo,
                     alt: block.settings.logo.alt,
                     additional_classes: 'footer__logo'
-                  %}
+                  %} {% endcomment %}
                 {% else %}
                   <h2 class="footer__heading">{{ shop.name }}</h2>
                 {% endif %}
