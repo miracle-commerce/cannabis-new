@@ -189,7 +189,7 @@
                 {% if link.links == blank %}
                   <div class="navbar-item header__item {% if link.active or link.child_active %}is-active{% endif %}" data-navlink-handle="{{ link.title | handleize }}">
                     <label for="mega-{{ link.title | handleize }}">
-                      <a {% unless link.url == 'http://' or link.url == '' or link.url == 'https://' or link.url == '#' %} href="{{ link.url }}" {% endunless %} class="navbar-link header__link {% if link.active %}is-active{% endif %} is-arrowless">
+                      <a {% unless link.url == 'http://' or link.url == '' or link.url == 'https://' or link.url == '#' %} href="{{ link.url }}" {% endunless %} class="navbar-link header__link {% if link.active %}is-active{% endif %} is-arrowless navbar-link--top-level">
                         {{ link.title }}
                       </a>
                     </label>
@@ -197,7 +197,7 @@
                 {% else %}
                   <div class="navbar-item header__item has-dropdown has-dropdown--{{ settings.dropdown_style }} is-hoverable {% if link.active or link.child_active %}is-active{% endif %}" aria-haspopup="true" aria-expanded="false" data-navlink-handle="{{ link.title | handleize }}">
                     <label for="dropdown-{{ link.title | handleize }}">
-                      <a {% unless link.url == 'http://' or link.url == '' or link.url == 'https://' or link.url == '#' %} href="{{ link.url }}" {% endunless %} class="navbar-link header__link {% if link.active or link.child_active %}is-active{% endif %}">
+                      <a {% unless link.url == 'http://' or link.url == '' or link.url == 'https://' or link.url == '#' %} href="{{ link.url }}" {% endunless %} class="navbar-link header__link {% if link.active or link.child_active %}is-active{% endif %} navbar-link--top-level">
                         {{ link.title }}
                       </a>
                     </label>
