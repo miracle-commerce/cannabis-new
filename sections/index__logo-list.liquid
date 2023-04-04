@@ -58,7 +58,7 @@
   {% endif %}
   <div class="has-column-padding-bottom logo-list__wrapper">
     {% if section.blocks.size > 0 %}
-      <div class="logo-list__slideshow"  data-flickity='{ "cellAlign": "center", "contain": true, "prevNextButtons": false }'>
+      <div class="logo-list__slideshow"  data-flickity='{ "cellAlign": "center", "contain": true, "prevNextButtons": false, "pageDots": false }'>
         {% for block in section.blocks %}
   
           {% comment %}Add number to id for each loop{% endcomment %}

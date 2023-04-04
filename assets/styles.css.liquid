@@ -18263,6 +18263,15 @@ body{
 /* ========================================
 Styles for background for each template
 ===========================================*/
+body[data-template="index"]{
+  background: radial-gradient(closest-side at 50% 50%,#FFF5E6 80%,#FFFFFF 100%),radial-gradient(closest-side at 50% 50%,rgba(234,247,245,.8) 60%, #FFFFFF 100%);
+  background-repeat: no-repeat,no-repeat;
+  mix-blend-mode: multiply;
+  opacity: 1;
+  background-size: 70% 50%, 60% 80%;
+  background-position: bottom 100px left -20vw, top 0 right -10vw;
+}
+
 body[data-template="blog"]{
   background: radial-gradient(closest-side at 50% 50%,#FFF5E6 80%,#FFFFFF 100%),radial-gradient(closest-side at 50% 50%,rgba(234,247,245,.8) 60%, #FFFFFF 100%);
   background-repeat: no-repeat,no-repeat;
@@ -18575,6 +18584,9 @@ Custom Styles for Product Testimonials
 /* =============================================
 Section: index__logo-list.liquid
 ================================================*/
+.shopify-section.logo-list .section{
+  max-width: 1360px;
+}
 .shopify-section.logo-list .flickity-slider{
   display: flex; 
   align-items: center; 
@@ -18987,8 +18999,25 @@ Custom Styles for Footer
 .footer__content{
   padding-top: 45px; 
   padding-bottom: 45px;
+  border: none; 
+  position: relative; 
 }
 
+.footer__content:before, .footer__content:after{
+  content: '';
+  display: block; 
+  width: 100%; 
+  height: 1px;
+  background-color: #e0e0e0; 
+  opacity: 0.09;
+  position: absolute; 
+  left: 0; 
+}
+.footer__content:before{
+  top: 0;
+}
+
+.footer__content:after{bottom: 0;}
 .footer__content .social-icons{
   column-gap: 20px;
 }
@@ -19270,7 +19299,8 @@ Styles for index__collection-list.liquid section.
 }
 
 .product-thumbnail__vendor{
-  font-family: obviously-wide, sans-serif; 
+  font-family: obviously-wide, sans-serif;
+  text-transform: uppercase; 
   font-weight: 500;
   font-size: 17px;
   margin-bottom: 17px;
