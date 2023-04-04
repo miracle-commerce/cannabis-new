@@ -1,6 +1,5 @@
 <section class="section is-width-{{section.settings.width}}">
-  <div class="blog-top-navigation" data-flickity='{ "cellAlign": "left", "contain": true, "freeScroll": true, "prevNextButtons": false,
-    "pageDots": false }'>
+  <div class="blog-top-navigation">
     {% if section.settings.navigation != blank %}
       {% assign blog_navigation = linklists[section.settings.navigation] %}
       {% for link in blog_navigation.links %}
