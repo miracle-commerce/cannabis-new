@@ -49,19 +49,19 @@
         "e45304e1-51c6-45d1-b12d-59139b858480": {
           "type": "article",
           "settings": {
-            "must_read_article": "higher-learning\/best-probiotics-in-australia-the-complete-guide"
+            "must_read_article": "health-wellness\/best-probiotics-in-australia-the-complete-guide"
           }
         },
         "98440652-370f-4ea7-91f1-8b79720486b4": {
           "type": "article",
           "settings": {
-            "must_read_article": "higher-learning\/indica-vs-sativa"
+            "must_read_article": "hemp\/what-is-hemp-protein"
           }
         },
         "70e4c943-5ef8-4b15-bf78-c1dc39b78b0f": {
           "type": "article",
           "settings": {
-            "must_read_article": "higher-learning\/hemp-seed-oil-anxiety"
+            "must_read_article": "hemp-seed-oil\/the-ultimate-guide-to-hemp-seed-oil-for-pets-the-natural-healer"
           }
         }
       },
@@ -73,7 +73,7 @@
       "settings": {
         "width": "container",
         "featured_article_title": "Featured",
-        "featured_article": "higher-learning\/what-is-cannabis-effects-explained",
+        "featured_article": "cbd-oil\/cbd-use-benefits",
         "must_read_title": "Must Reads"
       }
     },
