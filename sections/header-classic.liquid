@@ -122,27 +122,29 @@
               {% endif %}
               <div class="overlay-logo__content">
                 <a class="header__logo header__link overlay-logo" href="{{ routes.root_url }}" title="{{ shop.name }}">
-                  {%
+                  {% render 'header-logo-black-svg' %}
+                  {% comment %} {%
                     render 'image-element',
                     image: section.settings.overlay_logo,
                     alt: section.settings.overlay_logo.alt,
                     additional_classes: 'overlay-logo',
                     back_to_basics: true,
                     focal_point: section.settings.overlay_logo.presentation.focal_point,
-                  %}
+                  %} {% endcomment %}
                 </a>
               </div>
               <div class="logo__content">
                 {% if section.settings.logo != blank %}
                   <h1 class="visually-hidden">{{ shop.name }}</h1>
                   <a class="header__logo header__link primary-logo" href="{{ routes.root_url }}" title="{{ shop.name }}">
-                    {%
+                    {% render 'header-logo-black-svg' %}
+                    {% comment %} {%
                       render 'image-element',
                       image: section.settings.logo,
                       alt: section.settings.logo.alt,
                       additional_classes: 'primary-logo',
                       focal_point: section.settings.logo.presentation.focal_point,
-                    %}
+                    %} {% endcomment %}
                   </a>
                 {% else %}
                   <h1 class="header__logo-text">
