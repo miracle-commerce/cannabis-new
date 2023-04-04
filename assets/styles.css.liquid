@@ -18272,6 +18272,15 @@ body[data-template="index"]{
   background-position: bottom 100px left -20vw, top 0 right -10vw;
 }
 
+body[data-template="list-collections"]{
+  background: radial-gradient(closest-side at 50% 50%,#FFF5E6 80%,#FFFFFF 100%),radial-gradient(closest-side at 50% 50%,rgba(234,247,245,.8) 60%, #FFFFFF 100%);
+  background-repeat: no-repeat,no-repeat;
+  mix-blend-mode: multiply;
+  opacity: 1;
+  background-size: 70% 50%, 60% 80%;
+  background-position: bottom 100px left -20vw, top 0 right -10vw;
+}
+
 body[data-template="blog"]{
   background: radial-gradient(closest-side at 50% 50%,#FFF5E6 80%,#FFFFFF 100%),radial-gradient(closest-side at 50% 50%,rgba(234,247,245,.8) 60%, #FFFFFF 100%);
   background-repeat: no-repeat,no-repeat;
@@ -19323,6 +19332,12 @@ Custom Styles for feature collection
 .featured-collection-section .section{
   margin-right: 0;
   padding-right: 0;
+}
+
+@media only screen and (min-width: 799px){
+  .featured-collection-section .section_heading--wrapper{
+    padding-right: 60px;
+  }
 }
 
 .featured-collection-section .products-slider .one-fourth{
