@@ -37,7 +37,7 @@
   }
 
   {%- if section.settings.enable_overlay -%}
-    [data-enable_overlay="true"] .header:not(.is--opend-dropdown), [data-enable_overlay="true"] .mobile-header {
+    [data-enable_overlay="true"] .header:not(.is--opend-dropdown), [data-enable_overlay="true"] .mobile-header:not(.has-opened-menu) {
       background-color: {%- if overlay_alpha != 0 -%}{{ section.settings.overlay_background | color_modify: 'alpha', overlay_background_alpha }}{%- else -%}{{ settings.header_background | color_modify: 'alpha', overlay_background_alpha }}{%- endif -%};
     }
 
@@ -47,7 +47,10 @@
     }
 
     [data-enable_overlay="true"] .header:not(.is--opend-dropdown) .header__link,
-    [data-enable_overlay="true"] .header:not(.is--opend-dropdown) .select select {
+    [data-enable_overlay="true"] .header:not(.is--opend-dropdown) .select select,
+    [data-enable_overlay="true"] .mobile-header:not(.has-opened-menu) .mobile-header__logo,
+    [data-enable_overlay="true"] .mobile-header:not(.has-opened-menu) .mobile-menu__toggle-icon .icon,
+    [data-enable_overlay="true"] .mobile-header:not(.has-opened-menu) .mobile-icons .icon{
       color: {%- if overlay_link_alpha != 0 -%}{{ section.settings.overlay_link_color }}{%- endif -%};
       fill: {%- if overlay_link_alpha != 0 -%}{{ section.settings.overlay_link_color }}{%- endif -%};
       {% if section.settings.show_text_shadow %}

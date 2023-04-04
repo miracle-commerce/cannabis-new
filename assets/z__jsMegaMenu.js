@@ -72,6 +72,7 @@ window.PXUTheme.jsMegaMenu = {
       $('.navbar-item, .header__brand, .header__search').on('mouseover', function(){
         //Close any mega menus on hover
         $('.mega-menu__section').removeClass('is-active');
+        $parentElement.removeClass('is--opened-dropdown');
         $header.removeClass("is--opend-dropdown");
 
         if($(this).hasClass('has-mega-menu')) {
@@ -79,6 +80,7 @@ window.PXUTheme.jsMegaMenu = {
           //Toggle corresponding mega menu
           $(this).find('.mega-menu__section').addClass('is-active');
           $header.addClass("is--opend-dropdown");
+          $parentElement.addClass('is--opened-dropdown');
         }
       })
 
@@ -86,6 +88,7 @@ window.PXUTheme.jsMegaMenu = {
 
         //Hide mega menu upon leaving mega menu, logo or navbar
         $('.mega-menu__section').removeClass('is-active');
+        $parentElement.removeClass('is--opened-dropdown');
         $header.removeClass("is--opend-dropdown");
       })
     } else {
@@ -94,12 +97,14 @@ window.PXUTheme.jsMegaMenu = {
         //Close any mega menus on click
         $('.mega-menu__section').removeClass('is-active');
         $header.removeClass("is--opend-dropdown");
+        $parentElement.removeClass('is--opened-dropdown');
 
         if($(this).hasClass('has-mega-menu')) {
 
           //Toggle corresponding mega menu
           $(this).find('.mega-menu__section').addClass('is-active');
           $header.addClass("is--opend-dropdown");
+          $parentElement.addClass('is--opened-dropdown');
         }
       })
     }

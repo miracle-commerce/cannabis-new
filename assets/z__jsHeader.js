@@ -12,7 +12,7 @@ window.PXUTheme.jsHeader = {
     let announcementHeight = $('.announcement-sticky-wrapper').height();
 
     // Overlaid header
-    if (this.enable_overlay === true && isScreenSizeLarge()) {
+    if (this.enable_overlay === true) {
       this.updateOverlayStyle(this.sectionUnderlayIsImage());
     }
 
@@ -274,7 +274,7 @@ window.PXUTheme.jsHeader = {
     $('.dropdown-click--true .header__link').off();
     this.$menuToggle.off();
     this.disableSticky();
-    this.disableOverlayStyle();
+    // this.disableOverlayStyle();
   }
 }
 

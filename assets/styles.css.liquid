@@ -19116,15 +19116,19 @@ Custom Styles for Header
   fill: #000;
 }
 
-.header--classic [data-enable_overlay="false"] .navbar:after, .header.is--opend-dropdown .navbar:after{
+.header.is--opend-dropdown .navbar:after{
   content: '';
   display: inline-block;
   height: 1px; 
   width: calc(100% - 100px); 
   position:absolute;
-  bottom: 10px;
+  bottom: 15px;
   right: 0;
   background-color: {{settings.border_color}};
+}
+
+[data-enable_overlay="false"] .header{
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .header__link.navbar-link--top-level{
@@ -19137,6 +19141,13 @@ Custom Styles for Header
   display: none;
 }
 
+.header__icons .header__link{
+  color: #000;
+}
+
+.navbar-item.is--opened-dropdown .header__link.navbar-link--top-level{
+  color: #F18079;
+}
 /* Styles for Megamenu */
 .mega-menu.mega-menu--header-classic{
   padding-top: 30px;
@@ -19202,6 +19213,13 @@ Custom Styles for Header
 /* ==================================
 Custom Styles for Moble Navigation
 =====================================*/
+.mobile-header__logo, .mobile-icons .icon, .mobile-menu__toggle-icon .icon{
+  color: #000; 
+  fill: #000;
+}
+.mobile-header__logo svg{
+  max-width: 100%;
+}
 .mobile-menu__content .mobile-menu__list{
   padding-bottom: 0;
 }
@@ -19504,6 +19522,9 @@ Custom Styles for Collection Template
 @media only screen and (max-width: 798px){
   .collection__main{
     margin-top: 45px;
+  }
+  .collection__description{
+    font-size: 16px;
   }
 }
 

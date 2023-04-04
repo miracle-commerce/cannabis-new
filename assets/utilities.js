@@ -522,9 +522,11 @@ window.PXUTheme.mobileMenu = {
     this.$mobileDropDownToggle = $('.mobile-menu .close-dropdown');
     $('body').on('click', '[data-show-mobile-menu="false"]', function () {
       window.PXUTheme.mobileMenu.open();
+      $("#mobile-header").addClass("has-opened-menu");
     });
     $('body').on('click', '[data-show-mobile-menu="true"]', function () {
       window.PXUTheme.mobileMenu.close();
+      $("#mobile-header").removeClass("has-opened-menu");
     });
     if (window.PXUTheme.jsHeader.enable_sticky === true) {
       this.enableSticky();
