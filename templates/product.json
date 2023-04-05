@@ -113,7 +113,7 @@
       "type": "product__recommendations",
       "settings": {
         "show_product_recommendations": true,
-        "product_recommendations_style": "grid",
+        "product_recommendations_style": "slider",
         "product_recommendations_heading": "Recommend To use with",
         "products_per": 4,
         "recommended_products_limit": 4,

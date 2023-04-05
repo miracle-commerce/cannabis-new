@@ -89,19 +89,23 @@
       {% else %}
       <div
         class="
-          one-whole column
+          one-whole
           related-products
           related-products--slider
           js-related-products-slider
+          {% unless recommendations.products_count > section.settings.products_per %}
+            hide-slidenav--desktop
+          {% endunless %}
         "
+        {{recommendations.products_count}}
+
       >
         {%
           render 'product-slider',
           products: products,
           per_slide: section.settings.products_per,
           limit: section.settings.recommended_products_limit,
-          align_height: section.settings.align_height,
-          height: section.settings.collection_height,
+          image_shape: section.settings.image_shape,
           related_products: true,
           product_recommendations: true
         %}
