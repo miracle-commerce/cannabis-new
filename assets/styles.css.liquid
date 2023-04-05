@@ -11056,7 +11056,6 @@ shopify-payment-terms {
 .cart-warning {
   display: block;
   width: 100%;
-  margin-top: 20px;
 }
 
 .cart-warning__message {
@@ -20083,8 +20082,8 @@ Custom Styles for Pagenation
 Custom Styles for Product page
 ================================================*/
 .product_section{
-  max-width: 1670px; 
-  padding: 0 15px;
+  max-width: 1720px; 
+  padding: 0 40px;
   display: flex; 
   flex-wrap: wrap; 
   justify-content: space-between;
@@ -20117,7 +20116,76 @@ Custom Styles for Product page
   max-width: calc(100% - 140px);
   margin-right: auto; 
 }
+
+.product-gallery__main .flickity-page-dots .dot{
+  background: #7C8C82;
+  opacity: 0.4;
+  margin: 0;
+}
+
+.product-gallery__main .flickity-page-dots .dot.is-selected{
+  opacity: 1;
+}
+
+@media only screen and (max-width: 1440px){
+  .product__information--wrapper{
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 798px){
+  .product_section{
+    column-gap: 0; 
+    row-gap: 40px;
+  }
+  .product__images, .product__information{
+    width: 100%;
+  }
+
+  .product-gallery__main{
+    margin-bottom: 40px;
+  }
+
+  .product-gallery__main .flickity-page-dots{
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    column-gap: 6px;  
+    width: 100%;
+    text-align: center;
+    bottom: -35px;
+  }
+
+  .product-gallery .product-gallery__main .flickity-prev-next-button .flickity-button-icon{
+    fill: #878076;
+  }
+
+  .product-gallery .product-gallery__main .flickity-prev-next-button{
+    top: 50%;
+    opacity: 1;
+  }
+
+  .product-gallery .product-gallery__main .flickity-prev-next-button.previous{
+    left: 10px;
+  }
+
+  .product-gallery .product-gallery__main .flickity-prev-next-button.next{
+    right: 10px;
+  }
+}
+
+@media only screen and (max-width: 480px){
+  .product_section{
+    padding: 0 15px;
+  }
+
+  .breadcrumb.is-small{
+    font-size: 12px; 
+  }
+}
+
 .breadcrumb-instock__wrapper{
+  color:#5D6A73;
   display: flex; 
   flex-wrap: wrap; 
   justify-content: space-between; 
@@ -20127,6 +20195,24 @@ Custom Styles for Product page
 }
 .breadcrumb-separator{
   margin: 0 10px;
+}
+
+.product_section .breadcrumb a{
+  color: #5D6A73;
+  opacity: 0.8;
+}
+
+.product_section .breadcrumb li:last-child{
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 798px){
+  .breadcrumb-instock__wrapper{
+    margin-bottom: 10px;
+  }
+  .breadcrumb-separator{
+    margin: 0 5px; 
+  }
 }
 
 .instock_badge{
@@ -20142,7 +20228,9 @@ Custom Styles for Product page
   height: 14px; 
   margin-right: 5px;
 }
-
+.product-block--vendor{
+  margin-bottom: 20px;
+}
 .vendor{
   color: #5D6A73;
   font-size: 13px; 
@@ -20167,6 +20255,37 @@ Custom Styles for Product page
 .product-price__wrapper .modal_price {
   color: #5C5F67;
   font-size: 20px; 
+}
+
+.product-block--short-description{
+  font-size: 16px; 
+}
+
+.product-anchor-links{
+  display: flex; 
+  flex-wrap: wrap; 
+  column-gap: 60px;
+  color: #7C8C82;
+  font-size: 14px; 
+  font-family: obviously-wide, sans-serif;
+  font-weight: 500;
+  width: 100%;
+  margin-top: 32px;
+}
+
+.product-anchor-link--item{
+  color: #7C8C82;
+}
+
+@media only screen and (max-width: 480px){
+  .product-anchor-links{
+    column-gap: 0;
+    row-gap: 25px;
+  }
+
+  .product-anchor-link--item{
+    width: 100%;
+  }
 }
 
 .product-recommendations-wrapper{
@@ -20249,6 +20368,7 @@ Custom Styles for Product page
   align-items: center;
   font-size: 15px;
   line-height: 1;
+  margin-top: 35px;
 }
 .product-shipping-notification .icon{
   margin-right: 10px;
@@ -20260,6 +20380,34 @@ Custom Styles for Product page
 .product-block--form{
   padding-bottom: 15px; 
   border-bottom: 1px solid rgba(124, 140, 130, 0.2);
+}
+
+@media only screen and (max-width: 798px){
+  .vendor{
+    font-size: 12px; 
+  }
+  .product-block--title{
+    margin-bottom: 26px;
+  }
+  .product_name.title{
+    font-size: 26px; 
+  }
+  .product-rating__wrapper{
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 480px){
+  .product-quantity-box.purchase-details__quantity{
+    margin-top: 0; 
+    width: 100%;
+  }
+
+  .purchase-details.has-quantity-box .purchase-details__spb--false{
+    margin-top: 15px; 
+    width: 100%; 
+    max-width: 100%;
+  }
 }
 
 /* ==========================================================

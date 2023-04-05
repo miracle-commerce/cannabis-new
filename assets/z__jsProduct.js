@@ -6274,12 +6274,15 @@ class Product {
       adaptiveHeight: true,
       dragThreshold: 10,
       imagesLoaded: true,
-      pageDots: false,
+      pageDots: true,
       prevNextButtons: $productGallery.data('media-count') > 1 || $slides.length > 1,
       autoPlay: slideshowSpeed * 1000,
       fade: slideshowTransition === 'fade',
       watchCSS: this._data.template === 'image-scroll' && !$productGallery.hasClass('js-gallery-modal'), // Disables Flickity for main product gallery on image-scroll template
-      arrowShape: window.arrowShape,
+      arrowShape: { x0: 10,
+        x1: 60, y1: 50,
+        x2: 60, y2: 45,
+        x3: 15},
     });
 
     $productGallery.on('change.flickity', () => {
