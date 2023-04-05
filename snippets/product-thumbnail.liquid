@@ -81,11 +81,10 @@
 
             {% comment %} Primary image {% endcomment %}
             {%
-              render 'image-element',
+              render 'product-thumb-image-element',
               image: product.featured_media.preview_image,
               alt: alt_text,
-              object_fit: align_height,
-              max_height: height,
+              image_shape: image_shape
             %}
 
             {% comment %} Secondary image {% endcomment %}
@@ -105,8 +104,7 @@
                   render 'image-element',
                   image: product.media[1],
                   alt: alt_text,
-                  object_fit: align_height,
-                  max_height: height,
+                  image_shape: image_shape,
                   additional_classes: 'secondary swap--visible',
                 %}
               {% endif %}

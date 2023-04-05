@@ -260,8 +260,7 @@
                     products_per_row: products_per_row,
                     mobile_products_per_row: mobile_products_per_row,
                     limit: section.settings.pagination_limit,
-                    align_height: section.settings.align_height,
-                    height: section.settings.collection_height
+                    image_shape: section.settings.image_shape
             %}
           </div>
         </div>
@@ -410,21 +409,23 @@
       "content": "Product thumbnails"
     },
     {
-      "type": "checkbox",
-      "id": "align_height",
-      "label": "Align to height",
-      "default": false
-    },
-    {
-      "type": "range",
-      "id": "collection_height",
-      "label": "Product image height",
-      "min": 150,
-      "max": 600,
-      "step": 10,
-      "default": 200,
-      "unit": "px",
-      "info": "Applied when 'Align to height' is enabled. [Learn more](https://help.outofthesandbox.com/hc/en-us/articles/360022543913)"
+      "type": "select",
+      "id": "image_shape",
+      "label": "Product Image Shape",
+      "options": [
+        {
+          "value": "rectangle",
+          "label": "Rectangle"
+        },
+        {
+          "value":"square",
+          "label": "Square"
+        },
+        {
+          "value":"native",
+          "label":"Native"
+        }
+      ]
     },
     {
       "type": "range",

@@ -20289,3 +20289,45 @@ Custom Styles for Product Grid Item
     font-size: 14px; 
   }
 }
+
+/* =======================================================
+Custom Styles for Product thumbnail item image element
+==========================================================*/
+.thumb-image-element:not(.thumb-image-element--native){
+  position: relative; 
+  width: 100%;
+  height: 0;
+}
+
+.thumb-image-element--rectangle{
+  padding-bottom: 120%;
+}
+
+.thumb-image-element--square{
+  padding-bottom: 100%;
+}
+
+.thumb-image-element:not(.thumb-image-element--native) img{
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  object-fit: cover; 
+  object-position: center; 
+}
+
+.thumb-image-element:not(.thumb-image-element--native) img.thumb-image--horizontal{
+  width: 100%; 
+  height: auto;
+}
+
+.thumb-image-element:not(.thumb-image-element--native) img.thumb-image--vertical{
+  max-width: 100%; 
+  height: 100%; 
+  width: auto;
+}
+
+.thumb-image-element:not(.thumb-image-element--native) img.thumb-image--square{
+  width: 100%;
+  height: auto;
+}

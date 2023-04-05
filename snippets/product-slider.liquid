@@ -78,21 +78,19 @@ product_recommendations: <boolean>
 
                 {% comment %} Primary image {% endcomment %}
                 {%
-                  render 'image-element',
+                  render 'product-thumb-image-element',
                   image: product.featured_media.preview_image,
                   alt: alt_text,
-                  object_fit: align_height,
-                  max_height: height,
+                  image_shape: 'rectangle'
                 %}
 
                 {% comment %} Secondary image {% endcomment %}
                 {% if product.media[1] != blank and settings.show_secondary_image == true %}
                   {%
-                    render 'image-element',
+                    render 'product-thumb-image-element',
                     image: product.media[1],
                     alt: alt_text,
-                    object_fit: align_height,
-                    max_height: height,
+                    image_shape: 'rectangle',
                     additional_classes: 'secondary swap--visible',
                   %}
                 {% endif %}
