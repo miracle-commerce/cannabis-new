@@ -133,11 +133,11 @@ product_recommendations: <boolean>
                           scale_max: product.metafields.reviews.rating.value.scale_max,
                         %}
 
-                        <p class="rating__text">
+                        {% comment %} <p class="rating__text">
                           <span aria-hidden="true">
                             {{ product.metafields.reviews.rating.value }} / {{ product.metafields.reviews.rating.value.scale_max }}
                           </span>
-                        </p>
+                        </p> {% endcomment %}
 
                         <p class="rating__count">
                           <span aria-hidden="true">

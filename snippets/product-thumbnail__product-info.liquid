@@ -65,7 +65,7 @@
         <span aria-hidden="true">
           {{ product.metafields.reviews.rating.value }} / {{ product.metafields.reviews.rating.value.scale_max }}
         </span>
-      </p>
+      </p> {% endcomment %}
 
       <p class="rating__count">
         <span aria-hidden="true">
@@ -76,7 +76,7 @@
             {{ "general.accessibility.star_review_text" | t }}
           {% endif %}
         </span>
-      </p> {% endcomment %}
+      </p>
     </div>
   {% endif %}
 </div>

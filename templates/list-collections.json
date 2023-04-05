@@ -91,14 +91,65 @@
         "custom_css": ""
       }
     },
-    "60df3e4d-d11f-415c-9d23-ebb785b11e65": {
+    "9ac8a7da-7356-4972-a942-ed6696a4ecea": {
       "type": "global__section-spliter",
       "settings": {
         "width": "wide",
         "desktop_height": 80,
         "mobile_height": 60,
         "show_border": false,
-        "border_color": "#7c8c82",
+        "border_color": "#e9e9e9",
+        "border_size": 1
+      }
+    },
+    "d7394976-99a6-484e-a2d0-11e381af6189": {
+      "type": "index__featured-collection",
+      "settings": {
+        "title": "Brands",
+        "title_color": "#f78257",
+        "title_align": "right",
+        "title_size": "large",
+        "collection": "brands",
+        "products_per": 4,
+        "mobile_products_per_row": "1",
+        "products_limit": 50,
+        "align_height": true,
+        "collection_height": 350,
+        "show_rating": true,
+        "show_all_button": true,
+        "button_label": "Shop All",
+        "button_background": "#f78257",
+        "button_color": "#ffffff",
+        "show_collection_description": true,
+        "collection_style": "slider",
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "60df3e4d-d11f-415c-9d23-ebb785b11e65": {
+      "type": "global__section-spliter",
+      "settings": {
+        "width": "wide",
+        "desktop_height": 55,
+        "mobile_height": 55,
+        "show_border": true,
+        "border_color": "#d3d3d3",
+        "border_size": 4
+      }
+    },
+    "e82ba85a-ff4e-44e8-912e-b2c00c37c8b5": {
+      "type": "global__section-spliter",
+      "settings": {
+        "width": "wide",
+        "desktop_height": 80,
+        "mobile_height": 55,
+        "show_border": false,
+        "border_color": "#e9e9e9",
         "border_size": 1
       }
     },
@@ -115,6 +166,7 @@
         "products_limit": 10,
         "align_height": true,
         "collection_height": 350,
+        "show_rating": false,
         "show_all_button": true,
         "button_label": "Shop All",
         "button_background": "#3a5654",
@@ -137,7 +189,7 @@
         "desktop_height": 55,
         "mobile_height": 55,
         "show_border": true,
-        "border_color": "#D3D3D3",
+        "border_color": "#d3d3d3",
         "border_size": 4
       }
     },
@@ -165,6 +217,7 @@
         "products_limit": 10,
         "align_height": true,
         "collection_height": 350,
+        "show_rating": false,
         "show_all_button": true,
         "button_label": "Shop All",
         "button_background": "#f78257",
@@ -215,6 +268,7 @@
         "products_limit": 10,
         "align_height": true,
         "collection_height": 350,
+        "show_rating": false,
         "show_all_button": true,
         "button_label": "Shop All",
         "button_background": "#f18079",
@@ -265,6 +319,7 @@
         "products_limit": 10,
         "align_height": true,
         "collection_height": 350,
+        "show_rating": false,
         "show_all_button": true,
         "button_label": "Shop All",
         "button_background": "#223241",
@@ -295,7 +350,10 @@
   "order": [
     "main",
     "551d2325-43c0-42d1-8365-b515f6ecae27",
+    "9ac8a7da-7356-4972-a942-ed6696a4ecea",
+    "d7394976-99a6-484e-a2d0-11e381af6189",
     "60df3e4d-d11f-415c-9d23-ebb785b11e65",
+    "e82ba85a-ff4e-44e8-912e-b2c00c37c8b5",
     "194b0d11-6678-42b0-888a-0e84c7d05133",
     "3bab0e37-da96-48c8-aba8-93ecdac899bf",
     "58c1e739-0e86-4071-b334-dd4bf88c55af",

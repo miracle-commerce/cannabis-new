@@ -180,23 +180,77 @@
         "template--18176695304513__30fcee4b-c778-4381-8db3-9ab1eb4bcdb4-16789919504cf24987-0": {
           "type": "testimonial",
           "settings": {
-            "product": "hemp-seed-and-flax-oil-for-pets-100ml",
-            "testimonial_main": "<p>My wife and I love your oil. We both have osteoarthritis, and I have worn shoulder joints and need a shoulder replacement, so I’m in constant pain. The oil is a godsend and helps to kill the pain. I can even sleep, as before I couldn’t even lay in bed.<\/p>",
-            "testimonial_author": "Kevin, Western Australia"
+            "product": "milly",
+            "testimonial_main": "<p>2 Lady Bichoodles almost 12yo one was finding it had to stand up but does insist on laying on cold tiles, they have their drops every night and in the morning are jumping out of their skin, it certainly does work,<\/p>",
+            "testimonial_author": "Lee Blanchard, Queensland"
+          }
+        },
+        "f9e9526e-68cf-4662-a922-9e61e26d385e": {
+          "type": "testimonial",
+          "settings": {
+            "product": "hemp-protein-powder",
+            "testimonial_main": "<p>Australian Hemp. Best value in the market<\/p><p>Been using the hemp protein for years. Tried others but always return to cannaco. Increases energy levels. <br\/>Best value. Top quality. Easy to use. Australian ingredient. <br\/>Add to smoothies everyday. Recommended to everyone that asks me about protein supplements.<\/p>",
+            "testimonial_author": "Dee seaman, New South Wales"
           }
         },
         "e6d3b722-9f71-42e9-b410-119b2da80062": {
           "type": "testimonial",
           "settings": {
-            "product": "",
+            "product": "muscle-joint-terpene-essentials-30ml",
             "testimonial_main": "<p>My wife and I love your oil. We both have osteoarthritis, and I have worn shoulder joints and need a shoulder replacement, so I’m in constant pain. The oil is a godsend and helps to kill the pain. I can even sleep, as before I couldn’t even lay in bed.<\/p>",
             "testimonial_author": "Kevin, Western Australia"
+          }
+        },
+        "3b2bf102-4da8-4733-a68a-d566b4a8fa0b": {
+          "type": "testimonial",
+          "settings": {
+            "product": "marley-hemp-seed-oil-for-optimal-health",
+            "testimonial_main": "<p>I have been giving this to my dogs for some years now. Our vet recently commented that my 10 and a half year old is in excellent health - no joint problems, coat in excellent condition, heart good. I started giving him the oil to help his joints and it has definitely worked. Both dogs lick their bowls clean to make sure they get every last drop.<\/p>",
+            "testimonial_author": "Kerryl Gardner, ACT"
+          }
+        },
+        "c1131516-c4fe-43b0-b36b-07f033ad892b": {
+          "type": "testimonial",
+          "settings": {
+            "product": "relax-terpene-essentials-30ml",
+            "testimonial_main": "<p>Love it!<\/p><p>Brilliant for sleep and relaxation. Helped with anxiety. A true blessing with a teenager that has a disability. Highly recommend<\/p>",
+            "testimonial_author": "Naomi Grillinzoni, Victoria"
+          }
+        },
+        "cf77130d-6a2f-48ec-90df-9368612fa708": {
+          "type": "testimonial",
+          "settings": {
+            "product": "transdermal-hemp-patches",
+            "testimonial_main": "<p>Helps pain management<\/p><p>I have severe back issues and if I have been standing for a period pain is dreadful. am unable to take pain killers so two patches give me the ability to sleep for a period. They are an excellent product<\/p>",
+            "testimonial_author": "Elizabeth Boydell, NT"
+          }
+        },
+        "328e1bcb-e23b-49f6-b83d-842d9089f032": {
+          "type": "testimonial",
+          "settings": {
+            "product": "the-myrcene-hemp-gin-700ml",
+            "testimonial_main": "<p>A dash of tonic, lime and this drink is EASILY the nicest gin in Australia I've tasted and im not a big gin drinker. Ordered my second bottle as all my mates drunk the first one!! Thank you<\/p>",
+            "testimonial_author": "Jim Nolan, Auckland, New Zealand"
+          }
+        },
+        "fc8e5bb6-4f7e-45ad-86d2-7c304d57a13c": {
+          "type": "testimonial",
+          "settings": {
+            "product": "high-seas-navy-strength-hemp-gin-700ml",
+            "testimonial_main": "<p>High Seas Navy Strength Gin<\/p><p>One of the best gins we’ve had- bright, sweet & full flavoured. Also definitely has a calming & muscle relaxing effect which helps with tension & muscle pain with the cannabis terpene ingredient added. Quite strong but a small amt slow sipped is spot on!<\/p>",
+            "testimonial_author": "L&M Tom, Victoria"
           }
         }
       },
       "block_order": [
         "template--18176695304513__30fcee4b-c778-4381-8db3-9ab1eb4bcdb4-16789919504cf24987-0",
-        "e6d3b722-9f71-42e9-b410-119b2da80062"
+        "f9e9526e-68cf-4662-a922-9e61e26d385e",
+        "e6d3b722-9f71-42e9-b410-119b2da80062",
+        "3b2bf102-4da8-4733-a68a-d566b4a8fa0b",
+        "c1131516-c4fe-43b0-b36b-07f033ad892b",
+        "cf77130d-6a2f-48ec-90df-9368612fa708",
+        "328e1bcb-e23b-49f6-b83d-842d9089f032",
+        "fc8e5bb6-4f7e-45ad-86d2-7c304d57a13c"
       ],
       "settings": {
         "width": "wide",
@@ -316,10 +370,10 @@
             "heading_size": "large",
             "text": "<p>Everybody’s talking about it, your friends are using it, and even your children know what it does … but you can’t get a firm understanding of the word and its potential uses. Cannabis is one of the most commonly used psychoactive drugs. It has been used for centuries as a drug, medicine, and even food. <\/p>",
             "author_image": "shopify:\/\/shop_images\/jamie.png",
-            "author_name": "Jamie Stowell",
+            "author_name": "Patrick Sutherland",
             "publish_date": "13TH JANUARY 2023",
             "button_label": "",
-            "link": "",
+            "link": "shopify:\/\/blogs\/cannabis",
             "button_style": "button--primary",
             "background": "rgba(0,0,0,0)",
             "text_color": "rgba(0,0,0,0)",
@@ -362,7 +416,7 @@
         "fbaba073-0010-409d-a162-0fbdfd95e905": {
           "type": "article",
           "settings": {
-            "article": "recipes-cocktails\/raw-hemp-brownies"
+            "article": "recipes-cocktails\/hemp-crossed-buns"
           }
         },
         "e1af2046-dae5-4bb0-8481-347d059f1c76": {
@@ -374,14 +428,22 @@
         "d98244b2-1257-4e84-8121-391b8494d6d3": {
           "type": "article",
           "settings": {
-            "article": "health-wellness\/the-best-supplements-for-muscle-recovery-a-comprehensive-guide"
+            "article": "cbd-oil\/buying-cbd-in-australia"
+          }
+        },
+        "5631b394-5f90-4545-83c8-3aefbd67ad76": {
+          "type": "article",
+          "disabled": true,
+          "settings": {
+            "article": "cannabis\/how-long-does-cannabis-stay-in-your-system"
           }
         }
       },
       "block_order": [
         "fbaba073-0010-409d-a162-0fbdfd95e905",
         "e1af2046-dae5-4bb0-8481-347d059f1c76",
-        "d98244b2-1257-4e84-8121-391b8494d6d3"
+        "d98244b2-1257-4e84-8121-391b8494d6d3",
+        "5631b394-5f90-4545-83c8-3aefbd67ad76"
       ],
       "settings": {
         "title": "",
@@ -426,13 +488,13 @@
       "type": "index__image-with-text-overlay",
       "settings": {
         "section_height": "large",
-        "link": "",
+        "link": "https:\/\/cannabiscompany.com.au\/collections",
         "image": "shopify:\/\/shop_images\/discover-section-banner.png",
         "caption_layout": "two-columns",
         "pretext": "",
         "title": "Discover Our Cannabis Fields",
         "title_size": "large",
-        "subtitle": "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. <\/p>",
+        "subtitle": "<p>Nestled within the lush, picturesque landscapes of Tasmania, our organic cannabis plants flourish in the island's unspoiled beauty. This extraordinary location provides the perfect environment for cultivating the most remarkable quality hemp, infusing our products with unmatched potency and flavour. Tasmania's rich, fertile soil and untainted atmosphere are the secrets to our success, allowing us to bring you an unparalleled cannabis experience.<\/p>",
         "pretext_color": "#ffffff",
         "heading_color": "#ffffff",
         "subheading_color": "#ffffff",
@@ -445,7 +507,7 @@
         "border_width": 0,
         "text_width": 95,
         "button_1": "LEARN MORE",
-        "button_1_link": "",
+        "button_1_link": "https:\/\/cannabiscompany.com.au\/collections",
         "button_1_style": "button--link-style",
         "button_2": "",
         "button_2_link": "",

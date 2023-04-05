@@ -15435,7 +15435,7 @@ h1.header__logo-text > a:hover,
 
 #header .is-width-wide .mega-menu {
   width: calc(100% + 20px);
-  left: calc(-20px / 2);
+  /* left: calc(-20px / 2); */
 }
 
 .header--search-focus .mega-menu {
@@ -19094,8 +19094,14 @@ li.footer__menu-link{
 /* =============================================
 Custom Styles for Header
 ================================================*/
+@media only screen and (min-width: 798px){
+  .header--classic .header .navbar{
+    padding: 0 30px;
+    margin: 0;
+  }
+}
 .header__brand{
-  padding: 1rem 0.75rem 10px 0.75rem;
+  padding: 1rem 0.75rem 10px 0;
 }
 
 .header__icons{
@@ -19124,7 +19130,7 @@ Custom Styles for Header
   position:absolute;
   bottom: 15px;
   right: 0;
-  background-color: {{settings.border_color}};
+  background-color: #e0e0e0;
 }
 
 [data-enable_overlay="false"] .header{
@@ -19152,6 +19158,7 @@ Custom Styles for Header
 .mega-menu.mega-menu--header-classic{
   padding-top: 30px;
   padding-bottom: 30px;
+  padding-right: 30px;
 }
 .mega-menu.mega-menu--header-classic .container{
   max-width: calc(100% - 120px);
@@ -19345,7 +19352,8 @@ Styles for index__collection-list.liquid section.
   font-family: obviously-wide, sans-serif;
   text-transform: uppercase; 
   font-weight: 500;
-  font-size: 17px;
+  font-size: 15px;
+  letter-spacing: 0.75px;
   margin-bottom: 17px;
   color: #5D6A73;
 }
