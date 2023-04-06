@@ -125,33 +125,10 @@
         "custom_css": ""
       }
     },
-    "c97878f6-9e89-471a-a195-2f80661fdbe7": {
-      "type": "index__rich-text",
+    "9ef3b142-f460-4357-831e-c456a9e43d47": {
+      "type": "product__information",
       "settings": {
-        "title": "Product Information",
-        "title_color": "#5d6a73",
-        "title_size": "medium",
-        "text": "{{ product.metafields.meta_info.product_information | metafield_tag }}",
-        "content_heading_color": "#000000",
-        "text_color": "#000000",
-        "text_alignment": "left",
-        "columns": 2,
-        "button_label": "Add to Cart",
-        "button_link": "",
-        "button_alignment": "right",
-        "button_background": "#5d6a73",
-        "button_text_color": "#ffffff",
-        "background": "rgba(0,0,0,0)",
-        "gradient": "rgba(0,0,0,0)",
-        "gradient_rotation": 180,
-        "width": "container",
-        "padding_top": 20,
-        "padding_bottom": 0,
-        "padding_left": 0,
-        "padding_right": 0,
-        "animation": "none",
-        "css_class": "",
-        "custom_css": ""
+        "title": "Product Information"
       }
     },
     "8d96669b-b12e-4fa8-a15a-1741638a1c1e": {
@@ -320,7 +297,7 @@
     "main",
     "fcc94cc4-22d6-4a38-b4dd-c56304275971",
     "recommendations",
-    "c97878f6-9e89-471a-a195-2f80661fdbe7",
+    "9ef3b142-f460-4357-831e-c456a9e43d47",
     "8d96669b-b12e-4fa8-a15a-1741638a1c1e",
     "16801229245ccad69e",
     "7de9ffdf-c38a-449f-bf5d-d11673507c64"
