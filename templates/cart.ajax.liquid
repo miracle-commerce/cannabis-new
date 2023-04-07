@@ -7,10 +7,20 @@
 </template>
 
 <template data-html="content">
+
   {% comment %} No items in the cart message {% endcomment %}
   <div class="ajax-cart__empty-cart-message text-align-center {% if cart.item_count > 0 %}is-hidden {% endif %}">
     <p class="ajax-cart__cart-title has-margin-bottom">{{ 'cart.general.title' | t }}
-      <span class="cart__count--text" data-bind="itemCount" >{{ cart.item_count }}</span>
+      <span class="cart__count--text is-sr-only" data-bind="itemCount" >{{ cart.item_count }}</span>
+      <div
+        class="ajax-cart__close-icon"
+        data-ajax-cart-close
+      >
+        {%
+          render 'icon',
+          name: 'x',
+        %}
+      </div>
     </p>
     {%
       render 'icon',
@@ -20,11 +30,12 @@
     <a href="{{ routes.all_products_collection_url }}">{{ 'cart.general.continue_shopping_link_html' | t }}</a>
   </div>
 
+
   <div class="ajax-cart__cart-count">
     <p class="ajax-cart__cart-title">
       {{ 'cart.general.title' | t }}
       <span
-        class="ajax-cart__cart-item-count"
+        class="ajax-cart__cart-item-count is-sr-only"
         data-bind="itemCount"
       >
         {{- cart.item_count -}}
@@ -175,10 +186,7 @@
           <div class="ajax-cart__right-content media-right">
             <a class="ajax-cart__delete" data-ajax-cart-delete data-cart-item-key="{{ item.key }}" href="{{ routes.cart_change_url }}?line={{ forloop.index }}&amp;quantity=0" title="{{ 'cart.general.remove' | t }}" >
               <button class="close" aria-label="close">
-                {%
-                  render 'icon',
-                  name: 'x'
-                %}
+                {% render 'icon-recycle-bin-svg' %}
               </button>
             </a>
           </div>
@@ -241,7 +249,7 @@
       {% endif %}
 
       {%- comment -%} Taxes and shipping notice {%- endcomment -%}
-      <div class="is-align-center text-align-center ajax-cart__taxes-shipping">
+      <div class="is-align-center text-align-left ajax-cart__taxes-shipping">
         {%- capture taxes_shipping_checkout -%}
           {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
             {{ 'cart.general.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
@@ -254,7 +262,7 @@
           {%- endif -%}
         {%- endcapture -%}
 
-        <p class="ajax-cart__taxes-shipping-message has-padding-top">{{ taxes_shipping_checkout }}</p>
+        <p class="ajax-cart__taxes-shipping-message">{{ taxes_shipping_checkout }}</p>
       </div>
 
       {% comment %} Terms of service checkbox {% endcomment %}
@@ -280,9 +288,15 @@
         </div>
       {% endif %}
 
+      {%- if settings.cart_order_notification != blank -%}
+        <div class="ajax-cart__order-notification">{% render 'icon_solid', name: 'truck' %} {{settings.cart_order_notification}}</div>
+      {%- endif -%}
+
       {% comment %} Checkout {% endcomment %}
       <div class="ajax-cart__button-wrapper text-align-center">
         {% if settings.go_to_checkout %}
+          <a class="ajax-cart__cart-link ajax-cart__button ajax-add-to-cart" href="{{ routes.cart_url }}" >{{ 'layout.general.go_to_cart' | t }}</a>
+
           <button type="submit" name="checkout" class="ajax-cart__button button--add-to-cart button">
             {% if settings.show_lock_icon %}
               {%
@@ -292,9 +306,8 @@
             {% endif %}
             {{ 'layout.general.checkout' | t }}
           </button>
-          <a class="ajax-cart__cart-link" href="{{ routes.cart_url }}" >{{ 'layout.general.go_to_cart' | t }}</a>
         {% else %}
-          <a href="{{ routes.cart_url }}" class="ajax-cart__button button--add-to-cart button">
+          <a href="{{ routes.cart_url }}" class="ajax-cart__button button--add-to-cart button  ajax-add-to-cart">
             {% if settings.show_lock_icon %}
               {%
                 render 'icon',

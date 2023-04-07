@@ -20808,6 +20808,10 @@ Custom Styles for Product Info and faqs section
   margin-bottom: 23px !important;
 }
 
+.jdgm-rev__header{
+  margin-bottom: 20px !important;
+}
+
 .jdgm-rev__body{
   color: #2A2D31;
   font-size: 14px; 
@@ -20959,4 +20963,167 @@ Custom Styles for Product thumbnail item image element
 .thumb-image-element:not(.thumb-image-element--native) img.thumb-image--square{
   width: 100%;
   height: auto;
+}
+
+/* =============================================
+Custom Styles for Ajax Cart
+================================================ */
+#theme-ajax-cart.is-drawer{
+  max-width: 520px;
+  width: 100%;
+}
+
+.ajax-cart--drawer{
+  height: 100%;
+}
+
+.ajax-cart--drawer #ajax-cart__content{
+  height: 100%;
+}
+
+.ajax-cart__cart-count{
+  height: 70px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 25px 45px 0 45px;
+}
+
+
+.ajax-cart__cart-title{
+  border: none;
+  color: #405554;
+  font-family: obviously, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0;
+  padding: 0;
+}
+
+.ajax-cart__close-icon{
+  position: static;
+}
+
+.ajax-cart--drawer .ajax-cart__form{
+  display: flex; 
+  flex-direction: column;
+  row-gap: 30px;
+  max-height: initial;
+  height: calc(100% - 70px);
+  overflow: hidden;
+  padding: 50px;
+}
+
+.ajax-cart--drawer .ajax-cart__product{
+  border-top: 0px; 
+  border-bottom: 3px solid rgba(226, 235, 233, 0.47);
+  padding: 35px 0;
+  margin: 0;
+}
+
+.ajax-cart--drawer .ajax-cart__list{
+  flex-grow: 1; 
+  overflow-y: auto;
+}
+
+.ajax-cart__product-image{
+  width: 110px;
+}
+
+.ajax-cart__product-title{
+  font-size: 22px; 
+  line-height: 1; 
+  margin-bottom: 20px; 
+}
+
+.ajax-cart__price{
+  font-size: 18px; 
+  font-weight: 300;
+}
+
+.ajax-cart__quantity-box{
+  margin-top: 20px;
+}
+
+.ajax-cart--drawer .ajax-cart__details-wrapper{
+  border: none; 
+  padding: 0px;
+}
+
+.ajax-cart__quantity-box .icon svg{
+  width: 15px;
+}
+
+.ajax-cart__right-content{
+  margin-top: auto; 
+  margin-bottom: 10px;
+}
+
+.ajax-cart__delete .close{
+  background: none;
+}
+
+.ajax-cart__details-row{
+  font-size: 20px; 
+}
+
+.ajax-cart__row-description{
+  font-family: obviously, sans-serif;
+  font-size: 20px; 
+  color: #405554;
+}
+
+.ajax-cart__subtotal .money{
+  color: #2A2D31;
+}
+
+.ajax-cart__taxes-shipping-message{
+  color: #223241;
+  font-size: 13px;
+  padding-top: 10px; 
+  max-width: 60%;
+}
+
+.ajax-cart__order-notification{
+  color: #223241;
+  column-gap: 10px;
+  display: flex;
+  font-size: 15px;
+  flex-wrap: wrap;
+  padding-top: 20px;
+}
+
+.ajax-cart__order-notification .icon{
+  fill: #F18079;
+}
+
+.ajax-cart__button-wrapper{
+  display: flex; 
+  flex-wrap: wrap;
+  padding-top: 20px; 
+  row-gap: 17px;
+}
+
+.ajax-cart .ajax-cart__button{
+  border-radius: 100px;
+  font-family: obviously, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  margin: 0;
+  text-decoration: initial;
+  padding: 15px 40px;
+  width: 100%;
+  height: auto;
+}
+
+.ajax-cart a.ajax-add-to-cart{
+  border: 2px solid #405554;
+  color: #405554;
+}
+
+.ajax-cart a.ajax-add-to-cart:hover{
+  background-color: #405554;
+  color: #fff;
 }

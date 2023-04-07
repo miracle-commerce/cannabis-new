@@ -2400,6 +2400,11 @@
         "id": "shipping_calculator_default_country",
         "label": "Shipping rates calculator default country selection",
         "default": "United States"
+      },
+      {
+        "type":"richtext",
+        "id":"cart_order_notification", 
+        "label":"Cart Order Notification"
       }
     ]
   },
