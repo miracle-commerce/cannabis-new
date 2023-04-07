@@ -20727,6 +20727,170 @@ Custom Styles for Product Info and faqs section
   }
 }
 
+/*=============================================
+ Custom styles for judge me product widget 
+===============================================*/
+.jdgm-review-widget{
+  background-color: #fff; 
+  border: 1px solid #ededed;
+  border-radius: 12px;
+}
+
+.jdgm-all-reviews-widget, .jdgm-rev-widg{
+  border: none !important; 
+  margin: auto !important;
+  max-width: 1430px;
+  padding: 80px 30px 120px !important;
+}
+
+.jdgm-rev-widg__header{
+  display: flex;
+  flex-wrap: wrap; 
+  align-items: flex-end; 
+  margin-bottom: 70px !important;
+}
+
+.jdgm-rev-widg__title{
+  color: #F78257; 
+  font-size: 70px; 
+  font-weight: 700; 
+  margin-right: 40px !important; 
+  margin-bottom: 0px !important;
+}
+
+.jdgm-rev-widg__summary{
+  margin-bottom: 15px !important;
+}
+
+.jdgm-rev-widg__summary-inner{
+  display: flex; 
+  flex-wrap: wrap; 
+  column-gap: 15px; 
+}
+
+.jdgm-widget-actions-wrapper{
+  margin-left: auto !important; 
+  margin-bottom: 15px !important;
+}
+
+.jdgm-write-rev-link{
+  border-radius: 80px;
+  border: 2px solid #F78257 !important;
+  color: #F78257 !important;
+  font-family: obviously-wide, sans-serif;
+  font-size: 14px; 
+  font-weight: 500;
+  padding: 11px 50px 15px 50px !important;
+  text-transform: uppercase;
+}
+
+.jdgm-rev-widg__sort-wrapper{
+  display: none; 
+}
+
+/* Custom Styles for Review Item */
+.jdgm-rev {
+  border-top: 2px solid rgba(124, 140, 130, 0.4) !important;
+  margin-top: 50px !important;
+  padding-top: 50px !important;
+}
+
+.jdgm-rev:first-child{
+  border: 0px !important;
+}
+
+.jdgm-rev__title{
+  color: #2A2D31;
+  font-family: obviously, sans-serif;
+  font-weight: 300;
+  font-size: 30px !important;
+  letter-spacing: 0px; 
+  margin-bottom: 23px !important;
+}
+
+.jdgm-rev__body{
+  color: #2A2D31;
+  font-size: 14px; 
+}
+
+/* Custom styles review load more  */
+.jdgm-paginate__load-more{
+  border: 2px solid #F78257 !important;
+  border-radius: 80px;
+  color: #F78257;
+  font-family: obviously-wide, sans-serif;
+  font-size: 14px;
+  padding: 10px 40px 15px !important;
+}
+
+/* Custom Styles for review submit form */
+.jdgm-form-wrapper{
+  width: 100%; 
+}
+
+.jdgm-form-wrapper input{
+  border-radius: 8px;
+  font-size: 16px;
+  margin-top: 5px;
+  min-height: 45px;
+  padding: 10px 15px; 
+}
+
+@media only screen and (max-width: 798px){
+  .jdgm-all-reviews-widget, .jdgm-rev-widg{
+    padding-top: 30px !important;
+    padding-bottom: 60px !important;
+  }
+
+  .jdgm-rev-widg__header{
+    display: block;
+    margin-bottom: 20px !important;
+  }
+
+  .jdgm-rev-widg__title{
+    font-size: 40px;
+    margin-right: 0 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .jdgm-rev-widg__summary{
+    float: none !important;
+    margin-bottom: 30px !important;
+  }
+
+  .jdgm-widget-actions-wrapper{
+    float: none !important;
+    text-align: left !important;
+  }
+
+  .jdgm-write-rev-link{
+    font-size: 11px; 
+  }
+
+  .jdgm-rev {
+    margin-top: 32px!important;
+    padding-top: 32px!important;
+  }
+
+  .jdgm-rev__title{
+    font-size: 25px !important;
+    margin-bottom: 15px !important;
+  }
+
+  .jdgm-paginate__load-more{
+    font-size: 11px;
+    padding-bottom: 11px !important;
+  }
+}
+
+@media only screen and (max-width: 480px){
+  .jdgm-write-rev-link{
+    width: 100% !important;
+  }
+  .jdgm-paginate__load-more{
+    width: 100% !important;
+  }
+}
 /* ==========================================================
 Custom Styles for Product Grid Item
 ============================================================*/
