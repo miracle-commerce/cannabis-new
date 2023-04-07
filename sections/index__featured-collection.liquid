@@ -111,7 +111,7 @@
     {% endif %}
   </div>
   {%- if section.settings.show_collection_description and collection.description != blank -%}
-    <div class="featured-collection__description">{{collection.description | strip_html}}</div>
+    <div class="featured-collection__description">{{collection.description }}</div>
   {%- endif -%}
 
   {%- if section.settings.show_all_button -%}

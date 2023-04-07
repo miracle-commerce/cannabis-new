@@ -19463,16 +19463,21 @@ Custom Styles for feature collection
 
 .featured-collection__description{
   color: #3A5654;
-  font-size: 25px;
-  max-width: 945px;
+  font-size: 16px;
+  max-width: 1720px;
   margin-top: 90px;
   margin-right: auto;
+}
+
+.featured-collection__description p:not(:last-child){
+  margin-bottom: 10px;
 }
 
 @media only screen and (max-width: 798px){
   .featured-collection__description{
     margin-top: 80px;
     font-size: 16px;
+    padding-right: 10px;
   }
 }
 
@@ -19519,8 +19524,12 @@ Custom Styles for Collection Template
 
 .collection__description{
   color: #3A5654;
-  font-size: 25px;
+  font-size: 16px;
   margin-top: 20px;
+}
+
+.collection__description p:not(:last-child){
+  margin-bottom: 10px;
 }
 
 .collection__main{
@@ -20432,6 +20441,9 @@ Custom Styles for Product page
   }
 }
 
+
+/* Custom Styles for Product Form */
+
 .purchase-details.has-quantity-box{
   display: flex; 
   flex-wrap: wrap; 
@@ -20521,6 +20533,191 @@ Custom Styles for Product page
     margin-top: 15px; 
     width: 100%; 
     max-width: 100%;
+  }
+}
+
+
+/* ==========================================================
+Custom Styles for Product Info and faqs section
+=============================================================*/
+.product-info-faqs{
+  max-width: 1595px;
+  margin: auto;
+  padding: 0 40px;
+}
+
+.product-info-faq-item{
+  padding: 75px 83px;
+  position: relative; 
+}
+
+.product-info-faq-item:not(:last-child):before, .product-info-faq-item:after{
+  position: absolute; 
+  left: 0;
+  display: block; 
+  content: '';
+  width: 100%; 
+  height: 4px; 
+  background-color: #7C8C82;
+  opacity: 0.2;
+}
+
+.product-info-faq-item:not(:last-child):before{
+  top: 0;
+}
+
+.product-info-faq-item:after{
+  bottom: 0;
+}
+
+.product-info-faq__heading{
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+  column-gap: 20px;
+  align-items: flex-end; 
+}
+
+.product-info-faq__title{
+  color: #405554;
+  font-size: 60px; 
+  font-weight: 700;
+  letter-spacing: -1.2px;
+}
+.product-info-faq__content{
+  column-count: 2; 
+  column-gap: 100px;
+  padding-top: 50px;
+}
+
+.product-info-faq__content__block{
+  margin-bottom: 30px;
+  break-inside: avoid;
+}
+
+.product-info-faq__item__title{
+  color: #5A6A74;
+  font-size: 24px; 
+  letter-spacing: 0px;
+  margin-bottom: 24px;
+}
+
+.product-info-faq__item__content{
+  font-size: 16px;
+  color: #363636;
+}
+
+.product-info__cart-button{
+  background-color: #405554;
+  border: none;
+  border-radius: 45px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 12px 50px 18px 50px;
+  text-align: center;
+}
+
+.product-info__cart-button:hover{
+  background-color: #6E8988;
+  color: #fff; 
+}
+
+.product-faqs{
+  padding-top: 33px; 
+  padding-bottom: 60px;
+}
+
+.product-faq__title__icon{
+  margin-bottom: 15px;
+}
+
+.product-faq__title__icon svg{
+  width: 37px; 
+  height: 37px;
+  fill: #7C8C82;
+  transform: rotate(90deg);
+  transition: all 0.8s;
+}
+
+.product-faqs__content{
+  display: none; 
+}
+
+.product-faqs.is-active .product-faqs__content{
+  display: block;
+}
+
+.product-faqs.is-active .product-faq__title__icon svg{
+  transform: initial;
+}
+
+@media only screen and (max-width: 798px){
+  .product-info-faq-item{
+    padding-left: 30px; 
+    padding-right: 30px;
+  }
+
+  .product-info-faq__title{
+    font-size: 40px;
+    letter-spacing: -0.8px;
+    line-height: 1; 
+  }
+
+  .product-info-faq__content:not(.product-faqs__content), .product-faqs.is-active .product-faqs__content{
+    column-count: 1;
+    display: flex; 
+    flex-wrap: wrap; 
+    row-gap: 50px;
+    padding-top: 20px;
+  }
+
+  .product-info__cart-button{
+    font-size: 16px; 
+    margin-bottom: 0px;
+    margin-top: 50px;
+    padding-top: 10px; 
+    padding-bottom: 15px; 
+  }
+
+  .product-info-faq__content__block{
+    margin-bottom: 0px; 
+    width: 100%;
+  }
+
+  .product-info-faq__item__title{
+    font-size: 18px;
+    margin-bottom: 16px; 
+  }
+
+  .product-info-faq__item__content{
+    font-size: 14px; 
+  }
+
+  .product-faq__title__icon{
+    margin-bottom: 5px;
+  }
+
+  .product-faq__title__icon svg{
+    width: 28px; 
+    height: 28px;
+    fill: #7C8C82;
+  }
+
+  .product-faqs{
+    padding-bottom: 30px;
+  }
+
+  .product-faqs__content{
+    padding-bottom: 30px; 
+  }
+}
+
+@media only screen and (max-width: 480px){
+  .product-info-faqs{
+    padding: 0 15px; 
   }
 }
 

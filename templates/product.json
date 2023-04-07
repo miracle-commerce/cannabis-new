@@ -125,88 +125,93 @@
         "custom_css": ""
       }
     },
-    "9ef3b142-f460-4357-831e-c456a9e43d47": {
-      "type": "product__information",
+    "4407a22d-6ad1-4e90-ab8a-7d11d65ea873": {
+      "type": "global__section-spliter",
+      "settings": {
+        "width": "wide",
+        "desktop_height": 100,
+        "mobile_height": 60,
+        "show_border": false,
+        "border_color": "#e9e9e9",
+        "border_size": 1
+      }
+    },
+    "2a657bc7-0ffd-4232-a8d1-3201cfe2edf9": {
+      "type": "product__info_faqs",
       "settings": {
         "title": "Product Information"
       }
     },
-    "8d96669b-b12e-4fa8-a15a-1741638a1c1e": {
-      "type": "index__faq",
-      "blocks": {
-        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-0": {
-          "type": "heading",
-          "settings": {
-            "title": "Section heading"
-          }
-        },
-        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-1": {
-          "type": "content",
-          "settings": {
-            "title": "What is your question?",
-            "answer": "<p>Provide the answer to the question here.<\/p>"
-          }
-        },
-        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-2": {
-          "type": "content",
-          "settings": {
-            "title": "What is your question?",
-            "answer": "<p>Provide the answer to the question here.<\/p>"
-          }
-        },
-        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-3": {
-          "type": "content",
-          "settings": {
-            "title": "What is your question?",
-            "answer": "<p>Provide the answer to the question here.<\/p>"
-          }
-        },
-        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-4": {
-          "type": "heading",
-          "settings": {
-            "title": "Section heading"
-          }
-        },
-        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-5": {
-          "type": "content",
-          "settings": {
-            "title": "What is your question?",
-            "answer": "<p>Provide the answer to the question here.<\/p>"
-          }
-        },
-        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-6": {
-          "type": "content",
-          "settings": {
-            "title": "What is your question?",
-            "answer": "<p>Provide the answer to the question here.<\/p>"
-          }
-        },
-        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-7": {
-          "type": "content",
-          "settings": {
-            "title": "What is your question?",
-            "answer": "<p>Provide the answer to the question here.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-0",
-        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-1",
-        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-2",
-        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-3",
-        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-4",
-        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-5",
-        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-6",
-        "template--18176696123713__8d96669b-b12e-4fa8-a15a-1741638a1c1e-167952304450da5082-7"
-      ],
+    "3b713e13-8cfb-4017-8dd0-74bca8c8f35f": {
+      "type": "global__section-spliter",
       "settings": {
-        "title": "FAQ",
+        "width": "wide",
+        "desktop_height": 70,
+        "mobile_height": 50,
+        "show_border": false,
+        "border_color": "#e9e9e9",
+        "border_size": 1
+      }
+    },
+    "edb7a424-a7af-45da-8ca6-52b328a1b80c": {
+      "type": "global__section-spliter",
+      "settings": {
+        "width": "wide",
+        "desktop_height": 80,
+        "mobile_height": 60,
+        "show_border": false,
+        "border_color": "#e9e9e9",
+        "border_size": 1
+      }
+    },
+    "3b49c53d-eca9-447a-837e-4120fd646f6f": {
+      "type": "index__featured-collection",
+      "settings": {
+        "title": "You Might Also Like",
+        "title_color": "#223241",
+        "title_align": "left",
+        "title_size": "large",
+        "collection": "beverages",
+        "products_per": 4,
+        "mobile_products_per_row": "1",
+        "products_limit": 10,
+        "image_shape": "rectangle",
+        "show_rating": false,
+        "show_all_button": false,
+        "button_label": "Shop All",
+        "button_background": "#707070",
+        "button_color": "#fff",
+        "show_collection_description": false,
+        "collection_style": "slider",
         "width": "standard",
-        "padding_top": 56,
-        "padding_bottom": 56,
+        "show_gutter": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "animation": "none",
         "css_class": "",
         "custom_css": ""
+      }
+    },
+    "55cf1869-c715-421d-b44c-a45334c58b54": {
+      "type": "global__section-spliter",
+      "settings": {
+        "width": "wide",
+        "desktop_height": 70,
+        "mobile_height": 70,
+        "show_border": false,
+        "border_color": "#e9e9e9",
+        "border_size": 1
+      }
+    },
+    "882583f1-7e68-4873-956e-11944cda9feb": {
+      "type": "global__section-spliter",
+      "settings": {
+        "width": "wide",
+        "desktop_height": 50,
+        "mobile_height": 60,
+        "show_border": false,
+        "border_color": "#e9e9e9",
+        "border_size": 1
       }
     },
     "16801229245ccad69e": {
@@ -223,10 +228,21 @@
       ],
       "settings": {
         "width": "standard",
-        "padding_top": 20,
-        "padding_bottom": 20,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "css_class": "",
         "custom_css": ""
+      }
+    },
+    "c4b06a5b-697e-4413-902e-952fa4cac219": {
+      "type": "global__section-spliter",
+      "settings": {
+        "width": "wide",
+        "desktop_height": 76,
+        "mobile_height": 100,
+        "show_border": false,
+        "border_color": "#e9e9e9",
+        "border_size": 1
       }
     },
     "7de9ffdf-c38a-449f-bf5d-d11673507c64": {
@@ -282,11 +298,22 @@
         "padding_bottom": 0,
         "animation": "none",
         "title": "Shop With Us",
-        "title_size": "medium",
+        "title_size": "large",
         "title_color": "#405554",
         "title_align": "center",
         "css_class": "",
         "custom_css": ""
+      }
+    },
+    "342f16e4-8174-461c-9c4a-62138531498d": {
+      "type": "global__section-spliter",
+      "settings": {
+        "width": "wide",
+        "desktop_height": 100,
+        "mobile_height": 95,
+        "show_border": false,
+        "border_color": "#e9e9e9",
+        "border_size": 1
       }
     }
   },
@@ -297,9 +324,16 @@
     "main",
     "fcc94cc4-22d6-4a38-b4dd-c56304275971",
     "recommendations",
-    "9ef3b142-f460-4357-831e-c456a9e43d47",
-    "8d96669b-b12e-4fa8-a15a-1741638a1c1e",
+    "4407a22d-6ad1-4e90-ab8a-7d11d65ea873",
+    "2a657bc7-0ffd-4232-a8d1-3201cfe2edf9",
+    "3b713e13-8cfb-4017-8dd0-74bca8c8f35f",
+    "edb7a424-a7af-45da-8ca6-52b328a1b80c",
+    "3b49c53d-eca9-447a-837e-4120fd646f6f",
+    "55cf1869-c715-421d-b44c-a45334c58b54",
+    "882583f1-7e68-4873-956e-11944cda9feb",
     "16801229245ccad69e",
-    "7de9ffdf-c38a-449f-bf5d-d11673507c64"
+    "c4b06a5b-697e-4413-902e-952fa4cac219",
+    "7de9ffdf-c38a-449f-bf5d-d11673507c64",
+    "342f16e4-8174-461c-9c4a-62138531498d"
   ]
 }

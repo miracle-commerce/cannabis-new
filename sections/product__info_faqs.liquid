@@ -1,0 +1,70 @@
+{%- if product.metafields.meta_info.product_information != blank or product.metafields.meta_info.product_faqs != blank -%}
+  <section class="product-info-faqs">
+    <div class="product-info-faqs--wrapper">
+      {%- if product.metafields.meta_info.product_information != blank -%}
+        <div class="product-info-faq-item product-info">
+          <div class="product-info-faq__heading product-info__heading">
+            <h3 class="product-info-faq__title product-info__title">Product Information</h3>
+            <a href="javascript:void(0)" class="button product-info__cart-button medium-down--hide">Add to Cart</a>
+          </div>
+          <div class="product-info-faq__content">
+            {%- assign product_main_infos = product.metafields.meta_info.product_information | metafield_tag | remove_first: '<div class="metafield-rich_text_field">' | remove_last: '</div>' | split: '<h4>' -%}
+            {% for product_main_info in product_main_infos offset: 1 %}
+              <div class="product-info-faq__content__block">
+                <h4 class="product-info-faq__item__title">{{product_main_info | split: '</h4>' | first | strip_html }}</h4>
+                <div class="product-info-faq__item__content">{{product_main_info | split: '</h4>' | last }}</div>
+              </div>
+            {% endfor %}            
+          </div>
+          <a href="javascript:void(0)" class="button product-info__cart-button hide medium-down--show">Add to Cart</a>
+        </div>    
+      {%- endif -%}
+
+      {%- if product.metafields.meta_info.product_faqs != blank -%}
+        <div class="product-info-faq-item product-faqs">
+          <div class="product-info-faq__heading product-faq__heading">
+            <h3 class="product-info-faq__title product-faq__title">FAQs</h3>
+            <span class="product-faq__title__icon">
+              {% render 'icon__north-east-arrow-svg'%}
+            </span>
+          </div>
+          <div class="product-info-faq__content product-faqs__content" >
+            {%- assign product_faqs = product.metafields.meta_info.product_faqs | metafield_tag | remove_first: '<div class="metafield-rich_text_field">' | remove_last: '</div>' | split: '<h3>' -%}
+            {% for product_faq in product_faqs %}
+              {% if product_faq != blank %}
+                <div class="product-info-faq__content__block">
+                  <h4 class="product-info-faq__item__title">{{ product_faq | split: '</h3>' | first | strip_html }}</h4>
+                  <div class="product-info-faq__item__content">{{ product_faq | split: '</h3>' | last }}</div>
+                </div>
+              {% endif %}
+            {% endfor %}            
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name":"Product Info and FAQs",
+    "settings":[
+      {
+        "type": "header",
+        "content": "Title"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Product Information"
+      }
+    ],
+    "presets":[
+      {
+        "name":"Product Info and FAQs"
+      }
+    ],
+    "templates":["product"]
+  }
+{% endschema %}
