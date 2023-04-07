@@ -541,13 +541,13 @@
       {%- endfor -%}
 
       <div class="product-anchor-links">
-        {%- if product.description != blank -%}
-          <a href="" class="product-anchor-link--item">Product Information</a>
+        {%- if product.metafields.meta_info.product_information != blank -%}
+          <a href="#product-main-infos" class="product-anchor-link--item" data-target-el="#product-main-infos" data-product-anchor>Product Information</a>
         {%- endif -%}
-        <a href="" class="product-anchor-link--item">Reviews</a>
+        <a href="#judgeme_product_reviews" class="product-anchor-link--item" data-target-el="#judgeme_product_reviews" data-product-anchor>Reviews</a>
 
         {%- if product.metafields.meta_info.product_faqs != blank -%}
-          <a href="" class="product-anchor-link--item">FAQs</a>
+          <a href="#product-faqs" class="product-anchor-link--item" data-target-el="#product-faqs" data-product-anchor>FAQs</a>
         {%- endif -%}
       </div>
     </div>

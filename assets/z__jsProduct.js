@@ -6052,6 +6052,23 @@ class Product {
         state,
       ));
     }
+
+    // Scripts for Product Anchor links
+    const productAnchorLinks = $section.find("[data-product-anchor]");
+    if(productAnchorLinks.length > 0 ){
+      productAnchorLinks.each(function(){
+        const targetEl = $($(this).data('target-el'));
+        $(this).on("click", (e)=>{
+          e.preventDefault();
+          if(targetEl){
+            $(document).scrollTop(targetEl.offset().top - 100);
+            if(targetEl.hasClass("product-faqs")){
+              targetEl.addClass("is-active");
+            }
+          }
+        })
+      })
+    }
   }
 
   enableStickyScroll($stickyElement, $productGallery) {

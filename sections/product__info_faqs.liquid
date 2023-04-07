@@ -2,10 +2,10 @@
   <section class="product-info-faqs">
     <div class="product-info-faqs--wrapper">
       {%- if product.metafields.meta_info.product_information != blank -%}
-        <div class="product-info-faq-item product-info">
+        <div id="product-main-infos" class="product-info-faq-item product-info" data-product-infos>
           <div class="product-info-faq__heading product-info__heading">
             <h3 class="product-info-faq__title product-info__title">Product Information</h3>
-            <a href="javascript:void(0)" class="button product-info__cart-button medium-down--hide">Add to Cart</a>
+            <a href="javascript:void(0)" class="button product-info__cart-button medium-down--hide" data-target-form-id="product_form_{{product.id}}" data-trigger-product-cart-submit>Add to Cart</a>
           </div>
           <div class="product-info-faq__content">
             {%- assign product_main_infos = product.metafields.meta_info.product_information | metafield_tag | remove_first: '<div class="metafield-rich_text_field">' | remove_last: '</div>' | split: '<h4>' -%}
@@ -16,12 +16,12 @@
               </div>
             {% endfor %}            
           </div>
-          <a href="javascript:void(0)" class="button product-info__cart-button hide medium-down--show">Add to Cart</a>
+          <a href="javascript:void(0)" class="button product-info__cart-button hide medium-down--show" data-target-form-id="product_form_{{product.id}}" data-trigger-product-cart-submit>Add to Cart</a>
         </div>    
       {%- endif -%}
 
       {%- if product.metafields.meta_info.product_faqs != blank -%}
-        <div class="product-info-faq-item product-faqs">
+        <div id="product-faqs" class="product-info-faq-item product-faqs" data-product-faqs>
           <div class="product-info-faq__heading product-faq__heading">
             <h3 class="product-info-faq__title product-faq__title">FAQs</h3>
             <span class="product-faq__title__icon">
@@ -43,6 +43,8 @@
       {%- endif -%}
     </div>
   </section>
+
+  <script src="{{ 'z__jsProductInfoFaqs.js' | asset_url }}" defer></script>
 {%- endif -%}
 
 {% schema %}
