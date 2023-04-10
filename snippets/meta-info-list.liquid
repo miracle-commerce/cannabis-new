@@ -9,8 +9,8 @@ blog_comment_count: <string>
 
 <ul class="meta-info-list">
   {% if blog_author %}
-    <li class="meta-info-list__item">
-      <a href="{{ routes.search_url }}?type=author&q={{ article.author }}">{{ 'blogs.article.by' | t }} {% if article %}{{ article.author }}{% else %}{{ shop.name }}{% endif %}</a>
+    <li class="meta-info-list__item author-information">
+      <a href="{{ routes.search_url }}?type=author,article&q={{ article.author }}"> {% if article %}{% if author_image != blank %}{{ author_image | image_url: width: 40 | image_tag }}{% endif %}{{ article.author }}{% else %}{{ shop.name }}{% endif %}</a>
     </li>
   {% endif %}
   {% if blog_date %}

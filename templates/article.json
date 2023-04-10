@@ -1,57 +1,13 @@
 {
   "sections": {
-    "banner": {
-      "type": "fallback_image_banner",
-      "settings": {
-        "image_darken": true,
-        "width": "wide",
-        "banner_height": "medium",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "css_class": "",
-        "custom_css": ""
-      }
-    },
     "main": {
       "type": "article__main",
-      "blocks": {
-        "0c9edb6c-adbd-4232-ad83-bcf6fd11bfef": {
-          "type": "post_tags",
-          "settings": {
-            "title": "Blog post tags",
-            "blog": ""
-          }
-        },
-        "2880f059-67f1-4137-8d9c-fdd07c13aca4": {
-          "type": "menu",
-          "settings": {
-            "menu": "main-menu-1"
-          }
-        },
-        "d33a70c0-ec0d-47d8-acf1-deccb0931fad": {
-          "type": "text",
-          "settings": {
-            "title": "Heading",
-            "text": "<p>Text area can be used for details about blog authors or general information.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "0c9edb6c-adbd-4232-ad83-bcf6fd11bfef",
-        "2880f059-67f1-4137-8d9c-fdd07c13aca4",
-        "d33a70c0-ec0d-47d8-acf1-deccb0931fad"
-      ],
       "settings": {
-        "show_breadcrumb": true,
+        "blog_menu": "blog-sort-navigation",
         "blog_author": true,
         "blog_date": true,
-        "read_time": true,
-        "blog_comment_count": true,
-        "show_tags": false,
-        "show_featured_image": false,
-        "show_sidebar": false,
-        "sidebar_position": "left",
-        "width": "standard",
+        "read_time": false,
+        "blog_comment_count": false,
         "padding_top": 40,
         "padding_bottom": 40,
         "css_class": "",
@@ -60,7 +16,6 @@
     }
   },
   "order": [
-    "banner",
     "main"
   ]
 }

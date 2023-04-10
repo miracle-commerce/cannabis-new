@@ -69,25 +69,6 @@
     "youtube_link": "https:\/\/www.youtube.com\/channel\/UCAc3l5EnLVIHX8k6ZcyCbGA?reload=9",
     "show_search_icon_mobile": true,
     "sections": {
-      "announcement-bar": {
-        "type": "announcement-bar",
-        "settings": {
-          "icon_label": "",
-          "text": "<p>Get FREE Shipping on all order over $150<\/p>",
-          "alignment": "center",
-          "button_label": "",
-          "link": "",
-          "button_style": "button--primary",
-          "background": "#000000",
-          "text_color": "#ffffff",
-          "width": "wide",
-          "homepage_only": false,
-          "enable_sticky": false,
-          "show_close_icon": true,
-          "css_class": "",
-          "custom_css": ""
-        }
-      },
       "header__top-bar": {
         "type": "header__top-bar",
         "blocks": {
@@ -124,6 +105,47 @@
           "custom_css": ""
         }
       },
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "icon_label": "",
+          "text": "<p>Get FREE Shipping on all order over $150<\/p>",
+          "alignment": "center",
+          "button_label": "",
+          "link": "",
+          "button_style": "button--primary",
+          "background": "#000000",
+          "text_color": "#ffffff",
+          "width": "wide",
+          "homepage_only": false,
+          "enable_sticky": false,
+          "show_close_icon": true,
+          "css_class": "",
+          "custom_css": ""
+        }
+      },
+      "index__newsletter": {
+        "type": "index__newsletter",
+        "settings": {
+          "display_first_name": false,
+          "display_last_name": false,
+          "newsletter_title": "Join Our Community",
+          "newsletter_richtext": "<p>Join our vibrant community, unlock exclusive deals and must-read product reviews, and enjoy 10% off your first purchase. <\/p>",
+          "newsletter_section_text_align": "left",
+          "background_color": "#374d4c",
+          "title_color": "#f0b3b1",
+          "text_color": "#ffffff",
+          "show_label": false,
+          "width": "wide",
+          "padding_top": 0,
+          "padding_bottom": 0,
+          "padding_left": 0,
+          "padding_right": 0,
+          "animation": "none",
+          "css_class": "",
+          "custom_css": ""
+        }
+      },
       "header-classic": {
         "type": "header-classic",
         "settings": {
@@ -142,11 +164,27 @@
           "overlay_background_opacity": 0,
           "overlay_logo": "shopify:\/\/shop_images\/Logo.png",
           "overlay_logo_width": 225,
-          "enable_sticky": false,
+          "enable_sticky": true,
           "sticky_background_opacity": 100,
           "scroll_logo_width": 225,
           "width": "wide",
           "vertical_alignment": "center",
+          "css_class": "",
+          "custom_css": ""
+        }
+      },
+      "footer__icon-bar": {
+        "type": "footer__icon-bar",
+        "settings": {
+          "show_icon_bar": true,
+          "alignment": "center",
+          "icon_position": "row",
+          "size": "medium",
+          "background": "#8b8b8b",
+          "link_color": "#ffffff",
+          "link_hover_color": "#000000",
+          "text_color": "#ffffff",
+          "width": "standard",
           "css_class": "",
           "custom_css": ""
         }
@@ -222,22 +260,6 @@
           "custom_css": ""
         }
       },
-      "footer__icon-bar": {
-        "type": "footer__icon-bar",
-        "settings": {
-          "show_icon_bar": true,
-          "alignment": "center",
-          "icon_position": "row",
-          "size": "medium",
-          "background": "#8b8b8b",
-          "link_color": "#ffffff",
-          "link_hover_color": "#000000",
-          "text_color": "#ffffff",
-          "width": "standard",
-          "css_class": "",
-          "custom_css": ""
-        }
-      },
       "footer-classic": {
         "type": "footer-classic",
         "blocks": {
@@ -288,28 +310,6 @@
           "css_class": "",
           "custom_css": ""
         }
-      },
-      "index__newsletter": {
-        "type": "index__newsletter",
-        "settings": {
-          "display_first_name": false,
-          "display_last_name": false,
-          "newsletter_title": "Join Our Community",
-          "newsletter_richtext": "<p>Join our vibrant community, unlock exclusive deals and must-read product reviews, and enjoy 10% off your first purchase. <\/p>",
-          "newsletter_section_text_align": "left",
-          "background_color": "#374d4c",
-          "title_color": "#f0b3b1",
-          "text_color": "#ffffff",
-          "show_label": false,
-          "width": "wide",
-          "padding_top": 0,
-          "padding_bottom": 0,
-          "padding_left": 0,
-          "padding_right": 0,
-          "animation": "none",
-          "css_class": "",
-          "custom_css": ""
-        }
       }
     },
     "content_for_index": [
@@ -322,17 +322,17 @@
         "settings": {
         }
       },
-      "14060646107696862457": {
-        "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/judgeme_core\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-        "disabled": false,
-        "settings": {
-        }
-      },
       "12120936241911852800": {
         "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/reviews_tab\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": true,
         "settings": {
           "position": "right"
+        }
+      },
+      "14060646107696862457": {
+        "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/judgeme_core\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
+        "settings": {
         }
       }
     }

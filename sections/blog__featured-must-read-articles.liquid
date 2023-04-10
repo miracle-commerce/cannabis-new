@@ -29,13 +29,11 @@
             <a href="{{featured_article.url}}">{{featured_article.title | default: 'Featured Article Title'}}</a>
           </h3>
           <div class="blog__featured-article__author">
+            {%- if featured_article != blank and featured_article.metafields.author.image != blank -%}
             <div class="blog__featured-article__author__image">
-              {%- if featured_article != blank and featured_article.metafields.author.image != blank -%}
                 <img data-src="{{featured_article.metafields.author.image | image_url: width: 50}}" alt="" width="50" height="50" class="lazyload">
-              {%- else -%}
-                {{'image' | placeholder_svg_tag: 'article-author-placeholder'}}
-              {%- endif -%}
-            </div>
+              </div>
+            {%- endif -%}
             <div class="blog__featured-article__author__info">
               <p class="blog__featured-article__author-name">{{featured_article.author | default: 'Author Name'}}</p>
               <p class="blog__featured-article__publish-date">{{featured_article.published_at | default: 'now' | date: '%d %B %Y' | upcase}}</p>
@@ -50,13 +48,11 @@
         {% for block in section.blocks %}
           {%- assign mrarticle = block.settings.must_read_article -%}
           <div class="blog__mustread-article">
+            {% if mrarticle != blank and mrarticle.image != blank %}
             <div class="blog__mustread-article__image">
-              {% if mrarticle != blank and mrarticle.image != blank %}
                 {% render 'image-element', image: mrarticle.image, stretch_width: true %}
-              {% else %}
-                {{'image' | placeholder_svg_tag: 'article-author-placeholder'}}
-              {% endif %}
-            </div>
+              </div>
+            {% endif %}
             <div class="blog__mustread-article__meta">
               <div class="blog__mustread-article__meta__main">
                 {% if mrarticle.metafields.meta_info.topic != blank %}

@@ -176,7 +176,7 @@
     "article": {
       "read_time": "min read",
       "posted_in_html": "{{ tags }}",
-      "additional_articles": "Related Blog Posts",
+      "additional_articles": "Related Articles",
       "author_on_date_html": "Posted on {{ date }} by {{ author }}",
       "by_author": "by {{ author }}",
       "by": "by",

@@ -3,10 +3,28 @@
     "main": {
       "type": "page-content__main",
       "settings": {
+        "show_heading": false,
+        "heading_alignment": "left",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "98cccca7-57a2-4d6a-b82b-4248604384a1": {
+      "type": "global__section-spliter",
+      "settings": {
+        "width": "wide",
+        "desktop_height": 100,
+        "mobile_height": 60,
+        "show_border": false,
+        "border_color": "#e9e9e9",
+        "border_size": 1
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "98cccca7-57a2-4d6a-b82b-4248604384a1"
   ]
 }

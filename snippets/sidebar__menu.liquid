@@ -23,7 +23,7 @@
   <ul class="sidebar-block__content" {% if settings.toggle_sidebar %}data-sidebar-block__content--collapsible{% endif %}>
     {% for link in linklists[menu].links %}
       <li class="sidebar-block__item">
-        <a {% if link.active %}class="active"{% endif %} href="{{ link.url }}" title="{{ link.title | escape }}">
+        <a {% if link.active or template.name == 'article' and blog.url == link.url %}class="active"{% endif %} href="{{ link.url }}" title="{{ link.title | escape }}">
           {{ link.title }}
         </a>
       </li>

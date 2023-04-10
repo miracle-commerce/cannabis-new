@@ -18262,6 +18262,15 @@ body{
 /* ========================================
 Styles for background for each template
 ===========================================*/
+body{
+  background: radial-gradient(closest-side at 50% 50%,#FFF5E6 80%,#FFFFFF 100%),radial-gradient(closest-side at 50% 50%,rgba(234,247,245,.8) 60%, #FFFFFF 100%);
+  background-repeat: no-repeat,no-repeat;
+  mix-blend-mode: multiply;
+  opacity: 1;
+  background-size: 70% 50%, 60% 80%;
+  background-position: top 100px right -20vw,bottom 0 left -10vw;
+}
+
 body[data-template="index"]{
   background: radial-gradient(closest-side at 50% 50%,#FFF5E6 80%,#FFFFFF 100%),radial-gradient(closest-side at 50% 50%,rgba(234,247,245,.8) 60%, #FFFFFF 100%);
   background-repeat: no-repeat,no-repeat;
@@ -19219,6 +19228,9 @@ Custom Styles for Header
 /* ==================================
 Custom Styles for Moble Navigation
 =====================================*/
+.header--classic [data-enable_overlay="false"] .mobile-header{
+  border-bottom: 1px solid #e0e0e0;
+}
 .mobile-header__logo, .mobile-icons .icon, .mobile-menu__toggle-icon .icon{
   color: #000; 
   fill: #000;
@@ -19743,8 +19755,8 @@ Custom Styles Blog top navigation
 
 @media screen and (max-width: 798px){
   .blog-top-menu--link{
-    padding: 5px 24px;
-    margin-right: 8px;
+    padding: 5px 10px;
+    margin-right: 5px;
   }
 }
 
@@ -20020,7 +20032,7 @@ Custom style for sidebar
   color: #5D6A73;
   font-family: obviously-wide, sans-serif; 
   font-size: 13px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .block__menu .sidebar-block__item{
@@ -20969,8 +20981,9 @@ Custom Styles for Product thumbnail item image element
 Custom Styles for Ajax Cart
 ================================================ */
 #theme-ajax-cart.is-drawer{
-  max-width: 520px;
-  width: 100%;
+  width: 520px;
+  max-width: 100%;
+  right: -520px;
 }
 
 .ajax-cart--drawer{
@@ -21163,5 +21176,270 @@ Custom Styles for Ajax Cart
 
   .ajax-cart__subtotal .money{
     font-size: 20px;
+  }
+}
+
+/* ===================================================
+Custom Styles for custom pages
+====================================================== */
+/* General Styles for custom page */
+.main-page-section{
+  max-width: 1440px;
+  padding: 0 40px;
+  margin: auto;
+}
+
+.page__content h1, .page__content h2, .page__content h3, .page__content h4, .page__content h5, .page__content h6{
+  font-family: obviously, sans-serif; 
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.page__content h1, .page__content h2, .page__content h3, .page__content h4{
+  width: 100%;
+}
+
+.page__content h1{
+  font-size: 100px; 
+}
+
+.page__content h2{
+  font-size: 80px;
+}
+
+.page__content h3{
+  font-size: 60px;
+}
+
+.page__content h4{
+  font-size: 40px;
+}
+
+.page__content h5{
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.page__content img{
+  border-radius: 8px;
+}
+
+@media only screen and (max-width: 798px){
+  .page__content h1{
+    font-size: 60px; 
+  }
+  
+  .page__content h2{
+    font-size: 40px;
+  }
+  
+  .page__content h3{
+    font-size: 30px;
+  }
+  
+  .page__content h4{
+    font-size: 25px;
+  }
+  
+  .page__content h5{
+    font-size: 20px;
+  }
+
+}
+
+@media only screen and (max-width: 480px){
+  .main-page-section{
+    padding: 0 15px;
+    font-size: 16px;
+  }
+}
+
+
+/* ===========================================================
+Custom Styles for Main article section 
+==============================================================*/
+.sidebar-block__item a.active{
+  font-weight: 700; 
+  color: #023536;
+}
+section.main-article{
+  max-width: 1720px;
+  margin: auto;  
+  padding: 0 40px; 
+}
+
+section.main-article img{
+  border-radius: 8px; 
+  opacity: 0.88;
+}
+
+section.main-article .blog-top-navigation{
+  margin-bottom: 45px; 
+}
+
+.article-content__wrapper{
+  display: flex; 
+  flex-wrap: wrap: wrap; 
+  align-items: top; 
+  column-gap: 90px;
+}
+
+.article-sidebar{
+  width: 200px;
+}
+
+.article-main-content{
+  width: calc(100% - 580px);
+}
+
+.meta-info-list__item.author-information{
+  display: flex;
+  flex-wrap: wrap; 
+  align-items: center; 
+  column-gap: 15px;
+  color: #2A2D31;
+  font-family: obviously, sans-serif;
+  font-size: 16px; 
+}
+
+@media only screen and (max-width: 1200px){
+  .article-content__wrapper{
+    column-gap: 45px;
+  }
+  .article-main-content{
+    width: calc(100% - 490px);
+  }
+}
+@media only screen and (min-width: 1024px){
+  .main-article .blog-top-navigation{
+    display: none; 
+  }
+}
+
+@media only screen and (max-width: 1023px){
+  .article-sidebar{
+    display: none;
+  }
+
+  .article-main-content{
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 480px){
+  section.main-article{
+    padding: 0 15px;
+  }
+}
+
+.article-heading__meta{
+  display: flex; 
+  flex-wrap: wrap; 
+  column-gap: 40px;
+  margin-bottom: 7px;
+}
+
+.article-heading__meta__item{
+  font-size: 12px; 
+}
+
+.article-heading__meta__item--blog{
+  color: #5D6A73;
+  font-family: obviously-wide, sans-serif;
+  font-weight: 500;
+}
+
+.article-heading__meta__item--date{
+  color: #858A8E;
+}
+
+.article--heading__title{
+  color: #223241;
+  font-size: 60px; 
+  font-weight: 700;
+  line-height: calc(70 / 60);
+  letter-spacing: 0;
+  margin-bottom: 20px;
+}
+
+.article-image{
+  margin-top: 40px; 
+  margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 798px){
+  .article--heading__title{
+    font-size: 40px;
+  }
+
+  .article-content{
+    font-size: 16px; 
+  }
+}
+
+section.main-article .content h1,
+section.main-article .content h2,
+section.main-article .content h3,
+section.main-article .content h4{
+  color: #5D6A73;
+}
+
+.sidebar-block__content.blog-share{
+  margin-top: 60px;
+}
+
+.blog-share .share-btn{
+  margin-right: 15px;
+}
+
+.blog-share .share-btn .button{
+  width: auto;
+  height: auto;
+  background: none; 
+  border: none;
+  padding: 3px;
+  color: #5D6A73;
+}
+
+.blog-share .share-btn .button:hover{
+  background: none; 
+  border: none; 
+  color: #F18079;
+}
+
+.blog-share .icon svg{
+  width: 20px; 
+  height: 20px;
+  fill: currentColor;
+}
+
+.related-blogs--title .title{
+  color: #405554;
+  font-size: 70px; 
+  font-weight: 700; 
+  letter-spacing: -1.75px;
+}
+
+.blog-share--bottom{
+  display: none; 
+}
+
+.social-share-buttons{
+  margin-bottom: 0px;
+}
+
+@media only screen and (max-width: 1023px){
+  .blog-share--bottom{
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between;
+  }
+
+  .blog-share--bottom .share--title{
+    color: #5D6A73;
+    font-size: 13px; 
+    font-family: obviously-wide, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.65;
   }
 }

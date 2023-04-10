@@ -27,9 +27,8 @@
   %}
 {% endstyle %}
 
-<section class="section
-        {{ css_class }}
-        is-width-{{ width }}"
+<section class="section main-page-section
+        {{ css_class }}"
         {% if animation != "none" %}
           data-scroll-class="{{ animation }}"
         {% endif %}>
@@ -42,8 +41,8 @@
               text_alignment: section.settings.heading_alignment
       %}
     {%- endif -%}
-    <div class="page__content content container {% if settings.table_styles_enabled %} table is-striped is-bordered {% endif %}">
-      {% render 'page-multi-column', content: page.content %}
+    <div class="page__content content">
+      {{ page.content}}
     </div>
   </div>
 </section>
@@ -79,22 +78,6 @@
       {
         "type": "header",
         "content": "Layout"
-      },
-      {
-        "type": "select",
-        "id": "width",
-        "label": "Width",
-        "default": "standard",
-        "options": [
-          {
-            "value": "standard",
-            "label": "Standard"
-          },
-          {
-            "value": "wide",
-            "label": "Wide"
-          }
-        ]
       },
       {
         "type": "range",
