@@ -60,13 +60,14 @@
     "currency_format": "money_format",
     "show_multiple_currencies": true,
     "facebook_link": "https:\/\/www.facebook.com\/cannacoaus",
-    "instagram_link": "https:\/\/www.linkedin.com\/company\/cannabis-company\/",
+    "instagram_link": "https:\/\/www.instagram.com\/buddypetbynature\/",
     "medium_link": "",
     "messenger_link": "",
     "pinterest_link": "https:\/\/www.instagram.com\/cannacoaus\/",
     "tiktok_link": "",
+    "twitter_link": "https:\/\/twitter.com\/cannacoaus",
     "vimeo_link": "",
-    "youtube_link": "https:\/\/www.youtube.com\/channel\/UCAc3l5EnLVIHX8k6ZcyCbGA?reload=9",
+    "youtube_link": "",
     "show_search_icon_mobile": true,
     "sections": {
       "header__top-bar": {
@@ -291,17 +292,25 @@
               "menu": "contact",
               "social_icons_footer": false
             }
+          },
+          "180698d7-3ae8-4451-976c-205ee561583f": {
+            "type": "link_list",
+            "settings": {
+              "menu": "shop",
+              "social_icons_footer": false
+            }
           }
         },
         "block_order": [
           "footer-classic-0",
           "6cbc145f-3880-4154-a1b0-d34d931daca0",
           "footer-classic-1",
-          "7ce31b86-0258-4e9c-b9d5-ff06668a381e"
+          "7ce31b86-0258-4e9c-b9d5-ff06668a381e",
+          "180698d7-3ae8-4451-976c-205ee561583f"
         ],
         "settings": {
           "copyright_text": "<p>|  <a href=\"#\" title=\"#\">Cookie Policy<\/a>   |  <a href=\"\/policies\/terms-of-service\" title=\"Terms of Service\">Privacy & Terms<\/a><\/p>",
-          "contact_text": "<p>1300 402 420     .     Suite 504, 365 Little Collins Street, Melbourne, 3000, VIC     .     <a href=\"#\" title=\"#\">Cookie Policy<\/a>   |  <a href=\"\/policies\/terms-of-service\" title=\"Terms of Service\">Privacy & Terms<\/a><\/p>",
+          "contact_text": "<p>1300 402 420     .     Suite 504, 365 Little Collins Street, Melbourne, 3000, VIC     .     <a href=\"\/policies\/refund-policy\" title=\"Refund Policy\">Refund Policy<\/a> | <a href=\"\/pages\/liquor-policy\" title=\"Liquor Policy\">Liquor Policy<\/a><\/p>",
           "display_designed_by": false,
           "display_shopify": false,
           "display_payment_methods": false,
