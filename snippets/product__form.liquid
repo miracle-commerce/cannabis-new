@@ -68,7 +68,10 @@
       @param swatches_product_page_size
       @param swatches_custom_colors
     {% endcomment %}
-    
+    {% comment %} Include Bold Subscription V1 {% endcomment %}
+    <div class="ro_widget"></div>
+
+
     <variant-selection
       {% if variant_selection_id != blank %}id="{{ variant_selection_id }}"{% endif %}
       class="variant-selection"
@@ -233,7 +236,7 @@
           {% endif %}
 
           {% capture add_to_cart_label %}{% if collection_handles contains 'pre-order' %}{{ 'collections.general.pre_order' | t }}{% else %}{{ 'products.product.add_to_cart' | t }}{% endif %}{% endcapture %}
-          <button type="submit" name="add" class="button {% if settings.cart_action == 'mini_cart' or settings.cart_action == 'drawer' %} ajax-submit {% endif %}action_button button--add-to-cart {% if show_payment_button %} action_button--secondary {% endif %}" data-label={{ add_to_cart_label | json }} data-add-to-cart-trigger>
+          <button type="submit" name="add" class="addtocart button {% if settings.cart_action == 'mini_cart' or settings.cart_action == 'drawer' %} ajax-submit {% endif %}action_button button--add-to-cart {% if show_payment_button %} action_button--secondary {% endif %}" data-label={{ add_to_cart_label | json }} data-add-to-cart-trigger>
             {% if  settings.button_cart_icon != blank and settings.button_cart_icon_position == 'left' %}
               {%
                 render 'icon',

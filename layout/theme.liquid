@@ -160,6 +160,11 @@
     {{ "shopify_common.js" | shopify_asset_url | script_tag }}
     {{ "customer_area.js"  | shopify_asset_url | script_tag }}
   {% endif %}
+
+  {% comment %} Include Bold Subscription V1 {% endcomment %}
+  {%- render 'bold-common' -%}
+  {%- render 'bold-includes' -%} 
+  {%- render 'bold-ro-init' -%} 
 </head>
 
 {%- capture money_format_output -%}

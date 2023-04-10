@@ -117,7 +117,7 @@
                       </p>
                     {% endunless %}
 
-                    {% if item.properties %}
+                    {% comment %} {% if item.properties %}
                       <p>
                         {% for p in item.properties %}
                           {% unless p.last == blank %}
@@ -131,9 +131,13 @@
                               </div>
                             {% endif %}
                           {% endunless %}
+                          
                         {% endfor %}
                       </p>
-                    {% endif %}
+                    {% endif %} {% endcomment %}
+                    {% comment %} Include Bold Subscription V1 {% endcomment %}
+                    <span class="bold_ro_desc" data-product-id="{{item.id}}-{{ forloop.index0 }}"></span>
+                    <span class="bold_load_cart_item_properties"></span>
 
                     {% if item.selling_plan_allocation.selling_plan %}
                       <p class="item__selling-plan-name">{{ item.selling_plan_allocation.selling_plan.name }}</p>
@@ -216,6 +220,8 @@
                 <div class="cart__total">
                   <p>
                     {% if item.final_line_price > 0 %}
+                      {% comment %} Include Bold Subscription V1 {% endcomment %}
+                      <span class="Bold-theme-hook-DO-NOT-DELETE bold_cart_item_price" data-item-key="{{item.key}}" style="display:none !important;"></span>
                       <span class="money">
                         {%
                           render 'price-element',
@@ -266,6 +272,8 @@
                   <p class="h3">{{ 'cart.general.subtotal' | t }}:</p>
                 </div>
                 <p class="h3 cart__subtotal">
+                  {% comment %} Include Bold Subscription V1 {% endcomment %}
+                  <span class="Bold-theme-hook-DO-NOT-DELETE bold_cart_total" style="display:none !important;"></span>{{ cart.total_price | money_with_currency }}
                   <span class="money">
                     {%
                       render 'price-element',
