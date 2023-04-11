@@ -6643,7 +6643,7 @@ class Product {
   }
 
   _switchVariant(product, variant, state) {
-    window.selectCallback(
+    window.selectCallback2(
       this._section.querySelector(`.product-${product.id}`),
       product,
       variant,

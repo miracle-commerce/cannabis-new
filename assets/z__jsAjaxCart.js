@@ -97,6 +97,11 @@ window.PXUTheme.jsAjaxCart = {
     if (this.cart_action != 'drawer') return false;
     this.ajaxCartDrawer.addClass('is-visible');
     $('.ajax-cart__overlay').addClass('is-visible');
+
+    if(typeof BOLD === 'object' && BOLD.common && BOLD.common.eventEmitter && typeof BOLD.common.eventEmitter.emit === 'function') {
+ BOLD.common.eventEmitter.emit("BOLD_COMMON_cart_loaded");
+}
+    
   },
   hideDrawer: function () {
     if (this.cart_action != 'drawer') return false;
@@ -202,6 +207,12 @@ window.PXUTheme.jsAjaxCart = {
         },
         success: function (product) {
 
+          if(typeof window.BOLD !== 'undefined'
+          && typeof window.BOLD.common !== 'undefined'
+          && typeof window.BOLD.common.cartDoctor !== 'undefined') {
+            product = window.BOLD.common.cartDoctor.fixItem(product);
+          }
+
           let $el = $('[data-ajax-cart-trigger]');
 
           $addToCartBtn
@@ -256,6 +267,10 @@ window.PXUTheme.jsAjaxCart = {
               }
             });
           }
+
+        if(typeof BOLD === 'object' && BOLD.common && BOLD.common.eventEmitter && typeof BOLD.common.eventEmitter.emit === 'function') {
+         BOLD.common.eventEmitter.emit("BOLD_COMMON_cart_loaded");
+        }
 
         },
         error: function (XMLHttpRequest) {
@@ -316,6 +331,11 @@ window.PXUTheme.jsAjaxCart = {
       if (window.PXUTheme.currencyConverter) {
         window.PXUTheme.currencyConverter.convertCurrencies();
       }
+
+      if(typeof BOLD === 'object' && BOLD.common && BOLD.common.eventEmitter && typeof BOLD.common.eventEmitter.emit === 'function') {
+       BOLD.common.eventEmitter.emit("BOLD_COMMON_cart_loaded");
+      }
+      
     })
     .fail(() => {
       // some error handling

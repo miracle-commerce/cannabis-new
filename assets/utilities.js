@@ -1040,6 +1040,13 @@ window.PXUTheme.quantityBox = {
       data: `quantity=${quantity}&line=${lineID}`,
       dataType: 'json',
       success: function (cart) {
+
+        if(typeof window.BOLD !== 'undefined'
+        && typeof window.BOLD.common !== 'undefined'
+        && typeof window.BOLD.common.cartDoctor !== 'undefined') {
+          cart = window.BOLD.common.cartDoctor.fix(cart);
+        }
+        
         let newQuantity = 0;
         let itemsLeftText = '';
         let quantityWarning = $(`[data-line-item="${lineID}"]`).find('.quantity-warning');
@@ -1083,6 +1090,11 @@ window.PXUTheme.quantityBox = {
         if (window.PXUTheme.jsCart) {
           window.PXUTheme.jsCart.updateView(cart, lineID);
         }
+
+        if(typeof BOLD === 'object' && BOLD.common && BOLD.common.eventEmitter && typeof BOLD.common.eventEmitter.emit === 'function') {
+         BOLD.common.eventEmitter.emit("BOLD_COMMON_cart_loaded");
+        }
+                
       },
       error: function (XMLHttpRequest, textStatus) {
         var response = eval('(' + XMLHttpRequest.responseText + ')');
@@ -1121,7 +1133,7 @@ window.PXUTheme.responsiveVideo = {
     });
   }
 };
-function selectCallback(productEl, product, variant, state) {
+function selectCallback2(productEl, product, variant, state) {
   const $product = $(productEl);
   const $notifyForm = $('.product__notify-form', $product);
   const $productForm = $('.product_form, .shopify-product-form', $product);
@@ -1241,7 +1253,7 @@ function selectCallback(productEl, product, variant, state) {
     }
   }
 }
-window.selectCallback = selectCallback;
+window.selectCallback2 = selectCallback2;
 window.PXUTheme.predictiveSearch = {
   vars: {
     term: '',

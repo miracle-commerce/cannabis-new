@@ -149,6 +149,7 @@
                   {% if item.line_level_discount_allocations.size < 1 %}
                     <p>
                       {% if item.original_price > 0 %}
+                        <span class="Bold-theme-hook-DO-NOT-DELETE bold_cart_item_price" data-item-key="{{item.key}}" style="display:none !important;"></span>
                         <span class="money {% if item.original_price < item.variant.compare_at_price %}sale{% endif %}">
                           {%
                             render 'price-element',
@@ -172,6 +173,7 @@
                   {% comment %} Discounts for line items {% endcomment %}
                   {% if item.line_level_discount_allocations.size > 0 %}
                     <p class="sale">
+                    <span class="Bold-theme-hook-DO-NOT-DELETE bold_cart_item_price" data-item-key="{{item.key}}" style="display:none !important;"></span>
                       <span class="money">
                         {%
                           render 'price-element',
@@ -221,7 +223,7 @@
                   <p>
                     {% if item.final_line_price > 0 %}
                       {% comment %} Include Bold Subscription V1 {% endcomment %}
-                      <span class="Bold-theme-hook-DO-NOT-DELETE bold_cart_item_price" data-item-key="{{item.key}}" style="display:none !important;"></span>
+                      <span class="Bold-theme-hook-DO-NOT-DELETE bold_cart_item_total" data-item-key="{{item.key}}" style="display:none !important;"></span>
                       <span class="money">
                         {%
                           render 'price-element',
@@ -273,7 +275,7 @@
                 </div>
                 <p class="h3 cart__subtotal">
                   {% comment %} Include Bold Subscription V1 {% endcomment %}
-                  <span class="Bold-theme-hook-DO-NOT-DELETE bold_cart_total" style="display:none !important;"></span>{{ cart.total_price | money_with_currency }}
+                  <span class="Bold-theme-hook-DO-NOT-DELETE bold_cart_total" style="display:none !important;"></span>
                   <span class="money">
                     {%
                       render 'price-element',
@@ -432,6 +434,14 @@
   }
 </script>
 <script src="{{ 'z__jsCart.js' | asset_url }}" defer></script>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  if(typeof BOLD === 'object' && BOLD.common && BOLD.common.eventEmitter && typeof BOLD.common.eventEmitter.emit === 'function') {
+    BOLD.common.eventEmitter.emit("BOLD_COMMON_cart_loaded");
+  }
+}); 
+</script>
 
 {% schema %}
 

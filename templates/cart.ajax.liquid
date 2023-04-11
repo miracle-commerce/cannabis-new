@@ -97,6 +97,7 @@
             </div>
 
             <div class="ajax-cart__line-items">
+            {% comment %}
               {% if item.properties %}
                 {% for p in item.properties %}
                   {% if p.last != blank %}
@@ -106,6 +107,10 @@
                   {% endif %}
                 {% endfor %}
               {% endif %}
+             {% endcomment %}
+
+              <span class="bold_ro_desc" data-product-id="{{item.id}}-{{ forloop.index0 }}"></span>
+              <span class="bold_load_cart_item_properties"></span>
             </div>
 
             {% if item.selling_plan_allocation.selling_plan %}
@@ -117,6 +122,7 @@
                 <div class="ajax-cart__price-comparison">
                   <p class="sale">
                     <span class="money">
+                <span class="Bold-theme-hook-DO-NOT-DELETE bold_cart_item_price" data-item-key="{{item.key}}" style="display:none !important;"></span>
                       {%
                         render 'price-element',
                         price: item.final_price
@@ -145,6 +151,7 @@
             {% if item.line_level_discount_allocations.size < 1 %}
               <div class="ajax-cart__price price">
                 <span class="money {% if item.original_price < item.variant.compare_at_price %}sale{% endif %}">
+              <span class="Bold-theme-hook-DO-NOT-DELETE bold_cart_item_total" data-item-key="{{item.key}}" style="display:none !important;"></span>
                   {%
                     render 'price-element',
                     price: item.original_line_price
@@ -220,6 +227,7 @@
           <span>{{ 'layout.general.subtotal' | t }}:</span>
         </div>
         <span class="money">
+          <span class="Bold-theme-hook-DO-NOT-DELETE bold_cart_total" style="display:none !important;"></span>
           {%
             render 'price-element',
             price: cart.total_price

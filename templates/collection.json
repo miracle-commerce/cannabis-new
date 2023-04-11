@@ -37,6 +37,7 @@
         "promo_title": "Special sale on now!",
         "promo_text": "<p>Description of promotion with lots of details.<\/p>",
         "banner_height": "medium",
+        "show_rating": true,
         "image_shape": "rectangle",
         "products_per_row": 4,
         "mobile_products_per_row": "1",
