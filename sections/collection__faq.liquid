@@ -1,0 +1,384 @@
+{% comment %}
+** Rich text **
+{% endcomment %}
+
+{%- assign title = section.settings.title -%}
+{%- assign heading_color = section.settings.heading_color -%}
+{%- assign heading_alignment = section.settings.heading_alignment -%}
+{%- assign heading_size = section.settings.heading_size -%}
+{%- assign text_font = section.settings.text_font -%}
+{%- assign text_color = section.settings.text_color -%}
+{%- assign text_alignment = section.settings.text_alignment -%}
+
+{% comment %} Is the color set to transparent? {% endcomment %}
+{%- assign heading_alpha = heading_color | color_extract: 'alpha' -%}
+{%- assign text_alpha = text_color | color_extract: 'alpha' -%}
+{%- assign background_alpha = section.settings.background | color_extract: 'alpha' -%}
+{%- assign gradient_alpha = section.settings.gradient | color_extract: 'alpha' -%}
+
+{% comment %} Section specific CSS {% endcomment %}
+{% capture section_css -%}
+
+  .section .rich-text-content--wrapper {
+    background-image: linear-gradient({{ section.settings.gradient_rotation }}deg, rgba(255,255,255,0), {{ section.settings.gradient }});
+    background-color: {%- if background_alpha != 0 -%}{{ section.settings.background }}{%- endif -%};
+  }
+{%- endcapture -%}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    padding-left: {{ section.settings.padding_left }}px;
+    padding-right: {{ section.settings.padding_right }}px;
+    {% if section.settings.width == 'wide' %}
+      width: 100%;
+    {% elsif section.settings.width == 'half' %}
+      width: 50%;
+    {% endif %}
+  }
+  {% render 'css-loop',
+          css: section_css,
+          id: section.id
+  %}
+  {% render 'css-loop',
+          css: section.settings.custom_css,
+          id: section.id
+  %}
+{% endstyle %}
+
+{% comment %} HTML markup {% endcomment %}
+{% unless collection.metafields.custom.faqs == blank %}
+    <section class="section
+                    {{ section.settings.css_class }}
+                    is-width-{{ section.settings.width }}
+                    {% if background_alpha != 0 or gradient_alpha != 0  %}
+                      has-background
+                    {% endif %}
+                    "
+              {% if section.settings.animation != "none" %}
+                data-scroll-class="{{ section.settings.animation }}"
+              {% endif %}>
+      <div class="container
+                  has-limit
+                  rich-text-content--wrapper
+                  ">
+        <div class="columns one-whole">
+          <div class="rich-text__content card-content">
+            {%- if section.settings.title != blank or section.settings.button_label != blank -%}
+              <div class="rich-text__heading-wrapper section_heading--wrapper">
+                {% if section.settings.title != blank %}
+                  <h3 class="section__heading featured-heading featured-heading--{{section.settings.title_size}}" style="--section-heading-color: {{section.settings.title_color}}">{{section.settings.title}}</h3>
+                {% endif %}
+                {% if section.settings.button_label != blank %}
+                  <a href="{{section.settings.button_link}}" class="rich-text__button button medium-down--hide" style="--button-background: {{section.settings.button_background}}; --button-text-color: {{section.settings.button_text_color}}">{{section.settings.button_label}}</a>
+                {% endif %}
+              </div>
+            {%- endif -%}
+    
+            
+            <div class="collection-faqs__content rich-text__text has-columns--2 metafield-rich_text_field">
+              {%- assign collection_faqs = collection.metafields.custom.faqs.value -%}
+              {% for collection_faq in collection_faqs %}
+                {% if collection_faq != blank %}
+                  <div class="collection-faq">
+                    <h3 class="collection-faq__title">{{ collection_faq.title}}</h3>
+                    <div class="collection-faq__content">{{ collection_faq.content | metafield_tag | remove_first: '<div class="metafield-rich_text_field">' | remove_last: '</div>'}}</div>
+                  </div>
+                {% endif %}
+              {% endfor %}  
+            </div>
+            
+    
+            {% if section.settings.button_label != blank %}
+              <div class="rich-text__button-wrapper bottom-button-wrapper">
+                <a href="{{section.settings.button_link}}" class="rich-text__button button hide medium-down--show" style="--button-background: {{section.settings.button_background}}; --button-text-color: {{section.settings.button_text_color}}">{{section.settings.button_label}}</a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </section>
+{% endunless %}
+
+
+{% schema %}
+  {
+    "name": "Collection Faqs",
+    "class": "rich-text collection-faqs",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Rich text"
+      },
+      {
+        "type": "color",
+        "id": "title_color",
+        "label": "Title Color",
+        "default": "#5D6A73"
+      },
+      {
+        "type": "select",
+        "id": "title_size",
+        "label": "Title Size",
+        "options": [
+          {
+            "value": "tiny",
+            "label": "Tiny"
+          },
+          {
+            "value":"small",
+            "label":"Small"
+          },
+          {
+            "value":"medium",
+            "label":"Medium"
+          },
+          {
+            "value":"large",
+            "label":"Large"
+          },
+          {
+            "value":"extra-large",
+            "label":"Extra Large"
+          }
+        ],
+        "default": "medium"
+      },
+      {
+        "type": "select",
+        "id": "text_alignment",
+        "label": "Text alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "justify",
+            "label": "Justify"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left"
+      },
+      {
+        "type": "header",
+        "content": "Button"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      },
+      {
+        "type": "select",
+        "id": "button_alignment",
+        "label": "Alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "center"
+      },
+      {
+        "type": "color",
+        "id": "button_background",
+        "label": "Button Background",
+        "default": "#5D6A73"
+      },
+      {
+        "type": "color",
+        "id": "button_text_color",
+        "label": "Button Text Color",
+        "default": "#fff"
+      },
+      {
+        "type": "header",
+        "content": "Background"
+      },
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background",
+        "default": "#EEEEEE"
+      },
+      {
+        "type": "color",
+        "id": "gradient",
+        "label": "Gradient",
+        "default": "#C0C0C0"
+      },
+      {
+        "type": "range",
+        "id": "gradient_rotation",
+        "label": "Gradient rotation",
+        "min": 0,
+        "max": 180,
+        "step": 10,
+        "default": 180,
+        "unit": "deg"
+      },
+      {
+        "type": "header",
+        "content": "Layout"
+      },
+      {
+        "type": "select",
+        "id": "width",
+        "label": "Width",
+        "default": "wide",
+        "options": [
+          {
+            "value": "half",
+            "label": "Half"
+          },
+          {
+            "value": "standard",
+            "label": "Standard"
+          },
+          {
+            "value": "container",
+            "label": "Container"
+          },
+          {
+            "value": "wide",
+            "label": "Wide"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Top spacing",
+        "min": 0,
+        "max": 80,
+        "default": 20,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Bottom spacing",
+        "min": 0,
+        "max": 80,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_left",
+        "label": "Left spacing",
+        "min": 0,
+        "max": 80,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_right",
+        "label": "Right spacing",
+        "default": 0,
+        "min": 0,
+        "max": 80,
+        "unit": "px"
+      },
+      {
+        "type": "select",
+        "id": "animation",
+        "label": "Animation",
+        "default": "none",
+        "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
+          {
+            "value": "fadeIn",
+            "label": "Fade in"
+          },
+          {
+            "value": "fadeInDown",
+            "label": "Fade in down"
+          },
+          {
+            "value": "fadeInLeft",
+            "label": "Fade in left"
+          },
+          {
+            "value": "fadeInRight",
+            "label": "Fade in right"
+          },
+          {
+            "value": "slideInLeft",
+            "label": "Slide in left"
+          },
+          {
+            "value": "slideInRight",
+            "label": "Slide in right"
+          },
+          {
+            "value": "zoomIn",
+            "label": "Zoom in"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Advanced"
+      },
+      {
+        "type": "paragraph",
+        "content": "[Learn more](https://help.outofthesandbox.com/hc/en-us/articles/360022329373)"
+      },
+      {
+        "type": "text",
+        "id": "css_class",
+        "label": "CSS Class"
+      },
+      {
+        "type": "textarea",
+        "id": "custom_css",
+        "label": "Custom CSS"
+      }
+    ],
+    "templates":["collection"],
+    "presets": [
+      {
+        "name": "Collection Faqs",
+        "category": "Text",
+        "settings": {
+
+        }
+      }
+    ]
+  }
+{% endschema %}

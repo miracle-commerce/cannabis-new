@@ -37,8 +37,7 @@
         "promo_title": "Special sale on now!",
         "promo_text": "<p>Description of promotion with lots of details.<\/p>",
         "banner_height": "medium",
-        "align_height": true,
-        "collection_height": 450,
+        "image_shape": "rectangle",
         "products_per_row": 4,
         "mobile_products_per_row": "1",
         "pagination_limit": 48,
@@ -72,30 +71,8 @@
         "border_size": 1
       }
     },
-    "f733865d-eccc-4780-8287-238e065767ba": {
-      "type": "index__product-testimonials",
-      "blocks": {
-        "template--18176694944065__f733865d-eccc-4780-8287-238e065767ba-167988789551576224-0": {
-          "type": "testimonial",
-          "settings": {
-            "product": "digestive-terpene-essentials-30ml",
-            "testimonial_main": "<p>My wife and I love your oil. We both have osteoarthritis, and I have worn shoulder joints and need a shoulder replacement, so I’m in constant pain. The oil is a godsend and helps to kill the pain. I can even sleep, as before I couldn’t even lay in bed.<\/p>",
-            "testimonial_author": "Kevin, Western Australia"
-          }
-        },
-        "9d163e22-f1d4-4f38-a263-597b06861993": {
-          "type": "testimonial",
-          "settings": {
-            "product": "hemp-seed-and-flax-oil-for-pets-100ml",
-            "testimonial_main": "<p>My wife and I love your oil. We both have osteoarthritis, and I have worn shoulder joints and need a shoulder replacement, so I’m in constant pain. The oil is a godsend and helps to kill the pain. I can even sleep, as before I couldn’t even lay in bed.<\/p>",
-            "testimonial_author": "Kevin, Western Australia"
-          }
-        }
-      },
-      "block_order": [
-        "template--18176694944065__f733865d-eccc-4780-8287-238e065767ba-167988789551576224-0",
-        "9d163e22-f1d4-4f38-a263-597b06861993"
-      ],
+    "df62f991-02dd-43bd-b991-00c7d42a4a69": {
+      "type": "collection__testimonials",
       "settings": {
         "width": "standard",
         "padding_top": 0,
@@ -133,13 +110,12 @@
         "title_color": "#223241",
         "title_align": "left",
         "title_size": "medium",
-        "collection": "beverages",
+        "collection": "{{ collection.metafields.custom.recommended_collection.value }}",
         "products_per": 4,
         "mobile_products_per_row": "1",
         "products_limit": 10,
-        "align_height": true,
-        "collection_height": 400,
-        "show_rating": false,
+        "image_shape": "rectangle",
+        "show_rating": true,
         "show_all_button": false,
         "button_label": "Shop All",
         "button_background": "#707070",
@@ -243,19 +219,15 @@
         "border_size": 1
       }
     },
-    "8fa3b1c2-8a33-49e3-bba0-2ee54b490353": {
-      "type": "index__rich-text",
+    "8cca5408-03dc-40f6-858b-c984b75a6d23": {
+      "type": "collection__faq",
       "settings": {
-        "title": "FAQs",
+        "title": "Faqs",
         "title_color": "#5d6a73",
         "title_size": "large",
-        "text": "{{ collection.metafields.custom.faqs | metafield_tag }}",
-        "content_heading_color": "#5a6a74",
-        "text_color": "#363636",
         "text_alignment": "left",
-        "columns": 2,
         "button_label": "Shop All",
-        "button_link": "",
+        "button_link": "shopify:\/\/collections",
         "button_alignment": "center",
         "button_background": "#5d6a73",
         "button_text_color": "#ffffff",
@@ -325,8 +297,6 @@
         "title_align": "left",
         "title_size": "medium",
         "collections_per_row": 3,
-        "align_height": true,
-        "collection_height": 400,
         "enable_zoom": false,
         "button_style": "button--secondary",
         "overlay_background": "#939393",
@@ -360,7 +330,7 @@
     "main",
     "9eedafd7-6e4f-4d71-9127-3b2b4e477254",
     "69e8d988-41a4-4804-91dd-c2c9c3b9fee3",
-    "f733865d-eccc-4780-8287-238e065767ba",
+    "df62f991-02dd-43bd-b991-00c7d42a4a69",
     "6abf5384-539c-444d-9817-5cab840a001d",
     "60b70c49-0b7d-4b25-b6c8-05d7e425ace1",
     "410cc5ae-7768-4ac0-a5af-6f74b3c21ad8",
@@ -368,7 +338,7 @@
     "066bab76-1068-42f2-ab84-99399f9b5e18",
     "c9916ae5-fd84-40a6-ad88-2bab7ffa64d8",
     "aa2b48b5-07f9-41ca-88a7-4d0e4fe0a264",
-    "8fa3b1c2-8a33-49e3-bba0-2ee54b490353",
+    "8cca5408-03dc-40f6-858b-c984b75a6d23",
     "a3619a17-61cf-4555-9345-3f62ea83641f",
     "fd5ee440-085f-46e8-931c-2195ec67d41d",
     "43b18392-32e4-4284-94ce-462162a50b7b"

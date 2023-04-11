@@ -24,7 +24,7 @@
         "border_width": 0,
         "text_width": 100,
         "button_1": "Shop Now",
-        "button_1_link": "",
+        "button_1_link": "shopify:\/\/collections\/wellness",
         "button_1_style": "button--primary",
         "button_2": "",
         "button_2_link": "",
@@ -117,7 +117,7 @@
         "template--18176695304513__98daa6d7-2fc0-4745-bd50-9e7b25bdc2aa-167768300182f4e426-2": {
           "type": "collection",
           "settings": {
-            "feature_collection": "cannaco-pets-1",
+            "feature_collection": "buddypet",
             "image": "shopify:\/\/shop_images\/collectikon-pets.png",
             "title": "Pets",
             "button_label": ""
@@ -466,7 +466,7 @@
         "padding_bottom": 0,
         "animation": "none",
         "show_all_button": true,
-        "url_all_button": "",
+        "url_all_button": "shopify:\/\/blogs\/cannabis",
         "label_all_button": "ALL POSTS",
         "css_class": "",
         "custom_css": ""

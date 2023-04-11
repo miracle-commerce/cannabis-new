@@ -19072,6 +19072,7 @@ Custom Styles for Footer
 
 li.footer__menu-link{
   padding: 5px 0;
+  font-weight: 300;
 }
 
 @media only screen and (max-width: 798px){
@@ -19554,6 +19555,46 @@ Custom Styles for Collection Template
   }
   .collection__description{
     font-size: 16px;
+  }
+}
+
+/* Collection Faq section */
+.collection-faqs .rich-text__heading-wrapper{
+  margin-bottom: 50px;
+}
+.collection-faq{
+  break-inside: avoid;
+}
+
+.collection-faq:not(:last-child){
+  margin-bottom: 27px;
+}
+
+.collection-faq__title{
+  color: #5A6A74;
+  margin-bottom: 24px;
+}
+
+.collection-faq__content{
+  color: #363636;
+}
+
+@media only screen and (max-width: 798px){
+  .collection-faqs .rich-text__heading-wrapper{
+    margin-bottom: 27px;
+  }
+  .collection-faq:not(:last-child){
+    margin-bottom: 47px;
+  }
+
+  .collection-faqs .bottom-button-wrapper{
+    margin-top: 47px;
+  }
+}
+
+@media only screen and (max-width: 480px){
+  .collection-faqs .section.has-background{
+    padding: 0 15px; 
   }
 }
 
@@ -20914,6 +20955,10 @@ Custom Styles for Product Grid Item
   row-gap: 90px;
 }
 
+.product__thumbnail .rating{
+  flex-direction: initial;
+}
+
 .product-thumbnail__ratings{
   margin-bottom: 0; 
   margin-top: 15px;
@@ -21443,3 +21488,37 @@ section.main-article .content h4{
     letter-spacing: 0.65;
   }
 }
+
+
+/* ===========================================================
+Custom Styles for Bold Subscription widget on the product page
+============================================================== */
+.bold-ro__recurring-title{
+  display: none; 
+}
+
+.bold-ro__radio-div{
+  background: none !important; 
+  border: 1px solid #D5D5D5 !important; 
+  border-radius: 8px !important; 
+}
+
+.bold-ro__radio-div:not(:last-child){
+  margin-bottom: 17px !important;
+}
+
+.bold-ro__radio-div:not(.bold-ro__bold-active) .bold-ro__frequency-label{
+  padding: 0;
+}
+
+.bold-ro__bold-active{
+  background: none !important;
+  border-width: 2px !important;
+  border-color: #7C8C82 !important;
+  border-radius: 8px !important;
+}
+
+[name="bold-ro__selector_radio_button"]{
+  accent-color: #7C8C82;
+}
+

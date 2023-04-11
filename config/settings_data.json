@@ -59,12 +59,13 @@
     "cart_order_notification": "<p><strong>Order today<\/strong> before 4pm and <strong>receive it tomorrow!<\/strong><\/p>",
     "currency_format": "money_format",
     "show_multiple_currencies": true,
+    "default_currency": "AUD",
     "facebook_link": "https:\/\/www.facebook.com\/cannacoaus",
     "instagram_link": "https:\/\/www.instagram.com\/buddypetbynature\/",
     "medium_link": "",
     "messenger_link": "",
-    "pinterest_link": "https:\/\/www.instagram.com\/cannacoaus\/",
-    "tiktok_link": "",
+    "pinterest_link": "",
+    "tiktok_link": "https:\/\/www.tiktok.com\/@cannacoaus",
     "twitter_link": "https:\/\/twitter.com\/cannacoaus",
     "vimeo_link": "",
     "youtube_link": "",
@@ -232,7 +233,7 @@
             "type": "image",
             "settings": {
               "image": "shopify:\/\/shop_images\/megamenu.png",
-              "image_link": "#",
+              "image_link": "shopify:\/\/products\/jilungin-dreaming-hemp-gin-700ml",
               "image_caption": "<p>FEATURED<\/p>"
             }
           }

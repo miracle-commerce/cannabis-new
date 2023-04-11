@@ -260,7 +260,8 @@
                     products_per_row: products_per_row,
                     mobile_products_per_row: mobile_products_per_row,
                     limit: section.settings.pagination_limit,
-                    image_shape: section.settings.image_shape
+                    image_shape: section.settings.image_shape,
+                    show_rating: section.settings.show_rating
             %}
           </div>
         </div>
@@ -407,6 +408,12 @@
     {
       "type": "header",
       "content": "Product thumbnails"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "Show Rating",
+      "default": false
     },
     {
       "type": "select",

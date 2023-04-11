@@ -1,0 +1,138 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    padding-left: {{ section.settings.padding_left }}px;
+    padding-right: {{ section.settings.padding_right }}px;
+    {% if section.settings.width == 'wide' %}
+      width: 100%;
+    {% elsif section.settings.width == 'half' %}
+      width: 50%;
+    {% endif %}
+  }
+{% endstyle %}
+
+{% assign product_testimonials = collection.metafields.custom.product_testimonials.value %}
+
+<section class="section
+                {{section.settings.css_class}}
+                is-width-{{section.settings.width}}"
+              {{product_testimonials.count}} 123>
+  <div class="">
+    {%- if product_testimonials.count > 0 -%}
+      <div id="product-testimonials-slideshow" class="product-testimonials-slideshow"  data-flickity='{ "cellAlign": "left", "contain": true, "fade": true, "prevNextButtons": false }'>
+        {% for testimonial in product_testimonials %}
+          {%- assign testimonial_product = all_products[testimonial.testimonial_product] -%}
+          {%- assign testimonial_content = testimonial.testimonial_content -%}
+          {% assign testimonial_author = testimonial.testimonial_author %}
+          <div class="product-testimonials-slider">
+            <div class="testimonial-product-item">
+              <div class="testimonial-product__image-wrapper">
+                {%- if testimonial_product.featured_image -%}
+                  {%
+                    render 'image-element',
+                    image: testimonial_product.featured_image,
+                    alt: testimonial_product.featured_image.alt,
+                    stretch_width: true
+                  %}
+                {%- else -%}
+                  {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                {%- endif -%}
+              </div>
+              <div class="testimonial-product__info">
+                <p class="testimonial-product__info__title">{{testimonial_product.title}}</p>
+                <p class="testimonail-product__info__price--wrapper">
+                  {%- if testimonial_product.price_varies and testimonial_product.price_min > 0 -%}
+                    <span class="price-from">{{ 'products.general.from' | t }}</span>
+                  {%- endif -%}
+                  <span class="money">
+                    {% render 'price-element', price: testimonial_product.price_min %}
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div class="product-testimonial-content">
+              <div class="testimonial-main">{{testimonial_content | metafield_tag | remove_first: '<div class="metafield-rich_text_field">' | remove_last: '</div>'}}</div>
+              <span class="testimonial-author">{{testimonial_author | upcase}}</span>
+            </div>
+          </div>
+        {% endfor %}
+      </div>   
+    {%- endif -%}
+  </div>
+</section>
+{% schema %}
+  {
+    "name":"Collection Testimonials", 
+    "class":"product-testimonials",
+    "settings":[
+      {
+        "type": "header",
+        "content": "Layout"
+      },
+      {
+        "type": "select",
+        "id": "width",
+        "label": "Width",
+        "default": "wide",
+        "options": [
+          {
+            "value": "half",
+            "label": "Half"
+          },
+          {
+            "value": "standard",
+            "label": "Standard"
+          },
+          {
+            "value": "wide",
+            "label": "Wide"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Top spacing",
+        "min": 0,
+        "max": 80,
+        "default": 20,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Bottom spacing",
+        "min": 0,
+        "max": 80,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_left",
+        "label": "Left spacing",
+        "min": 0,
+        "max": 80,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_right",
+        "label": "Right spacing",
+        "default": 0,
+        "min": 0,
+        "max": 80,
+        "unit": "px"
+      }
+    ],
+    "templates":["collection"],
+    "presets":[
+      {
+        "name":"Collection Testimonials",
+        "category":"Collection Information"
+      }
+    ]
+  }
+{% endschema %}

@@ -187,8 +187,8 @@
               %}
             {% endif %}
 
-            {% if hover_enabled %}
-              {% if settings.enable_shopify_collection_badges and product.metafields.reviews.rating.value != blank %}
+            {% if hover_enabled and show_rating %}
+              {% if show_rating and product.metafields.reviews.rating.value != blank %}
                 <div class="product__rating rating">
                   {%
                     render 'rating-stars',
@@ -223,7 +223,8 @@
         {%
           render 'product-thumbnail__product-info',
           product: product,
-          collection_handles: collection_handles
+          collection_handles: collection_handles,
+          show_rating: show_rating
         %}
       </div>
     </div>
@@ -232,39 +233,4 @@
     render 'product-thumbnail__swatch',
     product: product
   %}
-
-  {% if hover_enabled == false %}
-    {% if settings.enable_shopify_collection_badges and product.metafields.reviews.rating.value != blank %}
-      <div
-        class="
-          product__rating
-          rating
-          is-justify-{{ settings.thumbnail_text_alignment }}
-        "
-      >
-        {%
-          render 'rating-stars',
-          value: product.metafields.reviews.rating.value.rating,
-          scale_max: product.metafields.reviews.rating.value.scale_max,
-        %}
-
-        {% comment %} <p class="rating__text">
-          <span aria-hidden="true">
-            {{ product.metafields.reviews.rating.value }} / {{ product.metafields.reviews.rating.value.scale_max }}
-          </span>
-        </p>{% endcomment %}
-
-        <p class="rating__count">
-          <span aria-hidden="true">
-            {{ product.metafields.reviews.rating_count }}
-            {% if product.metafields.reviews.rating_count > 1 %}
-              {{ "general.accessibility.star_reviews_text" | t }}
-            {% else %}
-              {{ "general.accessibility.star_review_text" | t }}
-            {% endif %}
-          </span>
-        </p> 
-      </div>
-    {% endif %}
-  {% endif %}
 </div>
