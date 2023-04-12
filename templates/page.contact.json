@@ -52,7 +52,7 @@
         "content_text": "<p>Customize your contact form to suit your business! Add custom fields like a dropdown menu, checkbox, text fields and more, so that you can gather pertinent info from shoppers right from the get-go, to help answer their inquiries more effectively.<\/p>",
         "social_enable": true,
         "text_alignment": "left",
-        "background": "#e5e5e5",
+        "background": "rgba(0,0,0,0)",
         "text_color": "#000000",
         "form_position": "right",
         "width": "standard",

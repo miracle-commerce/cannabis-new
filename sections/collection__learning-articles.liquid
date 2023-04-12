@@ -37,7 +37,7 @@
         <h3 class="section__heading featured-heading featured-heading--{{section.settings.title_size}}" style="--section-heading-color: {{section.settings.title_color}}">{{title}}</h3>
       {%- endif -%}
       {%- if subtitle != blank -%}
-        <div class="section_heading--subtitle" style="--section-subtitle-color: {{section.settings.subtitle_color}}">{{subtitle}}</div>
+        <div class="section_heading--subtitle" style="--section-subtitle-color: {{section.settings.subtitle_color}}">{{subtitle | upcase}}</div>
       {%- endif -%}
     </div>
   {%- endif -%}

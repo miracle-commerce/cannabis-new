@@ -112,7 +112,7 @@
     "recommendations": {
       "type": "product__recommendations",
       "settings": {
-        "show_product_recommendations": true,
+        "show_product_recommendations": false,
         "product_recommendations_style": "slider",
         "product_recommendations_heading": "Recommend To use with",
         "products_per": 4,
@@ -180,7 +180,7 @@
         "show_all_button": false,
         "button_label": "Shop All",
         "button_background": "#707070",
-        "button_color": "#fff",
+        "button_color": "#ffffff",
         "show_collection_description": false,
         "collection_style": "slider",
         "width": "standard",

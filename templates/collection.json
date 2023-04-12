@@ -143,106 +143,25 @@
         "border_size": 1
       }
     },
-    "c9916ae5-fd84-40a6-ad88-2bab7ffa64d8": {
-      "type": "index__featured-articles",
-      "blocks": {
-        "e78861b4-d224-4c72-bc7b-7e1cb4e0c554": {
-          "type": "article",
-          "settings": {
-            "article": "recipes-cocktails\/raw-hemp-brownies"
-          }
-        },
-        "ab2b3bc0-6557-49a0-9ec2-b067e39ba45c": {
-          "type": "article",
-          "settings": {
-            "article": "health-wellness\/best-probiotics-in-australia-the-complete-guide"
-          }
-        },
-        "f1dfbfba-8808-46ba-8f21-f880b8df143f": {
-          "type": "article",
-          "settings": {
-            "article": "health-wellness\/the-best-supplements-for-muscle-recovery-a-comprehensive-guide"
-          }
-        },
-        "cdfb5a4e-7139-4dfa-90a0-b680ce4cf300": {
-          "type": "article",
-          "disabled": true,
-          "settings": {
-            "article": "health-wellness\/how-to-lose-weight-naturally-with-hemp-oil-the-truth-behind-the-hype"
-          }
-        },
-        "6a1222fd-cf48-4212-b75e-d485c2bf0034": {
-          "type": "article",
-          "disabled": true,
-          "settings": {
-            "article": "health-wellness\/can-hemp-seed-oil-help-promote-hair-growth"
-          }
-        },
-        "6b29439c-1756-4983-bd7e-06e03663ad51": {
-          "type": "article",
-          "disabled": true,
-          "settings": {
-            "article": "terpenes\/what-is-limonene"
-          }
-        },
-        "d92c3985-4ca4-40c4-9422-31efce9175ca": {
-          "type": "article",
-          "disabled": true,
-          "settings": {
-            "article": "health-wellness\/what-is-mct-oil"
-          }
-        }
-      },
-      "block_order": [
-        "e78861b4-d224-4c72-bc7b-7e1cb4e0c554",
-        "ab2b3bc0-6557-49a0-9ec2-b067e39ba45c",
-        "f1dfbfba-8808-46ba-8f21-f880b8df143f",
-        "cdfb5a4e-7139-4dfa-90a0-b680ce4cf300",
-        "6a1222fd-cf48-4212-b75e-d485c2bf0034",
-        "6b29439c-1756-4983-bd7e-06e03663ad51",
-        "d92c3985-4ca4-40c4-9422-31efce9175ca"
-      ],
+    "e6286ba9-f41c-48df-8665-157918fa89a6": {
+      "type": "collection__learning-articles",
       "settings": {
-        "title": "Learn",
+        "title": "Featured collection",
         "title_color": "#f78257",
         "title_size": "large",
-        "subtitle": "ABOUT HEMP SEED OIL",
+        "subtitle": "",
         "subtitle_color": "#f78257",
-        "image_style": "square",
-        "blog_show_tags": false,
-        "show_topic": true,
-        "blog_author": false,
-        "read_time": false,
-        "blog_date": true,
-        "blog_comment_count": false,
-        "blog_show_excerpt": false,
-        "show-border": false,
-        "button_label": "",
-        "button_type": "button--primary",
         "width": "standard",
         "padding_top": 0,
         "padding_bottom": 0,
         "animation": "none",
-        "show_all_button": false,
-        "url_all_button": "",
-        "label_all_button": "",
         "css_class": "",
         "custom_css": ""
       }
     },
-    "aa2b48b5-07f9-41ca-88a7-4d0e4fe0a264": {
-      "type": "global__section-spliter",
-      "settings": {
-        "width": "wide",
-        "desktop_height": 100,
-        "mobile_height": 50,
-        "show_border": false,
-        "border_color": "#e9e9e9",
-        "border_size": 1
-      }
-    },
     "8cca5408-03dc-40f6-858b-c984b75a6d23": {
       "type": "collection__faq",
+      "disabled": true,
       "settings": {
         "title": "Faqs",
         "title_color": "#5d6a73",
@@ -357,8 +276,7 @@
     "410cc5ae-7768-4ac0-a5af-6f74b3c21ad8",
     "0a7c5e72-1aa1-4018-9a99-1da05c42c7cf",
     "066bab76-1068-42f2-ab84-99399f9b5e18",
-    "c9916ae5-fd84-40a6-ad88-2bab7ffa64d8",
-    "aa2b48b5-07f9-41ca-88a7-4d0e4fe0a264",
+    "e6286ba9-f41c-48df-8665-157918fa89a6",
     "8cca5408-03dc-40f6-858b-c984b75a6d23",
     "a3619a17-61cf-4555-9345-3f62ea83641f",
     "fd5ee440-085f-46e8-931c-2195ec67d41d",
