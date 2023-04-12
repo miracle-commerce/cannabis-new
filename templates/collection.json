@@ -100,7 +100,7 @@
         "title_color": "#223241",
         "title_align": "left",
         "title_size": "medium",
-        "collection": "hemp",
+        "collection": "{{ collection.metafields.custom.recommended_collection.value }}",
         "products_per": 4,
         "mobile_products_per_row": "1",
         "products_limit": 10,
