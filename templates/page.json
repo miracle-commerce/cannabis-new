@@ -1,5 +1,16 @@
 {
   "sections": {
+    "58d085c2-1ae7-40a2-a842-9eb02e8e0641": {
+      "type": "global__section-spliter",
+      "settings": {
+        "width": "wide",
+        "desktop_height": 80,
+        "mobile_height": 40,
+        "show_border": false,
+        "border_color": "#e9e9e9",
+        "border_size": 1
+      }
+    },
     "main": {
       "type": "page-content__main",
       "settings": {
@@ -24,6 +35,7 @@
     }
   },
   "order": [
+    "58d085c2-1ae7-40a2-a842-9eb02e8e0641",
     "main",
     "98cccca7-57a2-4d6a-b82b-4248604384a1"
   ]

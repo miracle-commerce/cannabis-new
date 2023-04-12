@@ -21533,3 +21533,96 @@ Custom Styles for Bold Subscription widget on the product page
   accent-color: #7C8C82;
 }
 
+
+/* =================================================
+Custom Styles for Page contents
+==================================================== */
+.page__content .image--wrapper{
+  line-height: 0;
+}
+.page__content a:hover{
+  opacity: 0.8;
+}
+
+.page__content--has-multi-blocks{
+  display: flex; 
+  flex-wrap: wrap;
+  row-gap: 60px; 
+}
+
+.page-content__block{
+  width: 100%;
+}
+
+@media only screen and (max-width: 798px){
+  .page__content--has-multi-blocks{
+    row-gap: 45px;
+  }
+}
+
+.page-content__block--image-with-text{
+  display: flex; 
+  flex-wrap: wrap;
+  align-items: center; 
+  column-gap: 30px;
+}
+
+.page-image-text-block__item {
+  flex-grow: 1; 
+  flex-shrink: 1;
+}
+
+.page-image-text-block__item{
+  width: calc(var(--block-width) - 15px);
+}
+
+.page-image-text-block__item--image.position--right{
+  order: 1; 
+}
+
+@media only screen and (max-width: 798px){
+  .page-content__block--image-with-text{
+    row-gap: 40px;
+  }
+  .page-image-text-block__item{
+    width: 100%;
+  }
+  .page-image-text-block__item--image{
+    order: 1;
+    text-align: center; 
+  }
+}
+
+.page-content__block--buttons-wrapper{
+  display: flex; 
+  flex-wrap: wrap; 
+  align-items: center; 
+  justify-content: center; 
+  column-gap: 30px;
+}
+
+.page-content__block--buttons-wrapper .custom_page-button{
+  border-radius: 45px; 
+  background-color: var(--page-button-background);
+  color: var(--page-button-color);
+  display: inline-block;
+  font-size: 20px; 
+  font-weight: 700; 
+  padding: 12px 40px;
+  text-align: center; 
+  min-width: 200px;
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 798px){
+  .page-content__block--buttons-wrapper{
+    row-gap: 20px;
+  }
+
+  .page-content__block--buttons-wrapper .custom_page-button{
+    font-size: 16px; 
+    padding: 12px 20px;
+    white-space: initial;
+    width: 100%;
+  }
+}

@@ -13,9 +13,11 @@
 {% assign custom_css = section.settings.custom_css %}
 
 {% style %}
-  #shopify-section-{{ id }} {
-    padding-top: {{ padding_top }}px;
-    padding-bottom: {{ padding_bottom }}px;
+  #shopify-section-{{ id }}{
+    padding-top: {{ padding_top }}
+    px;
+    padding-bottom: {{ padding_bottom }}
+    px;
     {% if width == 'wide' %}
       width: 100%;
     {% endif %}
@@ -23,27 +25,75 @@
 
   {% render 'css-loop',
           css: custom_css,
-          id: id
-  %}
+          id: id %}
 {% endstyle %}
 
-<section class="section main-page-section
-        {{ css_class }}"
-        {% if animation != "none" %}
-          data-scroll-class="{{ animation }}"
-        {% endif %}>
+<section
+  class="section main-page-section
+            {{ css_class }}"{% if animation != "none" %}
+  data-scroll-class="{{ animation }}"
+  {% endif %}>
   <div class="container">
     {%- if section.settings.show_heading != blank -%}
-      {% render 'heading',
-              title: page.title,
-              heading_tag: 'h1',
-              context: 'page',
-              text_alignment: section.settings.heading_alignment
-      %}
+      {% render 'heading'
+       , title: page.title,
+       heading_tag: 'h1',
+       context: 'page',
+       text_alignment: section.settings.heading_alignment %}
     {%- endif -%}
-    <div class="page__content content">
-      {{ page.content}}
-    </div>
+
+
+    {% if page.content contains '<!-- split-block' %}
+      <div class="page__content content page__content--has-multi-blocks">
+        {%- assign page_contents = page.content | split: '<!-- split-block' -%}
+        {%- if page_contents.size > 0 -%}
+          {% for page_content in page_contents %}
+            {% unless page_content == blank %}
+              {%- assign block_content = page_content | split: '<!-- end block -->' | first | split: '-->' | last-%}
+              {%- assign block_params = page_content | split: '<!-- end block -->' | first | split: '-->' | first | remove: ' ' -%}
+              {%- assign block_type = block_params | split: 'block-type:' | last | split: ',' | first -%}
+              <div class="page-content__block page-content__block--{{block_type}}">
+                {% case block_type %}
+                  {% when 'image-with-text' %}
+                    {%- assign image_position = block_params | split: 'image-position:' | last | split: ',' | first | default: 'left'-%}
+                    {%- assign image_width =  block_params | split: 'image-width:' | last | split: ',' | first | default: 50 -%}
+                    {%- assign text_width = 100 | minus: image_width -%}
+                    {%- assign image_el = block_content | split: '<img' | last | split: '>' | first -%}
+                    {%- assign image_el = '<img' | append: image_el | append: '>' -%}
+                    {%- assign block_main_content = block_content | remove: image_el -%}
+                    <div class="page-content__block__item page-image-text-block__item page-image-text-block__item--image image--wrapper position--{{image_position}}" style="--block-width: {{image_width}}%;">{{image_el}}</div>
+                    <div class="page-content__block__item page-image-text-block__item  page-image-text-block__item--text-content" style="--block-width: {{text_width}}%">{{block_main_content}}</div>
+
+                  {% when 'buttons-wrapper' %}
+                    {%- assign background_color = block_params | split: 'background-color:' | last | split: ',' | first -%}
+                    {% unless background_color != blank %}
+                      {%- assign background_color = '#5d6a73' -%}
+                    {% endunless %}
+                    {%- assign color = block_params | split: 'color:' | last | split: ',' | first -%}
+                    {% unless color != blank %}
+                      {%- assign color = '#fff' -%}
+                    {% endunless %}
+                    {%- assign button_els = block_content | split: '<a' -%}
+                    {% for button_el in button_els %}
+                      {%- assign button_label = button_el | strip_html | split: '>' | last -%}
+                      {%- assign button_url = button_el | split: 'href="' | last | split: '"' | first -%}
+                      {% unless button_el == blank %}
+                        <a href="{{button_url}}" class="custom_page-button" style="--page-button-background: {{background_color}}; --page-button-color: {{color}}">{{button_label}}</a>
+                      {% endunless %}
+                    {% endfor %}
+                  {% else %}
+                    {{block_content}}
+                {% endcase %}
+              </div>              
+            {% endunless %}
+          {% endfor %}
+        {%- endif -%}
+      </div>
+    {% else %}
+      <div class="page__content content">
+        {{ page.content }}
+      </div>
+    {% endif %}
   </div>
 </section>
 
@@ -68,8 +118,7 @@
           {
             "value": "left",
             "label": "Left"
-          },
-          {
+          }, {
             "value": "center",
             "label": "Center"
           }
@@ -87,8 +136,7 @@
         "max": 80,
         "default": 40,
         "unit": "px"
-      },
-      {
+      }, {
         "type": "range",
         "id": "padding_bottom",
         "label": "Bottom spacing",
@@ -96,21 +144,17 @@
         "max": 80,
         "default": 40,
         "unit": "px"
-      },
-      {
+      }, {
         "type": "header",
         "content": "Advanced"
-      },
-      {
+      }, {
         "type": "paragraph",
         "content": "[Learn more](https://help.outofthesandbox.com/hc/en-us/articles/360022329373)"
-      },
-      {
+      }, {
         "type": "text",
         "id": "css_class",
         "label": "CSS Class"
-      },
-      {
+      }, {
         "type": "textarea",
         "id": "custom_css",
         "label": "Custom CSS"
