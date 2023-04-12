@@ -82,17 +82,6 @@
         "padding_right": 0
       }
     },
-    "6abf5384-539c-444d-9817-5cab840a001d": {
-      "type": "global__section-spliter",
-      "settings": {
-        "width": "standard",
-        "desktop_height": 80,
-        "mobile_height": 60,
-        "show_border": true,
-        "border_color": "#e9e9e9",
-        "border_size": 4
-      }
-    },
     "60b70c49-0b7d-4b25-b6c8-05d7e425ace1": {
       "type": "global__section-spliter",
       "settings": {
@@ -111,7 +100,7 @@
         "title_color": "#223241",
         "title_align": "left",
         "title_size": "medium",
-        "collection": "{{ collection.metafields.custom.recommended_collection.value }}",
+        "collection": "hemp",
         "products_per": 4,
         "mobile_products_per_row": "1",
         "products_limit": 10,
@@ -174,12 +163,44 @@
           "settings": {
             "article": "health-wellness\/the-best-supplements-for-muscle-recovery-a-comprehensive-guide"
           }
+        },
+        "cdfb5a4e-7139-4dfa-90a0-b680ce4cf300": {
+          "type": "article",
+          "disabled": true,
+          "settings": {
+            "article": "health-wellness\/how-to-lose-weight-naturally-with-hemp-oil-the-truth-behind-the-hype"
+          }
+        },
+        "6a1222fd-cf48-4212-b75e-d485c2bf0034": {
+          "type": "article",
+          "disabled": true,
+          "settings": {
+            "article": "health-wellness\/can-hemp-seed-oil-help-promote-hair-growth"
+          }
+        },
+        "6b29439c-1756-4983-bd7e-06e03663ad51": {
+          "type": "article",
+          "disabled": true,
+          "settings": {
+            "article": "terpenes\/what-is-limonene"
+          }
+        },
+        "d92c3985-4ca4-40c4-9422-31efce9175ca": {
+          "type": "article",
+          "disabled": true,
+          "settings": {
+            "article": "health-wellness\/what-is-mct-oil"
+          }
         }
       },
       "block_order": [
         "e78861b4-d224-4c72-bc7b-7e1cb4e0c554",
         "ab2b3bc0-6557-49a0-9ec2-b067e39ba45c",
-        "f1dfbfba-8808-46ba-8f21-f880b8df143f"
+        "f1dfbfba-8808-46ba-8f21-f880b8df143f",
+        "cdfb5a4e-7139-4dfa-90a0-b680ce4cf300",
+        "6a1222fd-cf48-4212-b75e-d485c2bf0034",
+        "6b29439c-1756-4983-bd7e-06e03663ad51",
+        "d92c3985-4ca4-40c4-9422-31efce9175ca"
       ],
       "settings": {
         "title": "Learn",
@@ -332,7 +353,6 @@
     "9eedafd7-6e4f-4d71-9127-3b2b4e477254",
     "69e8d988-41a4-4804-91dd-c2c9c3b9fee3",
     "df62f991-02dd-43bd-b991-00c7d42a4a69",
-    "6abf5384-539c-444d-9817-5cab840a001d",
     "60b70c49-0b7d-4b25-b6c8-05d7e425ace1",
     "410cc5ae-7768-4ac0-a5af-6f74b3c21ad8",
     "0a7c5e72-1aa1-4018-9a99-1da05c42c7cf",

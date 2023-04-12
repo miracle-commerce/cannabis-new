@@ -1,0 +1,226 @@
+{% comment %}
+** Blog posts **
+{% endcomment %}
+
+{%- assign title = collection.metafields.custom.learning_articles_section.value.title | default: section.settings.title -%}
+{%- assign subtitle = collection.metafields.custom.learning_articles_section.value.subtitle | default: section.settings.subtitle -%}
+{%- assign learning_article_handles = collection.metafields.custom.learning_articles_section.value.article_handles | metafield_text | remove: ' and ' | remove: ' ' | split: ',' -%}
+
+{% comment %} Section specific CSS {% endcomment %}
+{% style %}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    {% if section.settings.width == 'wide' -%}
+      width: 100%;
+    {%- endif %}
+  }
+  {% render 'css-loop',
+          css: section.settings.custom_css,
+          id: section.id
+  %}
+{% endstyle %}
+
+
+{% comment %} HTML markup {% endcomment %}
+{% if learning_article_handles.size > 0 %}
+<section class="section
+                {{ section.settings.css_class }}
+                is-width-{{ section.settings.width }}"
+                {% if section.settings.animation != "none" %}
+                  data-scroll-class="{{ section.settings.animation }}"
+                {% endif %} {{learning_article_handles.count }} data-article-handles="{{learning_article_handles}}">
+
+  {%- if title != blank or subtitle != blank -%}
+    <div class="section_heading--wrapper">
+      {%- if title != blank -%}
+        <h3 class="section__heading featured-heading featured-heading--{{section.settings.title_size}}" style="--section-heading-color: {{section.settings.title_color}}">{{title}}</h3>
+      {%- endif -%}
+      {%- if subtitle != blank -%}
+        <div class="section_heading--subtitle" style="--section-subtitle-color: {{section.settings.subtitle_color}}">{{subtitle}}</div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  {% if learning_article_handles.size > 0 %}
+    <div class="featured-articles__wrapper" data-article-handles="{{collection.metafields.custom.learning_articles_section.value.article_handles | metafield_text | remove: ' and ' | remove: ' '}}">
+      {% for learning_article_handle in learning_article_handles %}
+          {%- assign learning_article = articles[learning_article_handle] -%}
+            <div class="featured-article__wrapper featured-article__item" {{learning_article_handle}}>
+              {% render 'article-card', 
+                article: learning_article, 
+                show_border: false,
+                show_date: true,
+                image_style: "square",
+                show_topic: true  
+              %}
+            </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>
+{% endif %}
+
+
+{% schema %}
+
+{
+  "name": "Collection Learn Articles",
+  "class": "featured-articles featured-articles--1",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Heading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Featured collection"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#F78257"
+    },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title Size",
+      "options": [
+        {
+          "value": "tiny",
+          "label": "Tiny"
+        },
+        {
+          "value":"small",
+          "label":"Small"
+        },
+        {
+          "value":"medium",
+          "label":"Medium"
+        },
+        {
+          "value":"large",
+          "label":"Large"
+        },
+        {
+          "value":"extra-large",
+          "label":"Extra Large"
+        }
+      ],
+      "default": "large"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#F78257"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Width",
+      "default": "standard",
+      "options": [
+        {
+          "value": "standard",
+          "label": "Standard"
+        },
+        {
+          "value":"container",
+          "label":"Container"
+        },
+        {
+          "value": "wide",
+          "label": "Wide"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top spacing",
+      "min": 0,
+      "max": 80,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom spacing",
+      "default": 0,
+      "min": 0,
+      "max": 80,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "animation",
+      "label": "Animation",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "fadeIn",
+          "label": "Fade in"
+        },
+        {
+          "value": "fadeInDown",
+          "label": "Fade in down"
+        },
+        {
+          "value": "fadeInLeft",
+          "label": "Fade in left"
+        },
+        {
+          "value": "fadeInRight",
+          "label": "Fade in right"
+        },
+        {
+          "value": "slideInLeft",
+          "label": "Slide in left"
+        },
+        {
+          "value": "slideInRight",
+          "label": "Slide in right"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Advanced",
+      "info": "[Learn more](https://help.outofthesandbox.com/hc/en-us/articles/360022329373)"
+    },
+    {
+      "type": "text",
+      "id": "css_class",
+      "label": "CSS Class"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_css",
+      "label": "Custom CSS"
+    }
+  ],
+  "templates":["collection"],
+  "presets": [{
+    "name": "Collection Learn Articles",
+    "category": "Blog"
+  }]
+}
+{% endschema %}
