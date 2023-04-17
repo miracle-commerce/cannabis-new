@@ -28,20 +28,19 @@
           id: id %}
 {% endstyle %}
 
+{%- assign show_heading = page.metafields.custom.show_heading -%}
+
 <section
   class="section main-page-section
             {{ css_class }}"{% if animation != "none" %}
   data-scroll-class="{{ animation }}"
   {% endif %}>
   <div class="container">
-    {%- if section.settings.show_heading != blank -%}
-      {% render 'heading'
-       , title: page.title,
-       heading_tag: 'h1',
-       context: 'page',
-       text_alignment: section.settings.heading_alignment %}
+    {%- if show_heading -%}
+      <div class="page-heading">
+        <h1 class="page-title text-align--{{section.settings.heading_alignment}}" style="--page-heading-color: {{page.metafields.custom.heading_color | default: "#f78257"}}">{{page.title}}</h1>
+      </div>
     {%- endif -%}
-
 
     {% if page.content contains '<!-- split-block' %}
       <div class="page__content content page__content--has-multi-blocks">
@@ -49,8 +48,8 @@
         {%- if page_contents.size > 0 -%}
           {% for page_content in page_contents %}
             {% unless page_content == blank %}
-              {%- assign block_content = page_content | split: '<!-- end block -->' | first | split: '-->' | last-%}
-              {%- assign block_params = page_content | split: '<!-- end block -->' | first | split: '-->' | first | remove: ' ' -%}
+              {%- assign block_content = page_content | split: '<!-- end block -->' | first | split: '/-->' | last-%}
+              {%- assign block_params = page_content | split: '<!-- end block -->' | first | split: '/-->' | first | remove: ' ' -%}
               {%- assign block_type = block_params | split: 'block-type:' | last | split: ',' | first -%}
               <div class="page-content__block page-content__block--{{block_type}}">
                 {% case block_type %}
@@ -80,6 +79,34 @@
                       {% unless button_el == blank %}
                         <a href="{{button_url}}" class="custom_page-button" style="--page-button-background: {{background_color}}; --page-button-color: {{color}}">{{button_label}}</a>
                       {% endunless %}
+                    {% endfor %}
+
+                  {% when 'text-with-form' and page.metafields.custom.form_code != blank %}
+                    <div class="page-content__block__item page-form-text-block">{{block_content}}</div>
+                    <div class="page-content__block__item page-form-text-block">{{page.metafields.custom.form_code.value}}</div>
+
+                  {% when 'feature-image-text-columns' %}
+                    {%- assign block_columns = block_content | split: '<!-- column-spliter -->' -%}
+                    {%- assign column_count = block_params | split: 'column-counts:' | last | split: ',' | first -%}
+                    {%- assign image_style = block_params | split: 'image-style:' | last | split: ',' | first -%}
+                    {%- assign text_align = block_params | split: 'text-align:' | last | split: ',' | first -%}
+                    {% assign link_style = block_params | split: 'link-style:' | last | split: ',' | first %}
+                    {% for block_column in block_columns %}
+                      <div class="page-content__feature-image-text-column column-width--{{column_count}} link-style--{{link_style}}">
+                        {% assign block_image = block_column | split: '<img' | last | split: '>' | first %}
+                        {% assign block_image = '<img' | append: block_image | append: '>' %}
+                        {% assign block_content = block_column | remove: block_image %}
+                        <div class="column-image__wrapper image-style--{{image_style}}">{{block_image}}</div>
+                        <div class="column-content is-text-align--{{text_align}}">{{block_content}}</div>
+                      </div>
+                    {% endfor %}
+
+                  {% when 'video-columns' %}
+                    {%- assign block_columns = block_content | split: '<!-- column-spliter -->' -%}
+                    {%- assign column_count = block_params | split: 'column-counts:' | last | split: ',' | first -%}
+                    {% for block_column in block_columns %}
+                      <div class="page__content--video-column column-width--{{column_count}}">
+                        <div class="video--wrapper">{{block_column}}</div></div>
                     {% endfor %}
                   {% else %}
                     {{block_content}}
