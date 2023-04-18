@@ -108,6 +108,10 @@
                       <div class="page__content--video-column column-width--{{column_count}}">
                         <div class="video--wrapper">{{block_column}}</div></div>
                     {% endfor %}
+
+                  {% when 'list-columns' %}
+                    {% assign column_count = block_params | split: 'column-counts:' | last | split: '/-->' | first %}
+                    <ul class="list-column--{{column_count}}">{{block_content | remove: '<ul>' | remove: '</ul>'}}</ul>
                   {% else %}
                     {{block_content}}
                 {% endcase %}

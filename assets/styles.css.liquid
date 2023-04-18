@@ -21239,39 +21239,44 @@ Custom Styles for Ajax Cart
 Custom Styles for custom pages
 ====================================================== */
 /* General Styles for custom page */
-.main-page-section{
-  max-width: 1440px;
+.main-page-section, .shopify-policy__container{
+  max-width: 1440px !important;
   padding: 0 40px;
-  margin: auto;
+  margin: auto !important;
 }
 
-.page__content h1, .page__content h2, .page__content h3, .page__content h4, .page__content h5, .page__content h6{
+.shopify-policy__container{
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.page__content h1, .page__content h2, .page__content h3, .page__content h4, .page__content h5, .page__content h6, .shopify-policy__body h1, .shopify-policy__body h2, .shopify-policy__body h3, .shopify-policy__body h4, .shopify-policy__body h5, .shopify-policy__body h6{
   font-family: obviously, sans-serif; 
   font-weight: 700;
   line-height: 1.1;
 }
 
-.page__content h1, .page__content h2, .page__content h3, .page__content h4{
+.page__content h1, .page__content h2, .page__content h3, .page__content h4, .shopify-policy__body h1, .shopify-policy__body h2, .shopify-policy__body h3, .shopify-policy__body h4{
   width: 100%;
 }
 
-.page__content h1{
+.page__content h1, .shopify-policy__body h1{
   font-size: 100px; 
 }
 
-.page__content h2{
+.page__content h2, .shopify-policy__body h2{
   font-size: 80px;
 }
 
-.page__content h3{
+.page__content h3, .shopify-policy__body h3{
   font-size: 60px;
 }
 
-.page__content h4{
+.page__content h4, .shopify-policy__body h4{
   font-size: 40px;
 }
 
-.page__content h5{
+.page__content h5, .shopify-policy__body h5{
   font-size: 30px;
   font-weight: 400;
 }
@@ -21281,51 +21286,56 @@ Custom Styles for custom pages
 }
 
 @media only screen and (max-width: 798px){
-  .page__content h1{
+  .page__content h1, .shopify-policy__body h1{
     font-size: 60px; 
   }
   
-  .page__content h2{
+  .page__content h2, .shopify-policy__body h2{
     font-size: 40px;
   }
   
-  .page__content h3{
+  .page__content h3, .shopify-policy__body h3{
     font-size: 30px;
   }
   
-  .page__content h4{
+  .page__content h4, .shopify-policy__body h4{
     font-size: 26px;
   }
   
-  .page__content h5{
+  .page__content h5, .shopify-policy__body h5{
     font-size: 24px;
   }
 
 }
 
 @media only screen and (max-width: 480px){
-  .main-page-section{
+  .main-page-section, .shopify-policy__container{
     padding: 0 15px;
     font-size: 16px;
   }
 
-  .page__content h1{
+  .shopify-policy__container{
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .page__content h1, .shopify-policy__body h1{
     font-size: 45px; 
   }
   
-  .page__content h2{
+  .page__content h2, .shopify-policy__body h2{
     font-size: 36px;
   }
   
-  .page__content h3{
+  .page__content h3, .shopify-policy__body h3{
     font-size: 32px;
   }
   
-  .page__content h4{
+  .page__content h4, .shopify-policy__body h4{
     font-size: 24px;
   }
   
-  .page__content h5{
+  .page__content h5, .shopify-policy__body h5{
     font-size: 22px;
   }
 }
@@ -21555,12 +21565,12 @@ Custom Styles for Bold Subscription widget on the product page
 
 
 /* =================================================
-Custom Styles for Page contents
+Custom Styles for Page contents and Policy Pages
 ==================================================== */
-.page-heading{
+.page-heading, .shopify-policy__title{
   width: 100%;
 }
-.page-title{
+.page-title, .shopify-policy__title h1{
   color: var(--page-heading-color);
   font-size: 80px; 
   font-weight: 700;
@@ -21569,19 +21579,24 @@ Custom Styles for Page contents
   margin-bottom: 60px; 
 }
 
+.shopify-policy__title h1{
+  color: #F78257;
+  text-align: left;
+}
+
 .page__content--has-multi-blocks{
   width: 100%;
 }
 
 @media only screen and (max-width: 798px){
-  .page-title{
+  .page-title, .shopify-policy__title h1{
     font-size: 60px; 
     margin-bottom: 40px; 
   }
 }
 
 @media only screen and (max-width: 480px){
-  .page-title{
+  .page-title, .shopify-policy__title h1{
     font-size: 45px;
   }
 }
@@ -21589,7 +21604,7 @@ Custom Styles for Page contents
 .page__content .image--wrapper{
   line-height: 0;
 }
-.page__content a:hover{
+.page__content a:hover ,.shopify-policy__container a:hover{
   opacity: 0.8;
 }
 
@@ -21822,5 +21837,31 @@ Custom Styles for Page contents
 @media only screen and (max-width: 480px){
   .page__content--video-column.column-width--2, .page__content--video-column.column-width--3{
     width: 100%;
+  }
+}
+
+
+/* list columns */
+
+.page-content__block--list-columns{
+  column-gap: 30px;
+}
+.page-content__block--list-columns .list-column--2{
+  column-count: 2;
+}
+
+.page-content__block--list-columns .list-column--3{
+  column-count: 3;
+}
+
+@media only screen and (max-width: 798px){
+  .page-content__block--list-columns .list-column--2, .page-content__block--list-columns .list-column--3{
+    column-count: 2;
+  }
+}
+
+@media only screen and (max-width: 480px){
+  .page-content__block--list-columns .list-column--2, .page-content__block--list-columns .list-column--3{
+    column-count: 1;
   }
 }
