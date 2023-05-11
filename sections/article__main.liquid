@@ -331,6 +331,26 @@
     </aside>
   </div>
 
+  {% comment %} Blog Post' Faqs {% endcomment %}
+  {%- if article.metafields.custom.article_faqs != blank -%}
+    <div class="container article-faqs">
+      <div class="one-whole column article-faqs__heading">
+        <h3 class="article-faqs__title">FAQs</h3>
+        <span class="article-faqs__heading__icon">
+          {% render 'icon__north-east-arrow-svg'%}
+        </span>
+      </div>
+      <div class="one-whole column article-faqs__content">
+        {%- for article_faq in article.metafields.custom.article_faqs.value -%}
+          <div class="article-faq">
+            <h4 class="article-faq__title">{{article_faq.title}}</h4>
+            <div class="article-faq__content">{{article_faq.faq_content| metafield_tag}}</div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
+
   {% comment %} Related blog posts {% endcomment %}
   {% if blog.articles_count > 1 %}
     <div class="container related-blogs has-padding-bottom medium-down--hide" {{ block.shopify_attributes }}>
@@ -370,7 +390,15 @@
 </section>
 
 <script data-theme-editor-load-script src="{{ 'z__jsSidebar.js' | asset_url }}"></script>
-
+{% if article.metafields.custom.article_faqs != blank %}
+  <script>
+    const articleFaqs = document.querySelector(".article-faqs");
+    const articleFaqsHeading = articleFaqs.querySelector(".article-faqs__heading");
+    articleFaqsHeading.addEventListener('click', function(){
+      articleFaqs.classList.toggle("is-active");
+    });
+  </script>
+{% endif %}
 {% schema %}
 
 {

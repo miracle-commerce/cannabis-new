@@ -21865,3 +21865,140 @@ Custom Styles for Page contents and Policy Pages
     column-count: 1;
   }
 }
+
+
+/* ============================================
+Custom Styles for FAQs section on article page
+=============================================== */
+.article-faqs{
+  padding: 60px 80px;
+  border-top: 4px solid rgba(124, 140, 130, 0.2);
+  border-bottom: 4px solid rgba(124, 140, 130, 0.2);
+  margin-bottom: 70px;
+}
+
+.article-faqs__heading{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  column-gap: 20px;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+.article-faqs__title{
+  color: #405554;
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: -1.2px;
+}
+
+.article-faqs__heading__icon{
+  margin-bottom: 15px;
+}
+
+.article-faqs__heading__icon svg{
+  width: 37px;
+  height: 37px;
+  fill: #7c8c82;
+  transform: rotate(90deg);
+  transition: all .8s;
+}
+
+.article-faqs__content{
+  display: none; 
+}
+
+.article-faqs.is-active .article-faqs__content{
+  display: block;
+  column-count: 2; 
+  column-gap: 100px; 
+  padding-top: 50px;
+}
+
+.article-faqs.is-active .article-faqs__heading__icon svg{
+  transform: initial; 
+}
+
+.article-faq{
+  margin-bottom:30px; 
+  break-inside: avoid;
+}
+
+.article-faq__title{
+  color: #5a6a74;
+  font-size: 24px;
+  letter-spacing: 0px;
+  margin-bottom: 24px;
+}
+
+.article-faq__content{
+  font-size: 16px; 
+  color: #363636;
+}
+
+.article-faq__content a{
+  color: #f78257;
+}
+
+.article-faq__content a:hover{
+  opacity: 0.9;
+}
+
+@media only screen and (max-width: 798px){
+  .article-faqs{
+    padding-left: 30px; 
+    padding-right: 30px;
+  }
+
+  .article-faqs__title{
+    font-size: 40px;
+    letter-spacing: -0.8px;
+    line-height: 1; 
+  }
+
+  .article-faqs.is-active .article-faqs__content{
+    column-count: 1;
+    display: flex; 
+    flex-wrap: wrap; 
+    row-gap: 50px;
+    padding-top: 20px;
+    margin-bottom: 0;
+  }
+
+  .article-faq{
+    margin-bottom: 0; 
+    width: 100%;
+  }
+
+  .article-faq__title{
+    font-size: 18px;
+    margin-bottom: 16px; 
+  }
+
+  .article-faq__content{
+    font-size: 14px; 
+  }
+
+  .article-faqs__heading__icon{
+    display: flex; 
+    align-items: flex-end; 
+    margin-bottom: 5px;
+  }
+
+  .article-faqs__heading__icon svg{
+    width: 28px; 
+    height: 28px;
+    fill: #7C8C82;
+  }
+}
+
+@media only screen and (max-width: 480px){
+  .article-faqs{
+    padding: 30px 15px; 
+  }
+
+  .article-faqs__content{
+    row-gap: 30px;
+  }
+}
