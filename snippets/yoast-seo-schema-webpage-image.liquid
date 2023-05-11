@@ -1,0 +1,72 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- liquid
+	capture yoast_seo_page_type
+		render 'yoast-seo-page-type'
+	endcapture
+
+	comment
+	Retrieve Shopify's featured image
+	endcomment
+	if yoast_seo_page_type == "product"
+		assign current_variant = product.selected_or_first_available_variant
+
+		if current_variant.featured_media != null and current_variant.featured_media != empty
+			assign og_image = current_variant.featured_media.preview_image
+			assign og_image_id = current_variant.featured_media.id
+		elsif product.featured_media != null and product.featured_media != empty
+			assign og_image = product.featured_media.preview_image
+			assign og_image_id = product.featured_media.id
+		endif
+
+	elsif yoast_seo_page_type == "article" and article.image
+		assign og_image = article.image
+
+	elsif yoast_seo_page_type == "collection" and collection.image
+		assign og_image = collection.image
+	endif
+
+	comment
+	Retrieve site image set with our Settings module.
+	endcomment
+	if og_image == null or og_image == empty
+		assign settings_data = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings
+		if settings_data.siteSettings.siteDefaults
+			assign site_image_url = settings_data.siteSettings.siteDefaults.siteImage.url
+			if site_image_url != ""
+				capture filename
+					render 'yoast-seo-image-filename', url: site_image_url
+				endcapture
+
+				assign og_image = images[filename]
+			endif
+		endif
+	endif
+
+	comment
+	Retrieve Shopify's site image.
+	endcomment
+	if og_image == null or og_image == empty
+		if page_image
+			assign og_image = page_image
+		endif
+	endif
+
+	if og_image_id == null or og_image_id == empty
+		assign og_image_id = og_image.id
+	endif
+
+	comment
+	Render the WebPage image
+	endcomment
+	if og_image != null and og_image != empty
+		if format == 'id'
+			echo og_image_id
+		else
+			render 'yoast-seo-schema-image', image_object: og_image, image_id: og_image_id
+		endif
+	endif
+ -%}

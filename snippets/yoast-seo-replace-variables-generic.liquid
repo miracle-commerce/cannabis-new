@@ -1,0 +1,66 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- liquid
+	if yoast_seo_page_type == null
+		capture yoast_seo_page_type
+			render 'yoast-seo-page-type'
+		endcapture
+	endif
+
+	capture page_title_replacement
+		case yoast_seo_page_type
+			when "page"
+				echo page.title
+			when "article"
+				echo article.title
+			when "product"
+				echo product.title
+			when "collection"
+				echo collection.title
+			when "blog"
+				echo blog.title
+			when "product_tags"
+				echo current_tags | join: ', '
+			when "blog_post_tags"
+			 	echo current_tags | join: ', '
+			else
+				echo page_title
+		endcase
+	endcapture
+
+	capture shopify_seo_title_replacement
+		echo page_title
+	endcapture
+
+	capture shopify_seo_description_replacement
+		echo page_description | default: ''
+	endcapture
+
+	capture focus_keyphrase
+		render "yoast-seo-variable", variable: "focus_keyphrase", replace_vars: false
+	endcapture
+
+	assign settings_data = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings
+
+	assign page_replacement = ''
+	if current_page > 1
+		capture page_translated
+			render 'yoast-seo-translate', text: "Page"
+		endcapture
+
+		assign page_replacement = page_translated | append: ' ' | append: current_page
+	endif
+
+	assign output = template
+	assign output = output | replace: "%%sitename%%", shop.name
+	assign output = output | replace: "%%title%%", page_title_replacement
+	assign output = output | replace: "%%page%%", page_replacement
+	assign output = output | replace: "%%focus_keyphrase%%", focus_keyphrase
+	assign output = output | replace: "%%shopify_seo_title%%", shopify_seo_title_replacement
+	assign output = output | replace: "%%shopify_seo_description%%", shopify_seo_description_replacement
+
+	echo output
+-%}

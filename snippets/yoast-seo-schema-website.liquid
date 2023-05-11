@@ -1,0 +1,46 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+{%- liquid
+	assign settings_data = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings
+	assign websiteName = shop.name
+	if settings_data.schema.siteRepresentation.websiteName != null and settings_data.schema.siteRepresentation.websiteName != ""
+		assign websiteName = settings_data.schema.siteRepresentation.websiteName
+	endif
+-%}
+{
+	"@type": "WebSite",
+	"@id": "{{ shop.url }}/#/schema/website/1",
+	"url": "{{ shop.url }}",
+	"name": {{ websiteName | json }},
+	{%- if settings_data.schema.siteRepresentation.alternateWebsiteName != null and settings_data.schema.siteRepresentation.alternateWebsiteName != "" %}
+	"alternateName": {{ settings_data.schema.siteRepresentation.alternateWebsiteName | json }},
+	{%- endif -%}
+	{%- if routes.search_url %}
+	"potentialAction": {
+		"@type": "SearchAction",
+		"target": "{{ shop.url }}{{ routes.search_url }}?q={search_term_string}",
+		"query-input": "required name=search_term_string"
+	},
+	{%- endif -%}
+	{%- liquid
+		if shop.published_locales.size == 1
+			assign locale_object = shop.published_locales | first
+			assign languages = locale_object.iso_code
+		else
+			assign languages = "" | split: '\_([.YOAST_ARRAY_SPLITTER.])_/'
+			for locale_object in shop.published_locales
+				assign locale_code = locale_object.iso_code | split: '\_([.YOAST_ARRAY_SPLITTER.])_/'
+				assign languages = languages |  concat: locale_code
+			endfor
+		endif
+	%}
+{% assign settings_data = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings -%}
+{%- if settings_data.schema.siteRepresentation.organizationName != "" %}
+	"publisher": {
+		"@id": "{{ shop.url }}/#/schema/organization/1"
+	},
+{%- endif %}
+	"inLanguage": {{ languages | json }}
+},

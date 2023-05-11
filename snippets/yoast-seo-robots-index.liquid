@@ -1,0 +1,29 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- if yoast_seo_page_type == null -%}
+	{%- capture yoast_seo_page_type -%}{%- render 'yoast-seo-page-type' -%}{%- endcapture -%}
+{%- endif -%}
+{%- assign index = "index" -%}
+{%- if yoast_seo_page_type == "404" or yoast_seo_page_type == "search" -%}
+	{%- assign index = "noindex" -%}
+{%- elsif yoast_seo_page_type == "collection" and collection.current_vendor or collection.current_type -%}
+	{%- assign index = "noindex" -%}
+{%- else -%}
+	{%- capture no_index -%}{%- render 'yoast-seo-variable-from-optimize-module', variable: "is_robots_noindex" -%}{%- endcapture -%}
+	{%- if no_index == "true" -%}
+		{%- assign index = "noindex" -%}
+	{%- elsif no_index == "false" -%}
+		{%- assign index = "index" -%}
+	{%- else -%}
+		{%- capture show_in_search_results -%}{%- render 'yoast-seo-show-in-search-results' -%}{%- endcapture -%}
+		{%- if show_in_search_results == "true" -%}
+			{%- assign index = "index" -%}
+		{%- elsif show_in_search_results == "false" -%}
+			{%- assign index = "noindex" -%}
+		{%- endif -%}
+	{%- endif -%}
+{%- endif -%}
+{{- index -}}

@@ -1,0 +1,16 @@
+{%- liquid
+	unless text == null
+		assign locale = localization.language.iso_code
+		assign translation_data = shop.metafields.yoast_seo.translations.value | default: shop.metafields.yoast_seo.translations
+		assign translated = translation_data[locale][text]
+
+		comment
+			If the locale isn't stored in the metafield, always fall back to English
+		endcomment
+		if translated == null or translated == empty
+			assign translated = text
+		endif
+
+		echo translated
+	endunless
+-%}

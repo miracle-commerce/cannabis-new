@@ -1,0 +1,57 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%-liquid
+	capture output
+		render 'yoast-seo-replace-variables-generic', template: template
+	endcapture
+
+	assign collection_title = product.collections | map: 'title' | first
+	assign tags = product.tags | join: ', '
+	assign product_vendor = product.vendor
+	assign current_variant = product.selected_or_first_available_variant
+	assign selected_variant = product.selected_variant
+	assign product_sku = current_variant.sku
+	assign product_barcode = current_variant.barcode
+	assign price = current_variant.price | default: product.price
+	assign price = price | money_with_currency
+	assign price_min = product.price_min | default: price
+	assign price_min = price_min | money_with_currency
+	assign price_max = product.price_max | default: price
+	assign price_max = price_max | money_with_currency
+
+	capture product_variant_name
+		if selected_variant
+			echo selected_variant.title
+		endif
+	endcapture
+
+	capture product_availability
+		render 'yoast-seo-product-variant-availability', variant: current_variant
+	endcapture
+
+	capture availability
+		if product_availability == "InStock"
+			render 'yoast-seo-translate', text: "In Stock"
+		elsif product_availability == "OutOfStock"
+			render 'yoast-seo-translate', text: "Out Of Stock"
+		elsif product_availability == "BackOrder"
+			render 'yoast-seo-translate', text: "Backorder"
+		endif
+	endcapture
+
+	assign output = output | replace: "%%collection_title%%", collection_title
+	assign output = output | replace: "%%product_tags%%", tags
+	assign output = output | replace: "%%vendor%%", product_vendor
+	assign output = output | replace: "%%sku%%", product_sku
+	assign output = output | replace: "%%barcode%%", product_barcode
+	assign output = output | replace: "%%product_variant%%", product_variant_name
+	assign output = output | replace: "%%availability%%", availability
+	assign output = output | replace: "%%price%%", price
+	assign output = output | replace: "%%price_min%%", price_min
+	assign output = output | replace: "%%price_max%%", price_max
+
+	echo output
+-%}

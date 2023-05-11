@@ -1,0 +1,31 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- liquid
+	capture yoast_seo_is_active
+		render "yoast-seo-is-active"
+	endcapture
+
+	if yoast_seo_page_type == null
+		capture yoast_seo_page_type
+			render 'yoast-seo-page-type'
+		endcapture
+	endif
+
+	if yoast_seo_is_active == "yes"
+		case yoast_seo_page_type
+			when "page"
+				echo page.metafields.yoast_seo.indexable.value[variable] | default: page.metafields.yoast_seo.indexable[variable]
+			when "article"
+				echo article.metafields.yoast_seo.indexable.value[variable] | default: article.metafields.yoast_seo.indexable[variable]
+			when "product"
+				echo product.metafields.yoast_seo.indexable.value[variable] | default: product.metafields.yoast_seo.indexable[variable]
+			when "collection"
+				echo collection.metafields.yoast_seo.indexable.value[variable] | default: collection.metafields.yoast_seo.indexable[variable]
+			when "blog"
+				echo blog.metafields.yoast_seo.indexable.value[variable] | default: blog.metafields.yoast_seo.indexable[variable]
+		endcase
+	endif
+-%}

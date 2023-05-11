@@ -1,0 +1,57 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- liquid
+	comment
+	This is the main Yoast SEO liquid file.
+	endcomment
+
+	comment
+	The output type is 'basic' for non-content pages.
+	For a list of the content pages, see yoast-seo-output-type.
+	endcomment
+	capture yoast_seo_output_type
+		render 'yoast-seo-output-type'
+	endcapture
+
+	capture title
+		render "yoast-seo-variable", variable: "title"
+	endcapture
+
+	assign settings_data = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings
+	assign sep = settings_data.siteSettings.siteDefaults.separator
+%}
+<!-- This site is optimized with Yoast SEO for Shopify -->
+{%- if yoast_seo_output_type == "basic" %}
+	{%- comment -%} Generate basic frontend output, for non-content pages. {%- endcomment -%}
+
+	<title>
+		{{- title | strip_html -}}
+		{%- unless title contains shop.name %} {{ sep }} {{ shop.name }}{% endunless -%}
+	</title>
+	<meta name="robots" content="noindex, follow"/>
+
+	{% render "yoast-seo-open-graph", yoast_seo_output_type: "basic" -%}
+	{%- render "yoast-seo-schema", yoast_seo_output_type: "basic" -%}
+
+{%- else %}
+	{%- comment -%} Generate regular frontend output, for content pages. {%- endcomment -%}
+
+	<title>{{- title | strip_html -}}</title>
+	{%- capture description -%}{%- render "yoast-seo-variable", variable: "description" -%}{%- endcapture -%}
+	{%- if description != "" %}
+<meta name="description" content="{{- description | replace: '"', '&#34;' -}}" />
+	{%- endif -%}
+
+	{%- render 'yoast-seo-canonical' -%}
+	{%- render "yoast-seo-webmaster-verification" -%}
+	{%- render "yoast-seo-robots" -%}
+	{%- render "yoast-seo-open-graph" -%}
+	{%- render "yoast-seo-product" -%}
+	{%- render "yoast-seo-twitter" -%}
+	{%- render "yoast-seo-schema" %}
+
+{%- endif -%}
+<!--/ Yoast SEO -->

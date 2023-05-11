@@ -1,0 +1,39 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- capture yoast_seo_page_type -%}{%- render 'yoast-seo-page-type' -%}{%- endcapture -%}
+{%- if yoast_seo_page_type == "product" -%}
+	{%- assign current_variant = product.selected_or_first_available_variant -%}
+	{%- capture product_availability -%}{%- render 'yoast-seo-product-variant-availability', variant: current_variant -%}{%- endcapture -%}
+	{%- if product_availability != "" -%}
+		{%- if product_availability == "OutOfStock" %}
+<meta property="og:availability" content="outofstock" />
+<meta property="product:availability" content="out of stock" />
+		{%- elsif product_availability == "InStock" %}
+<meta property="og:availability" content="instock" />
+<meta property="product:availability" content="instock" />
+		{%- elsif product_availability == "BackOrder" %}
+<meta property="og:availability" content="backorder" />
+<meta property="product:availability" content="available for order" />
+	   	{%- endif %}
+	{%- endif -%}
+
+<meta property="product:condition" content="new" />
+
+	{%- if current_variant.price != null and current_variant.price != "" %}
+<meta property="product:price:amount" content="{{- current_variant.price | divided_by: 100.00 -}}" />
+<meta property="product:price:currency" content="{{- cart.currency.iso_code -}}" />
+	{%- endif -%}
+
+	{%- assign sku = current_variant.sku -%}
+	{%- if sku != null and sku != "" %}
+<meta property="product:retailer_item_id" content="{{- sku | replace: '"', '&#34;' -}}" />
+	{%- endif -%}
+
+	{%- if current_variant.compare_at_price != null and current_variant.price != current_variant.compare_at_price %}
+<meta property="og:price:standard_amount" content="{{- current_variant.compare_at_price | divided_by: 100.00 -}}" />
+	{%- endif -%}
+
+{%- endif -%}

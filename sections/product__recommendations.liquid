@@ -60,6 +60,7 @@
 {% endstyle %}
 
 {% comment %} HTML markup {% endcomment %}
+{% if product.metafields.shopify--discovery--product_recommendation.related_products %}
 <section class="product-recommendations-wrapper
         {{ css_class }}"
         {% if animation != "none" %}
@@ -125,7 +126,7 @@
     {{ product_collections_markup }}
   </div>
 </section>
-
+{% endif %}
 <script
   type="application/json"
   data-section-id="{{ section.id }}"

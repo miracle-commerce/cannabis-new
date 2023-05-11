@@ -1,0 +1,33 @@
+{%- liquid
+	assign is_active = "yes"
+	assign plan_type = shop.metafields.yoast_seo.plan_type.value | default: "free"
+
+	if yoast_seo_page_type == null
+		capture yoast_seo_page_type
+			render "yoast-seo-page-type"
+		endcapture
+	endif
+
+	if plan_type == "free"
+		assign is_activated = ""
+
+		case yoast_seo_page_type
+			when "page"
+				assign is_activated = page.metafields.yoast_seo.indexable.value["is_activated"] | default: page.metafields.yoast_seo.indexable["is_activated"], allow_false: true
+			when "article"
+				assign is_activated = article.metafields.yoast_seo.indexable.value["is_activated"] | default: article.metafields.yoast_seo.indexable["is_activated"], allow_false: true
+			when "product"
+				assign is_activated = product.metafields.yoast_seo.indexable.value["is_activated"] | default: product.metafields.yoast_seo.indexable["is_activated"], allow_false: true
+			when "collection"
+				assign is_activated = collection.metafields.yoast_seo.indexable.value["is_activated"] | default: collection.metafields.yoast_seo.indexable["is_activated"], allow_false: true
+			when "blog"
+				assign is_activated = blog.metafields.yoast_seo.indexable.value["is_activated"] | default: blog.metafields.yoast_seo.indexable["is_activated"], allow_false: true
+		endcase
+
+		if is_activated != "true" and is_activated != true
+			assign is_active = "no"
+		endif
+	endif
+
+	echo is_active
+-%}

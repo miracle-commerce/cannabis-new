@@ -1,0 +1,133 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- liquid
+	comment
+	This template can be called with the "replace_vars: false" directive to prevent infinite loops
+	Especially needed for the focus keyphrase replacement
+	endcomment
+	if replace_vars == null
+		assign replace_vars = true
+	endif
+
+	capture yoast_seo_page_type
+		render 'yoast-seo-page-type'
+	endcapture
+
+	comment
+	The data for the variables is retrieved from different sources. Multiple sources will be touched
+	until one returns content. The order of the data sources is: optimize module > settings module > shopify default.
+	For the data from our modules, we support replacement variables. We don't support that on the default Shopify data.
+	endcomment
+	capture content
+		render 'yoast-seo-variable-from-optimize-module', variable: variable, yoast_seo_page_type: yoast_seo_page_type
+	endcapture
+
+	if content == ""
+		capture content
+			render 'yoast-seo-variable-from-settings-module', variable: variable, yoast_seo_page_type: yoast_seo_page_type
+		endcapture
+	endif
+
+	if content == ""
+		assign replace_vars = false
+		capture content
+			render 'yoast-seo-variable-from-shopify-default', variable: variable
+		endcapture
+	endif
+
+	if replace_vars and content != ""
+		case yoast_seo_page_type
+			when "product"
+				capture content
+					render 'yoast-seo-replace-variables-product', template: content
+				endcapture
+			when "product_tags"
+				capture content
+					render 'yoast-seo-replace-variables-product-tags', template: content
+				endcapture
+			when "article"
+				capture content
+					render 'yoast-seo-replace-variables-blog-post', template: content
+				endcapture
+			when "blog_post_tags"
+				capture content
+					render 'yoast-seo-replace-variables-blog-post-tags', template: content
+				endcapture
+			when "search"
+				capture content
+					render 'yoast-seo-replace-variables-search', template: content
+				endcapture
+			else
+				capture content
+					render 'yoast-seo-replace-variables-generic', template: content
+				endcapture
+		endcase
+	endif
+
+	comment
+	Standardize the whitespace in the output.
+	endcomment
+	assign content = content | replace: "\t", ' '
+	assign content = content | replace: "\n", ' '
+	assign content = content | replace: "\r", ' '
+	assign content = content | replace: "\f", ' '
+
+	capture content
+		render 'yoast-seo-variable-cleanup', content: content, search: '  ', replace: ' '
+	endcapture
+
+	comment
+	Deduplicate separators with and without space between them.
+	More than 1 space between separators has been reduced to 1 space by standardizing whitespace above.
+	endcomment
+	assign separator_template = '%%sep%%'
+	assign separator_template_length = separator_template | size
+
+	comment
+	Deduplicate separators after eachother
+	endcomment
+	capture content
+		assign search = separator_template | append: ' ' | append: separator_template
+		render 'yoast-seo-variable-cleanup', content: content, search: search, replace: separator_template
+	endcapture
+
+	comment
+	Deduplicate connected separators
+	endcomment
+	capture content
+		assign search = separator_template | append: separator_template
+		render 'yoast-seo-variable-cleanup', content: content, search: search, replace: separator_template
+	endcapture
+
+	assign content = content | strip
+
+	comment
+	Remove separator from the start
+	endcomment
+	assign start = content | slice: 0, separator_template_length
+	if start == separator_template
+		assign length = content | size | minus: separator_template_length
+		assign content = content | slice: separator_template_length, length
+	endif
+
+	comment
+	Remove separator from the end
+	endcomment
+	assign from_end = 0 | minus: separator_template_length
+	assign end = content | slice: from_end, separator_template_length
+	if end == separator_template
+		assign length = content | size | minus: separator_template_length
+		assign content = content | slice: 0, length
+	endif
+
+	comment
+	Finally replace the separator template with the actual separator
+	endcomment
+	assign settings_data = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings
+	assign content = content | replace: separator_template, settings_data.siteSettings.siteDefaults.separator
+
+	echo content | strip
+-%}

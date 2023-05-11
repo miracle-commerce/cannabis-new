@@ -1,0 +1,29 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- capture yoast_seo_page_type -%}{%- render 'yoast-seo-page-type' -%}{%- endcapture -%}
+{%- assign content_types = shop.metafields.yoast_seo.settings.value.contentTypes | default: shop.metafields.yoast_seo.settings.contentTypes -%}
+{%- case yoast_seo_page_type -%}
+	{%- when "page" -%}
+		{{- content_types.pages.showSingleInSearchResults -}}
+	{%- when "index" -%}
+		{{- content_types.homepage.showSingleInSearchResults -}}
+	{%- when "collection" -%}
+		{{- content_types.collections.showSingleInSearchResults -}}
+	{%- when "product_tags" -%}
+		{{- content_types.productTags.showSingleInSearchResults -}}
+	{%- when "collection_archive" -%}
+		{{- content_types.products.showArchiveInSearchResults -}}
+	{%- when "article" -%}
+		{{- content_types.blogPosts.showSingleInSearchResults -}}
+	{%- when "product" -%}
+		{{- content_types.products.showSingleInSearchResults -}}
+	{%- when "list-collections" -%}
+		{{- content_types.collections.showArchiveInSearchResults -}}
+	{%- when "blog_post_tags" -%}
+		{{- content_types.blogPostTags.showSingleInSearchResults -}}
+	{%- when "blog" -%}
+		{{- content_types.blogs.showSingleInSearchResults -}}
+{%- endcase -%}

@@ -1,3 +1,13 @@
+{%- comment -%}
+This file has been modified by the Yoast SEO for Shopify app.
+You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+{%- liquid
+	assign disabled_by_yoast_seo = true
+	if content_for_header contains 'yoast-active-script'
+		assign disabled_by_yoast_seo = false
+	endif
+-%}
 {% comment %}
 Required values
 name: <icon name>
@@ -59,7 +69,11 @@ icon_class: <string>
 
   {% elsif name == 'binoculars' %}
 
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><title>binoculars</title><g id="binoculars"><path d="M19,47.33a18,18,0,1,0,18,18v-.06A18,18,0,0,0,19,47.33Z"/><path d="M81,47.33a18,18,0,1,0,18,18v-.06A18,18,0,0,0,81,47.33Z"/><path d="M35.88,49.6l.88-25.21v-.58a7.18,7.18,0,0,0-12.92-4.33l0,.11L22.6,21.94a1,1,0,0,1-.11.23L11.93,43.37a23.08,23.08,0,0,1,24,6.23Z"/><path d="M81,42.26a23.23,23.23,0,0,1,7.08,1.11L77.49,22.17a1,1,0,0,1-.11-.23l-.79-1.56L76,19.24a7.18,7.18,0,0,0-12.73,4.57v.69l.87,25.1A23.22,23.22,0,0,1,81,42.26Z"/><path d="M50,30.7a12.14,12.14,0,0,0-6.77,2.07l-.76,22.31a19,19,0,0,1,15.07,0l-.76-22.3A12.17,12.17,0,0,0,50,30.7Z"/></g></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">{%- comment -%}Auto-disabled. Yoast plugin is taking care of SEO output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<title>binoculars</title>
+{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
+{%- endif -%}<g id="binoculars"><path d="M19,47.33a18,18,0,1,0,18,18v-.06A18,18,0,0,0,19,47.33Z"/><path d="M81,47.33a18,18,0,1,0,18,18v-.06A18,18,0,0,0,81,47.33Z"/><path d="M35.88,49.6l.88-25.21v-.58a7.18,7.18,0,0,0-12.92-4.33l0,.11L22.6,21.94a1,1,0,0,1-.11.23L11.93,43.37a23.08,23.08,0,0,1,24,6.23Z"/><path d="M81,42.26a23.23,23.23,0,0,1,7.08,1.11L77.49,22.17a1,1,0,0,1-.11-.23l-.79-1.56L76,19.24a7.18,7.18,0,0,0-12.73,4.57v.69l.87,25.1A23.22,23.22,0,0,1,81,42.26Z"/><path d="M50,30.7a12.14,12.14,0,0,0-6.77,2.07l-.76,22.31a19,19,0,0,1,15.07,0l-.76-22.3A12.17,12.17,0,0,0,50,30.7Z"/></g></svg>
 
   {% elsif name == 'bolt' %}
 

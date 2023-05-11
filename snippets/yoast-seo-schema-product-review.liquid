@@ -1,0 +1,13 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- liquid
+	capture reviewApp
+		render "yoast-seo-review-app"
+	endcapture
+-%}
+{% if reviewApp == "Loox" and product.metafields.loox.reviewsSchema != null %}
+	"review": {{ product.metafields.loox.reviewsSchema }},
+{% endif %}

@@ -1,0 +1,84 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- capture yoast_seo_page_type -%}{%- render 'yoast-seo-page-type' -%}{%- endcapture -%}
+<meta property="og:site_name" content="{{- shop.name -}}" />
+{%- capture yoast_canonical_url -%}{%- render "yoast-seo-variable", variable: "canonical_url" -%}{%- endcapture -%}
+{%- if yoast_seo_output_type != "basic" -%}
+	{%- assign og_url = yoast_canonical_url -%}
+	{%- if yoast_seo_page_type == "product" -%}
+		{%- assign current_variant = product.selected_variant -%}
+		{%- if current_variant -%}
+			{%- assign og_url = shop.url | append: current_variant.url -%}
+		{%- endif -%}
+	{%- endif %}
+<meta property="og:url" content="{{- og_url | replace: '"', '&#34;' -}}" />
+{%- endif -%}
+{%- liquid
+	assign language_iso_code = localization.language.iso_code
+	case language_iso_code
+		when "ca"
+			assign og_locale = 'ca_ES'
+		when "en"
+			assign og_locale = 'en_US'
+		when "el"
+			assign og_locale ='el_GR'
+		when "et"
+			assign og_locale ='et_EE'
+		when "ja"
+			assign og_locale ='ja_JP'
+		when "sq"
+			assign og_locale ='sq_AL'
+		when "uk"
+			assign og_locale ='uk_UA'
+		when "vi"
+			assign og_locale ='vi_VN'
+		when "zh"
+			assign og_locale ='zh_CN'
+		else
+			if language_iso_code.size == 2
+				assign country_iso_code = language_iso_code | upcase
+				assign language_iso_code = language_iso_code | append: '_' | append: country_iso_code
+			elsif language_iso_code.size == 5
+				assign language_iso_code = language_iso_code | replace: '-', '_'
+			endif
+			assign valid_locales = 'af_ZA,ak_GH,am_ET,ar_AR,as_IN,ay_BO,az_AZ,be_BY,bg_BG,bp_IN,bn_IN,br_FR,bs_BA,ca_ES,cb_IQ,ck_US,co_FR,cs_CZ,cx_PH,cy_GB,da_DK,de_DE,el_GR,en_GB,en_PI,en_UD,en_US,em_ZM,eo_EO,es_ES,es_LA,es_MX,et_EE,eu_ES,fa_IR,fb_LT,ff_NG,fi_FI,fo_FO,fr_CA,fr_FR,fy_NL,ga_IE,gl_ES,gn_PY,gu_IN,gx_GR,ha_NG,he_IL,hi_IN,hr_HR,hu_HU,ht_HT,hy_AM,id_ID,ig_NG,is_IS,it_IT,ik_US,iu_CA,ja_JP,ja_KS,jv_ID,ka_GE,kk_KZ,km_KH,kn_IN,ko_KR,ks_IN,ku_TR,ky_KG,la_VA,lg_UG,li_NL,ln_CD,lo_LA,lt_LT,lv_LV,mg_MG,mi_NZ,mk_MK,ml_IN,mn_MN,mr_IN,ms_MY,mt_MT,my_MM,nb_NO,nd_ZW,ne_NP,nl_BE,nl_NL,nn_NO,nr_ZA,ns_ZA,ny_MW,om_ET,or_IN,pa_IN,pl_PL,ps_AF,pt_BR,pt_PT,qc_GT,qu_PE,qr_GR,qz_MM,rm_CH,ro_RO,ru_RU,rw_RW,sa_IN,sc_IT,se_NO,si_LK,su_ID,sk_SK,sl_SI,sn_ZW,so_SO,sq_AL,sr_RS,ss_SZ,st_ZA,sv_SE,sw_KE,sy_SY,sz_PL,ta_IN,te_IN,tg_TJ,th_TH,tk_TM,tl_PH,tl_ST,tn_BW,tr_TR,ts_ZA,tt_RU,tz_MA,uk_UA,ur_PK,uz_UZ,ve_ZA,vi_VN,wo_SN,xh_ZA,yi_DE,yo_NG,zh_CN,zh_HK,zh_TW,zu_ZA,zz_TR'
+			assign og_locale = language_iso_code
+			unless valid_locales contains language_iso_code
+				assign og_locale = 'en_US'
+			endunless
+	endcase %}
+<meta property="og:locale" content="{{- og_locale | replace: '"', '&#34;' -}}" />
+
+{%- if yoast_seo_page_type == "article" %}
+<meta property="og:type" content="article" />
+<meta property="article:author" content="{{ article.author | replace: '"', '&#34;' }}" />
+<meta property="article:modified_time" content="{{ article.updated_at | date: "%Y-%m-%dT%H:%M:%S%:z" }}" />
+<meta property="article:published_time" content="{{ article.published_at | date: "%Y-%m-%dT%H:%M:%S%:z" }}" />
+	{%- assign settings_data = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings -%}
+	{%- assign publisher = settings_data.schema.socialProfiles.facebookPageUrl -%}
+	{%- if publisher != null and publisher != "" %}
+<meta property="article:publisher" content="{{ publisher | replace: '"', '&#34;' }}" />
+	{%- endif -%}
+{%- elsif yoast_seo_output_type != "basic" %}
+<meta property="og:type" content="website" />
+{%- endif -%}
+
+{%- capture og_title -%}{%- render "yoast-seo-variable", variable: "open_graph_title" -%}{%- endcapture -%}
+{%- if og_title == "" -%}
+	{%- capture og_title -%}{%- render "yoast-seo-variable", variable: "title" -%}{%- endcapture -%}
+{%- endif %}
+<meta property="og:title" content="{{ og_title | replace: '"', '&#34;' }}" />
+
+{%- unless yoast_seo_output_type == "basic" -%}
+	{%- capture og_description -%}{%- render "yoast-seo-variable", variable: "open_graph_description" -%}{%- endcapture -%}
+	{%- if og_description == "" -%}
+		{%- capture og_description -%}{%- render "yoast-seo-variable", variable: "description" -%}{%- endcapture -%}
+	{%- endif -%}
+	{%- if og_description != "" %}
+<meta property="og:description" content="{{ og_description | replace: '"', '&#34;' }}" />
+	{%- endif -%}
+	{%- render "yoast-seo-open-graph-image" -%}
+{%- endunless -%}

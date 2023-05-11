@@ -1,0 +1,16 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- liquid
+	capture output
+		render 'yoast-seo-replace-variables-generic', template: template
+	endcapture
+
+	assign tags = article.tags | join: ', '
+
+	assign output = output | replace: "%%blog_title%%", blog.title
+	assign output = output | replace: "%%post_tags%%", tags
+-%}
+{{- output -}}

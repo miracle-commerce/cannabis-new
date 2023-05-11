@@ -1,0 +1,58 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- assign settings_data = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings -%}
+{%- if settings_data.schema.siteRepresentation.organizationName != "" -%}
+	{%- capture yoast_seo_page_type -%}{%- render 'yoast-seo-page-type' -%}{%- endcapture -%}
+	{%- if yoast_seo_page_type == "article"  -%}
+		{%- capture schema_image_id -%}{%- render 'yoast-seo-open-graph-image', format: 'id' -%}{%- endcapture -%}
+		{%- capture description -%}{%- render "yoast-seo-variable", variable: "description" -%}{%- endcapture -%}
+		{% if description != '' and schema_image_id != "" %}
+			{%- capture yoast_canonical_url -%}{%- render "yoast-seo-variable", variable: "canonical_url" -%}{%- endcapture -%}
+			{%- capture published_at -%}{%- render "yoast-seo-variable-from-shopify-fields", variable: "published_at" -%}{%- endcapture -%}
+			{%- capture updated_at -%}{%- render "yoast-seo-variable-from-shopify-fields", variable: "updated_at" -%}{%- endcapture -%}
+			{%- capture headline -%}{%- render "yoast-seo-variable", variable: "title" -%}{%- endcapture -%}
+
+			{%- assign content_types = settings_data.contentTypes -%}
+			{%- assign article_type = "Article"  | split: '\_([.YOAST_ARRAY_SPLITTER.])_/' -%}
+			{%- assign article_id = yoast_canonical_url | append: "#/schema/article/" | append: article.id -%}
+			{%- capture optimize_article_type -%}{%- render 'yoast-seo-variable-from-optimize-module', variable: "schema_article_type" -%}{%- endcapture -%}
+			{%- liquid
+				if optimize_article_type and optimize_article_type != ""
+					assign optimize_article_type = optimize_article_type | split: '\_([.YOAST_ARRAY_SPLITTER.])_/'
+					assign article_type = article_type | concat: optimize_article_type
+				elsif content_types.blogPosts.schema.articleType and content_types.blogPosts.schema.articleType != ""
+					assign settings_article_type = content_types.blogPosts.schema.articleType | split: '\_([.YOAST_ARRAY_SPLITTER.])_/'
+					assign article_type = article_type | concat: settings_article_type
+				endif
+			-%}
+	{
+	"@type": {{ article_type | uniq | json }},
+	"@id": {{ article_id | json -}},
+	"headline": {{ headline | json }},
+	"description": {{ description | json }},
+	"isPartOf": {
+		"@id": {{ yoast_canonical_url | json }}
+	},
+	"mainEntityOfPage": {
+		"@id": {{ yoast_canonical_url | json }}
+	},
+	"datePublished": "{{ published_at | date: "%FT%T%:z" }}",
+	"dateModified": "{{ updated_at | date: "%FT%T%:z" }}",
+	"publisher": {
+		"@id": "{{ shop.url }}/#/schema/organization/1"
+	},
+	{%- render 'yoast-seo-schema-author', name: article.author -%}
+			{%- capture tags -%}{%- render "yoast-seo-variable-from-shopify-fields", variable: "tags", as_json: true -%}{%- endcapture -%}
+			{%- if tags and tags != "[]" and tags != "" and tags != "null" %}
+	"articleSection": {{ tags }},
+			{%- endif %}
+	"image": [{
+		"@id": "{{ shop.url }}/#/schema/ImageObject/{{ schema_image_id }}"
+	}]
+},
+		{%- endif -%}
+	{%- endif -%}
+{%- endif -%}

@@ -1,0 +1,17 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- if yoast_seo_page_type == null -%}
+	{%- capture yoast_seo_page_type -%}{%- render 'yoast-seo-page-type' -%}{%- endcapture -%}
+{%- endif -%}
+{%- if yoast_seo_page_type != "404" and yoast_seo_page_type != "search" -%}
+	{%- capture no_follow -%}{%- render 'yoast-seo-variable-from-optimize-module', variable: "is_robots_nofollow" -%}{%- endcapture -%}
+	{%- if no_follow == "true" -%}
+		{%- assign follow = "nofollow" -%}
+	{%- else -%}
+		{%- assign follow = "follow" -%}
+	{%- endif -%}
+{%- endif -%}
+{{- follow -}}

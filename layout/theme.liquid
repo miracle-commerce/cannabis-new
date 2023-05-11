@@ -1,20 +1,42 @@
+{%- comment -%}
+This file has been modified by the Yoast SEO for Shopify app.
+You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+{%- liquid
+	assign disabled_by_yoast_seo = true
+	if content_for_header contains 'yoast-active-script'
+		assign disabled_by_yoast_seo = false
+	endif
+-%}
 {% capture content %}
 <!doctype html>
 <html class="no-js no-touch" lang="{{ shop.locale }}">
-<head>
+<head>{% render 'yoast-seo' %}
   <script>
     window.Store = window.Store || {};
     window.Store.id = {{ shop.id }};
   </script>
   <meta charset="utf-8">
   <meta http-equiv="cleartype" content="on">
-  <meta name="robots" content="index,follow">
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta name="robots" content="index,follow">
+{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
+{%- endif -%}
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="{{ settings.shop_bg_color }}">
-  <link rel="canonical" href="{{ canonical_url }}">
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<link rel="canonical" href="{{ canonical_url }}">
+{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
+{%- endif -%}
 
   {%- if current_tags -%}{%- assign meta_tags = current_tags | join: ', ' -%}{%- endif -%}
-  <title>{%- if template.name == "index" -%}{{ page_title }}{%- else -%}{{ page_title }}{% if current_tags %} {{ 'general.meta.tagged_html' | t: tags: meta_tags }}{%- endif -%}{% if current_page != 1 %} {{ 'general.meta.page' | t: page_number: current_page }}{% endif %}{% unless page_title contains shop.name %} - {{ shop.name }}{% endunless %}{% endif %}</title>
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of SEO output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<title>{%- if template.name == "index" -%}{{ page_title }}{%- else -%}{{ page_title }}{% if current_tags %} {{ 'general.meta.tagged_html' | t: tags: meta_tags }}{%- endif -%}{% if current_page != 1 %} {{ 'general.meta.page' | t: page_number: current_page }}{% endif %}{% unless page_title contains shop.name %} - {{ shop.name }}{% endunless %}{% endif %}</title>
+{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
+{%- endif -%}
 
   <!-- DNS prefetches -->
   <link rel="dns-prefetch" href="https://cdn.shopify.com">
@@ -133,7 +155,11 @@
   </script>
 
   {%- if page_description -%}
-    <meta name="description" content="{{ page_description | escape }}{% if current_tags %} {{ 'general.meta.tagged_html' | t: tags: meta_tags | escape }}.{% endif %}{% if current_page != 1 %} {{ 'general.meta.page' | t: page_number: current_page }}.{% endif %}" />
+    {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta name="description" content="{{ page_description | escape }}{% if current_tags %} {{ 'general.meta.tagged_html' | t: tags: meta_tags | escape }}.{% endif %}{% if current_page != 1 %} {{ 'general.meta.page' | t: page_number: current_page }}.{% endif %}" />
+{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
+{%- endif -%}
   {%- endif -%}
 
   {%- if settings.favicon != nil -%}
@@ -153,8 +179,16 @@
   {{ content_for_header }}
 
   {% render 'social-meta-info' %}
-  {% if collection.previous_product %}<link rel="prev" href="{{ collection.previous_product }}">{% endif %}
-  {% if collection.next_product %}<link rel="next" href="{{ collection.next_product }}">{% endif %}
+  {% if collection.previous_product %}{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<link rel="prev" href="{{ collection.previous_product }}">
+{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
+{%- endif -%}{% endif %}
+  {% if collection.next_product %}{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<link rel="next" href="{{ collection.next_product }}">
+{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
+{%- endif -%}{% endif %}
 
   {% if template.name == 'customers' %}
     {{ "shopify_common.js" | shopify_asset_url | script_tag }}
@@ -165,6 +199,15 @@
   {%- render 'bold-common' -%}
   {%- render 'bold-includes' -%} 
   {%- render 'bold-ro-init' -%} 
+
+<script>
+window.mlvedaShopCurrency = "{{ shop.currency }}";
+window.shopCurrency = "{{ shop.currency }}";
+window.supported_currencies = "{{ settings.mlvedaACS_supportedCurrencies }}";
+</script>
+  {% render 'shogun-head' %}
+
+{% render 'gsf-conversion-pixels' %}
 </head>
 
 {%- capture money_format_output -%}
@@ -345,7 +388,11 @@
   {% endif %}
 
   {% render 'structured-data' %}
-</body>
+{% include 'mlveda-currencies-switcher' %}{% include 'mlveda-currencies' %}
+  <!-- Start of cannabiscompany Zendesk Widget script -->
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=dea42d2d-8c62-4b43-b162-7177f9ee09da"> </script>
+<!-- End of cannabiscompany Zendesk Widget script -->
+  </body>
 </html>
 {% endcapture %}
 {% assign content = content | replace_first: '<!doctype', '!doctype' | split: ' <' %}

@@ -1,0 +1,42 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- if yoast_seo_page_type == null -%}
+	{%- capture yoast_seo_page_type -%}{%- render 'yoast-seo-page-type' -%}{%- endcapture -%}
+{%- endif -%}
+
+{%- assign settings_data = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings -%}
+{%- assign content_types = settings_data.contentTypes -%}
+{%- assign supported_advanced_variables = "title" | split: ',' -%}
+{%- case yoast_seo_page_type -%}
+	{%- when "page" -%}
+		{{- content_types.pages.templates.seo.single[variable] -}}
+	{%- when "index" -%}
+		{{- content_types.homepage.templates.seo.single[variable] -}}
+	{%- when "collection" -%}
+		{{- content_types.collections.templates.seo.single[variable] -}}
+	{%- when "product_tags" -%}
+		{{- content_types.productTags.templates.seo.single[variable] -}}
+	{%- when "collection_archive" -%}
+		{{- content_types.products.templates.seo.archive[variable] -}}
+	{%- when "article" -%}
+		{{- content_types.blogPosts.templates.seo.single[variable] -}}
+	{%- when "product" -%}
+		{{- content_types.products.templates.seo.single[variable] -}}
+	{%- when "list-collections" -%}
+		{{- content_types.collections.templates.seo.archive[variable] -}}
+	{%- when "blog_post_tags" -%}
+		{{- content_types.blogPostTags.templates.seo.single[variable] -}}
+	{%- when "blog" -%}
+		{{- content_types.blogs.templates.seo.single[variable] -}}
+	{%- when "404" -%}
+		{%- if supported_advanced_variables contains variable -%}
+			{{- settings_data.advancedSettings.notFoundPages[variable] -}}
+		{%- endif -%}
+	{%- when "search" -%}
+		{%- if supported_advanced_variables contains variable -%}
+			{{- settings_data.advancedSettings.searchPages[variable] -}}
+		{%- endif -%}
+{%- endcase -%}

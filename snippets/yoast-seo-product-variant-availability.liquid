@@ -1,0 +1,14 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- if variant.available != null and variant.available != "" -%}
+	{%- if variant.available == false -%}
+		{{- "OutOfStock" -}}
+	{%- elsif variant.inventory_management == null or variant.inventory_quantity > 0 -%}
+		{{- "InStock" -}}
+	{%- else -%}
+		{{- "BackOrder" -}}
+	{%- endif -%}
+{%- endif -%}

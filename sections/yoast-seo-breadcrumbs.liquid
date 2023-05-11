@@ -1,0 +1,146 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- liquid
+	capture item_url
+		render "yoast-seo-variable", variable: "canonical_url"
+	endcapture
+
+	capture yoast_seo_page_type
+		render 'yoast-seo-page-type'
+	endcapture
+
+	assign item_name = page_title
+	assign item_url_prefix = "/"
+
+	case yoast_seo_page_type
+		when "page"
+			assign item_name = page.title
+		when "article"
+			assign item_name = article.title
+		when "collection"
+			assign item_name = collection.title
+		when "blog"
+			assign item_name = blog.title
+		when "product_tags"
+			assign item_name = current_tags | join: ', '
+		when "blog_post_tags"
+			assign item_name = current_tags | join: ', '
+	endcase
+
+	if yoast_seo_page_type == "product"
+		assign current_variant = product.selected_or_first_available_variant
+		assign settings_data = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings
+		assign separator_replacement = settings_data.siteSettings.siteDefaults.separator
+		assign item_name = product.title
+		if product.variants.size > 1 and product.selected_variant
+			assign item_url = shop.url | append: current_variant.url
+			assign item_url_prefix = ""
+			assign item_name = item_name | append: " " | append: separator_replacement | append: " " | append: current_variant.title
+		endif
+	endif
+
+	assign position = 1
+
+	capture breadcrumb_list
+
+		comment
+		Always add the homepage when we're not on the homepage.
+		endcomment
+		if yoast_seo_page_type != "index"
+			render 'yoast-seo-breadcrumbs-item', position: position, name: shop.name, item: shop.url
+			assign position = position | plus: 1
+		else
+			assign item_url_prefix = ""
+		endif
+
+		comment
+		Product with a variation should add the "base" product as an item.
+		endcomment
+		if yoast_seo_page_type == "product" and product.variants.size > 1 and product.selected_variant
+			assign product_url = shop.url | append: product.url
+			render 'yoast-seo-breadcrumbs-item', position: position, name: product.title, item: product_url
+			assign position = position | plus: 1
+		endif
+
+		comment
+		On articles or blog tag archives, add the blog base.
+		endcomment
+		if yoast_seo_page_type == "article" or yoast_seo_page_type == "blog_post_tags"
+			assign blog_url = shop.url | append: blog.url
+			assign blog_title = blog.title
+			render 'yoast-seo-breadcrumbs-item', position: position, name: blog_title, item: blog_url
+			assign position = position | plus: 1
+		endif
+
+		comment
+		On a collection archive (collections/all) or collection page, add the collections page.
+		endcomment
+		if yoast_seo_page_type == "collection_archive" or yoast_seo_page_type == "collection" or yoast_seo_page_type == "product_tags"
+			assign collections_url = shop.url | append: routes.collections_url
+			assign collections_title = "Collections"
+			render 'yoast-seo-breadcrumbs-item', position: position, name: collections_title, item: collections_url
+			assign position = position | plus: 1
+		endif
+
+		if yoast_seo_page_type == "product_tags"
+			assign collection_url = shop.url | append: collection.url
+			assign collection_title = collection.title
+			render 'yoast-seo-breadcrumbs-item', position: position, name: collection_title, item: collection_url
+			assign position = position | plus: 1
+		endif
+
+		if current_tags
+			assign item_name = current_tags | join: ', '
+		endif
+
+		render 'yoast-seo-breadcrumbs-item', position: position, name: item_name
+
+	endcapture
+
+-%}
+
+<ol id="breadcrumbs" class="yoast_breadcrumbs">
+	{{ breadcrumb_list }}
+</ol>
+
+<style>
+  .yoast_breadcrumbs {
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
+  .yoast_breadcrumbs::after {
+	content: "";
+	clear: both;
+	display: table;
+  }
+  .yoast_breadcrumbs li {
+	  float: left;
+	  margin: 0 6px 0 0;
+	  padding: 0;
+  }
+  .yoast_breadcrumbs li::after {
+	  content: "»";
+	  margin: 0 0 0 6px;
+  }
+  .yoast_breadcrumbs li.breadcrumb_last::after {
+	  content: unset;
+	  margin: unset;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Yoast SEO Breadcrumbs",
+  "class": "yoast-breadcrumbs-container",
+  "presets": [
+	{
+	  "name": "Yoast SEO Breadcrumbs"
+	}
+  ]
+}
+{% endschema %}

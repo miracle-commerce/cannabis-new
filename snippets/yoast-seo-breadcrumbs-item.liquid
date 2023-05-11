@@ -1,0 +1,24 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- liquid
+	assign item_class = ""
+
+	if position == 1
+		assign item_class = "class='breadcrumb_first'"
+	endif
+
+	if item == null or item == ""
+		assign item_class = "class='breadcrumb_last'"
+	endif
+-%}
+
+<li {{ item_class }}>
+	{%- if item != null and item != "" %}
+		<a href="{{ item }}">{{ name | escape_once }}</a>
+	{%- else -%}
+		<a aria-current="page">{{ name | escape_once }}</a>
+	{%- endif -%}
+</li>

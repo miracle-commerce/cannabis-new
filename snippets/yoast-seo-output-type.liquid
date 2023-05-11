@@ -1,0 +1,39 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- liquid
+	comment
+	For non-content pages (e.g. password, cart, customers pages, etc.) we want to show some limited, basic output, as we
+	don't expect anyone will want to share these pages and this content also shouldn't be crawled by search engines.
+
+	Content pages:
+	- index
+	- product
+	- product_archive
+	- product_tags
+	- collection
+	- collection_archive
+	- list-collections
+	- page
+	- blog
+	- article
+	- blog_post_tags
+	- search
+	- 404
+	- policy
+	endcomment
+
+	assign output_type = 'basic'
+	assign non_basic_page_types = "index,product,product_archive,product_tags,collection,collection_archive,list-collections,page,blog,article,blog_post_tags,search,404,policy"
+
+	capture yoast_seo_page_type
+		render 'yoast-seo-page-type'
+	endcapture
+
+	if non_basic_page_types contains yoast_seo_page_type
+		assign output_type = ''
+	endif
+-%}
+{{- output_type -}}

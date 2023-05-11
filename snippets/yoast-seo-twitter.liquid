@@ -1,0 +1,66 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- liquid
+	capture twitter_title
+		render "yoast-seo-variable", variable: "twitter_title"
+	endcapture
+
+	assign twitter_handle = ""
+	assign settings_data = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings
+	assign twitter_profile_url = settings_data.schema.socialProfiles.twitterProfileUrl
+
+	comment
+		Get Twitter handle from Twitter profile url.
+	endcomment
+	if twitter_profile_url != ""
+		if twitter_profile_url contains "https://twitter.com/"
+			assign twitter_handle = twitter_profile_url | remove: "https://twitter.com/"
+		elsif twitter_profile_url contains "https://www.twitter.com/"
+			assign twitter_handle = twitter_profile_url | remove: "https://www.twitter.com/"
+		endif
+	endif
+
+	capture twitter_description
+		render "yoast-seo-variable", variable: "twitter_description"
+	endcapture
+
+	comment
+		Retrieve Twitter image set from our Optimize module.
+	endcomment
+	capture twitter_image_url
+		render 'yoast-seo-variable-from-optimize-module', variable: "twitter_image_url"
+	endcapture
+
+	if twitter_image_url != ""
+		comment
+			The filename is a complete url. We extract the filename to retrieve all extra image data from Shopify.
+			If we have a filename, but the file does not exist inside Shopify (anymore), we end up with an "EmptyDrop".
+			Therefore we'll need to check "twitter_image == empty" later as well.
+		endcomment
+		capture filename
+			render 'yoast-seo-image-filename', url: twitter_image_url
+		endcapture
+
+		assign twitter_image = images[filename]
+	endif
+-%}
+{%- if twitter_handle != "" %}
+<meta name="twitter:site" content="{{- "@" | append: twitter_handle -}}" />
+{%- endif %}
+<meta name="twitter:card" content="summary_large_image" />
+
+{%- if twitter_title != "" %}
+<meta name="twitter:title" content="{{ twitter_title | replace: '"', '&#34;' }}" />
+{%- endif -%}
+
+{%- if twitter_description != "" %}
+<meta name="twitter:description" content="{{ twitter_description | replace: '"', '&#34;' }}" />
+{%- endif -%}
+
+{%- comment -%}Render the twitter:image tags{%- endcomment -%}
+{%- if twitter_image != null and twitter_image != empty %}
+<meta name="twitter:image" content="https:{{ twitter_image | img_url: '4096x4096' }}" />
+{%- endif -%}

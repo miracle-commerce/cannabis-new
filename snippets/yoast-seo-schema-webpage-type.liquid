@@ -1,0 +1,71 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- capture yoast_seo_page_type -%}{%- render 'yoast-seo-page-type' -%}{%- endcapture -%}
+{%- assign content_types = shop.metafields.yoast_seo.settings.value.contentTypes | default: shop.metafields.yoast_seo.settings.contentTypes -%}
+{%- assign collection_page = "CollectionPage" -%}
+{%- assign item_page = "ItemPage" -%}
+{%- assign search_results_page = '[ "CollectionPage", "SearchResultsPage" ]' -%}
+{%- assign basic_webpage_type = "WebPage" -%}
+{%- case yoast_seo_page_type -%}
+	{%- when "page" -%}
+		{%- capture optimize_webpage_type -%}{%- render 'yoast-seo-variable-from-optimize-module', variable: "schema_page_type" -%}{%- endcapture -%}
+		{%- liquid
+		assign page_webpage_type = basic_webpage_type
+		if optimize_webpage_type and optimize_webpage_type != ""
+			assign page_webpage_type = page_webpage_type | split: '\_([.YOAST_ARRAY_SPLITTER.])_/'
+			assign optimize_webpage_type = optimize_webpage_type | split: '\_([.YOAST_ARRAY_SPLITTER.])_/'
+			assign page_webpage_type = page_webpage_type | concat: optimize_webpage_type
+		elsif content_types.pages.schema.pageType and content_types.pages.schema.pageType != ""
+			assign page_webpage_type = page_webpage_type | split: '\_([.YOAST_ARRAY_SPLITTER.])_/'
+			assign settings_page_webpage_type = content_types.pages.schema.pageType | split: '\_([.YOAST_ARRAY_SPLITTER.])_/'
+			assign page_webpage_type = page_webpage_type | concat: settings_page_webpage_type
+		endif
+		-%}
+		{{- page_webpage_type | uniq | json -}}
+	{%- when "index" -%}
+		{%- liquid
+		assign index_webpage_type = basic_webpage_type
+		if content_types.homepage.schema.pageType and content_types.homepage.schema.pageType != ""
+			assign index_webpage_type = index_webpage_type | split: '\_([.YOAST_ARRAY_SPLITTER.])_/'
+			assign settings_index_webpage_type = content_types.homepage.schema.pageType | split: '\_([.YOAST_ARRAY_SPLITTER.])_/'
+			assign index_webpage_type = index_webpage_type | concat: settings_index_webpage_type
+		endif
+		-%}
+		{{- index_webpage_type | uniq | json -}}
+	{%- when "collection" -%}
+		{{- collection_page | json -}}
+	{%- when "product_tags" -%}
+		{{- collection_page | json -}}
+	{%- when "collection_archive" -%}
+		{{- collection_page | json -}}
+	{%- when "article" -%}
+		{%- capture optimize_webpage_type -%}{%- render 'yoast-seo-variable-from-optimize-module', variable: "schema_page_type" -%}{%- endcapture -%}
+		{%- liquid
+			assign blogpost_webpage_type = basic_webpage_type
+			if optimize_webpage_type and optimize_webpage_type != ""
+				assign blogpost_webpage_type = blogpost_webpage_type | split: '\_([.YOAST_ARRAY_SPLITTER.])_/'
+				assign optimize_webpage_type = optimize_webpage_type | split: '\_([.YOAST_ARRAY_SPLITTER.])_/'
+				assign blogpost_webpage_type = blogpost_webpage_type | concat: optimize_webpage_type
+			elsif content_types.blogPosts.schema.pageType and content_types.blogPosts.schema.pageType != ""
+				assign blogpost_webpage_type = blogpost_webpage_type | split: '\_([.YOAST_ARRAY_SPLITTER.])_/'
+				assign settings_blogposts_webpage_type = content_types.blogPosts.schema.pageType | split: '\_([.YOAST_ARRAY_SPLITTER.])_/'
+				assign blogpost_webpage_type = blogpost_webpage_type | concat: settings_blogposts_webpage_type
+			endif
+		-%}
+		{{- blogpost_webpage_type | uniq | json -}}
+	{%- when "product" -%}
+		{{- item_page | json -}}
+	{%- when "list-collections" -%}
+		{{- collection_page | json -}}
+	{%- when "blog_post_tags" -%}
+		{{- collection_page | json -}}
+	{%- when "blog" -%}
+		{{- collection_page | json -}}
+	{%- when "search" -%}
+		{{- search_results_page -}}
+	{%- else -%}
+		{{- basic_webpage_type | json -}}
+{%- endcase -%}

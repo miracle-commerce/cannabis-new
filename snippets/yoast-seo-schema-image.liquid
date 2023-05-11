@@ -1,0 +1,37 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- if image_url != null and image_url != empty -%}
+
+	{%- render 'yoast-seo-schema-image-inline', image_url: image_url, image_width: image_width, image_height: image_height, image_alt: image_alt -%}
+
+{%- else %}
+
+	{%- if image_object == null or image_object == empty -%}
+		{%- assign image_object = images[image] -%}
+	{%- endif -%}
+	{%- if image_object != null and image_object != empty -%}
+		{%- if image_id == null or image_id == empty -%}
+			{%- assign image_id = image_object.id -%}
+		{%- endif -%}
+		{%- assign image_url = image_object.src | img_url: "master" -%}
+		{%- assign image_url = "https:" | append: image_url %}
+{
+	"@type": "ImageObject",
+	"@id": "{{ shop.url }}/#/schema/ImageObject/{{ image_id }}",
+		{%- if image_object.alt and image_object.alt != "" %}
+	"caption": {{ image_object.alt | json }},
+	"inLanguage": {{ localization.language.iso_code | json }},
+		{%- endif %}
+	"url": {{ image_url | json }},
+	"contentUrl": {{ image_url | json }},
+	"width": {{ image_object.width }},
+	"height": {{ image_object.height }}
+},
+	{% endif -%}
+
+{%- endif -%}
+
+

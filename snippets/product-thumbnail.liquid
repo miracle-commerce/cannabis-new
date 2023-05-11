@@ -65,7 +65,7 @@
   {% if section.settings.pagination_type != 'basic_pagination' %}
     data-load-more--grid-item
   {% endif %}>
-  <div class="product-wrap">
+  <div class="product-wrap" {{ image_shape}}>
 
       <div class="product-image__wrapper">
         <div class="image__container product__imageContainer">
@@ -101,7 +101,7 @@
                 </div>
               {% else %}
                 {%
-                  render 'image-element',
+                  render 'product-thumb-image-element',
                   image: product.media[1],
                   alt: alt_text,
                   image_shape: image_shape,

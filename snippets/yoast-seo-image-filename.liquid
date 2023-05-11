@@ -1,0 +1,11 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- comment -%}
+	We extract the filename to retrieve all extra image data from Shopify.
+	If we have a filename, but the file does not exist inside Shopify (anymore), we end up with an "EmptyDrop".
+	Therefor we'll need to check "og_image == empty" later as well.
+{%- endcomment -%}
+{{- url | split: '/' | last | split: '?' | first -}}

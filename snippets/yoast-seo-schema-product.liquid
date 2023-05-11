@@ -1,0 +1,55 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- liquid
+	capture product_url
+		render "yoast-seo-variable", variable: "canonical_url"
+	endcapture
+
+	assign yoast_canonical_url = product_url
+	assign current_variant = product.selected_variant
+
+	if current_variant
+		assign yoast_canonical_url = shop.url | append: current_variant.url
+	endif
+
+	capture description
+		render "yoast-seo-variable", variable: "description"
+	endcapture
+
+	capture aggregateRating
+		render "yoast-seo-schema-product-rating"
+	endcapture
+
+	capture offers
+		render "yoast-seo-schema-product-offers", product: product
+	endcapture
+
+	assign product_id = product_url | append: "/#/schema/Product"
+-%}
+{
+	"@type": "Product",
+	"@id": {{ product_id | json }},
+{%- if use_main_entity_of_page %}
+	"mainEntityOfPage": {
+		"@id": {{ yoast_canonical_url | json }}
+	},
+{%- endif %}
+	"name": {{ product.title | json }},
+{%- if description != "" %}
+	"description": {{ description | json }},
+{%- endif %}
+{%- if product.featured_media != null and product.featured_media != empty %}
+	"image": [{ "@id": "{{ shop.url }}/#/schema/ImageObject/{{ product.featured_media.id }}" }],
+{%- endif -%}
+{%- if aggregateRating != empty and aggregateRating != null -%}
+	{{ aggregateRating -}}
+{%- endif -%}
+{%- if offers != empty and offers != null -%}
+	{{ offers -}}
+{%- endif %}
+	"url": {{ product_url | json }}
+},
+{%- render 'yoast-seo-schema-image', image_object: product.featured_media.preview_image, image_id: product.featured_media.id -%}

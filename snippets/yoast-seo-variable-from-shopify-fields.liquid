@@ -1,0 +1,18 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- capture yoast_seo_page_type -%}{%- render 'yoast-seo-page-type' -%}{%- endcapture -%}
+{%- case yoast_seo_page_type -%}
+	{%- when "page" -%}{%- assign return = page[variable] -%}
+	{%- when "article" -%}{%- assign return = article[variable] -%}
+	{%- when "product" -%}{%- assign return = product[variable] -%}
+	{%- when "collection" -%}{%- assign return = collection[variable] -%}
+	{%- when "blog" -%}{%- assign return = blog[variable] -%}
+{%- endcase -%}
+{%- if as_json -%}
+	{{- return | json -}}
+{%- else -%}
+	{{- return -}}
+{%- endif -%}

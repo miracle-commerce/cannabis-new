@@ -69,7 +69,20 @@
     "twitter_link": "https:\/\/twitter.com\/cannacoaus",
     "vimeo_link": "",
     "youtube_link": "",
+    "favicon": "shopify:\/\/shop_images\/C-Logo.png",
+    "mlvedaACS_roundDecimal": false,
     "show_search_icon_mobile": true,
+    "mlvedaACS_positionTop": false,
+    "mlvedaACS_positionRight": false,
+    "mlvedaACS_positionLeft": "0px",
+    "mlvedaACS_defaultCurrency": "AUD",
+    "mlvedaACS_positionBottom": "0px",
+    "mlvedaACS_position": "bottom_with_left",
+    "mlvedaACS_enable": true,
+    "mlvedaACS_supportedCurrencies": "AUD NZD",
+    "mlvedaACS_hideDecimal": false,
+    "mlvedaACS_currencyFormat": "money_with_currency_format",
+    "mlvedaACS_displayFlag": false,
     "sections": {
       "header__top-bar": {
         "type": "header__top-bar",
@@ -111,7 +124,7 @@
         "type": "announcement-bar",
         "settings": {
           "icon_label": "",
-          "text": "<p>Get FREE Shipping on all order over $150<\/p>",
+          "text": "<p>FREE SHIPPING OVER $150<\/p>",
           "alignment": "center",
           "button_label": "",
           "link": "",
@@ -310,7 +323,7 @@
           "180698d7-3ae8-4451-976c-205ee561583f"
         ],
         "settings": {
-          "copyright_text": "<p>|  <a href=\"#\" title=\"#\">Cookie Policy<\/a>   |  <a href=\"\/policies\/terms-of-service\" title=\"Terms of Service\">Privacy & Terms<\/a><\/p>",
+          "copyright_text": "<p>|  <a href=\"\/policies\/terms-of-service\" title=\"Terms of Service\">Terms of Service <\/a>  |  <a href=\"\/policies\/privacy-policy\" title=\"Privacy Policy\">Privacy Policy<\/a><\/p>",
           "contact_text": "<p>1300 402 420     .     Suite 504, 365 Little Collins Street, Melbourne, 3000, VIC     .     <a href=\"\/policies\/refund-policy\" title=\"Refund Policy\">Refund Policy<\/a> | <a href=\"\/pages\/liquor-policy\" title=\"Liquor Policy\">Liquor Policy<\/a><\/p>",
           "display_designed_by": false,
           "display_shopify": false,
@@ -326,12 +339,6 @@
 
     ],
     "blocks": {
-      "10436698916776057164": {
-        "type": "shopify:\/\/apps\/appstle-subscriptions\/blocks\/appstle-subscription-helper\/fe257d39-6f88-4f35-ab08-bd437e3aa94e",
-        "disabled": true,
-        "settings": {
-        }
-      },
       "12120936241911852800": {
         "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/reviews_tab\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": true,

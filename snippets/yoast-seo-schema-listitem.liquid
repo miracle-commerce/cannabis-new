@@ -1,0 +1,14 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+		{
+			"@type": "ListItem",
+			"name": {{ name | json }},
+{%- if item != null and item != "" %}
+			"item": {{ item | json }},
+{%- endif %}
+			"position": {{  position }}
+		}
+{%- if item != null and item != "" -%},{%- endif %}

@@ -1,0 +1,24 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- liquid
+	comment
+	This template will replace content until it no longer occurs. This allows to recursively cleanup content.
+	It has 3 parameters:
+	- content, the string to cleanup
+	- search, the string to search for in the content
+	- replace, the string to replace the search with
+	endcomment
+	assign oldContent = content
+	assign content = content | replace: search, replace
+
+	if oldContent != content
+		capture content
+			render 'yoast-seo-variable-cleanup', content: content, search: search, replace: replace
+		endcapture
+	endif
+
+	echo content
+-%}

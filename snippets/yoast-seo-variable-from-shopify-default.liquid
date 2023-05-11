@@ -1,0 +1,28 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- liquid
+	assign content = ""
+
+	case variable
+
+		when "title"
+			if page_title
+				assign content = page_title
+			else
+				assign content = shop.name
+			endif
+
+		when "description"
+			if page_description
+				assign content = page_description
+			endif
+
+		when "canonical_url"
+			assign content = canonical_url
+
+	endcase
+-%}
+{{- content -}}

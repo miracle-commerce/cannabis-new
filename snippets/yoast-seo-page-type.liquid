@@ -1,0 +1,48 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- assign yoast_seo_page_type = request.page_type -%}
+{%- if request.page_type == "collection" -%}
+	{%- if current_tags -%}
+		{%- assign yoast_seo_page_type = "product_tags" -%}
+	{%- elsif collection.handle == "all" -%}
+		{%- assign yoast_seo_page_type = "collection_archive" -%}
+	{%- endif -%}
+{%- endif -%}
+{%-  if request.page_type == "blog" and current_tags -%}
+	{%- assign yoast_seo_page_type = "blog_post_tags" -%}
+{%- endif -%}
+
+{%- comment %}
+Echoes a further refined Yoast SEO page type.
+Possible values are:
+- product_tags
+- collection_archive
+- blog_post_tags
+
+Plus the existing values from request.page_type:
+- index
+- article
+- blog
+- collection
+- page
+- product
+- list-collections
+- 404
+- search
+- cart
+- customers/account
+- customers/activate_account
+- customers/addresses
+- customers/login
+- customers/order
+- customers/register
+- customers/reset_password
+- gift_card
+- password
+
+{%- endcomment -%}
+
+{{- yoast_seo_page_type -}}

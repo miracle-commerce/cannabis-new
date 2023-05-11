@@ -81,7 +81,7 @@ product_recommendations: <boolean>
                   render 'product-thumb-image-element',
                   image: product.featured_media.preview_image,
                   alt: alt_text,
-                  image_shape: 'rectangle'
+                  image_shape: image_shape
                 %}
 
                 {% comment %} Secondary image {% endcomment %}
@@ -90,7 +90,7 @@ product_recommendations: <boolean>
                     render 'product-thumb-image-element',
                     image: product.media[1],
                     alt: alt_text,
-                    image_shape: 'rectangle',
+                    image_shape: image_shape,
                     additional_classes: 'secondary swap--visible',
                   %}
                 {% endif %}

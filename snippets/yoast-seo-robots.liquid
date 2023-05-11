@@ -1,0 +1,26 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- capture yoast_seo_page_type -%}{%- render 'yoast-seo-page-type' -%}{%- endcapture -%}
+{%- capture index -%}{%- render 'yoast-seo-robots-index', yoast_seo_page_type: yoast_seo_page_type -%}{%- endcapture -%}
+{%- capture follow -%}{%- render 'yoast-seo-robots-follow', yoast_seo_page_type: yoast_seo_page_type  -%}{%- endcapture -%}
+{%- if index != 'noindex' -%}
+	{%- capture image -%}{%- render 'yoast-seo-robots-image', yoast_seo_page_type: yoast_seo_page_type  -%}{%- endcapture -%}
+	{%- capture snippet -%}{%- render 'yoast-seo-robots-snippet', yoast_seo_page_type: yoast_seo_page_type  -%}{%- endcapture -%}
+	{%- capture video -%}{%- render 'yoast-seo-robots-video', yoast_seo_page_type: yoast_seo_page_type  -%}{%- endcapture -%}
+	{%- capture archive -%}{%- render 'yoast-seo-robots-archive', yoast_seo_page_type: yoast_seo_page_type  -%}{%- endcapture -%}
+{%- endif -%}
+{%- comment %}
+Since Shopify's Liquid implementation provides no way to populate an array from the theme files,
+we use the following lines to convert strings into arrays so we can `concat` and then `join` them into a comma-separated string.
+{%- endcomment -%}
+{%- assign index = index | split: "," -%}
+{%- assign follow = follow | split: "," -%}
+{%- assign image = image | split: "," -%}
+{%- assign snippet = snippet | split: "," -%}
+{%- assign video = video | split: "," -%}
+{%- assign archive = archive | split: "," -%}
+{%- assign robots = index | concat: follow | concat: image | concat: snippet | concat: video | concat: archive %}
+<meta name="robots" content="{{- robots | join: ", " -}}"/>

@@ -4,7 +4,7 @@
       "type": "index__image-with-text-overlay",
       "settings": {
         "section_height": "large",
-        "link": "",
+        "link": "shopify:\/\/collections\/hemp",
         "image": "shopify:\/\/shop_images\/pexels-los-muertos-crew-8908038.png",
         "mobile_image": "shopify:\/\/shop_images\/pexels-los-muertos-crew-mobile.png",
         "caption_layout": "two-columns",
@@ -65,7 +65,7 @@
         "products_per": 3,
         "mobile_products_per_row": "1",
         "products_limit": 10,
-        "image_shape": "rectangle",
+        "image_shape": "native",
         "show_rating": true,
         "show_all_button": false,
         "button_label": "Shop All",
@@ -145,8 +145,6 @@
         "title_align": "right",
         "title_size": "large",
         "collections_per_row": 4,
-        "align_height": true,
-        "collection_height": 400,
         "enable_zoom": true,
         "button_style": "button--secondary",
         "overlay_background": "#505050",
@@ -414,6 +412,7 @@
       "blocks": {
         "fbaba073-0010-409d-a162-0fbdfd95e905": {
           "type": "article",
+          "disabled": true,
           "settings": {
             "article": "recipes-cocktails\/hemp-crossed-buns"
           }
@@ -426,6 +425,7 @@
         },
         "d98244b2-1257-4e84-8121-391b8494d6d3": {
           "type": "article",
+          "disabled": true,
           "settings": {
             "article": "cbd-oil\/buying-cbd-in-australia"
           }
@@ -436,13 +436,27 @@
           "settings": {
             "article": "cannabis\/how-long-does-cannabis-stay-in-your-system"
           }
+        },
+        "7616d75a-2c8d-4d79-ad46-c71b6dd57b75": {
+          "type": "article",
+          "settings": {
+            "article": "hemp-seed-oil\/how-to-use-hemp-seed-oil-the-beginners-guide"
+          }
+        },
+        "b65e6dd5-5fe0-470f-9562-51ce64712222": {
+          "type": "article",
+          "settings": {
+            "article": "hemp-seed-oil\/the-ultimate-guide-to-hemp-seed-oil-for-pets-the-natural-healer"
+          }
         }
       },
       "block_order": [
         "fbaba073-0010-409d-a162-0fbdfd95e905",
         "e1af2046-dae5-4bb0-8481-347d059f1c76",
         "d98244b2-1257-4e84-8121-391b8494d6d3",
-        "5631b394-5f90-4545-83c8-3aefbd67ad76"
+        "5631b394-5f90-4545-83c8-3aefbd67ad76",
+        "7616d75a-2c8d-4d79-ad46-c71b6dd57b75",
+        "b65e6dd5-5fe0-470f-9562-51ce64712222"
       ],
       "settings": {
         "title": "",

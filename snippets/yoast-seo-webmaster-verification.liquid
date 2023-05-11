@@ -1,0 +1,25 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- capture yoast_seo_page_type -%}{%- render 'yoast-seo-page-type' -%}{%- endcapture -%}
+{%- assign settings_data = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings -%}
+{%- assign webmaster_verification = settings_data.integrations.webmasterVerification -%}
+{%- if yoast_seo_page_type == "index" and webmaster_verification -%}
+	{%- if webmaster_verification.baidu != "" %}
+<meta name="baidu-site-verification" content="{{- webmaster_verification.baidu | replace: '"', '&#34;' -}}" />
+	{%- endif -%}
+	{%- if webmaster_verification.bing != "" %}
+<meta name="msvalidate.01" content="{{- webmaster_verification.bing | replace: '"', '&#34;' -}}" />
+	{%- endif -%}
+	{%- if webmaster_verification.google != "" %}
+<meta name="google-site-verification" content="{{- webmaster_verification.google | replace: '"', '&#34;' -}}" />
+	{%- endif -%}
+	{%- if webmaster_verification.pinterest != "" %}
+<meta name="p:domain_verify" content="{{- webmaster_verification.pinterest | replace: '"', '&#34;' -}}" />
+	{%- endif -%}
+	{%- if webmaster_verification.yandex != "" %}
+<meta name="yandex-verification" content="{{- webmaster_verification.yandex | replace: '"', '&#34;' -}}" />
+	{%- endif -%}
+{% endif -%}

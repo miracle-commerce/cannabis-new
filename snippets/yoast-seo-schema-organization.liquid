@@ -1,0 +1,36 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- assign settings_data = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings -%}
+{%- if settings_data.schema.siteRepresentation.organizationName != "" -%}
+{%- capture logo -%}{%- render 'yoast-seo-image-filename', url: settings_data.schema.siteRepresentation.organizationLogo.url -%}{%- endcapture -%}
+{%- assign logo_object = images[logo] -%}
+{%- liquid
+	assign facebook = settings_data.schema.socialProfiles.facebookPageUrl | split: '\_([.YOAST_ARRAY_SPLITTER.])_/'
+	assign twitter = settings_data.schema.socialProfiles.twitterProfileUrl | split: '\_([.YOAST_ARRAY_SPLITTER.])_/'
+	assign socialProfiles = settings_data.schema.socialProfiles.other | concat: facebook | concat: twitter
+-%}
+{
+	"@type": "Organization",
+	"@id": "{{ shop.url }}/#/schema/organization/1",
+	"url": "{{ shop.url }}",
+	"name": {{ settings_data.schema.siteRepresentation.organizationName | json }},
+	{%- if settings_data.schema.siteRepresentation.alternateOrganizationName != null and settings_data.schema.siteRepresentation.alternateOrganizationName != "" %}
+	"alternateName": {{ settings_data.schema.siteRepresentation.alternateOrganizationName | json }},
+	{%- endif -%}
+{%- if logo_object != null and logo_object != empty %}
+	"logo": {
+		"@id": "{{ shop.url }}/#/schema/ImageObject/{{ logo_object.id }}"
+	},
+	"image": [
+		{
+			"@id": "{{ shop.url }}/#/schema/ImageObject/{{ logo_object.id }}"
+		}
+	],
+{%- endif %}
+	"sameAs": {{ socialProfiles | json }}
+},
+{% render 'yoast-seo-schema-image', image: logo -%}
+{%- endif -%}
