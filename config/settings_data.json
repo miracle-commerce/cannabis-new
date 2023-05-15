@@ -55,7 +55,7 @@
     "cart_action": "drawer",
     "show_lock_icon": false,
     "display_ajax_quantity_box": true,
-    "enable_shipping_calculator": true,
+    "enable_shipping_calculator": false,
     "cart_order_notification": "<p><strong>Order today<\/strong> before 4pm and <strong>receive it tomorrow!<\/strong><\/p>",
     "currency_format": "money_format",
     "show_multiple_currencies": true,
@@ -124,7 +124,7 @@
         "type": "announcement-bar",
         "settings": {
           "icon_label": "",
-          "text": "<p>FREE SHIPPING OVER $150<\/p>",
+          "text": "<p>FREE SHIPPING SPEND OVER $150<\/p>",
           "alignment": "center",
           "button_label": "",
           "link": "",
@@ -348,6 +348,12 @@
       },
       "14060646107696862457": {
         "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/judgeme_core\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
         "settings": {
         }
