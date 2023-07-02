@@ -208,6 +208,14 @@ window.supported_currencies = "{{ settings.mlvedaACS_supportedCurrencies }}";
   {% render 'shogun-head' %}
 
 {% render 'gsf-conversion-pixels' %}
+  <!-- Twitter conversion tracking base code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+twq('config','ofd4n');
+</script>
+<!-- End Twitter conversion tracking base code -->
 </head>
 
 {%- capture money_format_output -%}
@@ -442,6 +450,35 @@ window.supported_currencies = "{{ settings.mlvedaACS_supportedCurrencies }}";
       });
       </script>
   {% endif %}
+  <!-- Twitter conversion tracking event code -->
+<script type="text/javascript">
+  // Insert Twitter Event ID
+  twq('event', 'tw-ofd4n-ofd4o', {
+    value: null, // use this to pass the value of the conversion (e.g. 5.00)
+    currency: null, // use this to pass the currency of the conversion with an ISO 4217 code (e.g. ‘USD’)
+    contents: [ // use this to pass an array of products or content
+        // add all items to the array
+        // use this for the first item
+        {
+          content_type: null,
+          content_id: null,
+          content_name: null,
+          content_price: null,
+          num_items: null,
+          content_group_id: null
+        },
+        // use this for the second item
+        {
+          content_type: null,
+          content_id: null,
+          content_name: null,
+          content_price: null,
+          num_items: null,
+          content_group_id: null
+        }] 
+  });
+</script>
+<!-- End Twitter conversion tracking event code -->
   </body>
 </html>
 {% endcapture %}

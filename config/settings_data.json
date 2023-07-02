@@ -70,6 +70,7 @@
     "vimeo_link": "",
     "youtube_link": "",
     "favicon": "shopify:\/\/shop_images\/C-Logo.png",
+    "checkout_logo_image": "shopify:\/\/shop_images\/checkout_banner_800_x_150px.png",
     "mlvedaACS_roundDecimal": false,
     "show_search_icon_mobile": true,
     "mlvedaACS_positionTop": false,
@@ -78,7 +79,7 @@
     "mlvedaACS_defaultCurrency": "AUD",
     "mlvedaACS_positionBottom": "0px",
     "mlvedaACS_position": "bottom_with_left",
-    "mlvedaACS_enable": true,
+    "mlvedaACS_enable": false,
     "mlvedaACS_supportedCurrencies": "AUD NZD",
     "mlvedaACS_hideDecimal": false,
     "mlvedaACS_currencyFormat": "money_with_currency_format",
@@ -124,7 +125,7 @@
         "type": "announcement-bar",
         "settings": {
           "icon_label": "",
-          "text": "<p>FREE SHIPPING SPEND OVER $150<\/p>",
+          "text": "<p><strong>Free Shipping Over $150<\/strong><\/p>",
           "alignment": "center",
           "button_label": "",
           "link": "",
@@ -166,7 +167,7 @@
         "settings": {
           "logo": "shopify:\/\/shop_images\/logo-black.png",
           "logo_width": 200,
-          "main_linklist": "main-menu-2",
+          "main_linklist": "main-menu",
           "menu_alignment": "center",
           "dropdown_click": false,
           "display_search": true,
@@ -310,7 +311,7 @@
           "180698d7-3ae8-4451-976c-205ee561583f": {
             "type": "link_list",
             "settings": {
-              "menu": "shop",
+              "menu": "footer",
               "social_icons_footer": false
             }
           }
@@ -346,14 +347,20 @@
           "position": "right"
         }
       },
-      "14060646107696862457": {
-        "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/judgeme_core\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
         "settings": {
         }
       },
-      "855628211100114053": {
-        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+      "yoast-seo-metatags": {
+        "type": "shopify:\/\/apps\/yoast-seo-seo-for-everyone\/blocks\/metatags\/7c777011-bc88-4743-a24e-64336e1e5b46",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "14060646107696862457": {
+        "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/judgeme_core\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": false,
         "settings": {
         }

@@ -66,7 +66,7 @@
       {% if show_breadcrumb or show_instock_badge %}
         <div class="breadcrumb-instock__wrapper medium-down--hide">
           <div class="breadcrumb-container">{% render 'breadcrumb', context: 'product' %}</div>
-          <div class="instock_badge">{% render 'product-instock-badge-svg' %} In Stock</div>
+          <div class="instock_badge {%  unless product.available %}hide{% endunless %}">{% render 'product-instock-badge-svg' %} In Stock</div>
         </div>
       {% endif %}
       {% comment %} Sale sticker {% endcomment %}

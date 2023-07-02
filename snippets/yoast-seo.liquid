@@ -4,9 +4,7 @@
 {%- endcomment -%}
 
 {%- liquid
-	if content_for_header contains 'yoast-active-script'
-		render 'yoast-seo-main'
-	else
+	unless content_for_header contains 'yoast-active-script'
 		echo '<!-- ! Yoast SEO -->'
-	endif
+	endunless
 -%}
